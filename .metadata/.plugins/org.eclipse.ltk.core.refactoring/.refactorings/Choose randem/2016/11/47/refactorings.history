@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;textField_1&apos; in &apos;ahmed_shaker.Frame&apos; to &apos;txtQuestion&apos;&#x0D;&#x0A;- Original project: &apos;Choose randem&apos;&#x0D;&#x0A;- Original element: &apos;ahmed_shaker.Frame.textField_1&apos;&#x0D;&#x0A;- Renamed element: &apos;ahmed_shaker.Frame.txtQuestion&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;textField_1&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;ahmed_shaker{Frame.java[Frame^textField_1" name="txtQuestion" references="true" setter="false" stamp="1479230784040" textual="false" version="1.0"/>
+</session>

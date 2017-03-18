@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;inputAndOutput.sheet.c&apos; to &apos;InversClass&apos;&#x0D;&#x0A;- Original project: &apos;remember&apos;&#x0D;&#x0A;- Original element: &apos;inputAndOutput.sheet.c&apos;&#x0D;&#x0A;- Renamed element: &apos;inputAndOutput.sheet.InversClass&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;c&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;inputAndOutput.sheet{c.java[c" matchStrategy="1" name="InversClass" qualified="false" references="true" similarDeclarations="false" stamp="1479147301608" textual="false" version="1.0"/>
+</session>

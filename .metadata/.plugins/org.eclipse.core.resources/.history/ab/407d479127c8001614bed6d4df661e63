@@ -1,0 +1,235 @@
+package pharmacy;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class UpdateCompany extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtComID;
+	private JTextField txtSerial;
+	private JTextField txtName;
+	private JTextField txtPhone;
+	private JTextField txtEmail;
+	
+	private JLabel comID;
+	private JLabel serial;
+	private JLabel comName;
+	private JLabel phone;
+	private JLabel Email;
+	
+	
+	private JButton update;
+	private JButton insert ;
+	private JButton exit;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UpdateCompany frame = new UpdateCompany();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public UpdateCompany() {
+		setResizable(false);
+		setTitle("Company Update");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 541, 503);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		comID = new JLabel("Company ID  :   ");
+		comID.setForeground(Color.WHITE);
+		comID.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		comID.setBounds(41, 50, 138, 28);
+		contentPane.add(comID);
+		
+		txtComID = new JTextField();
+		txtComID.setBounds(189, 52, 267, 28);
+		contentPane.add(txtComID);
+		txtComID.setColumns(10);
+		
+		serial = new JLabel("Serial Number  :   ");
+		serial.setForeground(Color.WHITE);
+		serial.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		serial.setBounds(41, 118, 138, 28);
+		contentPane.add(serial);
+		
+		txtSerial = new JTextField();
+		txtSerial.setColumns(10);
+		txtSerial.setBounds(189, 120, 267, 28);
+		contentPane.add(txtSerial);
+		
+		comName = new JLabel("Company Name :");
+		comName.setForeground(Color.WHITE);
+		comName.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		comName.setBounds(41, 184, 138, 28);
+		contentPane.add(comName);
+		
+		txtName = new JTextField();
+		txtName.setColumns(10);
+		txtName.setBounds(189, 186, 267, 28);
+		contentPane.add(txtName);
+		
+		phone = new JLabel("Phone Number: ");
+		phone.setForeground(Color.WHITE);
+		phone.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		phone.setBounds(41, 253, 138, 28);
+		contentPane.add(phone);
+		
+		txtPhone = new JTextField();
+		txtPhone.setColumns(10);
+		txtPhone.setBounds(189, 255, 267, 28);
+		contentPane.add(txtPhone);
+		
+		Email = new JLabel("Email Address :");
+		Email.setForeground(Color.WHITE);
+		Email.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		Email.setBounds(41, 318, 138, 28);
+		contentPane.add(Email);
+		
+		txtEmail = new JTextField();
+		txtEmail.setColumns(10);
+		txtEmail.setBounds(189, 320, 267, 28);
+		contentPane.add(txtEmail);
+		
+		update = new JButton("Update");
+		update.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		update.setBounds(52, 395, 108, 36);
+		update.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				String sql;
+				String ID 		=	txtComID.getText().trim() ;
+				String name 	=	txtName.getText().trim();
+				String serial 	=	txtSerial.getText().trim();
+				String phone 	=	txtPhone.getText().trim();
+				String email 	= 	txtEmail.getText().trim();
+				
+				if(ID.equals("")||name.equals("")||serial.equals("")||phone.equals("")||email.equals("")){
+					JOptionPane.showMessageDialog(null, "plz full the space","information",2);
+				}else{
+					
+					int ids;
+					int phoneNum;
+					while(true){
+						try{
+							ids = Integer.parseInt(ID);
+							phoneNum = Integer.parseInt(phone);
+							if(ids>0 && phoneNum>0){
+								
+								sql = "UPDATE company SET serialNumber="+Integer.parseInt(serial)+",companyName='"+name+"',phone='"+phone+"',Email='"+email+"' WHERE companyID = "+Integer.parseInt(ID);
+								
+								Connect.connectUpdate(sql);
+								
+								dispose();
+								new Companies().setVisible(true);
+								break;
+							}
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Plz enter positeve number");
+						}
+						
+					}
+					
+					
+					
+				}
+					
+				
+				
+			}
+		});
+		contentPane.add(update);
+		
+		insert = new JButton("Insert");
+		insert.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		insert.setBounds(212, 395, 108, 36);
+		insert.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				String sql;
+				String ID 		=	txtComID.getText().trim() ;
+				String name 	=	txtName.getText().trim();
+				String serial 	=	txtSerial.getText().trim();
+				String phone 	=	txtPhone.getText().trim();
+				String email 	= 	txtEmail.getText().trim();
+				
+				if(ID.equals("")||name.equals("")||serial.equals("")||phone.equals("")||email.equals("")){
+					JOptionPane.showMessageDialog(null, "plz full the space","information",2);
+				}else{
+					int ids;
+					int phoneNum;
+					while(true){
+					try{
+						ids = Integer.parseInt(ID);
+						phoneNum = Integer.parseInt(phone);
+						if(ids>0 && phoneNum>0){
+							
+							sql = "INSERT INTO company(companyID, serialNumber, companyName, phone, Email)"
+									+ " VALUES ("+Integer.parseInt(ID)+","+Integer.parseInt(serial)+",'"+name+"','"+phone+"','"+email+"')";
+							
+							Connect.connectUpdate(sql);
+							
+							dispose();
+							new Companies().setVisible(true);
+							break;
+						}
+					}catch(Exception e){
+						JOptionPane.showMessageDialog(null, "Plz enter positeve number");
+					}
+					
+				}
+					
+					
+				}
+				
+			}
+		});
+		contentPane.add(insert);
+		
+		exit = new JButton("Exit");
+		exit.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		exit.setBounds(372, 395, 108, 36);
+		exit.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Companies().setVisible(true);
+				
+			}
+		});
+		contentPane.add(exit);
+	}
+
+}

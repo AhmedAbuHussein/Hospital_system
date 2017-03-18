@@ -1,0 +1,106 @@
+package pharmacy;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.table.DefaultTableModel;
+
+public class Customer extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Customer frame = new Customer();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Customer() {
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 924, 478);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 898, 345);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+			},
+			new String[] {
+				"customerID", "PharmacySerial", "customerName", "address", "phone", "email"
+			}
+		));
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		scrollPane.setViewportView(table);
+		
+		JButton update = new JButton("Update");
+		update.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		update.setBounds(84, 387, 124, 37);
+		contentPane.add(update);
+		
+		JButton delete = new JButton("Delete");
+		delete.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		delete.setBounds(292, 387, 124, 37);
+		contentPane.add(delete);
+		
+		JButton contact = new JButton("Contact");
+		contact.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		contact.setBounds(500, 387, 124, 37);
+		contentPane.add(contact);
+		
+		JButton exit = new JButton("Exit");
+		exit.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		exit.setBounds(708, 387, 124, 37);
+		contentPane.add(exit);
+	}
+
+}

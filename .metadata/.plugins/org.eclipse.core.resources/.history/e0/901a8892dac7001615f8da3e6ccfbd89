@@ -1,0 +1,70 @@
+package pharmacy;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Connect {
+    
+	protected  static Connection 			con = null;
+	protected static PreparedStatement  	stat = null;
+	protected static String 				sql  = null;
+	
+	public static String 					user = "root";
+	public static String 					password = "";
+	public static String 					url = "jdbc:mysql://localhost/";
+	
+      
+    public static ResultSet connect(String sql)
+    {
+    	ResultSet rs = null;
+    	
+         try {
+				Class.forName("com.mysql.jdbc.Driver");
+				con=DriverManager.getConnection(url,user,password);
+		        stat =con.prepareStatement(sql);
+		        rs = stat.executeQuery();
+		           return rs;
+			} catch (ClassNotFoundException e) {
+				
+				e.printStackTrace();
+				return null;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				return null;
+			}
+           
+        
+       
+    }
+    
+    
+    public static void connectUpdate(String sql,String table)
+    {
+ 
+    	
+         try {
+				Class.forName("com.mysql.jdbc.Driver");
+				con=DriverManager.getConnection(url+table,user,password);
+		        stat =con.prepareStatement(sql);
+		        stat.execute();
+			} catch (ClassNotFoundException e) {
+				
+				e.printStackTrace();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+				
+			}
+           
+        
+       
+    }
+}
+
+    
+
+

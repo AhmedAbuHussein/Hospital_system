@@ -1,0 +1,56 @@
+package chat;
+
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Login extends JFrame {
+
+	private final int DEFAULT_WIDTH =350 ,
+					DEFAULT_HEIGHT =420;
+	
+	private JPanel panel;
+	private JTextField txtName;
+	private JTextField txtAddress;
+	private JTextField txtPort;
+	
+	private JButton login;
+	
+	public Login(){
+		
+		createFrame();
+	}
+	
+	void createFrame(){
+		
+		
+		
+		panel =new JPanel();
+		panel.setSize(new Dimension(DEFAULT_WIDTH,DEFAULT_HEIGHT));
+		panel.setLayout(null);
+		panel.setBackground(Color.lightGray);
+		this.getContentPane().add(panel);
+		
+		
+		
+		txtName = new JTextField();
+		txtName.setBounds(25,50,300,30);
+		panel.add(txtName);
+		
+		
+		
+		
+		this.setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+	}
+	
+	public static void main(String []args){
+		new Login();
+	}
+}

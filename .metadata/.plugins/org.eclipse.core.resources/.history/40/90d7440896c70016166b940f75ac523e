@@ -1,0 +1,100 @@
+package hospitalProject;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hospital;
+
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Ahmed selemou
+ */
+public class Patientfordoctor extends JFrame {
+
+  /*  private String mes[] = {"reception", "doctor", "pharmacy", "lab", "x_ray"};
+    private JLabel patienttid = new JLabel("Patient ID");
+    private JLabel name = new JLabel(" Name");
+    private JLabel disease = new JLabel("Disease");
+    private JLabel remarkto = new JLabel("Remark To");
+    private JLabel remarkfrom = new JLabel("Remark from");
+    private JTextField f1 = new JTextField();
+    private JTextField f2 = new JTextField();
+    private JTextField f3 = new JTextField();
+    private JTextArea a1 = new JTextArea();
+    private JTextArea a2 = new JTextArea();
+    private JComboBox box1 = new JComboBox(mes);
+    private JComboBox box2 = new JComboBox(mes);
+    private JButton getdata = new JButton("Get data");
+    private JButton show = new JButton("Show Message");
+    private JButton New = new JButton("New");
+    private JButton show2 = new JButton("show");
+    private JButton show3 = new JButton("show");
+    private JPanel panel = new JPanel();*/
+
+    public Patientfordoctor() {
+       // having();
+        Patientforreception m=new Patientforreception();
+    }
+
+   /* public void having() {
+        setTitle("Patientfordoctor");
+        setSize(900, 800);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel.setSize(400, 300);
+        panel.setLayout(null);
+        panel.setBackground(Color.orange);
+        patienttid.setBounds(20, 30, 100, 20);
+        name.setBounds(20, 50, 100, 20);
+        disease.setBounds(20, 70, 100, 20);
+        remarkto.setBounds(20, 100, 100, 20);
+
+        f1.setBounds(140, 30, 120, 20);
+        f2.setBounds(140, 50, 120, 20);
+        f3.setBounds(140, 70, 120, 20);
+        box1.setBounds(40, 120, 100, 20);
+        show2.setBounds(180, 120, 90, 20);
+        a1.setBounds(300, 120, 180, 60);
+        remarkfrom.setBounds(20, 240, 100, 20);
+        box2.setBounds(40, 280, 100, 20);
+        show3.setBounds(180, 280, 90, 20);
+        a2.setBounds(300, 280, 180, 60);
+        getdata.setBounds(40, 360, 100, 20);
+        show.setBounds(180, 360, 100, 20);
+        New.setBounds(320, 360, 100, 20);
+        panel.add(patienttid);
+        panel.add(name);
+        panel.add(f1);
+        panel.add(f2);
+        panel.add(box1);
+        panel.add(box2);
+        panel.add(f3);
+        panel.add(disease);
+        panel.add(show2);
+        panel.add(show3);
+        panel.add(New);
+        panel.add(show);
+        panel.add(getdata);
+        panel.add(remarkto);
+        panel.add(remarkfrom);
+        panel.add(a1);
+        panel.add(a2);
+        this.add(panel);
+
+    }*/
+
+    public static void main(String[] args) {
+        new Patientfordoctor();
+    }
+}

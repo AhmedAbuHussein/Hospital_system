@@ -1,0 +1,266 @@
+package pharmacy;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class Update extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtId;
+	private JTextField txtName;
+	private JTextField txtType;
+	private JTextField txtDate;
+	private JTextField txtEx_Date;
+	private JLabel quantity;
+	private JTextField txtQuantity;
+	private JLabel lblToken;
+	private JTextField txtToken;
+	private JLabel price;
+	private JTextField txtPrice;
+	private JLabel patientAge;
+	private JTextField txtPatientAge;
+	private JButton update;
+	private JButton btnInsert;
+	private JButton exit;
+	
+	
+	private JLabel exDate;
+	private JLabel date;
+	private JLabel type;
+	private JLabel productName;
+	private JLabel productID;
+	
+	
+
+	
+	public Update() {
+		
+		createWindow();
+	}
+	
+	private void createWindow(){
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		setVisible(true);
+		setSize(795, 423);
+		setResizable(false);
+		setLocationRelativeTo(null);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		productID = new JLabel("ProductID :");
+		productID.setForeground(Color.WHITE);
+		productID.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		productID.setBounds(35, 33, 106, 23);
+		contentPane.add(productID);
+		
+		productName = new JLabel("ProductName :");
+		productName.setForeground(Color.WHITE);
+		productName.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		productName.setBounds(35, 84, 106, 23);
+		contentPane.add(productName);
+		
+		type = new JLabel("Type : ");
+		type.setForeground(Color.WHITE);
+		type.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		type.setBounds(35, 140, 106, 23);
+		contentPane.add(type);
+		
+		date = new JLabel("date :");
+		date.setForeground(Color.WHITE);
+		date.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		date.setBounds(35, 192, 106, 23);
+		contentPane.add(date);
+		
+	    exDate = new JLabel("Ex_Date :");
+		exDate.setForeground(Color.WHITE);
+		exDate.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		exDate.setBounds(35, 246, 106, 23);
+		contentPane.add(exDate);
+		
+		txtId = new JTextField();
+		txtId.setBounds(157, 33, 184, 23);
+		contentPane.add(txtId);
+		txtId.setColumns(10);
+		
+		txtName = new JTextField();
+		txtName.setColumns(10);
+		txtName.setBounds(157, 87, 184, 23);
+		contentPane.add(txtName);
+		
+		txtType = new JTextField();
+		txtType.setColumns(10);
+		txtType.setBounds(157, 143, 184, 23);
+		contentPane.add(txtType);
+		
+		txtDate = new JTextField();
+		txtDate.setColumns(10);
+		txtDate.setBounds(157, 195, 184, 23);
+		contentPane.add(txtDate);
+		
+		txtEx_Date = new JTextField();
+		txtEx_Date.setColumns(10);
+		txtEx_Date.setBounds(157, 249, 184, 23);
+		contentPane.add(txtEx_Date);
+		
+		quantity = new JLabel("Quantity :");
+		quantity.setForeground(Color.WHITE);
+		quantity.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		quantity.setBounds(431, 30, 106, 23);
+		contentPane.add(quantity);
+		
+		txtQuantity = new JTextField();
+		txtQuantity.setColumns(10);
+		txtQuantity.setBounds(553, 30, 184, 23);
+		contentPane.add(txtQuantity);
+		
+		lblToken = new JLabel("Token : ");
+		lblToken.setForeground(Color.WHITE);
+		lblToken.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblToken.setBounds(431, 83, 106, 23);
+		contentPane.add(lblToken);
+		
+		txtToken = new JTextField();
+		txtToken.setColumns(10);
+		txtToken.setBounds(553, 86, 184, 23);
+		contentPane.add(txtToken);
+		
+		price = new JLabel("Price : ");
+		price.setForeground(Color.WHITE);
+		price.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		price.setBounds(431, 135, 106, 23);
+		contentPane.add(price);
+		
+		txtPrice = new JTextField();
+		txtPrice.setColumns(10);
+		txtPrice.setBounds(553, 138, 184, 23);
+		contentPane.add(txtPrice);
+		
+		patientAge = new JLabel("patientAge :");
+		patientAge.setForeground(Color.WHITE);
+		patientAge.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		patientAge.setBounds(431, 189, 106, 23);
+		contentPane.add(patientAge);
+		
+		txtPatientAge = new JTextField();
+		txtPatientAge.setColumns(10);
+		txtPatientAge.setBounds(553, 192, 184, 23);
+		contentPane.add(txtPatientAge);
+		
+		update = new JButton("Update");
+		update.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		update.setBounds(115, 312, 106, 35);
+		update.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				String sql;
+				String ID 		=	txtId.getText().trim() ;
+				String name 	=	txtName.getText().trim();
+				String type 	=	txtType.getText().trim();
+				String Date 	=	txtDate.getText().trim();
+				String Ex_Date 	= 	txtEx_Date.getText().trim();
+				String quantity =  	txtQuantity.getText().trim();
+				String token 	=	txtToken.getText().trim();
+				String price 	=	txtPrice.getText().trim();
+				String Age 		=	txtPatientAge.getText().trim();
+				int stay;
+				
+				if(ID.equals("")|| name.equals("") || type.equals("") || Date.equals("") || Ex_Date.equals("") || quantity.equals("") || token.equals("") || price.equals("")|| Age.equals("")){
+				
+					JOptionPane.showMessageDialog(null, "plz full the space","Information",2);
+					
+				}else{
+					stay = Integer.parseInt(quantity) - Integer.parseInt(token);
+					
+					
+					
+					sql = "UPDATE store SET ProductName ='"+name+"', type ='"+type+"',date ='"+Date+"',Ex_date   ='"+Ex_Date+"',"
+							+ "quantity ="+Integer.parseInt(quantity)+", token="+Integer.parseInt(token)+",Stay ="+stay+",price='"+price+"',patientAge='"+Age+
+							
+							"' WHERE ProductID = "+Integer.parseInt(ID);
+					
+					Connect.connectUpdate(sql);
+					
+					 
+					 new Home().setVisible(true);
+					 dispose();
+					
+				}
+				
+			}
+		});
+		contentPane.add(update);
+		
+		btnInsert = new JButton("Insert");
+		btnInsert.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		btnInsert.setBounds(336, 312, 106, 35);
+		btnInsert.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				
+				String sql;
+				String ID 		=	txtId.getText().trim() ;
+				String name 	=	txtName.getText().trim();
+				String type 	=	txtType.getText().trim();
+				String Date 	=	txtDate.getText().trim();
+				String Ex_Date 	= 	txtEx_Date.getText().trim();
+				String quantity =  	txtQuantity.getText().trim();
+				String token 	=	txtToken.getText().trim();
+				String price 	=	txtPrice.getText().trim();
+				String Age 		=	txtPatientAge.getText().trim();
+				int stay;
+				
+				if(ID.equals("")|| name.equals("") || type.equals("") || Date.equals("") || Ex_Date.equals("") || quantity.equals("") || token.equals("") || price.equals("")|| Age.equals("")){
+				
+					JOptionPane.showMessageDialog(null, "plz full the space","Information",2);
+					
+				}else{
+					
+					stay = Integer.parseInt(quantity) - Integer.parseInt(token);
+					
+					sql = "INSERT INTO store(ProductID, ProductName, type, date, Ex_date, quantity,stay, token, price, patientAge)"
+							+ " VALUES ("+Integer.parseInt(ID) +",'"+name +"','"+ type +"','"+Date+"','"+Ex_Date+"',"+Integer.parseInt(quantity)+","+stay+","+Integer.parseInt(token)+",'"+price+"','"+Age+"')";
+				
+					Connect.connectUpdate(sql);
+					
+					 new Home().setVisible(true);
+					 dispose();
+					
+				}
+				
+			}
+		});
+		contentPane.add(btnInsert);
+		
+		exit = new JButton("Exit");
+		exit.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		exit.setBounds(557, 312, 106, 35);
+		exit.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Home().setVisible(true);
+			}
+		});
+		contentPane.add(exit);
+		
+	}
+}

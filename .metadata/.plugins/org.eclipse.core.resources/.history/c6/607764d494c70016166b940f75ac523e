@@ -1,0 +1,71 @@
+package hospitalProject;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import java.awt.Color;
+import java.awt.Desktop;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+/**
+ *
+ * @author Ahmed selemou
+ */
+public class Help extends JFrame{
+    private JLabel copyrights=new JLabel("Made BY @ Ahmed El_3mary");
+    private JButton contact=new JButton("contact us");
+    private JPanel panel=new JPanel();
+    public Help()
+    {
+        helping();
+    }
+    
+    public void helping()
+    {
+        setTitle("Help");
+        setSize(400, 300);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel.setSize(400, 300);
+        panel.setLayout(null);
+        panel.setBackground(Color.lightGray);
+        copyrights.setBounds(30, 40,200 ,30);
+        contact.setBounds(60, 150, 100, 30);
+        contact.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+           
+                Desktop d=Desktop.getDesktop();
+                try {
+                    d.browse(new URI("http://www.facebook.com"));
+                } catch (IOException ex) {
+                    Logger.getLogger(Help.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (URISyntaxException ex) {
+                    Logger.getLogger(Help.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+       
+        panel.add(copyrights);
+        panel.add(contact);
+        this.add(panel);
+    }
+    public static void main(String[] args) {
+        new Help();
+    }
+}
+

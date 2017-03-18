@@ -1,0 +1,139 @@
+package databaseCon;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class UIInsert {
+	
+	private static JFrame frame;
+	private static JPanel panel;
+	private static JButton insert , exit;
+	private static JTextField name , id , sex , country;
+	private static JLabel lName , lId , lSex ,lCountry;
+	private static int width = 500 , height = 400;
+	
+	public UIInsert(){
+		createFrame();
+	}
+	
+	private void createFrame(){
+		
+		panel = new JPanel();
+		panel.setSize(new Dimension(width, height));
+		panel.setLayout(null);
+		panel.setBackground(new Color(20,60,40));
+		
+		//**************************************label **********************************
+		lName  	 = new JLabel("NAME    : ");
+		lId  	 = new JLabel("  ID          : ");
+		lSex  	 = new JLabel("GENDER  : ");
+		lCountry = new JLabel("COUNTRY : ");
+		
+		lName.setBounds(20,40,100,40);
+		lName.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		lName.setForeground(Color.red);
+		panel.add(lName);
+		
+		lId.setBounds(20,100,100,40);
+		lId.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		lId.setForeground(Color.red);
+		panel.add(lId);
+		
+		lSex.setBounds(20,160,100,40);
+		lSex.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		lSex.setForeground(Color.red);
+		panel.add(lSex);
+		
+		lCountry.setBounds(20,220,100,40);
+		lCountry.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		lCountry.setForeground(Color.red);
+		panel.add(lCountry);
+
+		//*********************************** text *************************************
+		name  	= new JTextField();
+		id    	= new JTextField();
+		sex   	= new JTextField();
+		country	= new JTextField();
+		
+		
+		name.setBounds(140,40,300,40);
+		name.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		name.setForeground(Color.red);
+		panel.add(name);
+		
+		id.setBounds(140,100,300,40);
+		id.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		id.setForeground(Color.red);
+		panel.add(id);
+		
+		sex.setBounds(140,160,300,40);
+		sex.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		sex.setForeground(Color.red);
+		panel.add(sex);
+		
+		country.setBounds(140,220,300,40);
+		country.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		country.setForeground(Color.red);
+		panel.add(country);
+		
+		//**********************************Buttons *************************************
+		insert  = new JButton(" Insert ");
+		exit 	= new JButton(" Exit ");
+		
+		insert.setBounds(300, 300, 100, 40);
+		insert.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if((name.getText().equals("") ||id.getText().equals("") || sex.getText().equals("")||country.getText().equals("")))
+					JOptionPane.showMessageDialog(null, "Plz Full All The Space !");
+				else
+				Insert.insert(name.getText(),Integer.parseInt(id.getText()) ,sex.getText(),country.getText());
+				name.setText("");
+				id.setText("");
+				sex.setText("");
+				country.setText("");
+				
+				
+			}
+		});
+		panel.add(insert);
+		
+		
+		
+		exit.setBounds(150, 300, 100, 40);
+		exit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+				
+			}
+		});
+		panel.add(exit);
+
+		//**********************************frame *****************************************
+		
+		frame = new JFrame("INSERT");
+		frame.setSize(width,height);
+		frame.setLocationRelativeTo(null);
+		frame.setLayout(null);
+		frame.setVisible(true);
+		
+	
+		frame.add(panel);
+	}
+	
+
+}

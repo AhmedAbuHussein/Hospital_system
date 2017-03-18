@@ -1,0 +1,156 @@
+package hospitalProject;
+
+
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Ahmed selemou
+ */
+public class User extends JFrame {
+
+    private JButton save = new JButton("save");
+    private JButton close = new JButton("close");
+    private JButton New = new JButton("New");
+    private JLabel username = new JLabel("user name");
+    private JLabel password = new JLabel("password");
+    private JLabel confirmpassword = new JLabel("confirm password");
+    private JLabel specilization = new JLabel("specilization");
+    private JTextField f1 = new JTextField();
+    private JTextField f2 = new JTextField();
+    private JTextField f3 = new JTextField();
+    private JPanel panel = new JPanel();
+    private String specialsi[] = {"doctor", "nurse", "pharmacy", "x-ray", "reception", "lab", "admin", "accountancy"};
+    private JComboBox box = new JComboBox(specialsi);
+    Connection conn = null;
+    PreparedStatement stat = null;
+    ResultSet rst = null;
+
+    public User() {
+        doing();
+    }
+
+    protected void reset() {
+        f1.setText("");
+        f2.setText("");
+        f3.setText("");
+        box.setSelectedIndex(-1);
+    }
+
+    private void doing() {
+
+        setTitle("USER");
+        setSize(900, 800);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel.setSize(400, 300);
+        panel.setLayout(null);
+        panel.setBackground(Color.BLUE);
+        username.setBounds(20, 30, 100, 25);
+        password.setBounds(20, 60, 100, 25);
+        confirmpassword.setBounds(20, 90, 100, 25);
+        specilization.setBounds(20, 125, 100, 25);
+        f1.setBounds(140, 30, 150, 25);
+        f2.setBounds(140, 60, 150, 25);
+        f3.setBounds(140, 90, 150, 25);
+        box.setBounds(140, 125, 150, 25);
+        save.setBounds(40, 180, 100, 25);
+        New.setBounds(160, 180, 100, 25);
+        close.setBounds(280, 180, 100, 25);
+        panel.add(username);
+        panel.add(password);
+        panel.add(confirmpassword);
+        panel.add(specilization);
+        panel.add(f1);
+        panel.add(f2);
+        panel.add(f3);
+        panel.add(save);
+        panel.add(New);
+        panel.add(close);
+        panel.add(box);
+        this.add(panel);
+        close.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            
+            }
+        });
+        New.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                reset();
+            
+            }
+        });
+        
+        save.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (f1.getText().toString().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter user name");
+                }
+                if (f2.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter password");
+                }
+                if (f3.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Confirm password");
+                }
+
+                if (box.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter specialization");
+                }
+                if (!f2.getText().equals(f3.getText())) {
+                    JOptionPane.showMessageDialog(null, " Error in password");
+                }
+                if ((f2.getText()).length() < 5) {
+                    JOptionPane.showMessageDialog(null, "password must be at least 5 numbers");
+                }
+                conn = Connect.connect();
+                String sql = "select username from user where username='" + f1.getText() + "'";
+                try {
+                    stat = conn.prepareStatement(sql);
+                    rst = stat.executeQuery();
+                    if (rst.next()) {
+                        JOptionPane.showMessageDialog(null, "user name already exist in database");
+                        return;
+                    }
+                    String sql2 = "insert into user(username,password,specilization)values('" + f1.getText().toString() + "','" + f2.getText() + "','" + box.getSelectedItem().toString() + "')";
+                    stat = conn.prepareStatement(sql2);
+                    stat.execute();
+                    JOptionPane.showMessageDialog(null, "saved  successfully");
+                    reset();
+
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+            }
+
+        });
+
+    }
+
+    public static void main(String[] args) {
+        new User();
+    }
+
+}
+

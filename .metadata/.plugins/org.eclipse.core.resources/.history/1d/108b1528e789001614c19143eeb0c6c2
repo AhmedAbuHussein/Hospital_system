@@ -1,0 +1,41 @@
+package chat;
+
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Login extends JFrame {
+
+	private final int DEFAULT_WIDTH =300 ,
+					DEFAULT_HEIGHT =350;
+	
+	private JPanel panel;
+	
+	
+	public Login(){
+		
+		createFrame();
+	}
+	
+	void createFrame(){
+		
+		this.setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+		
+		panel =new JPanel();
+		panel.setSize(new Dimension(DEFAULT_WIDTH,DEFAULT_HEIGHT));
+		panel.setLayout(null);
+		panel.setBackground(Color.lightGray);
+		
+		
+		add(panel);
+	}
+	
+	public static void main(String []args){
+		new Login();
+	}
+}

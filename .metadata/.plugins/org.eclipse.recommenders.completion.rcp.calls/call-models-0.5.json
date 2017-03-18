@@ -1,0 +1,56 @@
+{
+  "C:\\Program Files\\Java\\jre1.8.0_71\\lib\\rt.jar": {
+    "location": "C:\\Program Files\\Java\\jre1.8.0_71\\lib\\rt.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027C:\\Program Files\\Java\\jre1.8.0_71\\lib\\rt.jar\u0027. Neither fingerprint \u0027579e7f1d2bb2f2ab86623ad0f18235089119a151\u0027 nor symbolic name \u0027rt\u0027 are known."
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_71\\lib\\ext\\jfxrt.jar": {
+    "location": "C:\\Program Files\\Java\\jre1.8.0_71\\lib\\ext\\jfxrt.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027C:\\Program Files\\Java\\jre1.8.0_71\\lib\\ext\\jfxrt.jar\u0027. Neither fingerprint \u002758828eb239777157bf34cd8ee85576f20ab1b48a\u0027 nor symbolic name \u0027jfxrt\u0027 are known."
+  },
+  "E:\\2nd year\\Java se\\lunna\\lecture\\src": {
+    "location": "E:\\2nd year\\Java se\\lunna\\lecture\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027E:\\2nd year\\Java se\\lunna\\lecture\\src\u0027. Skipped."
+  },
+  "E:\\2nd year\\Java se\\lunna\\remember\\src": {
+    "location": "E:\\2nd year\\Java se\\lunna\\remember\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027E:\\2nd year\\Java se\\lunna\\remember\\src\u0027. Skipped."
+  },
+  "E:\\2nd year\\Java se\\lunna\\testcase\\src": {
+    "location": "E:\\2nd year\\Java se\\lunna\\testcase\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027E:\\2nd year\\Java se\\lunna\\testcase\\src\u0027. Skipped."
+  },
+  "E:\\2nd year\\Java se\\lunna\\serverProject\\src": {
+    "location": "E:\\2nd year\\Java se\\lunna\\serverProject\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027E:\\2nd year\\Java se\\lunna\\serverProject\\src\u0027. Skipped."
+  },
+  "E:\\2nd year\\Java se\\lunna\\Choose randem\\src": {
+    "location": "E:\\2nd year\\Java se\\lunna\\Choose randem\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027E:\\2nd year\\Java se\\lunna\\Choose randem\\src\u0027. Skipped."
+  },
+  "E:\\2nd year\\Java se\\lunna\\network chat\\src": {
+    "location": "E:\\2nd year\\Java se\\lunna\\network chat\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027E:\\2nd year\\Java se\\lunna\\network chat\\src\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_45\\lib\\rt.jar": {
+    "location": "C:\\Program Files\\Java\\jre1.8.0_45\\lib\\rt.jar",
+    "status": "UNRESOLVED"
+  },
+  "E:\\2nd year\\Java se\\lunna\\hosptal system\\src": {
+    "location": "E:\\2nd year\\Java se\\lunna\\hosptal system\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027E:\\2nd year\\Java se\\lunna\\hosptal system\\src\u0027. Skipped."
+  },
+  "C:\\Program Files\\Java\\jdbc\\rs2xml.jar": {
+    "location": "C:\\Program Files\\Java\\jdbc\\rs2xml.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027C:\\Program Files\\Java\\jdbc\\rs2xml.jar\u0027. Neither fingerprint \u00278a970b2f2ce64a6d8c96b850d8db8908ec3148f1\u0027 nor symbolic name \u0027rs2xml\u0027 are known."
+  }
+}

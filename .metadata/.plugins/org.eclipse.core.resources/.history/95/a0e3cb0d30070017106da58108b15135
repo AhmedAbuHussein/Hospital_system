@@ -1,0 +1,14 @@
+package source;
+
+import javax.swing.JPanel;
+
+public class S extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public S() {
+
+	}
+
+}

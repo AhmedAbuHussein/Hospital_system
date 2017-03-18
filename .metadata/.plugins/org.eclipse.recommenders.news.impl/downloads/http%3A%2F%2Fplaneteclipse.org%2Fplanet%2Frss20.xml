@@ -1,0 +1,1199 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Planet Eclipse</title>
+	<link>http://planeteclipse.org/planet/</link>
+	<language>en</language>
+	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
+
+<item>
+	<title>JBoss Tools Team: Eclipse Webinar series - JSDT and Docker Tooling for Eclipse Neon</title>
+	<guid isPermaLink="true">http://tools.jboss.org/blog/eclipse_neon_webinar_series.html</guid>
+	<link>http://tools.jboss.org/blog/eclipse_neon_webinar_series.html</link>
+	<description>&lt;div&gt;&lt;div id=&quot;preamble&quot;&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;To celebrate the release of &lt;a href=&quot;http://eclipse.org&quot;&gt;Eclipse Neon&lt;/a&gt;, the Eclipse Foundation
+      produced a &lt;a href=&quot;https://www.eclipse.org/community/webinars/&quot;&gt;webinar series&lt;/a&gt; with a list of
+       &lt;strong&gt;7 of the Top New &amp;amp; Noteworthy Features&lt;/strong&gt; that are integral to the Eclipse Neon Release.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Amongst those webinars, &lt;a href=&quot;https://developer.jboss.org/people/ibuziuk&quot;&gt;Ilya&lt;/a&gt; and
+      &lt;a href=&quot;https://developer.jboss.org/people/gercan&quot;&gt;Gorkem&lt;/a&gt; presented the Eclipse JavaScript Development Tools (JSDT)
+      and I presented the Docker tooling.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect1&quot;&gt;
+      &lt;h2 id=&quot;jsdt-tooling&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#jsdt-tooling&quot;&gt;&lt;/a&gt;JSDT Tooling&lt;/h2&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The Eclipse JavaScript Development Tools have reached a new level of features and usability with Eclipse Neon.
+      Many things were implemented as part of the JSDT 2.0 release that is now available with &lt;a href=&quot;http://eclipse.org&quot;&gt;Eclipse Neon&lt;/a&gt;.
+      This webinar demonstrates the following new features:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ulist&quot;&gt;
+      &lt;ul&gt;
+      &lt;li&gt;
+      &lt;p&gt;Package managers (npm / bower)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;Build systems (grunt / gulp)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;Node.js Tools&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+      &lt;p&gt;ECMAScript 2015 (ES6) parser&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The talk also features plans for the future of JavaScript development in Eclipse IDE.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;videoblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The slides for the presentation are available &lt;a href=&quot;http://eclipsecon2016.herokuapp.com/#/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect1&quot;&gt;
+      &lt;h2 id=&quot;docker-tooling&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#docker-tooling&quot;&gt;&lt;/a&gt;Docker Tooling&lt;/h2&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Docker is awesome, but how to use it well when doing development?
+      In this talk you will get a quick introduction on how to use Docker effectively, especially for development from within Eclipse.
+      We will show how the release of Eclipse Neon supports Docker to make it even more integrated into your day-to-day work from within your IDE.
+      In particular, you’ll see how you can pull and run an image for a database, build a custom image for an application server, run it and deploy an application using data volume, exposed ports and container links.
+      We will also take a look at some of the newest features, such as support for Docker Machine, TM Terminal integration, run configurations for containers, and a variety of other UI improvements.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;videoblock&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+      
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;The slides for the presentation are available &lt;a href=&quot;http://www.slideshare.net/XavierCoulon/eclipse-neon-webinar-docker-tooling-for-developers&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;sect1&quot;&gt;
+      &lt;h2 id=&quot;other-webinars&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;http://tools.jboss.org/blog/news.atom#other-webinars&quot;&gt;&lt;/a&gt;Other Webinars&lt;/h2&gt;
+      &lt;div class=&quot;sectionbody&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Other webinars have also been recorded and are available on the &lt;a href=&quot;https://www.youtube.com/playlist?list=PLy7t4z5SYNaTzWo4OTOxRisfKNby7dENY&quot;&gt;Eclipse Neon Webinar Series&lt;/a&gt; on Youtube.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
+      &lt;p&gt;Enjoy !&lt;br /&gt;
+      Xavier Coulon&lt;br /&gt;
+      &lt;a href=&quot;http://twitter.com/xcoulon&quot;&gt;@xcoulon&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Thu, 23 Jun 2016 16:07:40 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse Newsletter - Eclipse Neon Shines Bright</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/Sk2LVbIIgOw/</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/Sk2LVbIIgOw/</link>
+	<description>Read about the top ten Neon features, the new Eclipse User Storage Service (USS), Eclipse CDT 9.0, and Eclipse PDT 4.0.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/Sk2LVbIIgOw&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 23 Jun 2016 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Geniutec: New Eclipse Neon Packages for JavaScript and Android</title>
+	<guid isPermaLink="false">https://www.genuitec.com/?p=486837</guid>
+	<link>https://www.genuitec.com/new-eclipse-neon-packages-for-javascript-and-android/</link>
+	<description>&lt;p&gt;Eclipse Neon Android Package Now that Eclipse Neon is just around the corner, I was pleased to see that Eclipse for Android Developers is back. We’ve all waited a long time for it! This package bundles the Andmore-Eclipse Android Tooling—a fork of Google’s ADT (Android Development Tools) plugins for Eclipse. These are maintained separately from […]&lt;/p&gt;
+&lt;p&gt;The post &lt;a href=&quot;https://www.genuitec.com/new-eclipse-neon-packages-for-javascript-and-android/&quot; rel=&quot;nofollow&quot;&gt;New Eclipse Neon Packages for JavaScript and Android&lt;/a&gt; appeared first on &lt;a href=&quot;https://www.genuitec.com&quot; rel=&quot;nofollow&quot;&gt;Genuitec&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Thu, 23 Jun 2016 13:24:12 +0000</pubDate>
+</item>
+<item>
+	<title>Gunnar Wagenknecht: Eclipse Neon and ssh-agent</title>
+	<guid isPermaLink="false">http://wagenknecht.org/blog/?p=855</guid>
+	<link>http://feedproxy.google.com/~r/eclipseguru/~3/xaL117nW3BE/eclipse-neon-and-ssh-agent.html</link>
+	<description>&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/neon/&quot; target=&quot;_blank&quot;&gt;Eclipse Neon is out.&lt;/a&gt; Time to give &lt;a href=&quot;https://bugs.eclipse.org/179924&quot; target=&quot;_blank&quot;&gt;a long awaited feature&lt;/a&gt; a try again. It’s support for re-using the identify from &lt;strong&gt;ssh-agent&lt;/strong&gt; running on my system within Eclipse. I want this primarily for the Eclipse Git integration.&lt;/p&gt;
+&lt;p&gt;As it turns out, the core support is part of Eclipse Neon. The SSH interface had been made extensible for additional identity discovery. The remaining missing piece is the actual code that bridges the ssh-agent connection into the Eclipse SSH interface (powered by JSch). The reason for this are – of course – legal issues. It would be great if those can be addressed and this can be shipped out of the box in Eclipse.&lt;/p&gt;
+&lt;p&gt;I forked the initial work from the JSch folks and made it consumable as an update site.&lt;/p&gt;
+&lt;p&gt;Please give it a try:&lt;br /&gt;
+&lt;strong&gt;&lt;a href=&quot;https://eclipseguru.github.io/eclipse-jsch-agent-proxy/&quot; target=&quot;_blank&quot;&gt;https://eclipseguru.github.io/eclipse-jsch-agent-proxy/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;feedflare&quot;&gt;
+&lt;a href=&quot;http://feeds.feedburner.com/~ff/eclipseguru?a=xaL117nW3BE:q9Pozdtq_tY:yIl2AUoC8zA&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://feeds.feedburner.com/~ff/eclipseguru?d=yIl2AUoC8zA&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;http://feeds.feedburner.com/~ff/eclipseguru?a=xaL117nW3BE:q9Pozdtq_tY:qj6IDK7rITs&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://feeds.feedburner.com/~ff/eclipseguru?d=qj6IDK7rITs&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;http://feeds.feedburner.com/~ff/eclipseguru?a=xaL117nW3BE:q9Pozdtq_tY:V_sGLiPBpWU&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://feeds.feedburner.com/~ff/eclipseguru?i=xaL117nW3BE:q9Pozdtq_tY:V_sGLiPBpWU&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;http://feeds.feedburner.com/~ff/eclipseguru?a=xaL117nW3BE:q9Pozdtq_tY:D7DqB2pKExk&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://feeds.feedburner.com/~ff/eclipseguru?i=xaL117nW3BE:q9Pozdtq_tY:D7DqB2pKExk&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;http://feeds.feedburner.com/~ff/eclipseguru?a=xaL117nW3BE:q9Pozdtq_tY:F7zBnMyn0Lo&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://feeds.feedburner.com/~ff/eclipseguru?i=xaL117nW3BE:q9Pozdtq_tY:F7zBnMyn0Lo&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;http://feeds.feedburner.com/~ff/eclipseguru?a=xaL117nW3BE:q9Pozdtq_tY:gIN9vFwOqvQ&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://feeds.feedburner.com/~ff/eclipseguru?i=xaL117nW3BE:q9Pozdtq_tY:gIN9vFwOqvQ&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipseguru/~4/xaL117nW3BE&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 23 Jun 2016 12:31:02 +0000</pubDate>
+</item>
+<item>
+	<title>Frank Appel: Clean Sheet Update for Eclipse Neon</title>
+	<guid isPermaLink="false">https://facon-biz.prossl.de/?p=13296</guid>
+	<link>http://www.codeaffine.com/2016/06/23/clean-sheet-update-for-eclipse-neon/</link>
+	<description>&lt;p&gt;Written by &lt;a href=&quot;http://www.codeaffine.com/author/fappel/&quot; rel=&quot;nofollow&quot;&gt;Frank Appel&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In celebration of the latest Eclipse release, we provide a Clean Sheet Update for Eclipse Neon. Congratulations and a big ‘thank you’ to all the diligent Eclipse committers and contributors that made the Neon version happen, great work! While the Clean Sheet Update for Eclipse Neon primarily ensures compatibility it comes also with some nice Look-and-Feel improvements. This post gives a short overview of the most important innovations of the feature’s new version (0.4).&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div class=&quot;notification lock cannothide&quot;&gt;&lt;div class=&quot;boximg infoimg&quot;&gt;&lt;/div&gt;&lt;h2&gt;The Clean Sheet Eclipse Design&lt;/h2&gt;
+
+In case you've missed out on the topic and you are wondering what I'm talking about, here is a screenshot of my real world setup using the Clean Sheet theme (click on the image to enlarge).
+
+&lt;a href=&quot;http://fappel.github.io/xiliary/clean-sheet-screenshot.html&quot;&gt;&lt;img alt=&quot;Eclipse IDE Look and Feel: Clean Sheet Screenshot&quot; class=&quot;alignnone size-full wp-image-12279&quot; height=&quot;408&quot; src=&quot;http://www.codeaffine.com/wp-content/uploads/2015/11/clean-sheet-eclipse-theme.png&quot; width=&quot;850&quot; /&gt;&lt;/a&gt;
+
+For more information please refer to the features landing page at &lt;a href=&quot;http://fappel.github.io/xiliary/clean-sheet.html&quot; target=&quot;_blank&quot;&gt;http://fappel.github.io/xiliary/clean-sheet.html&lt;/a&gt;, read the introductory Clean Sheet feature description &lt;a href=&quot;http://www.codeaffine.com/2015/11/04/clean-sheet-an-ergonomic-eclipse-theme-for-windows-10/&quot;&gt;blog post&lt;/a&gt;, and check out the &lt;a href=&quot;http://fappel.github.io/xiliary/clean-sheet-new-and-noteworthy.html&quot; target=&quot;_blank&quot;&gt;New &amp;amp; Noteworthy&lt;/a&gt; page.&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;FlatScrollBar Overlay for ScrolledComposite&lt;/h2&gt;
+&lt;p&gt;Styling capabilities have been enhanced to allow adoption of ScrolledComposite widgets and derivatives by the FlatScrollBar overlay mechanism on Windows platforms. The picture shows how the content area of the preference dialog blends in the Clean Sheet scrollbars on diminution.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;Clean Sheet Update for Eclipse Neon: Scrolled Composite Overlay&quot; class=&quot;alignnone size-full wp-image-13301&quot; height=&quot;422&quot; src=&quot;http://www.codeaffine.com/wp-content/uploads/2016/06/scrolled-composite.png&quot; width=&quot;598&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Forms Style Adjustment&lt;/h2&gt;
+&lt;p&gt;The styling of &lt;a href=&quot;https://eclipse.org/articles/Article-Forms/article.html&quot; target=&quot;_blank&quot;&gt;FormToolkit&lt;/a&gt; based views and editors has been overhauled. Together with the FlatScrollBar overlay mechanism on ScrolledForms (Windows only), UI parts like the PDE Manifest editor integrate now quite nicely with the overall look and feel of the Clean Sheet theme.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;Clean Sheet Update for Eclipse Neon: Forms Look and Feel&quot; class=&quot;alignnone size-full wp-image-13302&quot; height=&quot;649&quot; src=&quot;http://www.codeaffine.com/wp-content/uploads/2016/06/forms.png&quot; width=&quot;1022&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Clean Sheet Installation&lt;/h2&gt;
+
+&lt;p&gt;Drag the 'Install' link below to your running Eclipse instance&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;drag&quot; href=&quot;http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2588223&quot; title=&quot;Drag to your running Eclipse installation to install Clean Sheet&quot;&gt;&lt;img alt=&quot;Drag to your running Eclipse installation to install Clean Sheet&quot; src=&quot;http://marketplace.eclipse.org/sites/all/themes/solstice/_themes/solstice_marketplace/public/images/btn-install.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;Select Help &amp;gt; Install New Software.../Check for Updates.&lt;br /&gt;
+P2 repository software site: @ &lt;a href=&quot;http://fappel.github.io/xiliary/&quot;&gt;http://fappel.github.io/xiliary/&lt;/a&gt;&lt;br /&gt;
+Feature: Code Affine Theme&lt;/p&gt;
+
+&lt;p&gt;After feature installation and workbench restart select the ‘Clean Sheet’ theme:&lt;br /&gt;
+Preferences: General &amp;gt; Appearance &amp;gt; Theme: Clean Sheet&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2&gt;On a Final Note, …&lt;/h2&gt;
+&lt;p&gt;Of course, it’s interesting to hear suggestions or find out about potential issues that need to be resolved. In particular, as the ScrolledComposite widget has some interesting layout mechanisms by itself there still might be some uncovered spots with the newly added scrollbar overlay mechanism. Feel free to use the &lt;a href=&quot;https://github.com/fappel/xiliary/issues&quot; target=&quot;_blank&quot;&gt;Xiliary Issue Tracker&lt;/a&gt; or the comment section below for reporting.&lt;/p&gt;
+&lt;p&gt;With this in mind, I’d like to thank all adopters for the support and hope that everybody likes the Clean Sheet Update for Eclipse Neon as much as we do &lt;img alt=&quot;😉&quot; class=&quot;wp-smiley&quot; src=&quot;http://s.w.org/images/core/emoji/72x72/1f609.png&quot; style=&quot;height: 1em;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The post &lt;a href=&quot;http://www.codeaffine.com/2016/06/23/clean-sheet-update-for-eclipse-neon/&quot; rel=&quot;nofollow&quot;&gt;Clean Sheet Update for Eclipse Neon&lt;/a&gt; appeared first on &lt;a href=&quot;http://www.codeaffine.com&quot; rel=&quot;nofollow&quot;&gt;Code Affine&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Thu, 23 Jun 2016 05:37:21 +0000</pubDate>
+</item>
+<item>
+	<title>Ian Skerrett: Eclipse Marketplace: Neon and 20 Million</title>
+	<guid isPermaLink="false">http://ianskerrett.wordpress.com/?p=3607</guid>
+	<link>http://feedproxy.google.com/~r/IanSkerrett/~3/ifIoKEYnNYE/</link>
+	<description>&lt;p&gt;The Eclipse Neon release is &lt;a href=&quot;https://www.eclipse.org/neon/&quot;&gt;now out&lt;/a&gt;. I also noticed &lt;a href=&quot;http://marketplace.eclipse.org/&quot;&gt;Eclipse Marketplace&lt;/a&gt; just passed the 20 million successful install milestone. Wow, that is a lot of developers using Eclipse Marketplace.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;Eclipse Marketplace - 20 million&quot; class=&quot;alignnone size-full wp-image-3614&quot; src=&quot;https://ianskerrett.files.wordpress.com/2016/06/eclipse-marketplace-20-million.png?w=450&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;For the Neon release, there are two key features that I think will accelerate the use of Eclipse Marketplace Client (MPC).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Eclipse MPC now allows you to store your Favorite with your Eclipse account. The other very cool feature is you can import someone else &lt;a href=&quot;https://marketplace.eclipse.org/user/iskerrett/favorites&quot;&gt;favorite list&lt;/a&gt;. Here is my favorite list if you are to give it a try.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&quot;mpc favorites&quot; class=&quot;  wp-image-3627 aligncenter&quot; height=&quot;400&quot; src=&quot;https://ianskerrett.files.wordpress.com/2016/06/mpc-favorites1.png?w=382&amp;amp;h=400&quot; width=&quot;382&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;2. In Eclipse Neon, selecting the text editor for associated file types now allows a user to search Eclipse Marketplace Client for plug-ins that support that file type. This should make it a lot easier for developers to find the appropriate plug-in from Eclipse Marketplace.&lt;/p&gt;
+&lt;p&gt;Congratulations to everyone that made the Eclipse Neon release possible. Another great community collaboration.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/ianskerrett.wordpress.com/3607/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/ianskerrett.wordpress.com/3607/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=ianskerrett.wordpress.com&amp;amp;blog=405862&amp;amp;post=3607&amp;amp;subd=ianskerrett&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/IanSkerrett/~4/ifIoKEYnNYE&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 19:40:49 +0000</pubDate>
+</item>
+<item>
+	<title>Orion: New and noteworthy for codeEdit widget 12</title>
+	<guid isPermaLink="false">http://planetorion.org/news/?p=856</guid>
+	<link>http://planetorion.org/news/2016/06/new-and-noteworthy-for-codeedit-widget-12/</link>
+	<description>&lt;p&gt;&lt;a href=&quot;http://planetorion.org/news/2015/07/orion-9-0-code-edit-widget-with-language-tooling/&quot;&gt;Orion codeEdit widget&lt;/a&gt; debuted just one year ago in &lt;a href=&quot;http://planetorion.org/news/2015/06/language-tooling-goodness-in-orion-9-0/&quot;&gt;Orion 9.0&lt;/a&gt;. Thanks to all the valuable user feedback over the past year, now in &lt;a href=&quot;http://planetorion.org/news/2016/06/announcing-orion-12/&quot;&gt;Orion 12&lt;/a&gt;, the widget has been improved a lot for both usability and customizability. We’ve updated the &lt;a href=&quot;https://wiki.eclipse.org/Orion/How_Tos/Code_Edit&quot;&gt;widget wiki page&lt;/a&gt; to include the latest features, summarizing user feedback in the &lt;a href=&quot;https://wiki.eclipse.org/Orion/How_Tos/Code_Edit#Frequent_asked_questions&quot;&gt;FAQ section&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;http://libingw.github.io/OrionCodeEditTern/&quot;&gt;codeEdit demo page&lt;/a&gt; shows you two of the biggest improvements in the widget: &lt;a href=&quot;https://wiki.eclipse.org/Orion/How_Tos/Code_Edit#editorConfig_Parameter&quot;&gt;customizable editor configurations&lt;/a&gt; and &lt;a href=&quot;https://wiki.eclipse.org/Orion/How_Tos/Code_Edit#Options_to_tune_your_.tern-project_and_.eslintrc_files&quot;&gt;fine tuning your web language tooling&lt;/a&gt;. In Orion 11.0 we introduced &lt;a href=&quot;http://planetorion.org/news/2016/04/configuring-your-orion-project/&quot;&gt;tern project&lt;/a&gt; – now this feature is integrated into the widget. In the demo you will see a zoom ruler in each editor, enabled by an editor configuration change. You will also see how the javascript file validation behavior changes while live editing the tern project and eslint rule files.&lt;/p&gt;
+&lt;p&gt;Aside from that, there are other major improvements that are not shown in the demo.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.eclipse.org/Orion/How_Tos/Code_Edit#userPlugins_Parameter&quot;&gt;Plug-able user implementations of services&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.eclipse.org/Orion/How_Tos/Code_Edit#codeEdit.importFiles_API&quot;&gt;Ability to import multiple files into the widget&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.eclipse.org/Orion/How_Tos/Code_Edit#codeEdit.exportFiles_API&quot;&gt;Ability to export multiple files outside of the widget&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;
+&lt;p&gt;With all the improvements so far, we found it’s been much easier for the existing users to consume and customize the widget. We are still improving in other areas so please stay tuned.&lt;/p&gt;
+&lt;/div&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 18:25:38 +0000</pubDate>
+</item>
+<item>
+	<title>Orion: New and Noteworthy in Javascript tooling for Orion 12.0</title>
+	<guid isPermaLink="false">http://planetorion.org/news/?p=835</guid>
+	<link>http://planetorion.org/news/2016/06/new-and-noteworthy-in-javascript-tooling-for-orion-12-0/</link>
+	<description>&lt;p&gt;As noted in our Orion 12.0 announcement, a tonne of work has gone into this release of Orion.  Over 350 Bugzilla reports were fixed.  Here are some of the many things we have been working on for the JavaScript language tooling.  Expect more in-depth looks at these items in the next few weeks.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Cross-file linting&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&quot;http://eslint.org&quot;&gt;ESLint&lt;/a&gt; based validation in our JavaScript tools up to Orion 11 was only focused on the single file you were editing.  No consideration was given to the rest of your project setup.  With 12.0 the linting is now aware of the other files in your workspace and the project configuration you have set up.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;no-undef&lt;/em&gt;: Warn when a global variable has not been defined&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;no-undef-expression&lt;/em&gt;:  Warn when a function (member expression) has not been defined&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;no-unused-vars&lt;/em&gt;: Warn when declared variables are not used.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;unknown-require&lt;/em&gt;:  Unknown required library&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;type-checked-consistent-return&lt;/em&gt;: Discouraged inconsistent returns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So we can now in many cases tell you that you are using a function that doesn’t exist.  Especially helpful when you mistype the name or use the wrong casing.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Make the tools consumable&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;We have created a new API and webpack build that will package up the JavaScript tooling in one consumable bundle that can be used to drive language plugins for other IDEs, such as Brackets or Atom.&lt;/p&gt;
+&lt;p&gt;A deep-dive into the new API is coming in a subsequent blog post. To get a jump on it, we have provided two wiki pages: (1) &lt;a href=&quot;http://wiki.eclipse.org/Orion/JavaScript/API&quot;&gt;JavaScript tools API&lt;/a&gt; and, (2) &lt;a href=&quot;http://wiki.eclipse.org/Orion/JavaScript/Build&quot;&gt;Building the JavaScript API&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Improved Tern integration&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;In Orion 12.0 we moved the remainder of our client-side services to be Tern plugins.&lt;/p&gt;
+&lt;p&gt;These new plugins include:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ESlint&lt;/li&gt;
+&lt;li&gt;Occurrences&lt;/li&gt;
+&lt;li&gt;Templates / templating&lt;/li&gt;
+&lt;li&gt;Quickfixes&lt;/li&gt;
+&lt;li&gt;Outlining&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The move to be more Tern-centric with our features carries many benefits, but most importantly it allows us to cut down on message passing, improve memory use and make the features more portable.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;ECMA 2015 support&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Orion 12.0 supports all of the &lt;a href=&quot;http://www.ecma-international.org/ecma-262/6.0/&quot;&gt;ECMA 2015&lt;/a&gt; specification like arrow functions, import/export statements and classes.&lt;/p&gt;
+&lt;p&gt;The tooling completely understands the new language syntax with new quick fixes and code templates also being available to get you started.  The linting rules have also been updated to respect the new ECMA 2015 code patterns.&lt;/p&gt;
+&lt;p&gt;Outlining has been updated:&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_848&quot; style=&quot;width: 491px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/es6-outline.png&quot;&gt;&lt;img alt=&quot;ECMA 2015 outlining support&quot; class=&quot;size-full wp-image-848&quot; height=&quot;188&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/es6-outline.png&quot; width=&quot;481&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;ECMA 2015 outlining support&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Occurrences has been updated:&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_849&quot; style=&quot;width: 314px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/es6-occurrences.png&quot;&gt;&lt;img alt=&quot;ECMA 2015 occurrences support&quot; class=&quot;size-full wp-image-849&quot; height=&quot;124&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/es6-occurrences.png&quot; width=&quot;304&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;ECMA 2015 occurrences support&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;Linting has been updated:&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_850&quot; style=&quot;width: 311px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/es6-linting.png&quot;&gt;&lt;img alt=&quot;Lint rules updated for ECMA 2015&quot; class=&quot;size-full wp-image-850&quot; height=&quot;138&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/es6-linting.png&quot; width=&quot;301&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Lint rules updated for ECMA 2015&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;We also support import and export statements which require the source type to be “module”. This is set through the .tern-project file – and you can use a handy quickfix to write it all for you.&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_847&quot; style=&quot;width: 564px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/sourcetype-qf.png&quot;&gt;&lt;img alt=&quot;Change sourceType quickfix&quot; class=&quot;size-full wp-image-847&quot; height=&quot;135&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/sourcetype-qf.png&quot; width=&quot;554&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Change sourceType quickfix&lt;/p&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;strong&gt;Support for ESLint project configuration files&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Users can now include &lt;a href=&quot;http://eslint.org/docs/user-guide/configuring&quot;&gt;.eslintrc&lt;/a&gt; files in their projects.  These files can configure all of the ESLint settings that your files are validated with, including rule severities.&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_842&quot; style=&quot;width: 578px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/eslint-rc.png&quot;&gt;&lt;img alt=&quot;.eslintrc file example&quot; class=&quot;wp-image-842 size-full&quot; height=&quot;165&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/eslint-rc.png&quot; width=&quot;568&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;.eslintrc file example&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;When this file is present, the rule values will override any workspace settings.  If you go from editing your project to changing settings the page will warn you that an .eslintrc file is present.&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_843&quot; style=&quot;width: 928px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/eslint-rc-prefs.png&quot;&gt;&lt;img alt=&quot;Preference warning banner for .eslintrc overrides&quot; class=&quot;wp-image-843 size-full&quot; height=&quot;241&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/eslint-rc-prefs.png&quot; width=&quot;918&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Preference warning banner for .eslintrc overrides&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;We support other forms of ESLint configuration too, such as settings in package.json. There is a hierarchy of configuration files that you can use. Read the full details on &lt;a href=&quot;http://eslint.org/docs/user-guide/configuring&quot;&gt;ESLint’s configuration page&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_844&quot; style=&quot;width: 593px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/package-json-eslint.png&quot;&gt;&lt;img alt=&quot;Package.json ESlint configuration section&quot; class=&quot;wp-image-844 size-full&quot; height=&quot;174&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/package-json-eslint.png&quot; width=&quot;583&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Package.json ESlint configuration section&lt;/p&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;strong&gt;Support for in-project definition files&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;You can define and use your own &lt;a href=&quot;http://ternjs.net/doc/manual.html#typedef&quot;&gt;definition files&lt;/a&gt; in your project. See the file &lt;a href=&quot;http://git.eclipse.org/c/orion/org.eclipse.orion.client.git/tree/bundles/org.eclipse.orion.client.javascript/web/javascript/ternPlugins/IndexCreation.md&quot;&gt;IndexCreation.md&lt;/a&gt; to find out how to proceed.&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_840&quot; style=&quot;width: 747px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/defs-folder.png&quot;&gt;&lt;img alt=&quot;Tern index file example&quot; class=&quot;wp-image-840 size-full&quot; height=&quot;195&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/defs-folder.png&quot; width=&quot;737&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Tern index file example&lt;/p&gt;&lt;/div&gt;
+&lt;p&gt;The tooling will include all the type information found in your definitions to improve content assist, tooltip hovers and more.&lt;/p&gt;
+&lt;div class=&quot;wp-caption alignnone&quot; id=&quot;attachment_839&quot; style=&quot;width: 650px;&quot;&gt;&lt;a href=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/use-in-code-defs.png&quot;&gt;&lt;img alt=&quot;Content assist for example in-project index file&quot; class=&quot;wp-image-839 size-large&quot; height=&quot;149&quot; src=&quot;http://planetorion.org/news/wp-content/uploads/2016/06/use-in-code-defs-1024x239.png&quot; width=&quot;640&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Content assist for example in-project index file&lt;/p&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;strong&gt;Updated third-party libraries&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Most of our third-party libraries have been refreshed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Acorn 3.1.0&lt;/li&gt;
+&lt;li&gt;Doctrine 1.2.1&lt;/li&gt;
+&lt;li&gt;ESrecurse 4.1.0&lt;/li&gt;
+&lt;li&gt;Estraverse 4.1.1&lt;/li&gt;
+&lt;li&gt;Escope 4.2.0&lt;/li&gt;
+&lt;li&gt;Tern 0.18.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A notable change to our consumed library lineup is that we have discontinued use of the Esprima parser in favour of Acorn.  There are many reasons for the switch, but the main reasons are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Acorn has complete ECMA 2015 support (with recovery for most of it).&lt;/li&gt;
+&lt;li&gt;We can easily extend the Acorn parser via its &lt;a href=&quot;https://github.com/ternjs/acorn#plugins&quot;&gt;plugin mechanism&lt;/a&gt;, so there is no need to edit parser code to have our Orion customizations.&lt;/li&gt;
+&lt;li&gt;Acorn has robust recovery support right out of the box (no more editing the parser to hack our own in).&lt;/li&gt;
+&lt;/ul&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 17:15:52 +0000</pubDate>
+</item>
+<item>
+	<title>Vladimir Piskarev: Announcing Handly 0.5</title>
+	<guid isPermaLink="false">http://pisv.wordpress.com/?p=582</guid>
+	<link>https://pisv.wordpress.com/2016/06/22/announcing-handly-0-5/</link>
+	<description>&lt;p&gt;I am very pleased to announce the availability of the &lt;a href=&quot;https://projects.eclipse.org/projects/technology.handly/releases/0.5&quot; target=&quot;_blank&quot;&gt;Handly 0.5&lt;/a&gt; release, a true “2.0” version in spirit. This release introduces an entirely new design that gives the implementor of a Handly-based model complete control over the model API. Among other things, this should make it possible to use &lt;a href=&quot;http://www.eclipse.org/handly&quot; target=&quot;_blank&quot;&gt;Handly&lt;/a&gt; for (re-)implementing handle-based models where the model API is a given, just as in the case of a preexisting model API that needs to be preserved for backward compatibility. Many of the core APIs have been revised in this release to make Handly even more flexible and robust.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://wiki.eclipse.org/Handly/NewIn05&quot; target=&quot;_blank&quot;&gt;New and Noteworthy&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://wiki.eclipse.org/Handly/Migration05&quot;&gt;Migration Guide&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://projects.eclipse.org/projects/technology.handly/downloads&quot;&gt;Downloads&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Any feedback would be greatly appreciated.&lt;/p&gt;
+&lt;p&gt;Many thanks to all who contributed to this release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ondrej Ilcik, head of IDE Team at &lt;a href=&quot;https://www.codasip.com/&quot; target=&quot;_blank&quot;&gt;Codasip&lt;/a&gt;, has kindly contributed a navigator view for the Java model example, which made its way into this release. This is the first significant (~ 4K LOC) contribution to the project by a non-committer. &lt;a href=&quot;https://www.codasip.com/products/&quot;&gt;Codasip Studio&lt;/a&gt; is one of the earliest adopters of Handly, and it is really great to see that a major adopter becomes a significant contributor. Also, Ondrej has been so kind as to share a great &lt;a href=&quot;https://wiki.eclipse.org/Handly/Adopters&quot; target=&quot;_blank&quot;&gt;success story&lt;/a&gt; of Codasip Studio and Handly, which is all the more valuable as the first success story published by a Handly adopter.&lt;/li&gt;
+&lt;li&gt;Vlad Dumitrescu, the project lead of &lt;a href=&quot;http://erlide.org/&quot; target=&quot;_blank&quot;&gt;erlide&lt;/a&gt;, has been actively participating in discussions on the project’s &lt;a href=&quot;https://dev.eclipse.org/mailman/listinfo/handly-dev&quot; target=&quot;_blank&quot;&gt;mailing list&lt;/a&gt;. His earlier feedback helped inspire the new design introduced in this release, and he has also contributed great ideas about restructuring the project’s &lt;a href=&quot;http://www.eclipse.org/handly&quot; target=&quot;_blank&quot;&gt;web page&lt;/a&gt; to make it more readable.&lt;/li&gt;
+&lt;li&gt;Peter Gribanov, &lt;a href=&quot;http://1c.com/&quot; target=&quot;_blank&quot;&gt;1C&lt;/a&gt;, has contributed a &lt;a href=&quot;https://wiki.eclipse.org/Handly/Adopters&quot; target=&quot;_blank&quot;&gt;success story&lt;/a&gt; describing how &lt;a href=&quot;http://1c-dn.com/1c_enterprise/1c_enterprise_developmet_tools_graphite/&quot; target=&quot;_blank&quot;&gt;1C:Enterprise Development Tools&lt;/a&gt;, the earliest adopter of the project, is using Handly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thank you for contributing!&lt;/p&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=pisv.wordpress.com&amp;amp;blog=63898667&amp;amp;post=582&amp;amp;subd=pisv&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 17:00:44 +0000</pubDate>
+</item>
+<item>
+	<title>Alexander Nyssen: GEF4 Dot Oh Dot Oh</title>
+	<guid isPermaLink="false">tag:blogger.com,1999:blog-7387747921278902619.post-7143736488095793307</guid>
+	<link>http://nyssen.blogspot.com/2016/06/gef4-dot-oh-dot-oh.html</link>
+	<description>&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;I am proud to announce that with today's Eclipse Neon release we have officially published the new &lt;a href=&quot;https://wiki.eclipse.org/GEF/GEF4&quot;&gt;GEF4&lt;/a&gt; components in version 1.0.0, exposing their up to now only preliminary API. We have worked intensively on the code base since the 0.2.0 (Mars.1) release and have achieved quite a lot.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;Polishing API&lt;/h3&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;From an adopters viewpoint, the (up to now provisional) API has been cleaned up and harmonized in nearly all places. We have for instance adopted JavaFX collections and properties throughout, so that we can now use only a single notification mechanism in all places. As outlined in detail in an earlier &lt;a href=&quot;http://nyssen.blogspot.de/2016/04/gef4-common-collections-and-properties.html&quot; target=&quot;_blank&quot;&gt;post&lt;/a&gt;, this also enables us to use JavaFX bindings, which makes framework and client code more concise. Especially the GEF4 FX component has profited a lot from this. We have further simplified the contract of the GEF4 Layout component to no longer rely on own interface abstractions for data exchange, but to use a GEF4 Graph model, similar to what GEF4 Zest already did for rendering. And we have harmonized the GEF4 Zest API, especially those parts related to JFace. The &lt;a href=&quot;https://wiki.eclipse.org/GEF/New_and_Noteworthy&quot;&gt;New and Noteworthy&lt;/a&gt; page gives a quite detailed overview of the most important API changes. &lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;h3&gt;Improving DOT&lt;/h3&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;From an end-users viewpoint, the GEF4 DOT component has been brought a huge step nearer to its final goal of being a full Graphviz DOT authoring environment (even if its still a far way to go). The Xtext editor can now also parse and validate certain attribute values, and the Graph view is capable of rendering a first set of node shapes, as well as edge styles and decorations. All DOT spline types are now also supported. In addition to the 'emulated' layout we provided so far, where a GEF4 Layout algorithm is used to mimic the Graphviz layout, we now support a 'native' mode, in which the native dot executable (the path to which is specified via a preference) is used:&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;a href=&quot;https://3.bp.blogspot.com/-SmBXiq7uzuw/V2pIsMT1phI/AAAAAAAAARI/9b2UzUsvWcAkvP_NLa75DbKTnsi0UXMjwCKgB/s1600/Bildschirmfoto%2B2016-05-27%2Bum%2B13.53.18.png&quot; style=&quot;clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: justify;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://3.bp.blogspot.com/-SmBXiq7uzuw/V2pIsMT1phI/AAAAAAAAARI/9b2UzUsvWcAkvP_NLa75DbKTnsi0UXMjwCKgB/s400/Bildschirmfoto%2B2016-05-27%2Bum%2B13.53.18.png&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;h3&gt;'Pimping' FX and MVC&lt;/h3&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;Connection handling has been significantly improved. We have added support for orthogonal routing in addition to straight routing, and we have separated out an IConnectionRouter, which is responsible for manipulating the bend/control points, as well as an IConnectionInterpolator, which determines the to be rendered curve geometry. Routers and interpolators can be freely combined, so a connection can now be routed orthogonally, while it can still be rendered ‚smoothly‘ using Bézier curves:&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://4.bp.blogspot.com/-DNFdsNZXOFw/V2pROT42uRI/AAAAAAAAARk/UMuSuApouKwWH9dSAxcyte-FO2cF2V-egCKgB/s1600/Bildschirmfoto%2B2016-06-22%2Bum%2B10.49.48.png&quot; style=&quot;clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: justify;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;280&quot; src=&quot;https://4.bp.blogspot.com/-DNFdsNZXOFw/V2pROT42uRI/AAAAAAAAARk/UMuSuApouKwWH9dSAxcyte-FO2cF2V-egCKgB/s320/Bildschirmfoto%2B2016-06-22%2Bum%2B10.49.48.png&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;In addition, connection decorations are now properly clipped (which lies within the responsibility of the interpolator), and a 'clickable area‘ (a transparent fat curve that overlays the connection) can now be used to make a connection clickable even when the zoom level is large (we have added this functionality to the GeometryNode so it is usable in an even broader scope). &lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;Within GEF4 MVC we have accordingly enhanced FXBendConnectionPolicy to provide interaction support for manipulating connections that are orthogonally routed. These can now be manipulated using segment handles rather than handles for way/control points:&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://4.bp.blogspot.com/-kJdZvpgzilA/V2pUXD_f-YI/AAAAAAAAAR8/FIW7vicpZBofKqwlDNNY1R7Z9Pp7VPSMQCLcB/s1600/Bildschirmfoto%2B2016-06-22%2Bum%2B11.02.38.png&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;131&quot; src=&quot;https://4.bp.blogspot.com/-kJdZvpgzilA/V2pUXD_f-YI/AAAAAAAAAR8/FIW7vicpZBofKqwlDNNY1R7Z9Pp7VPSMQCLcB/s320/Bildschirmfoto%2B2016-06-22%2Bum%2B11.02.38.png&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;We have further enabled that distinct bindings can be specified for viewers with different roles. That allows us to use an FXViewer both as palette and content viewer, so a palette can now be easily realized. We have augmented the MVC Logo example to serve as a demonstrator:&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://3.bp.blogspot.com/-_e749NiLvJU/V2pVLojE-2I/AAAAAAAAASI/NSs_paAWsbgZPw009nV0f8HKuT957gQOACLcB/s1600/Bildschirmfoto%2B2016-06-22%2Bum%2B11.06.23.png&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; height=&quot;288&quot; src=&quot;https://3.bp.blogspot.com/-_e749NiLvJU/V2pVLojE-2I/AAAAAAAAASI/NSs_paAWsbgZPw009nV0f8HKuT957gQOACLcB/s640/Bildschirmfoto%2B2016-06-22%2Bum%2B11.06.23.png&quot; width=&quot;640&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;a href=&quot;https://www.eclipse.org/gef/&quot; target=&quot;_blank&quot;&gt;Try it out!&lt;/a&gt;&lt;/div&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 15:33:25 +0000</pubDate>
+	<author>noreply@blogger.com (Alexander Nyßen)</author>
+</item>
+<item>
+	<title>Orion: Announcing Orion 12</title>
+	<guid isPermaLink="false">http://planetorion.org/news/?p=837</guid>
+	<link>http://planetorion.org/news/2016/06/announcing-orion-12/</link>
+	<description>&lt;p&gt;We are pleased to announce the twelfth release of Orion, “Your IDE in the Cloud”. You can run it now on &lt;a href=&quot;https://orionhub.org&quot;&gt;OrionHub&lt;/a&gt; or &lt;a href=&quot;http://download.eclipse.org/orion/drops/R-12.0-201606220105/index.html&quot;&gt;download the server&lt;/a&gt; to run your own instance. Once again, thank you to all committers and contributors for your hard work this release.  There were over 350 &lt;a href=&quot;https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;amp;bug_status=VERIFIED&amp;amp;bug_status=CLOSED&amp;amp;chfieldfrom=2016-02-24&amp;amp;chfieldto=Now&amp;amp;classification=ECD&amp;amp;list_id=14631304&amp;amp;product=Orion&amp;amp;query_format=advanced&amp;amp;resolution=FIXED&quot;&gt;bugs and enhancements&lt;/a&gt; fixed, across more than 900 commits from 22 authors!&lt;/p&gt;
+&lt;p&gt;What’s new in Orion 12?  The Orion 12 release continues to emphasize our JavaScript tooling.  In particular, we now have full support for the &lt;a href=&quot;https://bugs.eclipse.org/bugs/show_bug.cgi?id=460728&quot;&gt;ECMA 2015 spec&lt;/a&gt;, vastly improved project configuration capabilities, support for eslintrc.* files and much much more!&lt;/p&gt;
+&lt;p&gt;The other focus of this release is consumability. To make Orion easier to use for end users, admins and everyone in between, we created an experimental node.js server (which can be used on &lt;a href=&quot;http://orion.eclipse.org&quot;&gt;orion.eclipse.org&lt;/a&gt; or locally), a metrics service for plugins, some &lt;a href=&quot;http://planetorion.org/news/2016/06/new-and-noteworthy-for-codeedit-widget-12/&quot;&gt;super cool updates to the code edit widget&lt;/a&gt; and a whole lot more!&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 15:27:24 +0000</pubDate>
+</item>
+<item>
+	<title>Webtools News: WTP 3.8 Released!</title>
+	<guid isPermaLink="false">http://www.eclipse.org/webtools/news.php#permalink173</guid>
+	<link>http://eclipse.org/webtools/releases/3.8.0/</link>
+	<description>&lt;div&gt;
+        The Eclipse Web Tools Platform 3.8 (Neon) has been released!  Featured in the
+        &lt;a href=&quot;http://eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neonr&quot;&gt;Eclipse IDE for Java EE Developers&lt;/a&gt;,
+        you'll also find parts of WTP in many of the
+        &lt;a href=&quot;http://www.eclipse.org/downloads/packages/release/Neon/R&quot;&gt;Neon packages&lt;/a&gt;. Of course you can still download the raw
+        &lt;a href=&quot;http://download.eclipse.org/webtools/downloads/drops/R3.8.0/R-3.8.0-20160608130753/&quot;&gt;WTP 3.8 build&lt;/a&gt; manually--don't forget the dependencies if you do.
+        Anyone with a working Eclipse 4.6, or Neon package, can
+        &lt;a href=&quot;https://wiki.eclipse.org/WTP_FAQ#How_do_I_install_WTP.3F&quot;&gt;install WTP&lt;/a&gt;
+        by working with the
+        &lt;a href=&quot;http://download.eclipse.org/releases/neon/&quot;&gt;Neon&lt;/a&gt; and corresponding &lt;a href=&quot;http://download.eclipse.org/webtools/repository/neon/&quot;&gt;WTP&lt;/a&gt; Update
+            Sites.
+    &lt;/div&gt;&lt;p&gt;&lt;a href=&quot;http://www.eclipse.org/webtools/news.php#permalink173&quot;&gt;More news&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 15:14:30 +0000</pubDate>
+</item>
+<item>
+	<title>InfoQ Eclipse feed: Eclipse Foundation Releases Neon</title>
+	<guid isPermaLink="true">http://www.infoq.com/news/2016/06/eclipse-neon?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=Eclipse</guid>
+	<link>http://www.infoq.com/news/2016/06/eclipse-neon?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=Eclipse</link>
+	<description>&lt;img src=&quot;http://www.infoq.com/styles/i/logo_bigger.jpg&quot; /&gt;&lt;p&gt;Today, the Eclipse Foundation announced the release of Eclipse Neon, the eponymous IDE which provides support for Java, JavaScript, C/C++, PHP and Fortran, amongst others. This release marks the eleventh release of the combined release train, with contributions from 779 developers (of which 331 are committers) and totalling 69 million lines of code. Read on to find out what's new in this release.&lt;/p&gt; &lt;i&gt;By Alex Blewitt&lt;/i&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Eclipse Neon Release Train Now Available</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/vtrnBpQPvik/20160622_neon.php</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/vtrnBpQPvik/20160622_neon.php</link>
+	<description>We're proud to announce the availability of the Neon release, the annual release train from the Eclipse community.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/vtrnBpQPvik&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Geniutec: Eclipse Neon Java Editor Gets More Awesomeness</title>
+	<guid isPermaLink="false">https://www.genuitec.com/?p=486733</guid>
+	<link>https://www.genuitec.com/eclipse-neon-java-editor-gets-more-awesomeness/</link>
+	<description>&lt;p&gt;I always appreciate those “small things” that help me write better code and code faster. Eclipse Neon comes with a great set of those small things right in the Java editor. As a Java developer I can’t help but feel excited about the new features Neon has and how it has a better integration with […]&lt;/p&gt;
+&lt;p&gt;The post &lt;a href=&quot;https://www.genuitec.com/eclipse-neon-java-editor-gets-more-awesomeness/&quot; rel=&quot;nofollow&quot;&gt;Eclipse Neon Java Editor Gets More Awesomeness&lt;/a&gt; appeared first on &lt;a href=&quot;https://www.genuitec.com&quot; rel=&quot;nofollow&quot;&gt;Genuitec&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 13:10:56 +0000</pubDate>
+</item>
+<item>
+	<title>Melanie Bats: Sirius 4.0 Gotta Catch ‘Em All: Fully operational battle station!</title>
+	<guid isPermaLink="false">http://melb.enix.org/?p=298</guid>
+	<link>http://melb.enix.org/sirius/sirius-4-0-fully-operational-battle-station/</link>
+	<description>&lt;p&gt;&lt;a href=&quot;http://melb.enix.org/sirius/sirius-4-0-super-powered-api&quot;&gt;Finally&lt;/a&gt;, with Sirius 4.0, some newly introduced components are declared fully operational.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Compartments&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;a href=&quot;http://orig06.deviantart.net/173c/f/2014/325/c/0/kangaskhan_by_weaponix-d877jc6.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter&quot; height=&quot;222&quot; src=&quot;https://raw.githubusercontent.com/mbats/sirius-blog/master/sirius4/blog/images/kangaskhan.png&quot; width=&quot;125&quot; /&gt;&lt;/a&gt; Sirius 3.1 came with the possibility to create compartments where you can group and stack your model elements. The way your data is represented is better structured and the information is easier to understand. With Sirius 3.0, it was already possible to create compartments, but we had introduced it as an “experimental” feature since some behaviors were not supported yet. Today compartments are fully operational.&lt;a href=&quot;http://orig06.deviantart.net/173c/f/2014/325/c/0/kangaskhan_by_weaponix-d877jc6.png&quot;&gt;&lt;br /&gt;
+&lt;/a&gt;&lt;br /&gt;
+&lt;img alt=&quot;&quot; class=&quot;aligncenter&quot; height=&quot;149&quot; src=&quot;https://raw.githubusercontent.com/mbats/sirius-blog/master/sirius4/blog/images/compartments.gif&quot; width=&quot;248&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I18N&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://orig07.deviantart.net/f7cc/f/2014/183/7/8/meowth_by_weaponix-d7o9trk.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter&quot; height=&quot;238&quot; src=&quot;https://raw.githubusercontent.com/mbats/sirius-blog/master/sirius4/blog/images/meowth.png&quot; width=&quot;134&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We completed our work on the internationalization. Now the runtime strings are externalized and a dedicated mechanism exists for the odesign files.&lt;br /&gt;
+&lt;img alt=&quot;&quot; class=&quot;aligncenter&quot; height=&quot;175&quot; src=&quot;https://raw.githubusercontent.com/mbats/sirius-blog/master/sirius4/blog/images/i18n.png&quot; width=&quot;602&quot; /&gt; &lt;span style=&quot;font-weight: 300;&quot;&gt;To catch all the new features coming with Sirius 4.0 have a look to the slides of &lt;/span&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2016/session/sirius-40-let-me-sirius-you&quot; style=&quot;font-weight: 300;&quot;&gt;our talk&lt;/a&gt;&lt;span style=&quot;font-weight: 300;&quot;&gt; at EclipseCon France! Another chance for you to join the Sirius community, &lt;/span&gt;&lt;a href=&quot;http://www.siriuscon.org/&quot; style=&quot;font-weight: 300;&quot;&gt;SiriusCon&lt;/a&gt;&lt;span style=&quot;font-weight: 300;&quot;&gt; will occur in Paris the 15th November 2016. Be sure to save the date!&lt;/span&gt;&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;</description>
+	<pubDate>Wed, 22 Jun 2016 07:00:09 +0000</pubDate>
+</item>
+<item>
+	<title>Chris Aniszczyk: Open Container Initiative at 12 Months</title>
+	<guid isPermaLink="false">http://aniszczyk.org/?p=4094</guid>
+	<link>http://aniszczyk.org/2016/06/21/open-container-initiative-at-12-months/</link>
+	<description>&lt;p&gt;Today at DockerCon 2016 I had fun speaking with colleagues on where we are with the &lt;a href=&quot;https://www.opencontainers.org/&quot;&gt;Open Container Initiative&lt;/a&gt; (OCI) after about a year:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;lightbox&quot; href=&quot;http://www.slideshare.net/caniszczyk/the-open-container-initiative-oci-at-12-months&quot;&gt;&lt;img alt=&quot;OCI&quot; class=&quot;aligncenter wp-image-4095 size-medium&quot; height=&quot;166&quot; src=&quot;http://aniszczyk.org/wp-content/uploads/2016/06/oci-300x166.png&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The industry needs standards around the container format/runtime to enable portability, if you’re interested in joining this effort you can find more information here: &lt;a href=&quot;https://www.opencontainers.org/join&quot;&gt;https://www.opencontainers.org/join&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Tue, 21 Jun 2016 17:34:53 +0000</pubDate>
+</item>
+<item>
+	<title>Tom Schindl: Slides and Source from Munich DemoCamp on Java9</title>
+	<guid isPermaLink="false">http://tomsondev.bestsolution.at/?p=4844</guid>
+	<link>https://tomsondev.bestsolution.at/2016/06/21/slides-and-source-from-munich-democamp-on-java9/</link>
+	<description>&lt;p&gt;I’ve pushed the &lt;a href=&quot;https://github.com/BestSolution-at/java9&quot;&gt;slides and source-code&lt;/a&gt; I used for my short introduction at the &lt;a href=&quot;https://wiki.eclipse.org/Eclipse_DemoCamps_Neon_2016/Munich&quot;&gt;Munich Eclipse Democamp&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;embed-slideshare&quot;&gt; 
+&lt;div style=&quot;margin-bottom: 5px;&quot;&gt; &lt;strong&gt; &lt;a href=&quot;https://www.slideshare.net/TomSchindl/democamp-munich-java9&quot; target=&quot;_blank&quot; title=&quot;Democamp - Munich - Java9&quot;&gt;Democamp – Munich – Java9&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;http://www.slideshare.net/TomSchindl&quot; target=&quot;_blank&quot;&gt;Tom Schindl&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;/div&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/tomsondev.wordpress.com/4844/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/tomsondev.wordpress.com/4844/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=tomsondev.bestsolution.at&amp;amp;blog=7995503&amp;amp;post=4844&amp;amp;subd=tomsondev&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Tue, 21 Jun 2016 09:47:53 +0000</pubDate>
+</item>
+<item>
+	<title>Dirk Fauth: Getting Started with OSGi Declarative Services</title>
+	<guid isPermaLink="false">http://blog.vogella.com/?p=7367</guid>
+	<link>http://blog.vogella.com/2016/06/21/getting-started-with-osgi-declarative-services/</link>
+	<description>&lt;p&gt;In the last weeks I worked intensively on getting a deeper knowledge in OSGi declarative services. I use them for a while with Eclipse 4, but never had a deep understanding of everything. Well, basically it is not that complicated at all, but it is the details that matter. And although there are several tutorials and blog posts out there, I had to search a lot to find the detail information I was searching for. And most of the time I ended up reading the &lt;a href=&quot;https://www.osgi.org/developer/specifications/&quot; target=&quot;_blank&quot;&gt;OSGi specification&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This fact by the way is one of the most common remarks regarding OSGi. It is complicated and there is no really good documentation besides the specification. But this is getting better, and the &lt;a href=&quot;http://enroute.osgi.org/&quot; target=&quot;_blank&quot;&gt;enRoute project&lt;/a&gt; now delivers an already quite good documentation regarding OSGi. It also helped me a lot, but as this project is quite young and there is a lot to document, it is not complete yet. I can see good progress in that project and definitely suggest everyone who is interested in OSGi to read the &lt;a href=&quot;http://enroute.osgi.org/book/210-doc.html&quot; target=&quot;_blank&quot;&gt;enRoute documentation&lt;/a&gt; and play with the tutorials to get a basic understanding. Kudos to Peter Kriens and everyone working and contributing to enRoute. You are doing a great job!&lt;/p&gt;
+&lt;p&gt;While the enRoute documentation, the tutorials and blog posts I have found were really useful to understand the basics, they were also sometimes quite frustrating for me. They of course focus on plain OSGi and therefore use Bndtools. There is no mentioning of the limitations we have in Eclipse RCP development (e.g. still only DS 1.2 is supported). The information about the DS annotations are mostly special to bnd or Apache Felix, as they have their own set or implementation of DS annotations. And for sure tutorials and blog posts use &lt;a href=&quot;http://bndtools.org/&quot; target=&quot;_blank&quot;&gt;Bndtools&lt;/a&gt;, because for plain OSGi this is the tooling that fits best. Another frustrating fact, because as an Eclipse RCP developer I can not use Bndtools. Mainly the reason is that when writing an Eclipse RCP application you rely on Equinox specific things like features, a target platform and the p2 update mechanism. But as writing this blog post Bndtools doesn’t support the Equinox p2 specific things. Therefore Eclipse RCP developers are still forced to use PDE. I heard of people writing Eclipse RCP applications using Bndtools, but it doesn’t sound like an easy way to go. There are so much workarounds necessary to get things together. Maybe these workarounds got better or are not necessary anymore with the new modifications to the Maven support added lately, but I haven’t looked at that in detail. I really hope that sometimes it will be easily possible to create Eclipse RCP applications using Bndtools, so that people can choose the tooling that they like the most.&lt;/p&gt;
+&lt;p&gt;I also want to mention that the discussion Bndtools vs. PDE was quite frustrating. While I was researching and playing around with declarative services I also learned a lot about OSGi in general. I also learned how good Bndtools is compared to PDE for example when it comes to the MANIFEST.MF generation. This is one of the biggest pain points in PDE, because you have to configure it manually and you need to be aware of all the specific things yourself. The result is almost never close to an OSGi recommendation (search for Require-Bundle vs. Import-Package to get an idea). But as explained before, as an Eclipse RCP developer I can not use Bndtools. Asking questions on various forums or reading answers on Stackoverflow, reading comments on blog posts or user groups, the answer was always like “Use Bndtools then you don’t have to think about that. PDE is crap!”. Not very helpful answers when trying to dig deeper in OSGi and being forced to use PDE.&lt;/p&gt;
+&lt;p&gt;At this point I want to thank &lt;a href=&quot;http://njbartlett.name/about.html&quot;&gt;Neil Bartlett&lt;/a&gt; for his high quality answers on various channels, like Stackoverflow, Twitter, Google Groups and even email. Of course I also got a lot of support from others, e.g. from the Equinox team, but the support by Neil was really special. So thanks a lot!&lt;/p&gt;
+&lt;p&gt;Because of the above I decided to write some tutorials about OSGi declarative services. I want to show the information I had to search for the last weeks. And I also want to show Eclipse RCP developers how to make the most out of declarative services in their projects.&lt;/p&gt;
+&lt;p&gt;In this tutorial I want to give an introduction to OSGi declarative services. What a component is and how it is created using DS annotations. I will use the &lt;em&gt;Declarative Services Annotations Support&lt;/em&gt; that was introduced as part of PDE with Eclipse Neon. But basically the information about declarative services and the annotations are kept general so they can be useful with any tooling.&lt;/p&gt;
+&lt;p&gt;You can expect:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;General information about OSGi Declarative Services&lt;/li&gt;
+&lt;li&gt;The usage of Declarative Services Annotations with Eclipse Neon (PDE)&lt;/li&gt;
+&lt;li&gt;A very basic comparison between PDE and Bndtools&lt;/li&gt;
+&lt;li&gt;An introduction to the Declarative Services Specification 1.3&lt;br /&gt;
+(which is not usable with Eclipse Equinox at the time writing this tutorial)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The tutorial is similar to the &lt;a href=&quot;http://bndtools.org/tutorial.html&quot; target=&quot;_blank&quot;&gt;Bndtools tutorial&lt;/a&gt;. Therefore we basically create three bundles:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Service API&lt;/li&gt;
+&lt;li&gt;Service Provider&lt;/li&gt;
+&lt;li&gt;Service Consumer (a Felix Shell command)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are interested in using Bndtools and not PDE, you can read on for the general information and then move over to the &lt;a href=&quot;http://bndtools.org/tutorial.html&quot; target=&quot;_blank&quot;&gt;Bndtools tutorial&lt;/a&gt; or even the &lt;a href=&quot;http://enroute.osgi.org/tutorial_base/050-start.html&quot; target=&quot;_blank&quot;&gt;enRoute Base Tutorial&lt;/a&gt;. Both are very good to get started with Bndtools and Declarative Services. For the curious I will try to point out the differences between PDE and Bndtools. But only with regards to this tutorial. For sure Bndtools serves a lot more features, but I don’t want to focus on that topic and just give an idea on the differences to start with.&lt;/p&gt;
+&lt;h2&gt;1. Introduction&lt;/h2&gt;
+&lt;p&gt;OSGi has a layered model to provide several concepts. Mostly the &lt;em&gt;Bundles&lt;/em&gt; and &lt;em&gt;Modules&lt;/em&gt; are seen when talking about OSGi, where the focus is on modularization. But the &lt;em&gt;Services&lt;/em&gt; layer is at least as interesting as the &lt;em&gt;Bundles&lt;/em&gt; and &lt;em&gt;Modules&lt;/em&gt;. Regarding OSGi services you will find the following (or similar) picture in various documentations and tutorials .&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;osgi_service&quot; class=&quot;aligncenter size-full wp-image-7369&quot; height=&quot;282&quot; src=&quot;http://blog.vogella.com/wp-content/uploads/2016/06/osgi_service.png&quot; width=&quot;677&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Without repeating the already existing documentation, it means that a bundle &lt;em&gt;A&lt;/em&gt; can provide/publish a service implementation &lt;em&gt;S&lt;/em&gt; and another bundle &lt;em&gt;B&lt;/em&gt; can consume it. This is done by finding a service and binding to it when it is found. As there can be multiple service implementations published at the same time for the same type, and services in OSGi are dynamic and can come and go at runtime, the service consumer is listening to be able to react accordingly. This contract is implemented by the OSGi &lt;code&gt;ServiceRegistry&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Compared with the Equinox only extension points, that are widely used in Eclipse 3.x based RCP applications, there are several advantages when using OSGi declarative&lt;br /&gt;
+services. First is the fact that multiple bundles can provide services and multiple bundles can consume them, which means there is a many-to-many relationship. In Equinox one bundle specifies an extension point and multiple bundles can contribute extensions to it, which makes it technically a one-to-many relationship. Of course you can also access the extension points of another bundle via the &lt;code&gt;ExtensionRegistry&lt;/code&gt;, but conceptually this feels like a workaround compared with the general &lt;em&gt;publish-find-bind&lt;/em&gt; mechanism of OSGi services. The second fact is that you access extension points via ID, while OSGi services are retrieved by type. That means OSGi service retrieval is type-safe, while extension points are not. Further information about the comparison between extension points and OSGi services can be found here: &lt;a href=&quot;http://www.eclipsezone.com/articles/extensions-vs-services/&quot; target=&quot;_blank&quot;&gt;A Comparison of Eclipse Extensions and OSGi Services&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With declarative services it is not necessary to register or consume services programmatically. This needs to be done with plain OSGi services where a service is typically registered (&lt;em&gt;publish&lt;/em&gt;) to the &lt;code&gt;ServiceRegistry&lt;/code&gt; in an &lt;code&gt;Activator&lt;/code&gt; and consumed (&lt;em&gt;find-bind&lt;/em&gt;) via &lt;code&gt;ServiceTracker&lt;/code&gt; (also mostly via &lt;code&gt;Activator&lt;/code&gt;). Instead of this a &lt;em&gt;Service Component&lt;/em&gt; is declared via &lt;em&gt;Component Description&lt;/em&gt; when using declarative services. The &lt;em&gt;Component Description&lt;/em&gt; is an XML file that is processed by a &lt;em&gt;Service Component Runtime&lt;/em&gt; (SCR, e.g. Equinox DS or Felix SCR) when a bundle is activated. It is responsible for managing the components and their life cycle. That means, if you want to use declarative services in your application, you need to ensure that a &lt;em&gt;Service Component Runtime&lt;/em&gt; bundle is installed and activated in your environment.&lt;/p&gt;
+&lt;h3&gt;1.1 Components&lt;/h3&gt;
+&lt;p&gt;When talking about OSGi declarative services you will always talk about components. The following list will give an overview of the necessary wordings related to components to distinguish the different parts:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;Service Component &lt;/em&gt;&lt;br /&gt;
+A Java class inside a bundle that is declared via &lt;em&gt;Component Description&lt;/em&gt; and managed by a &lt;em&gt;Service Component Runtime&lt;/em&gt;.&lt;br /&gt;
+Note that although we are talking about Declarative Services and &lt;em&gt;Service Components&lt;/em&gt;, not every component provides a service!&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Component Description&lt;/em&gt;&lt;br /&gt;
+The declaration of a &lt;em&gt;Service Component&lt;/em&gt;, contained in an XML document.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Component Configuration&lt;/em&gt;&lt;br /&gt;
+A &lt;em&gt;Component Description&lt;/em&gt; that is parameterized with component properties. It is used to track the component dependencies and manages the &lt;em&gt;Component Instance&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Component Instance&lt;/em&gt;&lt;br /&gt;
+The instance of the component implementation class. It is created when a &lt;em&gt;Component Configuration&lt;/em&gt; is activated and discarded if the &lt;em&gt;Component Configuration&lt;/em&gt; is deactivated.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As nobody wants to write XML files manually nowadays and the &lt;em&gt;Component Definition Editor&lt;/em&gt; in PDE is the worst Eclipse editor ever, we will use the Declarative Service Annotations to get the &lt;em&gt;Component Definition&lt;/em&gt; generated. I will therefore also not look at the generated XML document. If you are interested in that, have a look at the specification.&lt;/p&gt;
+&lt;h3&gt;1.2 References to Services&lt;/h3&gt;
+&lt;p&gt;Components can have dependencies on other components. If these dependencies should be managed automatically by the SCR, this is restricted to components that provide a service. Otherwise the SCR is not able to resolve the dependency.&lt;/p&gt;
+&lt;p&gt;There are different terms used when reading about service references. These terms are mostly related to the state they are in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Reference&lt;/em&gt;&lt;br /&gt;
+The definition of a dependency to another service.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Target Services&lt;/em&gt;&lt;br /&gt;
+The services that match the reference interface and target property filter. They are needed to satisfy a &lt;em&gt;Component Configuration&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Bound Services&lt;/em&gt;&lt;br /&gt;
+The services that are bound to a &lt;em&gt;Component Configuration&lt;/em&gt;. The binding is done on activating a &lt;em&gt;Component Configuration&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are different strategies to access a &lt;em&gt;Bound Service&lt;/em&gt;. The probably most common is the &lt;em&gt;Event Strategy&lt;/em&gt;. With this strategy the SCR calls &lt;em&gt;Event Methods&lt;/em&gt; when a service becomes bound, unbound or its configuration properties are updated. Additionally there is the &lt;em&gt;Lookup Strategy&lt;/em&gt;, where the bound service is located programmatically via &lt;code&gt;ComponentContext&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;With &lt;strong&gt;DS 1.3&lt;/strong&gt; the &lt;em&gt;Field Strategy&lt;/em&gt; was added, which simply updates a field in case a service becomes bound, unbound or its configuration properties are updated.&lt;/p&gt;
+&lt;p&gt;I will add more detailed information on references at the end of this tutorial, with the description of the &lt;code&gt;@Resource&lt;/code&gt; annotation.&lt;/p&gt;
+&lt;h3&gt;1.3 Lifecycle&lt;/h3&gt;
+&lt;p&gt;An important information regarding &lt;em&gt;Service Components&lt;/em&gt; is that they have their own lifecycle, which is contained in the life cycle of a bundle. The most important question regarding &lt;em&gt;Service Components&lt;/em&gt; is, when is it available for usage. To answer this question it is also important to know that there are basically three types of components with regards to the component life cycle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Delayed Component&lt;/em&gt;&lt;br /&gt;
+Activation is not done until there is a request for a service object. Therefore even class loading and instantiation can be delayed until that time. A &lt;em&gt;Delayed Component&lt;/em&gt; needs to specify a service.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Immediate Component&lt;/em&gt;&lt;br /&gt;
+Activated as soon as its dependencies are satisfied. An &lt;em&gt;Immediate Component&lt;/em&gt; does not need to specify a service.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Factory Component&lt;strong&gt;&lt;br /&gt;
+&lt;/strong&gt;&lt;/em&gt;Creates and activates new &lt;em&gt;Component Configurations&lt;/em&gt; on request. The created &lt;em&gt;Component Configurations&lt;/em&gt; are not re-used if they become unsatisfied or unregistered.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Typically you find information about &lt;em&gt;Delayed Components&lt;/em&gt; when reading about OSGi Declarative Services.&lt;/p&gt;
+&lt;p&gt;The following states are possible:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Enabled/Disabled&lt;/em&gt;&lt;br /&gt;
+The initial enabled state of a component is specified via &lt;em&gt;Component Description&lt;/em&gt;. All components are disabled when the bundle is stopped. It is possible to change the enabled state programmatically at runtime via &lt;code&gt;CompontentContext&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;UNSATISFIED&lt;/em&gt;&lt;br /&gt;
+The component is not ready to be started. See &lt;em&gt;Satisfied&lt;/em&gt; for the necessary criteria.&lt;br /&gt;
+This status can also be reached again if a component is not &lt;em&gt;Satisfied&lt;/em&gt; anymore.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Satisfied&lt;/em&gt;&lt;br /&gt;
+A component is in a &lt;em&gt;Satisfied&lt;/em&gt; state when it is &lt;em&gt;enabled&lt;/em&gt; and the required referenced services are available. In case the ConfigurationAdmin is used and the &lt;code&gt;configuration-policy=required&lt;/code&gt; is specified, also a configuration object needs to be available to bring a component to satisfied state.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;REGISTERED&lt;/em&gt;&lt;br /&gt;
+A component is in &lt;em&gt;REGISTERED &lt;/em&gt;state if it &lt;em&gt;Satisfied&lt;/em&gt; and not yet requested. Only applies for &lt;em&gt;Delayed Components&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;ACTIVE&lt;/em&gt;&lt;br /&gt;
+The component was activated due to immediate activation or, in case of a &lt;em&gt;Delayed Component&lt;strong&gt;,&lt;/strong&gt;&lt;/em&gt; it was requested.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following images show the lifecycle of an &lt;em&gt;Immediate Component&lt;/em&gt; and a &lt;em&gt;Delayed Component&lt;/em&gt;. As I will not write about &lt;em&gt;Factory Components &lt;/em&gt;here, I leave them out and come up with it in another post.&lt;/p&gt;
+&lt;h4&gt;Immediate Component Lifecycle&lt;/h4&gt;
+&lt;p&gt;&lt;img alt=&quot;immediate_lifecycle&quot; class=&quot;aligncenter size-full wp-image-7409&quot; height=&quot;445&quot; src=&quot;http://blog.vogella.com/wp-content/uploads/2016/06/immediate_lifecycle.png&quot; width=&quot;798&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;Delayed Component Lifecycle&lt;/h4&gt;
+&lt;p&gt;&lt;img alt=&quot;delayed_lifecycle&quot; class=&quot;aligncenter size-full wp-image-7376&quot; height=&quot;463&quot; src=&quot;http://blog.vogella.com/wp-content/uploads/2016/06/delayed_lifecycle.png&quot; width=&quot;830&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;When a bundle is started, the SCR is checking if the bundle contains &lt;em&gt;Component Descriptions&lt;/em&gt;. This is done via &lt;a href=&quot;http://enroute.osgi.org/doc/218-patterns.html&quot; target=&quot;_blank&quot;&gt;Extender Pattern&lt;/a&gt;, which means it searches for a Service-Component entry in the bundle MANIFEST header. If it finds one it will start to process the &lt;em&gt;Component Description &lt;/em&gt;and create a&lt;em&gt; Component Configuration.&lt;/em&gt; One of the first checks is the initial &lt;em&gt;enabled&lt;/em&gt; state. Only if the &lt;em&gt;Component Configuration&lt;/em&gt; is enabled, the SCR will try to satisfy the dependencies by finding and binding the specified references. It will also try to satisfy the configuration, if that is required by the &lt;em&gt;Component Description&lt;/em&gt;. That means it checks for required references and configurations if necessary. After the &lt;em&gt;Component Configuration&lt;/em&gt; is satisfied, it can be activated. An &lt;em&gt;Immediate Component&lt;/em&gt; will activate immediately, a &lt;em&gt;Delayed Component&lt;/em&gt; moves to the REGISTERED state, awaiting the first request to the provided service. If a &lt;em&gt;Component Configuration&lt;/em&gt; contains dynamic references, the references can rebind in ACTIVE state, otherwise it will be re-activated. If a &lt;em&gt;Component Configuration&lt;/em&gt; becomes unsatisfied (e.g. a bound service becomes unavailable), the &lt;em&gt;Component Configuration&lt;/em&gt; will be deactivated. Note that a &lt;em&gt;Delayed Component&lt;/em&gt; will also be deactivated and gets back to REGISTERED state in case no other bundle references it anymore.&lt;/p&gt;
+&lt;p&gt;The activation of a component and the time when it is done makes the real difference between an &lt;em&gt;Immediate&lt;/em&gt; and a &lt;em&gt;Delayed Component&lt;/em&gt;. It consists of the following steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Load the component implementation class&lt;/li&gt;
+&lt;li&gt;Create the component instance and component context&lt;/li&gt;
+&lt;li&gt;Bind the target services&lt;/li&gt;
+&lt;li&gt;Call the activate method if present&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For &lt;em&gt;Delayed Components&lt;/em&gt; the initial memory footprint and the load time is therefore delayed on startup until the first request on a service object (&lt;i&gt;see&lt;/i&gt; &lt;i&gt;Declarative&lt;/i&gt;&lt;i&gt; Services &lt;/i&gt;&lt;i&gt;Specification&lt;/i&gt;&lt;i&gt; Version 1.3 – 112.5.6 &lt;/i&gt;&lt;i&gt;Activation&lt;/i&gt;&lt;i&gt;).&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;In the above diagrams the light-blue highlighted states and state transitions indicate that a &lt;em&gt;Component Instance&lt;/em&gt; exists. Correlated to the explanation on the activation of a component, this should make it more clear where a &lt;em&gt;Component Instance&lt;/em&gt; (and therefore a real object) comes to play.&lt;/p&gt;
+&lt;p&gt;This is also a big difference to Eclipse Extension Points. While with OSGi Declarative Services and &lt;em&gt;Delayed Components&lt;/em&gt; a bundle can be safely activated without issues regarding startup performance and initial memory footprint, the policy in Equinox and Eclipse is to optimize the startup on bundle level. That means you can use Extension Points and Core Expressions to avoid starting a bundle until the first usage of an extension.&lt;/p&gt;
+&lt;p&gt;Now enough with the general basics and let’s get started with the tutorial! I will place some further general information (e.g. describing the DS annotations) alongside the matching places in the tutorial and at the end.&lt;/p&gt;
+&lt;h2&gt;2. IDE Setup&lt;/h2&gt;
+&lt;p&gt;If you are using Eclipse Neon, you need to enable the DS support. To do this open the preferences via &lt;em&gt;Window -&amp;gt; Preferences -&amp;gt; Plug-in Development -&amp;gt;&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;DS Annotations&lt;/em&gt; and check &lt;em&gt;Generate descriptors from annotated sources&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter wp-image-7412 size-full&quot; height=&quot;474&quot; src=&quot;http://blog.vogella.com/wp-content/uploads/2016/06/neon_ds_preferences.png&quot; width=&quot;570&quot; /&gt;&lt;br /&gt;
+After that the following four configurations are available:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Descriptor directory&lt;br /&gt;
+The directory to which the component description files will be generated. Default is &lt;em&gt;OSGI-INF&lt;/em&gt;, and you should leave that setting unchanged.&lt;/li&gt;
+&lt;li&gt;Annotation problem level&lt;br /&gt;
+If issues on annotation level should be reported as an &lt;em&gt;Error&lt;/em&gt;, &lt;em&gt;Warning&lt;/em&gt; or to &lt;em&gt;Ignore&lt;/em&gt; them. Default is &lt;em&gt;Error&lt;/em&gt; and it is a good idea to keep that to see if the annotation is used correctly.&lt;/li&gt;
+&lt;li&gt;Missing implicit reference unbind method&lt;br /&gt;
+If a missing unbind method for a service reference should be reported as an &lt;em&gt;Error&lt;/em&gt;, &lt;em&gt;Warning&lt;/em&gt; or to &lt;em&gt;Ignore&lt;/em&gt; them. The default is &lt;em&gt;Error&lt;/em&gt;. The DS specification does not require an unbind method, but it is strongly suggested in case of dynamic references that are stored locally. Further details on that topic will follow. A discussion on that topic is started in &lt;a href=&quot;https://bugs.eclipse.org/bugs/show_bug.cgi?id=492726&quot; target=&quot;_blank&quot;&gt;Bug 492726&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Generate header “Bundle-ActivationPolicy: lazy”&lt;br /&gt;
+If this setting is enabled, the bundle manifest header will be generated. The default is enabled, and it should be enabled in case Equinox is used as OSGi framework.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; If you are using Eclipse Mars, you can install the &lt;em&gt;Declarative Services Annotations Support&lt;/em&gt; from the &lt;a href=&quot;https://marketplace.eclipse.org/content/declarative-services-annotations-support&quot; target=&quot;_blank&quot;&gt;marketplace&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Bndtools vs. PDE&lt;/h3&gt;
+&lt;p&gt;The difference to Bndtools, well you need to &lt;a href=&quot;http://Install Bndtools&quot; target=&quot;_blank&quot;&gt;install Bndtools&lt;/a&gt; into your Eclipse installation. And there is no need to configure the annotation processing separately.&lt;/p&gt;
+&lt;h3&gt;Interlude: Bundle-ActivationPolicy: lazy&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&quot;https://www.osgi.org/developer/design/lazy-start/&quot; target=&quot;_blank&quot;&gt;Lazy Activation Policy&lt;/a&gt; that is configured via &lt;em&gt;Bundle-ActivationPolicy&lt;/em&gt;, is a bundle life cycle policy that tells the OSGi framework that a bundle should be lazily activated when the first successful class load is made from its local class space. From my research I’ve found out that this policy is typically not used when working with other OSGi frameworks. Apache Felix or Eclipse Concierge for example can be configured to automatically install and start all bundles in a specified directory. Also Equinox can be configured to automatically install and start all bundles, but that needs to be explicitly configured for every bundle itself. The default &lt;a href=&quot;https://wiki.eclipse.org/Configurator&quot; target=&quot;_blank&quot;&gt;Eclipse Configurator&lt;/a&gt;, currently SimpleConfigurator and the deprecated update configurator, only install all bundles in the &lt;em&gt;plugins&lt;/em&gt; directory but doesn’t start them. By specifying the Lazy Activation Policy you basically specify an auto-start behavior for bundles without the need to specify the auto-start manually in a launch configuration. As you typically don’t specify an auto-start for every bundle that provides service implementations via DS, the lazy activation policy is mandatory in Eclipse with Equinox to be sure that the service implementation is available. Otherwise the bundle that provides the service might never be started.&lt;br /&gt;
+The main idea behind not automatically starting all bundles was to reduce the startup time by reducing the number of bundles to activate. From my understanding the startup performance issues in the past (when that policy was added) where related to ineffectively implemented bundle activators. If you follow the best practices in OSGi development and use declarative services, you shouldn’t use &lt;em&gt;Activators&lt;/em&gt; at all. The bundle startup should take almost no time and the component activation can be delayed to the first request (see lifecycle above). There should be only rare cases where you can’t use &lt;em&gt;Service Components&lt;/em&gt; and an &lt;em&gt;Activator&lt;/em&gt; is really needed.&lt;/p&gt;
+&lt;h2&gt;3. API Project&lt;/h2&gt;
+&lt;p&gt;Let’s start with the tutorial by specifying the service API. This is typically done in a separate API project to decouple the service contract and the service implementation, which makes it possible to exchange or provide multiple implementations for a service.&lt;/p&gt;
+&lt;p&gt;I recently heard the remark that it is “old-school” to always create an interface if there is only one implementation. But regarding a service-oriented-design you should always consider using interfaces and even separate the interfaces in an API bundle. Even if you only see one implementation, consider the following two statements:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Don’t forget testing! By separating API and implementation you can simply create a test implementation of a service that is provided by a separate bundle. Especially for UI testing you can deploy the bundle with the test implementation of a service instead of deploying the real service implementation that needs to be mocked in test execution.&lt;/li&gt;
+&lt;li&gt;Clean dependency hierarchies&lt;br /&gt;
+An API should typically have no or at least little dependencies to other libraries. Only implementations should have such dependencies. If the API without additional third-party-depencies is separated in an API bundle, and a service consumer only depends on the API, the consumer also has a simpler dependency graph.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Regarding &lt;em&gt;Service Components&lt;/em&gt; that provide a service it is therefore always recommended to have the API in a separate bundle. For sure there are also exceptions to that rule, e.g. &lt;em&gt;Immediate Components&lt;/em&gt; that are used for initial configuration or used to open a socket for communication.&lt;/p&gt;
+&lt;h3&gt;3.1 Create an API project&lt;/h3&gt;
+&lt;p&gt;In the Plug-in Perspective create a new Plug-in Project via &lt;em&gt;File -&amp;gt; New -&amp;gt; Plug-in Project&lt;/em&gt;. Choose a name that indicates that this is a bundle that provides an API (e.g. &lt;em&gt;org.fipro.inverter.api&lt;/em&gt;), and on the following wizard page ensure that no Activator is generated, no UI contributions will be added and that no Rich Client Application is created. The following screenshots show how the wizard pages should look like:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;api_wizard_one&quot; class=&quot;aligncenter wp-image-7383 size-full&quot; height=&quot;623&quot; src=&quot;http://blog.vogella.com/wp-content/uploads/2016/06/api_wizard_one1.png&quot; width=&quot;525&quot; /&gt;&lt;img alt=&quot;api_wizard_two&quot; class=&quot;aligncenter wp-image-7381 size-full&quot; height=&quot;623&quot; src=&quot;http://blog.vogella.com/wp-content/uploads/2016/06/api_wizard_two.png&quot; width=&quot;525&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;3.2 Specify the API&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a new package &lt;em&gt;org.fipro.inverter&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Create an interface &lt;em&gt;StringInverter&lt;/em&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;package org.fipro.inverter; 
+
+public interface StringInverter {
+
+    String invert(String input);
+
+}&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3.3 Define / Export the bundle&lt;/p&gt;
+&lt;p&gt;An OSGi bundle differs from a simple JAR by additional meta information. This meta information is configured in the &lt;em&gt;META-INF/MANIFEST.MF&lt;/em&gt; file. In PDE this file needs to be modified manually.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the &lt;em&gt;MANIFEST.MF&lt;/em&gt; file and on the &lt;em&gt;Overview&lt;/em&gt; tab set the &lt;em&gt;Version&lt;/em&gt; to 1.0.0 (remove the qualifier).&lt;/li&gt;
+&lt;li&gt;Switch to the &lt;em&gt;Runtime&lt;/em&gt; tab and export the &lt;em&gt;org.fipro.inverter.api&lt;/em&gt; package.&lt;/li&gt;
+&lt;li&gt;Specify the version 1.0.0 on the package via &lt;em&gt;Properties…&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PDE does not generate the jar file automatically, you need to export it via &lt;em&gt;File -&amp;gt; Export -&amp;gt; Plugin -&amp;gt; Deployable&lt;/em&gt;. This step is not necessary now, I just wanted to mention it already here.&lt;/p&gt;
+&lt;h3&gt;Bndtools vs. PDE&lt;/h3&gt;
+&lt;p&gt;With Bndtools you create a &lt;em&gt;Bndtools OSGi Project&lt;/em&gt;. Additionally you need to create a configuration project if you don’t have one yet. Typically this is called the &lt;em&gt;cnf&lt;/em&gt; project that contains workspace-wide configurations, like the repositories that are used to resolve the dependencies. They have their own workspace concept additionally to the Eclipse workspace, and since Bndtools 3.2 they have &lt;a href=&quot;http://enroute.osgi.org/tutorial_base/200-workspace.html&quot; target=&quot;_blank&quot;&gt;workspace templates&lt;/a&gt; that help with the creation.&lt;/p&gt;
+&lt;p&gt;PDE uses the concept of a Target Platform, where you specify the repositories and the bundles that are used to create an application. The target platform typically contains p2 repositories and the Eclipse IDE itself can be used as target platform for the development. In a professional environment you typically create a project specific target definition in a separate project (I explained that in my &lt;a href=&quot;https://blog.codecentric.de/en/2015/02/eclipse-rcp-cookbook-basic-recipe/&quot; target=&quot;_blank&quot;&gt;basic recipe&lt;/a&gt;). So conceptually the usage of a repository or configuration project is similar when comparing PDE and Bndtools. But as Bndtools doesn’t support p2 and the target platform concept of PDE, the &lt;em&gt;cnf&lt;/em&gt; project is different and required for OSGi development with Bndtools.&lt;/p&gt;
+&lt;p&gt;In Bndtools you configure the bundle in the &lt;em&gt;bnd.bnd&lt;/em&gt; file. So the bundle version and the exported packages are configured there. The &lt;em&gt;MANIFEST.MF&lt;/em&gt; file is generated with the correct information. The creation of the &lt;em&gt;MANIFEST.MF&lt;/em&gt; file is a major advantage of Bndtools compared with PDE, as this is one of the more complicated things regarding OSGi.&lt;/p&gt;
+&lt;p&gt;Another difference is that the resulting bundle JAR file is automatically generated. After saving the &lt;em&gt;bnd.bnd&lt;/em&gt; file, the bundle jar is available for usage in the &lt;em&gt;generated&lt;/em&gt; folder.&lt;/p&gt;
+&lt;h2&gt;4. Service Provider&lt;/h2&gt;
+&lt;p&gt;After the API bundle is specified, a service provider bundle with a service implementation can be created.&lt;/p&gt;
+&lt;h3&gt;4.1. Create and configure the service provider bundle&lt;/h3&gt;
+&lt;p&gt;In the Plug-in Perspective create a new Plug-in Project via &lt;em&gt;File -&amp;gt; New -&amp;gt; Plug-in Project&lt;/em&gt;. Choose a name that indicates that this is a bundle that provides a service implementation (e.g. &lt;em&gt;org.fipro.inverter.provider&lt;/em&gt;), and on the following wizard page ensure that no Activator is generated, no UI contributions will be added and that no Rich Client Application is created. The steps are the same as for creating the API bundle.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; In Eclipse projects you also often find bundle names that end with&lt;br /&gt;
+&lt;em&gt;.impl&lt;/em&gt; instead of&lt;em&gt; .provider&lt;/em&gt;. IMHO suffixing such bundles with .&lt;em&gt;provider&lt;/em&gt; makes more sense, but in the end it is a project decision.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the &lt;em&gt;MANIFEST.MF&lt;/em&gt; file and switch to the &lt;em&gt;Dependencies&lt;/em&gt; tab&lt;/li&gt;
+&lt;li&gt;Add the following two dependencies on the &lt;em&gt;Imported Packages&lt;/em&gt; side:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;org.fipro.inverter (1.0.0)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.osgi.service.component.annotations (1.2.0)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mark &lt;em&gt;org.osgi.service.component.annotations&lt;/em&gt; as &lt;em&gt;Optional&lt;/em&gt; via &lt;em&gt;Properties…&lt;/em&gt; to ensure there are no runtime dependencies. We only need this dependency at build time.&lt;/li&gt;
+&lt;li&gt;Add the upper version boundaries to the &lt;em&gt;Import-Package&lt;/em&gt; statements. Open the &lt;em&gt;Properties…&lt;/em&gt; for both imported packages and specify 2.0.0 as upper bound to ensure we don’t get into runtime issues if a newer major version is deployed whose API doesn’t match the old one. Following the rules of &lt;a href=&quot;http://semver.org/&quot; target=&quot;_blank&quot;&gt;semantic versioning&lt;/a&gt; a new major number means an API breakage has occured. Therefore it is always a good idea to specify the upper bound accordingly. This is not done automatically by PDE.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; The fact that we need to add &lt;em&gt;org.osgi.service.component.annotations&lt;/em&gt; as an optional dependency is a necessary but nasty task to do. It is needed to make the declarative service annotations available in the project. But as they are only needed at build time, it shouldn’t be necessary to specify that dependency at all. There are already two tickets on this topic: &lt;a href=&quot;https://bugs.eclipse.org/bugs/show_bug.cgi?id=488800&quot; target=&quot;_blank&quot;&gt;Bug 488800&lt;/a&gt; and &lt;a href=&quot;https://bugs.eclipse.org/bugs/show_bug.cgi?id=490061&quot; target=&quot;_blank&quot;&gt;Bug 490061&lt;/a&gt;. They weren’t fixed for Neon, probably because of the API freeze in the release process. Hopefully they will get in for Eclipse Oxygen.&lt;/p&gt;
+&lt;h3&gt;4.2 Create the service implementation class&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a new package &lt;code&gt;org.fipro.inverter.provider&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a new class &lt;code&gt;StringInverterImpl&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;package org.fipro.inverter.provider;
+
+import org.fipro.inverter.StringInverter;
+import org.osgi.service.component.annotations.Component;
+
+@Component
+public class StringInverterImpl implements StringInverter {
+
+    @Override
+    public String invert(String input) {
+        return new StringBuilder(input).reverse().toString();
+    }
+}&lt;/pre&gt;
+&lt;p&gt;The usage of the &lt;code&gt;@Component&lt;/code&gt; annotation is the important thing in this step. On save it triggers the generation of the &lt;em&gt;Component Description&lt;/em&gt;. You will find the XML file in the &lt;em&gt;OSGI-INF&lt;/em&gt; folder in the &lt;em&gt;org.fipro.inverter.provider&lt;/em&gt; project, which also has been created if it didn’t exist before (note that in PDE the file is also called Component Definition, just in case you are getting confused by names). It also updates the &lt;em&gt;MANIFEST.MF&lt;/em&gt; file by adding (or updating) the &lt;em&gt;Service-Component&lt;/em&gt; header to point to the &lt;em&gt;Component Description. &lt;/em&gt;This is necessary for the SCR to find, load and process the &lt;em&gt;Component Description&lt;/em&gt;.  The &lt;em&gt;build.properties&lt;/em&gt; file is updated aswell to include the &lt;em&gt;Component Description&lt;/em&gt; file. Unfortunately this generates a warning saying the &lt;em&gt;OSGI-INF&lt;/em&gt; folder itself is not included. To remove that warning you can simply open the &lt;em&gt;build.properties&lt;/em&gt; file and add the &lt;em&gt;OSGI-INF&lt;/em&gt; folder itself. This is at least sufficient for this simple example.&lt;/p&gt;
+&lt;p&gt;There is nothing more to do at this point. You will find a more detailed description on the &lt;code&gt;@Component&lt;/code&gt; annotation at the end of this tutorial.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; The fact that after code generation warnings are shown is IMHO really annoying. I suggested to always add the whole &lt;em&gt;OSGI-INF&lt;/em&gt; folder to the &lt;em&gt;build.properties&lt;/em&gt;, but this was declined with the comment that not everybody wants to always add all files in that folder to the resulting bundle JAR. This is of course a valid remark. I therefore created another ticket to either rethink that warning (not sure if that warning is really valid) or if it should be possible to disable that warning somehow. There has been no action on that topic while writing this tutorial, but you can follow the discussion in &lt;a href=&quot;https://bugs.eclipse.org/bugs/show_bug.cgi?id=491666&quot; target=&quot;_blank&quot;&gt;Bug 491666&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Bndtools vs. PDE&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;With Bndtools you create a new Bndtools project with the &lt;em&gt;Component Definition Template&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;In the &lt;em&gt;bnd.bnd&lt;/em&gt; file specify the DS annotations to use on the &lt;em&gt;Contents&lt;/em&gt; tab (OSGi DS vs. Bnd). With DS 1.3 I couldn’t find a reason for using the Bnd annotations anymore, I therefore suggest to use the default OSGi DS Annotations.&lt;/li&gt;
+&lt;li&gt;On the &lt;em&gt;Build&lt;/em&gt; tab you add the build time dependency to the API bundle, which will be used to calculate the necessary imports in the &lt;em&gt;MANIFEST.MF&lt;/em&gt; file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As explained before, the advantage is clearly the generation of the OSGi meta-data in the &lt;em&gt;MANIFEST.MF&lt;/em&gt; file.&lt;/p&gt;
+&lt;h3&gt;Interlude: Capabilities&lt;/h3&gt;
+&lt;p&gt;There is no need to specify a bundle dependency to the SCR on package level. But without specifying such a dependency, the OSGi framework doesn’t know about that dependency when resolving the provider bundle. As we don’t need to import a package from an SCR implementation, we need another way to specify the dependency. In OSGi this is done via &lt;a href=&quot;http://blog.osgi.org/2015/12/using-requirements-and-capabilities.html&quot; target=&quot;_blank&quot;&gt;Requirements and Capabilities&lt;/a&gt;. With the &lt;strong&gt;DS 1.3&lt;/strong&gt; specification the SCR needs to provide the following capability:&lt;/p&gt;
+&lt;pre&gt;Provide-Capability: osgi.extender;
+ osgi.extender=&quot;osgi.component&quot;;
+ version:Version=&quot;1.3&quot;;
+ uses:=&quot;org.osgi.service.component&quot;&lt;/pre&gt;
+&lt;p&gt;A provider bundle can require the &lt;em&gt;osgi.extender&lt;/em&gt; capability which wires the bundle to the SCR implementation and ensures that both use the same version of the &lt;em&gt;org.osgi.service.component&lt;/em&gt; package. This can be done by adding the following header to the bundle MANIFEST.&lt;/p&gt;
+&lt;pre&gt;Require-Capability: osgi.extender;
+ filter:=&quot;(&amp;amp;(osgi.extender=osgi.component)(version&amp;gt;=1.3)(!(version&amp;gt;=2.0)))&quot;&lt;/pre&gt;
+&lt;p&gt;The Equinox DS implementation is still only 1.2, but some users liked the idea so much that the &lt;em&gt;osgi.extender&lt;/em&gt; capability was even introduced there for version 1.2 with Eclipse Neon. So it is possible to require the &lt;em&gt;osgi.extender&lt;/em&gt; capability for version 1.2 if you are using Equinox DS 1.4.400 (Neon). Simply replace the 1.3 in the above Require-Capability header with 1.2.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; The PDE &lt;em&gt;Plug-in Manifest Editor&lt;/em&gt; has not build in support for specifying capabilities. You therefore have to add that header in the &lt;em&gt;MANIFEST.MF&lt;/em&gt; source tab manually.&lt;/p&gt;
+&lt;p&gt;Unfortunately this comes with two new issues:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The DS 1.2 specification does not specify the capability, therefore other implementations of that specification doesn’t provide it. If you try to deploy your service in an environment that only supports the 1.2 spec (e.g. a Felix SCR 1.2 on &lt;a href=&quot;https://www.eclipse.org/concierge/documentation.php&quot; target=&quot;_blank&quot;&gt;Concierge&lt;/a&gt;) your bundle will not be started and therefore your service will not be available.&lt;/li&gt;
+&lt;li&gt;p2 does not support OSGi capabilities. This is tracked in &lt;a href=&quot;https://bugs.eclipse.org/bugs/show_bug.cgi?id=313553&quot; target=&quot;_blank&quot;&gt;Bug 313553&lt;/a&gt;. This is especially an issue when trying to build such bundles using Tycho, which internally uses the p2 resolver.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;While there is not much you can do on the first topic, there is a way to solve the second one by &lt;a href=&quot;https://wiki.eclipse.org/Equinox/p2/Customizing_Metadata&quot; target=&quot;_blank&quot;&gt;Customizing Metadata&lt;/a&gt; via p2. The Equinox DS implementation also provides the capabilities that way, additionally to the OSGi capabilities. To specify the corresponding requirement, you need to add a &lt;em&gt;p2.inf&lt;/em&gt; file in the &lt;em&gt;META-INF&lt;/em&gt; folder, so the p2 resolver is able to resolve the capabilities. The file needs to have the following content:&lt;/p&gt;
+&lt;pre&gt;requires.0.namespace = osgi.extender
+requires.0.name = osgi.component
+requires.0.version = 1.2.0&lt;/pre&gt;
+&lt;p&gt;Don’t forget to add the &lt;em&gt;p2.inf&lt;/em&gt; file to the &lt;em&gt;build.properties&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;You could also provide the &lt;em&gt;osgi.service&lt;/em&gt; capability to make consumers able to declare a dependency on the service that is provided. As per specification this would look like the following snippet for the service of this tutorial:&lt;/p&gt;
+&lt;pre&gt;Provide-Capability: osgi.service;
+ objectClass:List&amp;lt;String&amp;gt;=&quot;org.fipro.inverter.StringInverter&quot;&lt;/pre&gt;
+&lt;p&gt;But remember that you would also need to add the corresponding p2 capabilities to make that work with the p2 resolver.&lt;/p&gt;
+&lt;p&gt;I created &lt;a href=&quot;https://bugs.eclipse.org/bugs/show_bug.cgi?id=490063&quot; target=&quot;_blank&quot;&gt;Bug 490063&lt;/a&gt; so the DS Annotations in PDE also create the &lt;code&gt;Provide-Capability&lt;/code&gt; header. We could even think about automatically generating the necessary &lt;em&gt;p2.inf&lt;/em&gt; files. But personally I would like it more if p2 would add support for OSGi capabilities so the additional work is not necessary.&lt;/p&gt;
+&lt;p&gt;On the consumer side you could then require the &lt;em&gt;osgi.service&lt;/em&gt; capability like this:&lt;/p&gt;
+&lt;pre&gt;Require-Capability: osgi.service;
+ filter:=&quot;(objectClass=org.fipro.inverter.StringInverter)&quot;;effective:=active&lt;/pre&gt;
+&lt;p&gt;You should notice the &lt;code&gt;effective:=active&lt;/code&gt; directive here. It is necessary so the OSGi Framework will resolve the bundle without checking if another bundle provides that capability. Without that directive or setting &lt;code&gt;effective:=resolve&lt;/code&gt; the resolution of the bundle would be prevented. Unfortunately it then also has no effect for the resolution by p2. If the capability resolution needs to be added at resolve time, it needs to be specified via &lt;em&gt;p2.inf&lt;/em&gt; like with the &lt;em&gt;osgi.extender&lt;/em&gt; above.&lt;/p&gt;
+&lt;p&gt;The service provider would need to add the following lines to the &lt;em&gt;p2.inf&lt;/em&gt;:&lt;/p&gt;
+&lt;pre&gt;provides.1.namespace = osgi.service
+provides.1.name = org.fipro.inverter.StringInverter&lt;/pre&gt;
+&lt;p&gt;The consumer would require it like this in a &lt;em&gt;p2.inf&lt;/em&gt; file:&lt;/p&gt;
+&lt;pre&gt;requires.1.namespace = osgi.service
+requires.1.name = org.fipro.inverter.StringInverter&lt;/pre&gt;
+&lt;p&gt;After that the resolving works with p2 and at runtime in the OSGi framework.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; The default OSGi services in Equinox currently also doesn’t provide the &lt;em&gt;osgi.service&lt;/em&gt; capability. This is tracked by &lt;a href=&quot;https://bugs.eclipse.org/bugs/show_bug.cgi?id=416047&quot; target=&quot;_blank&quot;&gt;Bug 416047&lt;/a&gt; and hopefully added soon.&lt;/p&gt;
+&lt;h3&gt;Bndtools vs. PDE&lt;/h3&gt;
+&lt;p&gt;With Bndtools the capability headers are automatically generated. It always provides the &lt;em&gt;osgi.service&lt;/em&gt; capability. But it will only require the &lt;em&gt;osgi.extender&lt;/em&gt; capability in case the component XML file is generated for DS spec 1.3. The &lt;em&gt;Component Description&lt;/em&gt; file generation always uses the lowest necessary specification dependent on the features used by the component. So for our simple example we would not see the Require-Capability header on &lt;em&gt;osgi.extender&lt;/em&gt;. But the generation of a &lt;em&gt;Component Description&lt;/em&gt; file with a minimum namespace version of 1.3 can be forced by adding the following option to the &lt;em&gt;bnd.bnd&lt;/em&gt; file:&lt;/p&gt;
+&lt;pre&gt;-dsannotations-options: extender&lt;/pre&gt;
+&lt;p&gt;This also adds the requirement for the &lt;em&gt;osgi.extender&lt;/em&gt; capability.&lt;/p&gt;
+&lt;h2&gt;5. Service Consumer&lt;/h2&gt;
+&lt;p&gt;To show that our service is working, we need to implement a consumer. As an Eclipse developer it would be natural to create a small Eclipse RCP application for that. But I want to stick to the Bndtools tutorial and just create a console command for that. This is also easier to achieve without adding Eclipse RCP specifics to this tutorial.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; The Eclipse OSGi console is based on the Felix Gogo Shell. We can therefore easily use the same approach for creating a console command as shown in the Bndtools tutorial.&lt;/p&gt;
+&lt;h3&gt;5.1 Create and configure the service consumer bundle&lt;/h3&gt;
+&lt;p&gt;In the Plug-in Perspective create a new Plug-in Project via &lt;em&gt;File -&amp;gt; New -&amp;gt; Plug-in Project&lt;/em&gt;. Choose a name that indicates that this is a bundle that provides a service implementation (e.g. &lt;em&gt;org.fipro.inverter.command&lt;/em&gt;), and on the following wizard page ensure that no Activator is generated, no UI contributions will be added and that no Rich Client Application is created. The steps are the same as for the bundles before.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the &lt;em&gt;MANIFEST.MF&lt;/em&gt; file and switch to the &lt;em&gt;Dependencies&lt;/em&gt; tab&lt;/li&gt;
+&lt;li&gt;Add the following dependencies on the &lt;em&gt;Imported Packages&lt;/em&gt; side:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;org.apache.felix.service.command (0.10.0)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.fipro.inverter (1.0.0)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.osgi.service.component.annotations (1.2.0)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mark &lt;em&gt;org.osgi.service.component.annotations&lt;/em&gt; as &lt;em&gt;Optional&lt;/em&gt; via &lt;em&gt;Properties…&lt;/em&gt; to ensure there are no runtime dependencies. We only need this dependency at build time.&lt;/li&gt;
+&lt;li&gt;Specify the upper version bounds for the packages accordingly.&lt;/li&gt;
+&lt;li&gt;Specify &lt;em&gt;status=provisional&lt;/em&gt; for the import of the package &lt;em&gt;org.apache.felix.service.command&lt;/em&gt;. Otherwise it won’t be resolved correctly. Basically you only need that import to use the constants from the &lt;code&gt;CommandProcessor&lt;/code&gt;. Without using that, there is no need to specify it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; You need to switch to the &lt;em&gt;MANIFEST.MF&lt;/em&gt; tab in the &lt;em&gt;Plug-in Manifest Editor&lt;/em&gt; and add the &lt;em&gt;status=provisional&lt;/em&gt; entry manually. It is not possible to add such properties on the &lt;em&gt;Dependencies &lt;/em&gt;tab.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Import-Package&lt;/em&gt; statement should look like the following snippet after these changes.&lt;/p&gt;
+&lt;pre&gt;Import-Package: org.apache.felix.service.command;status=provisional;version=&quot;[0.10.0,1.0.0)&quot;,
+ org.fipro.inverter;version=&quot;[1.0.0,2.0.0)&quot;,
+ org.osgi.service.component.annotations;version=&quot;[1.2.0,2.0.0)&quot;;resolution:=optional&lt;/pre&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h3&gt;5.2 Create the service consumer class&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a new package &lt;code&gt;org.fipro.inverter.command&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a new class &lt;code&gt;StringInverterCommand&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;package org.fipro.inverter.command;
+
+import org.apache.felix.service.command.CommandProcessor;
+import org.fipro.inverter.StringInverter;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+@Component(
+    property= {
+        CommandProcessor.COMMAND_SCOPE + &quot;:String=fipro&quot;,
+        CommandProcessor.COMMAND_FUNCTION + &quot;:String=invert&quot;
+    },
+    service=StringInverterCommand.class
+)
+public class StringInverterCommand {
+
+    private StringInverter inverter;
+
+    @Reference
+    void bindStringInverter(StringInverter inverter) {
+        this.inverter = inverter;
+    }
+
+    public void invert(String input) {
+        System.out.println(inverter.invert(input));
+    }
+}&lt;/pre&gt;
+&lt;p&gt;We are specifying some elements on the &lt;code&gt;@Component&lt;/code&gt; annotation for additional configuration. First we specify configuration properties that are needed for the configuration of the command. We specify the &lt;em&gt;osgi.command.scope&lt;/em&gt; and the &lt;em&gt;osgi.command.function&lt;/em&gt; property, so our command can be triggered by executing &lt;em&gt;fipro:invert&lt;/em&gt; on the console. The method that gets triggered needs to have the same as the configured function property. With the service element we specify that we provide a service. This is necessary so the command is registered as a service. The component would be otherwise an &lt;em&gt;Immediate Component&lt;/em&gt;, because we don’t implement an interface.&lt;/p&gt;
+&lt;p&gt;As the command is intended to be a service consumer, it needs to consume a &lt;code&gt;StringInverter&lt;/code&gt;. We specify the service dependency via a so called &lt;em&gt;Event Method&lt;/em&gt; to bind to a &lt;code&gt;StringInverter&lt;/code&gt; component. The &lt;code&gt;bindStringInverter(StringInverter)&lt;/code&gt; method is marked as bind event method by adding the &lt;code&gt;@Reference&lt;/code&gt; annotation.&lt;/p&gt;
+&lt;p&gt;Further information on the annotations can be found at the end of the tutorial.&lt;/p&gt;
+&lt;h3&gt;Bndtools vs. PDE&lt;/h3&gt;
+&lt;p&gt;In the &lt;em&gt;bnd.bnd&lt;/em&gt; file of the command project you need to switch to the &lt;em&gt;Build&lt;/em&gt; tab and add&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;org.fipro.inverter.api&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.apache.felix.gogo.runtime&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Despite the fact that you need to choose the annotation implementation, there is nothing more to do.&lt;/p&gt;
+&lt;h2&gt;6. Run&lt;/h2&gt;
+&lt;p&gt;Now that our bundles are ready we need to launch an OSGi application to test it. For this we create a launch configuration, so we can start directly from the IDE.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select the menu entry &lt;em&gt;Run -&amp;gt; Run Configurations…&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;In the tree view, right click on the &lt;em&gt;OSGi Framework&lt;/em&gt; node and select &lt;em&gt;New&lt;/em&gt; from the context menu&lt;/li&gt;
+&lt;li&gt;Specify a name, e.g. &lt;em&gt;OSGi Inverter&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Deselect All&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Select the following bundles
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;org.fipro.inverter.api&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.fipro.inverter.command&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.fipro.inverter.provider&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.apache.felix.gogo.command&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.apache.felix.gogo.runtime&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.apache.felix.gogo.shell&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.eclipse.equinox.console&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.eclipse.equinox.ds&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.eclipse.equinox.event&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.eclipse.equinox.util&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.eclipse.osgi&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;org.eclipse.osgi.services&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Ensure that &lt;em&gt;Default Auto-Start&lt;/em&gt; is set to &lt;em&gt;true&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;em&gt;Run&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Console view should open with an &lt;em&gt;osgi&amp;gt;&lt;/em&gt; prompt. Now you can type in the &lt;em&gt;invert&lt;/em&gt; command with a parameter and see the result. Note that it is not necessary to specify the scope here, because there is no other invert command published.&lt;/p&gt;
+&lt;p&gt;The result should look similar to this:&lt;/p&gt;
+&lt;pre&gt;osgi&amp;gt; invert Simpson
+nospmiS
+osgi&amp;gt;&lt;/pre&gt;
+&lt;h3&gt;Bndtools vs. PDE&lt;/h3&gt;
+&lt;p&gt;You will find a &lt;em&gt;launch.bndrun&lt;/em&gt; file in the command bundle project, that can be used to launch our small OSGi application. The &lt;em&gt;OSGi Framework&lt;/em&gt; and the &lt;em&gt;Execution Environment&lt;/em&gt; needs to be selected and the &lt;em&gt;org.fipro.*&lt;/em&gt; bundles need to be added to the &lt;em&gt;Run Requirements&lt;/em&gt;. Click on &lt;em&gt;Resolve&lt;/em&gt; so the &lt;em&gt;Run Bundles&lt;/em&gt; are automatically determined. After that you simply click on &lt;em&gt;Run OSGi&lt;/em&gt; in the upper right corner of the editor and the application starts up, opening the Console view for interaction.&lt;/p&gt;
+&lt;p&gt;The creation of the launch configuration in Bndtools feels more comfortable than the one with PDE. On the other hand I had sometimes strange issues with that editor. It sometimes forgot my changes in the &lt;em&gt;Run&lt;/em&gt; tab on save, which left me editing the launch configuration in the Source tab directly. This happened mostly when trying to create a launch configuration with Equinox as &lt;em&gt;OSGi Framework&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;7. DS Annotations&lt;/h2&gt;
+&lt;p&gt;That’s it with the tutorial. Now let’s have a closer look at the DS annotations.&lt;/p&gt;
+&lt;h3&gt;7.1 @Component&lt;/h3&gt;
+&lt;p&gt;Let’s start with the &lt;code&gt;@Component&lt;/code&gt; annotation. It is the first &lt;em&gt;Declarative Service Annotation&lt;/em&gt; we used. It indicates that the annotated class is intended to be an OSGi component and triggers the generation of the &lt;em&gt;Configuration Description &lt;/em&gt;as explained above. If nothing else is specified, the annotation defaults will create the easiest to use component:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Its name is the full qualified class name&lt;/li&gt;
+&lt;li&gt;It registers all of the class’s directly implemented interfaces as services&lt;/li&gt;
+&lt;li&gt;The instance will be shared by all bundles&lt;/li&gt;
+&lt;li&gt;It is enabled&lt;/li&gt;
+&lt;li&gt;It is immediate if it has no services, otherwise it is delayed&lt;/li&gt;
+&lt;li&gt;It has an optional configuration policy&lt;/li&gt;
+&lt;li&gt;The configuration PID is the full qualified class name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These defaults can be changed via annotation type elements (or annotation parameter if that is better understandable). The following elements are supported by the &lt;code&gt;@Component&lt;/code&gt; annotation:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Annotation Type Element&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;configurationPid&lt;/td&gt;
+&lt;td&gt;The configuration PID that is used for the configuration of the component in conjunction with the ConfigurationAdmin.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configurationPolicy&lt;/td&gt;
+&lt;td&gt;Configure whether a configuration object for the component needs to be present via ConfigurationAdmin.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;enabled&lt;/td&gt;
+&lt;td&gt;The initial enabled state of the component when the containing bundle is started.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;factory&lt;/td&gt;
+&lt;td&gt;The factory identifier for this component, indicating that this component is a &lt;em&gt;Factory Component&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;immediate&lt;/td&gt;
+&lt;td&gt;Control whether a component configuration should be immediately activated after becoming satisfied or if the activation should be delayed. Needs to be &lt;code&gt;false&lt;/code&gt; in case the factory attribute is set also, needs to be &lt;code&gt;true&lt;/code&gt; if no service is provided.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;The name of the component which needs to be unique within a bundle.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;properties&lt;/td&gt;
+&lt;td&gt;References a &lt;em&gt;Java Properties File&lt;/em&gt; entry in the bundle.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;property&lt;/td&gt;
+&lt;td&gt;Array of Strings to specify a set of component properties. Can be seen as additional meta-information of a component that is used for configuration. It is a number of key-value pairs in the format&lt;br /&gt;
+&lt;em&gt;&amp;lt;name&amp;gt;(:&amp;lt;type&amp;gt;)?=&amp;lt;value&amp;gt;&lt;/em&gt;&lt;br /&gt;
+where the type information is optional and defaults to String.&lt;br /&gt;
+The following example defines a property with key &lt;em&gt;answer&lt;/em&gt; and an &lt;code&gt;Integer&lt;/code&gt; value 42:&lt;br /&gt;
+&lt;em&gt;answer:Integer=42&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;service&lt;/td&gt;
+&lt;td&gt;The name(s) of the interface or class this component is registered under as a service. Needs to be a full qualified class name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;servicefactory&lt;/td&gt;
+&lt;td&gt;By setting this value to true, a new &lt;em&gt;Component Instance&lt;/em&gt; will be created for each distinct bundle that request the service.&lt;br /&gt;
+Note: this element is replaced by &lt;em&gt;scope&lt;/em&gt; with DS 1.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;xmlns&lt;/td&gt;
+&lt;td&gt;The XML name space of the &lt;em&gt;Component Description&lt;/em&gt; for this component. By default the lowest Declarative Services XML name space is used, that supports all the specification features used by this component.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; The configuration related type elements will be explained in an upcoming post that will focus on the ConfigurationAdmin.&lt;/p&gt;
+&lt;p&gt;With &lt;strong&gt;DS 1.3&lt;/strong&gt; two additional elements were added to the &lt;code&gt;@Component&lt;/code&gt; annotation:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Annotation Type Element&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;reference&lt;/td&gt;
+&lt;td&gt;Array of &lt;code&gt;@Reference&lt;/code&gt; annotations with specified name and service elements. Used to accesss references via &lt;em&gt;Lookup Strategy&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;scope&lt;/td&gt;
+&lt;td&gt;The scope of the provided service. SINGLETON by default which means the &lt;em&gt;Component Instance&lt;/em&gt; will be used by all bundles. BUNDLE if every bundle should get its own &lt;em&gt;Component Instance&lt;/em&gt;. PROTOTYPE to create a new &lt;em&gt;Component Instance&lt;/em&gt; for each distinct request.&lt;br /&gt;
+Note: This element replaces the &lt;em&gt;servicefactory&lt;/em&gt; element.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;7.2 @Activate, @Deactivate, @Modified&lt;/p&gt;
+&lt;p&gt;Although we don’t use them in the example, I want to show and explain the life cycle annotations. A component can specify methods that should be called when a life cycle event happens. This is the activation, modification or deactivation of a component. Using the DS annotations you can mark a method as such a life cycle method.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Annotation&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;@Activate&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The method that should be called on component activation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;@Modified&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The method that should be called if a configuration is updated using the ConfigurationAdmin.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;@Deactivate&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The method that should be called on component deactivation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;These methods can have zero or more arguments, where each argument must be one of the following types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ComponentContext&lt;/code&gt;&lt;br /&gt;
+The component context for the component configuration.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BundleContext&lt;/code&gt;&lt;br /&gt;
+The bundle context of the components bundle.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Map&amp;lt;String, ?&amp;gt;&lt;/code&gt;&lt;br /&gt;
+An unmodifiable map containing the component properties.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following snippet is an example for an activate method that takes all supported parameters:&lt;/p&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;@Activate
+private void activate(
+    ComponentContext c,
+    BundleContext b,
+    Map&amp;lt;String, ?&amp;gt; properties) {
+
+    //do some initialization stuff
+}&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;@Deactivate&lt;/code&gt; accepts an additional &lt;code&gt;int&lt;/code&gt; or &lt;code&gt;Integer&lt;/code&gt; parameter for the deactivation reason. The different deactivation reasons are specified in &lt;code&gt;org.osgi.service.component.ComponentConstants&lt;/code&gt; which is contained in the SCR implementation.&lt;/p&gt;
+&lt;p&gt;With &lt;strong&gt;DS 1.3&lt;/strong&gt; there is an additional parameter type that is accepted by the life cycle methods. It is called a &lt;em&gt;Component Property Type&lt;/em&gt;, which allows type safe access to component properties. You can also access the component properties via the Map parameter, but in an unsafe manner. You need to check the type and cast accordingly. As the component properties can come from anywhere (specified via &lt;code&gt;@Component&lt;/code&gt; &lt;em&gt;property&lt;/em&gt; or &lt;em&gt;properties&lt;/em&gt; element, via ConfigurationAdmin or factory component) it is nicer to have a type safe access via &lt;em&gt;Component Property Type&lt;/em&gt;, as the framework will do the conversion. As this tutorial is about getting started with Declarative Services, I will not cover this here in more detail. A dedicated post is planned.&lt;/p&gt;
+&lt;p&gt;Note that you can only use each annotation once in your component implementation. There is no overriding capability but a strict order which method will be chosen in such a case. I therefore suggest to only add one method per life cycle annotation and choose the parameter list that matches the best.&lt;/p&gt;
+&lt;p&gt;The OSGi best practices suggest to not use the public access modifier for the life cycle methods. They are only intended to be called by the SCR and should not be called from other code.&lt;/p&gt;
+&lt;p&gt;7.3 @Reference&lt;/p&gt;
+&lt;p&gt;The last available annotation is &lt;code&gt;@Reference&lt;/code&gt;. It is used to specify the dependency on other services. With DS 1.2 it can only be used with &lt;em&gt;Event Methods&lt;/em&gt;. &lt;strong&gt;DS 1.3&lt;/strong&gt; also introduced the usage of &lt;code&gt;@Reference&lt;/code&gt; on fields and the type element &lt;em&gt;reference&lt;/em&gt; of &lt;code&gt;@Component&lt;/code&gt; .&lt;/p&gt;
+&lt;p&gt;Let’s first explain &lt;em&gt;Event Methods&lt;/em&gt;. An &lt;em&gt;Event Method&lt;/em&gt; is called by the SCR when a service becomes bound, unbound or its configuration properties are updated. With DS 1.2 it is necessary to bind a service reference via &lt;em&gt;bind&lt;/em&gt; event method. With DS 1.3 &lt;em&gt;Event Methods&lt;/em&gt; are still useful in case actions need to be performed if a service is bound, unbound or changes its configuration. There are three &lt;em&gt;Event Methods&lt;/em&gt; per service reference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;bind&lt;/em&gt;&lt;br /&gt;
+Called to bind a new service to the component. For static references this method is called before the activate method. For dynamic references this method can also be called while the component is active.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;updated&lt;/em&gt;&lt;br /&gt;
+Called when the configuration properties of a bound service are modified.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;unbind&lt;/em&gt;&lt;br /&gt;
+Called when the SCR needs to unbind the service. For static references this method is called after the deactivate method. For dynamic references this method can also be called while the component is active.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With DS 1.2 the &lt;em&gt;bind&lt;/em&gt; method is mandatory to specify the reference. The &lt;em&gt;updated&lt;/em&gt; and &lt;em&gt;unbind&lt;/em&gt; methods are optional as per specification, although specifying the &lt;em&gt;unbind&lt;/em&gt; method is often recommended (see below).&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;@Reference&lt;/code&gt; annotation needs to be applied on the &lt;em&gt;bind&lt;/em&gt; event method. The following defaults are used in that case:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The name of the &lt;em&gt;bind&lt;/em&gt; method is used for the name of the reference. That means the method name after the prefix (e.g. &lt;code&gt;setStringInverter()&lt;/code&gt; -&amp;gt; &lt;em&gt;StringInverter&lt;/em&gt;). Mind the case sensitivity, as the name in that case starts with an upper case letter.&lt;/li&gt;
+&lt;li&gt;1:1 cardinality.&lt;/li&gt;
+&lt;li&gt;Static reluctant policy.&lt;/li&gt;
+&lt;li&gt;The requested service is the type of the first argument of the bind method.&lt;/li&gt;
+&lt;li&gt;It will infer a default &lt;em&gt;unset&lt;/em&gt; method and &lt;em&gt;updated&lt;/em&gt; method based on the name of the &lt;em&gt;bind&lt;/em&gt; method.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The defaults can be changed via annotation type elements, which will be explained shortly.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; When using &lt;em&gt;Event Methods&lt;/em&gt; for reference binding, typically the &lt;em&gt;bind&lt;/em&gt; method is used to store the service reference instance in a field. In case of a dynamic reference there should be &lt;strong&gt;always&lt;/strong&gt; an &lt;em&gt;unbind&lt;/em&gt; method to clean up such a reference. This is necessary as for dynamic references the reference binding/unbinding can happen while the &lt;em&gt;Component Configuration&lt;/em&gt; is ACTIVE. The &lt;em&gt;unbind&lt;/em&gt; method is not necessary for static references, as a &lt;em&gt;Component Configuration&lt;/em&gt; would be deactivated if the bound service is not available anymore, and activated again if another target service could be bound.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Event Methods&lt;/em&gt; accept different parameters. With DS 1.2 these can be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ServiceReference&lt;/code&gt;&lt;br /&gt;
+The service reference to the bound service, which can later be used for the &lt;em&gt;Lookup Strategy&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Service Type&lt;br /&gt;
+The type of the referenced service, so the Service Instance itself is passed.&lt;/li&gt;
+&lt;li&gt;Service Type + &lt;code&gt;Map&amp;lt;String, ?&amp;gt;&lt;/code&gt;&lt;br /&gt;
+The Service Instance itself is passed together with the unmodifyable map that contains the configuration properties of the bound service.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following snippet shows the &lt;em&gt;bind&lt;/em&gt; method for the &lt;code&gt;StringInverter&lt;/code&gt; reference, that also takes the configuration properties as parameter:&lt;/p&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;@Reference
+void bindStringInverter(
+        StringInverter inverter, Map&amp;lt;String, ?&amp;gt; properties) {
+    // check the properties for some initialization
+    this.inverter = inverter;
+}&lt;/pre&gt;
+&lt;p&gt;The &lt;em&gt;bind&lt;/em&gt; event methods are typically prefixed with either &lt;em&gt;bind&lt;/em&gt;, &lt;em&gt;set&lt;/em&gt; or &lt;em&gt;add&lt;/em&gt;. The &lt;em&gt;unbind&lt;/em&gt; method should have the corresponding prefixes &lt;em&gt;unbind&lt;/em&gt;, &lt;em&gt;unset&lt;/em&gt; or &lt;em&gt;remove&lt;/em&gt;, so they are automatically picked up by &lt;code&gt;@Reference&lt;/code&gt;. The &lt;em&gt;updated&lt;/em&gt; event method follows that principle by replacing the bind prefix with &lt;em&gt;updated&lt;/em&gt;. Alternatively it is possible to explicitly specify the &lt;em&gt;unbind&lt;/em&gt; and the &lt;em&gt;updated&lt;/em&gt; event methods via type element.&lt;/p&gt;
+&lt;p&gt;With &lt;strong&gt;DS 1.3&lt;/strong&gt; an additional parameter is supported for usage with the PROTOTYPE scope, &lt;code&gt;ComponentServiceObjects&lt;/code&gt;. Also additional parameter combinations are supported with DS 1.3. So it is for example possible to only get the map of configuration properties injected, or a combination of &lt;code&gt;ServiceReference&lt;/code&gt;, Service Type, &lt;code&gt;ComponentServiceObjects&lt;/code&gt; and the map of configuration properties.&lt;/p&gt;
+&lt;p&gt;Also introduced with &lt;strong&gt;DS 1.3&lt;/strong&gt; is the &lt;em&gt;Field Strategy&lt;/em&gt; for binding services. With this it is not necessary to specify a &lt;em&gt;bind&lt;/em&gt; event method for a reference. Instead it is possible to apply the &lt;code&gt;@Reference&lt;/code&gt; annotation to a field in the component implementation class. For a static reference the field will be set before the component instance is activated. Dynamic references need to be marked as &lt;code&gt;volatile&lt;/code&gt; so that changes to that field are also visible to other threads.&lt;/p&gt;
+&lt;p&gt;When applying &lt;code&gt;@Reference&lt;/code&gt; on a field, the following defaults are used:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The name of the field is used for the name of the reference.&lt;/li&gt;
+&lt;li&gt;1:1 cardinality if the field is not a collection. 0..n cardinality if the field is a collection.&lt;/li&gt;
+&lt;li&gt;Static reluctant policy if the field is not declared &lt;code&gt;volatile&lt;/code&gt;. Dynamic reluctant policy if the field is declared &lt;code&gt;volatile&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The requested service is the type of the field in case the field type is a service type.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;@Reference&lt;/code&gt; annotation can be applied to different field types. The following list shows the supported types for references with unary cardinality:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Service Type&lt;br /&gt;
+The type of the referenced service, so the Service Instance itself is passed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ServiceReference&lt;/code&gt;&lt;br /&gt;
+The service reference to the bound service, which can later be used for the &lt;em&gt;Lookup Strategy&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ComponentServiceObjects&lt;/code&gt;&lt;br /&gt;
+The actual service object or objects for services with prototype scope.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Map&amp;lt;String, ?&amp;gt;&lt;/code&gt;&lt;br /&gt;
+The unmodifyable map that contains the configuration properties of the bound service.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Map.Entry&amp;lt;Map&amp;lt;String, ?&amp;gt;, Service Type&amp;gt;&lt;/code&gt;&lt;br /&gt;
+An unmodifiable &lt;code&gt;Map.Entry&lt;/code&gt; whose key is an unmodifiable Map containing the service properties of the bound service, as above, and whose value is the bound service object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The cardinality of the reference is determined by the field type. If multiple service references should be bound (or at least one service reference) one of the following types needs to be used, where the type of objects in the collection can be one of the above:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Collection&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;List&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;A subtype of &lt;code&gt;Collection&lt;/code&gt;&lt;br /&gt;
+This can only be used for dynamic references using the UPDATE &lt;em&gt;field-option&lt;/em&gt;. The collection object needs to be initialized in the component instances constructor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; Only instance fields are supported. The &lt;code&gt;@Reference&lt;/code&gt; annotation can not be applied to &lt;code&gt;static&lt;/code&gt; fields.&lt;/p&gt;
+&lt;p&gt;There are various options to configure service references. The following annotation type elements are supported by the &lt;code&gt;@Reference&lt;/code&gt; annotation for configuration:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Annotation Type Element&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cardinality&lt;/td&gt;
+&lt;td&gt;Specify if the reference is optional and if single or multiple bound services are supported. Supported values are specified in the &lt;code&gt;ReferenceCardinality&lt;/code&gt; enum :&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0..1 = OPTIONAL&lt;/li&gt;
+&lt;li&gt;1..1 = MANDATORY&lt;/li&gt;
+&lt;li&gt;0..n = MULTIPLE&lt;/li&gt;
+&lt;li&gt;1..n = AT_LEAST_ONE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;The component local name of the reference which can be used for the &lt;em&gt;Lookup Strategy&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;policy&lt;/td&gt;
+&lt;td&gt;The reference policy regarding dynamicity. Supported values are specified in the &lt;code&gt;ReferencePolicy&lt;/code&gt; enum:&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;STATIC&lt;br /&gt;
+The component instance doesn’t see any dynamics. Dependent on the policy-option it is either ignored that a new or higher ranking service becomes available, or the &lt;em&gt;Component Configuration&lt;/em&gt; is deactivated and reactivated.&lt;/li&gt;
+&lt;li&gt;DYNAMIC&lt;br /&gt;
+The SCR can change the set of bound services without deactivating the &lt;em&gt;Component Configuration&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;policyOption&lt;/td&gt;
+&lt;td&gt;Specify the binding behavior when a new, potentially with a higher ranking, target service becomes available. Supported values are specified via &lt;code&gt;ReferencePolicyOption&lt;/code&gt; enum:&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RELUCTANT&lt;br /&gt;
+In case of OPTIONAL or MANDATORY cardinality, the new service is ignored for both STATIC and DYNAMIC policy (except if a service comes up for an OPTIONAL reference that is not bound yet).&lt;br /&gt;
+In case of MULTIPLE or AT_LEAST_ONE cardinality, the new service is ignored for the STATIC policy, and simply bound with the DYNAMIC policy.&lt;/li&gt;
+&lt;li&gt;GREEDY&lt;br /&gt;
+In case of STATIC references a new service causes reactivation for any cardinality.&lt;br /&gt;
+In case of DYNAMIC references a binding is triggered. For OPTIONAL and MANDATORY this means rebinding in case there is already a bound service.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;service&lt;/td&gt;
+&lt;td&gt;The full qualified class name of the referenced service.Typically this type element is not specified manually!&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;target&lt;/td&gt;
+&lt;td&gt;OSGi Framework filter expression to constrain the set of target services. It uses the &lt;a href=&quot;http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm&quot; target=&quot;_blank&quot;&gt;LDAP Filter Syntax&lt;/a&gt; and is empty by default.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;unbind&lt;/td&gt;
+&lt;td&gt;The name of the unbind method.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;updated&lt;/td&gt;
+&lt;td&gt;The name of the updated event method, which is used to notify that a bound service has modified its  properties.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;With &lt;strong&gt;DS 1.3&lt;/strong&gt; additional element types are added.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Annotation Type Element&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;bind&lt;/td&gt;
+&lt;td&gt;The name of the bind event method. Can be used to combine &lt;em&gt;Field Strategy&lt;/em&gt; and &lt;em&gt;Event Strategy&lt;/em&gt;, for example to only get the configuration properties map in the bind method.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;field&lt;/td&gt;
+&lt;td&gt;The name of the field in the component implementation class that is used to hold the bound services.Typically this type element is not specified manually!&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fieldOption&lt;/td&gt;
+&lt;td&gt;Specify how the field value needs to be managed with the &lt;em&gt;Field Strategy&lt;/em&gt;. Supported values are specified via &lt;code&gt;FieldOption&lt;/code&gt; enum:&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;REPLACE&lt;br /&gt;
+SCR must set the field value. Only static references and unary dynamic references can use this option.&lt;/li&gt;
+&lt;li&gt;UPDATE&lt;br /&gt;
+SCR must update the collection set in the field. It will update the content, not replace the collection instance. This way it is possible to choose the &lt;code&gt;Collection&lt;/code&gt; implementation that should be used to track the service references. Can only be used for dynamic references with MULTIPLE or AT_LEAST_ONE cardinality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;scope&lt;/td&gt;
+&lt;td&gt; The reference scope for this reference. Supported values are specified via &lt;code&gt;ReferenceScope&lt;/code&gt; enum:&lt;p&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;BUNDLE&lt;br /&gt;
+All activated components within a bundle must uses the same service object.&lt;/li&gt;
+&lt;li&gt;PROTOTYPE&lt;br /&gt;
+Each activated component instance may use a single, distinct service object.&lt;/li&gt;
+&lt;li&gt;PROTOTYPE_REQUIRED&lt;br /&gt;
+Each activated component instance must use a single, distinct service object.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/span&gt; The so called &lt;em&gt;Target Property&lt;/em&gt; of a reference, to filter by properties additionally to the service interface, can also be configured dynamically via ConfigurationAdmin, which I will cover in a follow up blog post.&lt;/p&gt;
+&lt;p&gt;At last here are four snippets to show the usage of @Reference with different strategies:&lt;/p&gt;
+&lt;h4&gt;Event Strategy&lt;/h4&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;@Component(
+    property= {
+        &quot;osgi.command.scope:String=fipro&quot;,
+        &quot;osgi.command.function:String=invert&quot;},
+    service=StringInverterCommand.class
+)
+public class StringInverterCommand {
+
+    private StringInverter inverter;
+
+    @Reference
+    void setStringInverter(StringInverter inverter) {
+        this.inverter = inverter;
+    }
+
+    // Note: static reference, therefore no unbind method needed
+
+    public void invert(String input) {
+        System.out.println(inverter.invert(input));
+    }
+}&lt;/pre&gt;
+&lt;h4&gt;Lookup Strategy (DS 1.2)&lt;/h4&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;@Component(
+    property= {
+        &quot;osgi.command.scope:String=fipro&quot;,
+        &quot;osgi.command.function:String=invert&quot;},
+    service=StringInverterCommand.class
+)
+public class StringInverterCommand {
+
+    private ComponentContext context;
+    private ServiceReference&amp;lt;StringInverter&amp;gt; reference;
+
+    @Activate
+    void activate(ComponentContext context) {
+        this.context = context;
+    }
+
+    @Reference
+    void setStringInverter(ServiceReference&amp;lt;StringInverter&amp;gt; reference) {
+        this.reference = reference;
+    }
+
+    public void invert(String input) {
+        StringInverter inverter =
+            context.locateService(&quot;StringInverter&quot;, reference);
+        if (inverter != null) {
+            System.out.println(inverter.invert(input));
+        } else {
+            System.out.println(&quot;StringInverter not available!&quot;);
+        }
+    }
+}&lt;/pre&gt;
+&lt;h4&gt;Lookup Strategy (DS 1.3)&lt;/h4&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;@Component(
+    property= {
+        &quot;osgi.command.scope:String=fipro&quot;,
+        &quot;osgi.command.function:String=invert&quot;},
+    service=StringInverterCommand.class,
+    reference=@Reference(name=&quot;inverter&quot;, service=StringInverter.class)
+)
+public class StringInverterCommand {
+
+    private ComponentContext context;
+
+    @Activate
+    void activate(ComponentContext context) {
+        this.context = context;
+    }
+
+    public void invert(String input) {
+        StringInverter inverter =
+            (StringInverter) context.locateService(&quot;inverter&quot;);
+        if (inverter != null) {
+            System.out.println(inverter.invert(input));
+        } else {
+            System.out.println(&quot;StringInverter not available!&quot;);
+        }
+    }
+}&lt;/pre&gt;
+&lt;h4&gt;Field Strategy (DS 1.3)&lt;/h4&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;@Component(
+    property= {
+        &quot;osgi.command.scope:String=fipro&quot;,
+        &quot;osgi.command.function:String=invert&quot;},
+    service=StringInverterCommand.class
+)
+public class StringInverterCommand {
+
+    @Reference
+    private StringInverter inverter;
+
+    public void invert(String input) {
+        System.out.println(inverter.invert(input));
+    }
+}&lt;/pre&gt;
+&lt;h2&gt;Finish&lt;/h2&gt;
+&lt;p&gt;Now I’m done with this blog post. It has become much longer than I initially planned, but well, there are also a lot of information I gathered the last months. And I still haven’t blogged about everything. Next up will be the configuration of components via ConfigurationAdmin and the deployment of the components with different OSGi implementations.&lt;/p&gt;
+&lt;p&gt;I hope you enjoyed following my  blog post and it gives you the necessary information to get started with OSGi Declarative Services (in Eclipse and plain OSGi). If you find something incorrect it would be great if you contact me, so I am able to update the information accordingly.&lt;/p&gt;
+&lt;p&gt;The sources for this tutorial are hosted on GitHub:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/fipro78/osgi-ds-getting-started-pde&quot; target=&quot;_blank&quot;&gt;DS Getting Started (PDE)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/fipro78/osgi-ds-getting-started-bndtools&quot; target=&quot;_blank&quot;&gt;DS Getting Started (Bndtools)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the following list you can find most of the links to resources that I used to gather the information in this tutorial. As I come across different blog posts, forum discussions, mailing lists, Google Groups and Stackoverflow posts, I can’t link all of them.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.osgi.org/developer/specifications/&quot;&gt;https://www.osgi.org/developer/specifications/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bndtools.org/tutorial.html&quot;&gt;http://bndtools.org/tutorial.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.osgi.org/developer/architecture/&quot;&gt;https://www.osgi.org/developer/architecture/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://enroute.osgi.org/doc/100-about-osgi.html&quot;&gt;http://enroute.osgi.org/doc/100-about-osgi.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://enroute.osgi.org/doc/215-sos.html&quot;&gt;http://enroute.osgi.org/doc/215-sos.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://enroute.osgi.org/services/org.osgi.service.component.html&quot;&gt;http://enroute.osgi.org/services/org.osgi.service.component.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.aqute.biz/Bnd/Components&quot;&gt;http://www.aqute.biz/Bnd/Components&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+	<pubDate>Tue, 21 Jun 2016 09:23:33 +0000</pubDate>
+</item>
+<item>
+	<title>Melanie Bats: Sirius 4.0 Gotta Catch ‘Em All: Super powered  API</title>
+	<guid isPermaLink="false">http://melb.enix.org/?p=296</guid>
+	<link>http://melb.enix.org/sirius/sirius-4-0-super-powered-api/</link>
+	<description>&lt;p&gt;You already discovered with the &lt;a href=&quot;http://melb.enix.org/sirius/sirius-4-0-stability-and-performance&quot;&gt;previous posts&lt;/a&gt; that Sirius is more and more powerful.&lt;br /&gt;
+Sirius 4.0 offers more and more possibilities to our advanced users thanks to super powered APIs.&lt;br /&gt;
+&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;API to control the tab-bar&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;http://orig07.deviantart.net/747b/f/2014/068/a/7/butterfree_by_weaponix-d79lwes.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter&quot; height=&quot;264&quot; src=&quot;https://raw.githubusercontent.com/mbats/sirius-blog/master/sirius4/blog/images/butterfree.png&quot; width=&quot;149&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+The top area of all Sirius diagram editors is filled with the tab-bar, which provides access to many operations on diagrams and their elements.&lt;br /&gt;
+From now on, Sirius provides an API to get complete control of how the tab-bar is filled: which elements to put (Sirius standard ones or custom ones) and in which order.&lt;br /&gt;
+&lt;img alt=&quot;&quot; class=&quot;aligncenter&quot; height=&quot;106&quot; src=&quot;https://raw.githubusercontent.com/mbats/sirius-blog/master/sirius4/blog/images/tabbar.png&quot; width=&quot;660&quot; /&gt;&lt;br /&gt;
+&lt;strong&gt;Better integration with EMF Edit&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://orig00.deviantart.net/89b8/f/2014/308/2/0/exeggcute_by_weaponix-d85bhkz.png&quot;&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter&quot; height=&quot;262&quot; src=&quot;https://raw.githubusercontent.com/mbats/sirius-blog/master/sirius4/blog/images/exeggcute.png&quot; width=&quot;147&quot; /&gt;&lt;/a&gt;&lt;br /&gt;
+For the specifier, Sirius 4.0 comes with a better integration with EMF Edit. While it is only the beginning, Sirius is now contributing the EditingDomainServices service class, which can be referenced from any VSM. This class provides a large set of methods giving access to many useful features of the EMF Edit framework. It provides general editing domain related services and contributes all types of Item Providers, in a way that is directly accessible as service invocations from interpreted expressions. It also offers item property related services. A series of service methods can be used to invoke the standard EMF Commands available from and ItemProviderAdapter’s various createXXXCommand() methods. Note that contrary to the createXXXCommand() methods which simply returns a Command instance, the service methods exposed in this class will directly execute the command on the editing domains CommandStack.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;&quot; class=&quot;aligncenter&quot; height=&quot;480&quot; src=&quot;https://raw.githubusercontent.com/mbats/sirius-blog/master/sirius4/blog/images/emfedit.png&quot; width=&quot;318&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;To &lt;a href=&quot;https://en.wikipedia.org/wiki/Gotta_catch_%27em_all&quot;&gt;catch all&lt;/a&gt; the new features coming with Sirius 4.0 have a look at the slides of &lt;a href=&quot;https://www.eclipsecon.org/france2016/session/sirius-40-let-me-sirius-you&quot;&gt;our talk&lt;/a&gt; at EclipseCon France! Another chance for you to join the Sirius community, &lt;a href=&quot;http://www.siriuscon.org/&quot;&gt;SiriusCon&lt;/a&gt; will occur in Paris the 15th November 2016. Be sure to save the date!&lt;/p&gt;</description>
+	<pubDate>Mon, 20 Jun 2016 07:00:38 +0000</pubDate>
+</item>
+
+</channel>
+</rss>

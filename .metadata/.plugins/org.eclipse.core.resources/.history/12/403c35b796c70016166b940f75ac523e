@@ -1,0 +1,236 @@
+package hospitalProject;
+
+
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Ahmed selemou
+ */
+public class Room extends JFrame {
+
+    Connection conn = null;
+    PreparedStatement stat = null;
+    ResultSet rst = null;
+    private JLabel roomno = new JLabel("Room NO");
+    private JLabel type = new JLabel("type");
+    private JLabel department = new JLabel("Department");
+    private JLabel status = new JLabel("status");
+    private JLabel cost = new JLabel("cost");
+    private JLabel servicecharge = new JLabel("Service charge");
+    private JTextField f1 = new JTextField();
+    private JTextField f2 = new JTextField();
+    private JTextField f3 = new JTextField();
+    private String roomtype[] = {"1", "2", "3", "4"};
+    private JComboBox box1 = new JComboBox(roomtype);
+    private String depart[] = {"orthopedic surgery", "cardiac surgery", "dermatology", "chest diseases", "obsterrics and gynecology", "pphthalmology", "dental", "internal medicine"};
+    private JComboBox box2 = new JComboBox(depart);
+    private String stata[] = {"empty"};
+    private JComboBox box3 = new JComboBox(stata);
+    private JButton delete = new JButton("Delete");
+    private JButton update = new JButton("update");
+    private JButton getdata = new JButton("Get data");
+    private JButton add = new JButton("Add");
+    private JButton New = new JButton("New");
+    private JPanel panel = new JPanel();
+
+    public Room() {
+        rooming();
+    }
+
+    public void rooming() {
+        setTitle("Room");
+        setSize(900, 800);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel.setSize(400, 300);
+        panel.setLayout(null);
+        panel.setBackground(Color.BLUE);
+        roomno.setBounds(20, 30, 120, 25);
+        f1.setBounds(180, 30, 120, 20);
+        type.setBounds(20, 80, 120, 25);
+        box1.setBounds(180, 80, 120, 20);
+        department.setBounds(20, 110, 120, 25);
+        box2.setBounds(180, 110, 120, 20);
+        status.setBounds(20, 140, 120, 25);
+        box3.setBounds(180, 140, 120, 20);
+        cost.setBounds(20, 170, 120, 25);
+        f2.setBounds(180, 170, 120, 20);
+        servicecharge.setBounds(20, 200, 120, 20);
+        f3.setBounds(180, 200, 120, 20);
+        add.setBounds(15, 260, 80, 20);
+        delete.setBounds(105, 260, 80, 20);
+        update.setBounds(200, 260, 80, 20);
+        getdata.setBounds(320, 260, 110, 20);
+        New.setBounds(495, 260, 80, 20);
+        panel.add(roomno);
+        panel.add(type);
+        panel.add(status);
+        panel.add(department);
+        panel.add(servicecharge);
+        panel.add(cost);
+        panel.add(add);
+        panel.add(New);
+        panel.add(delete);
+        panel.add(update);
+        // panel.add(getdata);
+        panel.add(box1);
+        panel.add(box2);
+        panel.add(box3);
+        panel.add(f1);
+        panel.add(f2);
+        panel.add(f3);
+        this.add(panel);
+        add.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Connect.connect();
+                if (f1.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "enter room number");
+                }
+                if (f2.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "enter  cost");
+                }
+                if (f3.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "enter  service charges");
+                }
+                if (box1.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, " please check type");
+                }
+                if (box2.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "enter department");
+                }
+                if (box3.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "enter status");
+                }
+                try {
+                    conn = Connect.connect();
+                    String sql = "select roomnumber from room where roomnumber='" + f1.getText() + "'";
+                    stat = conn.prepareStatement(sql);
+                    rst = stat.executeQuery();
+                    if (rst.next()) {
+                        JOptionPane.showMessageDialog(null, "room number is already exist");
+                        return;
+
+                    }
+                    JOptionPane.showMessageDialog(null, "hellllo");
+                    String sql2 = "insert into room (roomnumber,type,department,cost,status,servicecharges)"
+                            + "values(" + Integer.parseInt(f1.getText()) + "," + box1.getSelectedItem() + ",'" + box2.getSelectedItem().toString() + "'," + Integer.parseInt(f2.getText()) + ",'" + box3.getSelectedItem().toString() + "'," + Integer.parseInt(f3.getText()) + ")";
+                    System.out.println(sql2);
+                    stat = conn.prepareStatement(sql2);
+                    stat.execute();
+                    JOptionPane.showMessageDialog(null, "saved successfully");
+
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        delete.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (f1.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter room number");
+                    return;
+                }
+               conn= Connect.connect();
+                try {
+                     JOptionPane.showMessageDialog(null, "hello");
+                    String sql = "select roomnumber from room where roomnumber ="+ Integer.parseInt(f1.getText());
+                   // JOptionPane.showMessageDialog(null,sql);
+                    System.out.println(sql);
+                    stat = conn.prepareStatement(sql);
+                    System.out.println(stat);
+                     //JOptionPane.showMessageDialog(null,stat);
+                    rst = stat.executeQuery();
+                    if (rst.next()) {
+                        JOptionPane.showMessageDialog(null, "hello");
+                        String sql2 = "delete from room where roomnumber="+Integer.parseInt(f1.getText())+"";
+                     //   conn = Connect.connect();
+                        
+                        stat = conn.prepareStatement(sql2);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null, "DELETED successfully");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "sorry the patient you search for does not exist");
+                    }
+                } catch (SQLException ex) {
+                    System.out.println("your exception is   " +ex.getMessage());
+                }
+
+            }
+        });
+        New.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+           
+            reset();
+            
+            }
+        });
+        update.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            if (f1.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter your ID");
+                }
+               conn= Connect.connect();
+               // String sql="select patientid from patient where patientid='"+f1.getText()+"'";
+                try
+                {
+                String sql="select roomnumber from room where roomnumber ='"+f1.getText()+"'";  
+                     stat=conn.prepareStatement(sql);
+                     rst=stat.executeQuery();
+                     if(rst.next())
+                     {
+                         String sql2 = "update room set roomnumber='" + f1.getText().toString() + "',cost='" + f2.getText().toString() + "',servicecharges='" + f3.getText().toString() + "',type='" + box1.getSelectedItem()+"',department='" + box2.getSelectedItem() + "',status='" + box3.getSelectedItem() + "'where roomnumber='" + f1.getText() + "'";
+                            stat = conn.prepareStatement(sql2);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                     }
+                }
+                catch(Exception ex)
+                {
+                   JOptionPane.showMessageDialog(null,ex.getMessage());
+                }
+                    
+            
+            }
+        });
+        
+    }
+    protected void reset() {
+        f1.setText("");
+        f2.setText("");
+        f3.setText("");
+        box1.setSelectedIndex(-1);
+        box2.setSelectedIndex(-1);
+        box3.setSelectedIndex(-1);
+       
+    }
+
+    public static void main(String[] args) {
+        new Room();
+    }
+}
+

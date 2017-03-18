@@ -1,0 +1,61 @@
+package chat;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
+import java.awt.LayoutManager;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import com.sun.javafx.sg.prism.GrowableDataBuffer;
+
+public class Client extends JFrame{
+	
+	private final int DEFAULT_WIDTH =520 ,
+			DEFAULT_HEIGHT =600;
+
+	private JPanel panel;
+	
+	private JTextArea txtArea;
+	private JScrollPane scp;
+	
+	public Client(){
+		
+		createFrame();
+	}
+
+	void createFrame(){
+		
+		panel =new JPanel();
+		panel.setSize(new Dimension(DEFAULT_WIDTH,DEFAULT_HEIGHT));
+		panel.setBackground(Color.LIGHT_GRAY);
+		panel.setLayout(null);		
+		panel.setBackground(Color.black);
+		this.getContentPane().add(panel);
+		//////////////////////////////////////////////////////////////////
+		
+		txtArea = new JTextArea();
+		txtArea.setBounds(5,5,510,530);
+		scp =new JScrollPane(txtArea);
+		panel.add(scp);
+		panel.add(txtArea);
+		
+		
+		
+		///////////////////////////////////////////////////////////////
+		
+		this.setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+		this.setTitle("Client");
+		
+		
+	}
+}

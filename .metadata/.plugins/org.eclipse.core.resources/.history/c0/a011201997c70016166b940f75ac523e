@@ -1,0 +1,658 @@
+package hospitalProject;
+
+
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDesktopPane;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.plaf.DesktopPaneUI;
+
+/**
+ *
+ * @author Ahmed selemou
+ */
+public class Staff extends JFrame {
+  
+    Connection conn = null;
+    PreparedStatement stat = null;
+    ResultSet rst = null;
+      byte []by=null;
+    private JLabel id = new JLabel("ID");
+    private JLabel name = new JLabel("name");
+    private JLabel fathername = new JLabel("father name");
+    private JLabel familyname = new JLabel("family name");
+    private JLabel mobile = new JLabel("mobile");
+    private JLabel email = new JLabel("email");
+    private JLabel address = new JLabel("address");
+    private JLabel dateofjoining = new JLabel("date of joiniing");
+    private JLabel specialization = new JLabel("specialization");
+    private JLabel gender = new JLabel("gender");
+    private JLabel bloodgroup = new JLabel("blood group");
+    protected JTextField f1 = new JTextField();
+    protected JTextField f2 = new JTextField();
+    protected JTextField f3 = new JTextField();
+    protected JTextField f4 = new JTextField();
+    protected JTextField f5 = new JTextField();
+    protected JTextField f6 = new JTextField();
+    protected JTextField f7 = new JTextField();
+    private String years[] = {"2010", "2011", "2012", "2013", "2014", "2015", "2016"};
+    protected JComboBox box1 = new JComboBox(years);
+    private String months[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+    private JComboBox box2 = new JComboBox(months);
+    private String days[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"};
+    private JComboBox box3 = new JComboBox(days);
+    private String gend[] = {"Male", "Female"};
+    protected String special[] = {"doctor", "nurse", "pharmacy", "xray", "reception", "lab", "admin", "accountancy"};
+    protected JComboBox box4 = new JComboBox(special);
+    protected JComboBox box5 = new JComboBox(gend);
+    private String group[] = {"A+", "A-", "B+", "B-", "O+", "O-"};
+    protected JComboBox box6 = new JComboBox(group);
+    private JButton save = new JButton("Save");
+    private JButton update = new JButton("update");
+    private JButton getdata = new JButton("Get data");
+    private JButton delete = new JButton("Delete");
+    private JButton New = new JButton("New");
+    private JPanel panel = new JPanel();
+    private JButton image=new JButton("Image");
+    protected JTextField imagefield=new JTextField();
+    protected JDesktopPane d=new JDesktopPane();
+
+    public Staff() {
+
+        action();
+    }
+
+    public void action() {
+        setTitle("STAFF");
+        setSize(900, 800);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel.setSize(400, 300);
+        panel.setLayout(null);
+        panel.setBackground(Color.orange);
+        d.setBounds(640, 40, 200, 200);
+        image.setBounds(640,295,150, 25);
+        imagefield.setBounds(640,250, 150, 25);
+        id.setBounds(20, 30, 100, 20);
+        f1.setBounds(140, 30, 150, 20);
+        name.setBounds(20, 65, 100, 20);
+        f2.setBounds(140, 65, 150, 20);
+        fathername.setBounds(20, 90, 100, 20);
+        f3.setBounds(140, 90, 150, 20);
+        familyname.setBounds(20, 110, 100, 20);
+        f4.setBounds(140, 110, 150, 20);
+        mobile.setBounds(20, 130, 100, 20);
+        f5.setBounds(140, 130, 150, 20);
+        email.setBounds(20, 155, 100, 20);
+        f6.setBounds(140, 155, 150, 20);
+        address.setBounds(20, 180, 100, 20);
+        f7.setBounds(140, 180, 150, 20);
+        dateofjoining.setBounds(20, 245, 100, 20);
+        box1.setBounds(140, 245, 80, 20);
+        box2.setBounds(250, 245, 80, 20);
+        box3.setBounds(360, 245, 80, 20);
+        specialization.setBounds(20, 275, 100, 20);
+        box4.setBounds(140, 275, 80, 20);
+        gender.setBounds(20, 300, 100, 20);
+        box5.setBounds(140, 300, 80, 20);
+        bloodgroup.setBounds(20, 340, 100, 20);
+        box6.setBounds(140, 340, 80, 20);
+        save.setBounds(20, 380, 80, 20);
+        delete.setBounds(120, 380, 80, 20);
+        update.setBounds(230, 380, 80, 20);
+        getdata.setBounds(340, 380, 80, 20);
+        New.setBounds(440, 380, 80, 20);
+        panel.add(d);
+        panel.add(image);
+        panel.add(imagefield);
+        panel.add(id);
+        panel.add(name);
+        panel.add(fathername);
+        panel.add(familyname);
+        panel.add(email);
+        panel.add(address);
+        panel.add(gender);
+        panel.add(bloodgroup);
+        panel.add(specialization);
+        panel.add(dateofjoining);
+        panel.add(mobile);
+        panel.add(f1);
+        panel.add(f2);
+        panel.add(f3);
+        panel.add(f4);
+        panel.add(f5);
+        panel.add(f6);
+        panel.add(f7);
+        panel.add(save);
+        panel.add(delete);
+        panel.add(update);
+        panel.add(getdata);
+        panel.add(New);
+        panel.add(box1);
+        panel.add(box2);
+        panel.add(box3);
+        panel.add(box4);
+        panel.add(box5);
+        panel.add(box6);
+        this.add(panel);
+        save.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (f1.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please enter id");
+                }
+                if (f2.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please enter name");
+                }
+                if (f3.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please enter father name");
+                }
+                if (f4.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please enter family name");
+                }
+                if (f5.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please enter your mobile number");
+                }
+                if (f6.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please enter your email");
+                }
+                if (f7.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please enter your address");
+                }
+                if (box1.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please check the year");
+                }
+                if (box2.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please check the month");
+                }
+                if (box3.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please ckeck the day");
+                }
+                if (box4.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please check your specialization");
+                }
+                if (box5.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please check your gender");
+                }
+                if (box6.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "please check your blood group");
+                }
+                if (box4.getSelectedItem().equals("xray")) {
+                    try {
+                        String sql = "select xrayid from x_ray where xrayid='" + f1.getText() + "'";
+                        conn = Connect.connect();
+                        stat = conn.prepareStatement(sql);
+                        rst = stat.executeQuery();
+                        if (rst.next()) {
+                            JOptionPane.showMessageDialog(null, "ID already exist");
+                            return;
+                        }
+                      String sql2 = "insert into x_ray(image,name,fathername,familyname,mobile,email,address,dateofjoining,specialization,gender,bloodgroup,xrayid) values(?,'"+ f2.getText().toString() + "','" + f3.getText().toString() + "','" + f4.getText().toString() + "','" + f5.getText() + "','" + f6.getText() + "','" + f7.getText() + "','" + box1.getSelectedItem() + "','" + box4.getSelectedItem() + "','" + box5.getSelectedItem() + "','" + box6.getSelectedItem() + "','"+ f1.getText() +"')";
+                       stat = conn.prepareStatement(sql2);
+                       stat.setBytes(1, by);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null, "okkkkk x_raaay");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
+                    }
+
+                }
+                if (box4.getSelectedItem().equals("doctor")) {
+                    try {
+                        String sql = "select doctorid from doctor where doctorid='" + f1.getText() + "'";
+                        conn = Connect.connect();
+                        stat = conn.prepareStatement(sql);
+                        rst = stat.executeQuery();
+                        if (rst.next()) {
+                            JOptionPane.showMessageDialog(null, "ID already exist");
+                            return;
+                        }
+                        String sql2 = "insert into doctor(image,name,fathername,familyname,mobile,email,address,dateofjoining,specialization,gender,bloodgroup,doctorid) values(?,'"+ f2.getText().toString() + "','" + f3.getText().toString() + "','" + f4.getText().toString() + "','" + f5.getText() + "','" + f6.getText() + "','" + f7.getText() + "','" + box1.getSelectedItem() + "','" + box4.getSelectedItem() + "','" + box5.getSelectedItem() + "','" + box6.getSelectedItem() + "','"+ f1.getText() +"')";
+                        stat = conn.prepareStatement(sql2);
+                        stat.setBytes(1 , by);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null, "okkkkk doctor");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null,"this is your message \n"+ ex.getMessage());
+                    }
+                }
+                if (box4.getSelectedItem().equals("nurse")) {
+                    try {
+                        String sql = "select nurseid from nurse where nurseid='" + f1.getText() + "'";
+                        conn = Connect.connect();
+                        stat = conn.prepareStatement(sql);
+                        rst = stat.executeQuery();
+                        if (rst.next()) {
+                            JOptionPane.showMessageDialog(null, "ID already exist");
+                            return;
+                        }
+                        String sql2 = "insert into nurse(image,name,fathername,familyname,mobile,email,address,dateofjoining,specialization,gender,bloodgroup,nurseid) values(?,'"+ f2.getText().toString() + "','" + f3.getText().toString() + "','" + f4.getText().toString() + "','" + f5.getText() + "','" + f6.getText() + "','" + f7.getText() + "','" + box1.getSelectedItem() + "','" + box4.getSelectedItem() + "','" + box5.getSelectedItem() + "','" + box6.getSelectedItem() + "','"+ f1.getText() +"')";
+                      
+                        stat = conn.prepareStatement(sql2);
+                        stat.setBytes(1, by);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null,"this is your message \n"+ "okkkkk nurse");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
+                    }
+
+                }
+               if (box4.getSelectedItem().equals("reception")) {
+                    try {
+                        String sql = "select receptionid from reception where receptionid='" + f1.getText() + "'";
+                        conn = Connect.connect();
+                        stat = conn.prepareStatement(sql);
+                        rst = stat.executeQuery();
+                        if (rst.next()) {
+                            JOptionPane.showMessageDialog(null, "ID already exist");
+                            return;
+                        }
+                         String sql2 = "insert into reception(image,name,fathername,familyname,mobile,email,address,dateofjoining,specialization,gender,bloodgroup,receptionid) values(?,'"+ f2.getText().toString() + "','" + f3.getText().toString() + "','" + f4.getText().toString() + "','" + f5.getText() + "','" + f6.getText() + "','" + f7.getText() + "','" + box1.getSelectedItem() + "','" + box4.getSelectedItem() + "','" + box5.getSelectedItem() + "','" + box6.getSelectedItem() + "','"+ f1.getText() +"')";
+                      
+                        stat = conn.prepareStatement(sql2);
+                        stat.setBytes(1, by);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null, "okkkkk pharmacy");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
+                    }
+
+                }
+                if (box4.getSelectedItem().equals("pharmacy")) {
+                    try {
+                        String sql = "select pharmacyid from pharmacy where pharmacyid='" + f1.getText() + "'";
+                        conn = Connect.connect();
+                        stat = conn.prepareStatement(sql);
+                        rst = stat.executeQuery();
+                        if (rst.next()) {
+                            JOptionPane.showMessageDialog(null, "ID already exist");
+                            return;
+                        }
+                         String sql2 = "insert into pharmacy(image,name,fathername,familyname,mobile,email,address,dateofjoining,specialization,gender,bloodgroup,pharmacyid) values(?,'"+ f2.getText().toString() + "','" + f3.getText().toString() + "','" + f4.getText().toString() + "','" + f5.getText() + "','" + f6.getText() + "','" + f7.getText() + "','" + box1.getSelectedItem() + "','" + box4.getSelectedItem() + "','" + box5.getSelectedItem() + "','" + box6.getSelectedItem() + "','"+ f1.getText() +"')";
+                      
+                        stat = conn.prepareStatement(sql2);
+                        stat.setBytes(1, by);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null, "okkkkk pharmacy");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
+                    }
+
+                }
+
+                if (box4.getSelectedItem().equals("lab")) {
+                    try {
+                        String sql = "select labid from lab where labid='" + f1.getText() + "'";
+                        conn = Connect.connect();
+                        stat = conn.prepareStatement(sql);
+                        rst = stat.executeQuery();
+                        if (rst.next()) {
+                            JOptionPane.showMessageDialog(null, "ID already exist");
+                            return;
+                        }
+                         String sql2 = "insert into lab(image,name,fathername,familyname,mobile,email,address,dateofjoining,specialization,gender,bloodgroup,labid) values(?,'"+ f2.getText().toString() + "','" + f3.getText().toString() + "','" + f4.getText().toString() + "','" + f5.getText() + "','" + f6.getText() + "','" + f7.getText() + "','" + box1.getSelectedItem() + "','" + box4.getSelectedItem() + "','" + box5.getSelectedItem() + "','" + box6.getSelectedItem() + "','"+ f1.getText() +"')";
+                      
+                        stat = conn.prepareStatement(sql2);
+                        stat.setBytes(1, by);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null, "okkkkk laaaaaaaaaaab");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
+                    }
+
+                }
+                if (box4.getSelectedItem().equals("accountancy")) {
+                    try {
+                        String sql = "select accountancyid from accountancy where accountancyid='" + f1.getText() + "'";
+                        conn = Connect.connect();
+                        stat = conn.prepareStatement(sql);
+                        rst = stat.executeQuery();
+                        if (rst.next()) {
+                            JOptionPane.showMessageDialog(null, "ID already exist");
+                            return;
+                        }
+                         String sql2 = "insert into accountancy(image,name,fathername,familyname,mobile,email,address,dateofjoining,specialization,gender,bloodgroup,accountancyid) values(?,'"+ f2.getText().toString() + "','" + f3.getText().toString() + "','" + f4.getText().toString() + "','" + f5.getText() + "','" + f6.getText() + "','" + f7.getText() + "','" + box1.getSelectedItem() + "','" + box4.getSelectedItem() + "','" + box5.getSelectedItem() + "','" + box6.getSelectedItem() + "','"+ f1.getText() +"')";
+                      
+                        stat = conn.prepareStatement(sql2);
+                        stat.setBytes(1, by);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null, "okkkkk accountancy");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
+                    }
+
+                }
+                if (box4.getSelectedItem().equals("admin")) {
+                    try {
+                        String sql = "select adminid from admin where adminid='" + f1.getText() + "'";
+                        conn = Connect.connect();
+                        stat = conn.prepareStatement(sql);
+                        rst = stat.executeQuery();
+                        if (rst.next()) {
+                            JOptionPane.showMessageDialog(null, "ID already exist");
+                            return;
+                        }
+                        String sql2 = "insert into admin(image,name,fathername,familyname,mobile,email,address,dateofjoining,specialization,gender,bloodgroup,adminid) values(?,'"+ f2.getText().toString() + "','" + f3.getText().toString() + "','" + f4.getText().toString() + "','" + f5.getText() + "','" + f6.getText() + "','" + f7.getText() + "','" + box1.getSelectedItem() + "','" + box4.getSelectedItem() + "','" + box5.getSelectedItem() + "','" + box6.getSelectedItem() + "','"+ f1.getText() +"')";
+                      
+                        stat = conn.prepareStatement(sql2);
+                        stat.setBytes(1, by);
+                        stat.execute();
+                        JOptionPane.showMessageDialog(null, "okkkkk admin");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, ex.getMessage());
+                    }
+
+                }
+
+            }
+        });
+
+        //******* deleting  *****************************
+        delete.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (f1.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter your ID");
+                }
+                Connect.connect();
+                int val = JOptionPane.showConfirmDialog(null, "Do you realy want to delete");
+                if (val == 0) {
+                    if (box4.getSelectedItem().equals("xray")) {
+                        try {
+                            String sql = "delete from x_ray where xrayid='" + f1.getText() + "'";
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "DELETED successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("doctor")) {
+                        try {
+                            String sql = "delete from doctor where doctorid='" + f1.getText() + "'";
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "DELETED successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+                    }
+                    if (box4.getSelectedItem().equals("nurse")) {
+                        try {
+                            String sql = "delete from nurse where nurseid='" + f1.getText() + "'";
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "DELETED successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("reception")) {
+                        try {
+                            String sql = "delete from reception where staffid='" + f1.getText() + "'";
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "DELETED successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("pharmacy")) {
+                        try {
+                            String sql = "delete from pharmacy where pharmacyid='" + f1.getText() + "'";
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "DELETED successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+
+                    if (box4.getSelectedItem().equals("lab")) {
+                        try {
+                            String sql = "delete from lab where labid='" + f1.getText() + "'";
+
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "DELETED successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("accountancy")) {
+                        try {
+                            String sql = "delete from accountancy where accountancyid='" + f1.getText() + "'";
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "DELETED successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("admin")) {
+                        try {
+                            String sql = "delete from admin where adminid='" + f1.getText() + "'";
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "DELETED successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+
+                }
+            }
+        });
+        update.addActionListener(new ActionListener() {
+
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+
+                if (f1.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter your ID");
+                }
+                Connect.connect();
+                
+                    if (box4.getSelectedItem().equals("xray")) {
+                        try {
+                            String sql = "update x_ray set xrayid='" + f1.getText().toString() + "',name='" + f2.getText().toString() + "',fathername='" + f3.getText().toString() + "',familyname='" + f4.getText().toString() + "',mobile='" + f5.getText() + "',email='" + f6.getText().toString() + "',address='" + f7.getText().toString() + "',dateofjoining='" + box1.getSelectedItem() + box2.getSelectedItem() + box3.getSelectedItem() + "',specailization='" + box4.getSelectedItem() + "',gender='" + box5.getSelectedItem() + "',bloodgroup='" + box6.getSelectedItem() + "' where xrayid='" + f1.getText() + "'";
+
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("doctor")) {
+                        try {
+                            String sql = "update doctor set doctorid='" + f1.getText().toString() + "',name='" + f2.getText().toString() + "',fathername='" + f3.getText().toString() + "',familyname='" + f4.getText().toString() + "',mobile='" + f5.getText() + "',email='" + f6.getText().toString() + "',address='" + f7.getText().toString() + "',dateofjoining='" + box1.getSelectedItem() + box2.getSelectedItem() + box3.getSelectedItem() + "',gender='" + box5.getSelectedItem() + "',bloodgroup='" + box6.getSelectedItem() + "' where doctorid='" + f1.getText() + "'";
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+                    }
+                    if (box4.getSelectedItem().equals("nurse")) {
+                        try {
+                            String sql = "update nurse set nurseid='" + f1.getText().toString() + "',name='" + f2.getText().toString() + "',fathername='" + f3.getText().toString() + "',familyname='" + f4.getText().toString() + "',mobile='" + f5.getText() + "',email='" + f6.getText().toString() + "',address='" + f7.getText().toString() + "',dateofjoining='" + box1.getSelectedItem() + box2.getSelectedItem() + box3.getSelectedItem() + "',gender='" + box5.getSelectedItem() + "',bloodgroup='" + box6.getSelectedItem() + "' where nurseid='" + f1.getText() + "'";
+
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("reception")) {
+                        try {
+                            String sql = "update reception set receptionid='" + f1.getText().toString() + "',name='" + f2.getText().toString() + "',fathername='" + f3.getText().toString() + "',familyname='" + f4.getText().toString() + "',mobile='" + f5.getText() + "',email='" + f6.getText().toString() + "',address='" + f7.getText().toString() + "',dateofjoining='" + box1.getSelectedItem() + box2.getSelectedItem() + box3.getSelectedItem() + "',gender='" + box5.getSelectedItem() + "',bloodgroup='" + box6.getSelectedItem() + "' where receptionid='" + f1.getText() + "'";
+
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("pharmacy")) {
+                        try {
+                            String sql = "update pharmacy set pharmacyid='" + f1.getText().toString() + "',name='" + f2.getText().toString() + "',fathername='" + f3.getText().toString() + "',familyname='" + f4.getText().toString() + "',mobile='" + f5.getText() + "',email='" + f6.getText().toString() + "',address='" + f7.getText().toString() + "',dateofjoining='" + box1.getSelectedItem() + box2.getSelectedItem() + box3.getSelectedItem() + "',gender='" + box5.getSelectedItem() + "',bloodgroup='" + box6.getSelectedItem() + "' where pharmacyid='" + f1.getText() + "'";
+
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+
+                    if (box4.getSelectedItem().equals("lab")) {
+                        try {
+                            String sql = "update lab set labid='" + f1.getText().toString() + "',name='" + f2.getText().toString() + "',fathername='" + f3.getText().toString() + "',familyname='" + f4.getText().toString() + "',mobile='" + f5.getText() + "',email='" + f6.getText().toString() + "',address='" + f7.getText().toString() + "',dateofjoining='" + box1.getSelectedItem() + box2.getSelectedItem() + box3.getSelectedItem() + "',gender='" + box5.getSelectedItem() + "',bloodgroup='" + box6.getSelectedItem() + "' where labid='" + f1.getText() + "'";
+
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("accountancy")) {
+                        try {
+                            String sql = "update accountancy set accountancyid='" + f1.getText().toString() + "',name='" + f2.getText().toString() + "',fathername='" + f3.getText().toString() + "',familyname='" + f4.getText().toString() + "',mobile='" + f5.getText() + "',email='" + f6.getText().toString() + "',address='" + f7.getText().toString() + "',dateofjoining='" + box1.getSelectedItem() + box2.getSelectedItem() + box3.getSelectedItem() + "',gender='" + box5.getSelectedItem() + "',bloodgroup='" + box6.getSelectedItem() + "' where accountancyid='" + f1.getText() + "'";
+
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+                    if (box4.getSelectedItem().equals("admin")) {
+                        try {
+                            String sql = "update admin set adminid='" + f1.getText().toString() + "',name='" + f2.getText().toString() + "',fathername='" + f3.getText().toString() + "',familyname='" + f4.getText().toString() + "',mobile='" + f5.getText() + "',email='" + f6.getText().toString() + "',address='" + f7.getText().toString() + "',dateofjoining='" + box1.getSelectedItem() + box2.getSelectedItem() + box3.getSelectedItem() + "',gender='" + box5.getSelectedItem() + "',bloodgroup='" + box6.getSelectedItem() + "' where adminid='" + f1.getText() + "'";
+
+                            conn = Connect.connect();
+                            stat = conn.prepareStatement(sql);
+                            stat.execute();
+                            JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+                        } catch (Exception ex) {
+                            JOptionPane.showMessageDialog(null, ex.getMessage());
+                        }
+
+                    }
+
+                
+            }
+
+        });
+     New.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            reset();  
+            }
+        });
+     image.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+     
+                JFileChooser  f=new JFileChooser();
+                f.showOpenDialog(null);
+                File file=f.getSelectedFile();
+                String filename =file.getAbsolutePath();
+                imagefield.setText(filename);
+                try
+                {
+                   File f2=new File(filename);
+                    FileInputStream fis=new FileInputStream(f2);
+                    ByteArrayOutputStream baos=new ByteArrayOutputStream();
+                    byte []bytes=new byte[1024];
+                    for(int readno;(readno=fis.read(bytes))!=-1;)
+                    {
+                        baos.write(bytes, 0, readno);
+                    }
+                    by=baos.toByteArray(); 
+                }
+                catch(Exception ex)
+                {
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                    
+                }
+            
+            }
+        });
+     
+    }
+
+    protected void reset() {
+        f1.setText("");
+        f2.setText("");
+        f3.setText("");
+        f4.setText("");
+        f5.setText("");
+        f6.setText("");
+        f7.setText("");
+        box1.setSelectedIndex(-1);
+        box2.setSelectedIndex(-1);
+        box3.setSelectedIndex(-1);
+        box5.setSelectedIndex(-1);
+        box6.setSelectedIndex(-1);
+    }
+   
+
+    public static void main(String[] args) {
+        new Staff();
+    }
+}
+

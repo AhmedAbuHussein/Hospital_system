@@ -1,0 +1,62 @@
+package chat;
+
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+
+public class Client extends JFrame{
+	
+	private final int DEFAULT_WIDTH =520 ,
+			DEFAULT_HEIGHT = 600;
+
+	private JPanel panel;
+	
+	private JTextArea txtArea;
+	private JScrollPane scp;
+	private JTextField message;
+	private JButton enter;
+	public Client(){
+		
+		createFrame();
+	}
+
+	void createFrame(){
+		
+		panel =new JPanel();
+		panel.setSize(new Dimension(DEFAULT_WIDTH,DEFAULT_HEIGHT));
+		panel.setBackground(Color.LIGHT_GRAY);
+		panel.setLayout(null);		
+		panel.setBackground(Color.black);
+		this.getContentPane().add(panel);
+		//////////////////////////////////////////////////////////////////
+		
+		txtArea = new JTextArea();
+		txtArea.setBounds(5,5,493,490);
+		scp =new JScrollPane(txtArea);
+		panel.add(scp);
+		panel.add(txtArea);
+		///////////////////////////////////////////////////////////////
+		
+		message = new JTextField();
+		message.setBounds(5, 500, 410, 50);
+		panel.add(message);
+		
+		
+		///////////////////////////////////////////////////////////////
+		
+		this.setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+		this.setTitle("Client");
+		
+		
+	}
+}

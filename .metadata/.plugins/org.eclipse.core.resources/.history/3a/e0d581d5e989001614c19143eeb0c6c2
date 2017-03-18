@@ -1,0 +1,76 @@
+package chat;
+
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Login extends JFrame {
+
+	private final int DEFAULT_WIDTH =350 ,
+					DEFAULT_HEIGHT =420;
+	
+	private JPanel panel;
+	private JTextField txtName;
+	private JTextField txtAddress;
+	private JTextField txtPort;
+	
+	private JLabel lblName;
+	private JLabel lblAddress;
+	private JLabel lblPort;
+	
+	
+	private JButton login;
+	
+	public Login(){
+		
+		createFrame();
+	}
+	
+	
+	void createFrame(){
+		
+		
+		
+		panel =new JPanel();
+		panel.setSize(new Dimension(DEFAULT_WIDTH,DEFAULT_HEIGHT));
+		panel.setLayout(null);
+		panel.setBackground(Color.lightGray);
+		this.getContentPane().add(panel);
+		
+		///////////////////////// text field ////////////////////////////
+		
+		txtName = new JTextField();
+		txtName.setBounds(25,50,290,30);
+		panel.add(txtName);
+		
+		txtAddress = new JTextField();
+		txtAddress.setBounds(25,130,290,30);
+		panel.add(txtAddress);
+		
+		txtPort = new JTextField();
+		txtPort.setBounds(25,210,290,30);
+		panel.add(txtPort);
+		
+		//////////////////////// label //////////////////////////////////
+		
+		lblName = new JLabel("Name");
+		lblName.setBounds(150, 15, 80, 30);
+		panel.add(lblName);
+		
+		
+		/////////////////////////////////////////////////////////////////
+		this.setSize(DEFAULT_WIDTH,DEFAULT_HEIGHT);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+	}
+	
+	public static void main(String []args){
+		new Login();
+	}
+}

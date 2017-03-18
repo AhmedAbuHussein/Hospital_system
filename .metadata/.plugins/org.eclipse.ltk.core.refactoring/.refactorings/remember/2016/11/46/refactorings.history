@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;re_Ahmed_string.server.Server.addClient(...)&apos; to &apos;process&apos;&#x0D;&#x0A;- Original project: &apos;remember&apos;&#x0D;&#x0A;- Original element: &apos;re_Ahmed_string.server.Server.addClient(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;re_Ahmed_string.server.Server.process(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;addClient&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;re_Ahmed_string.server{Server.java[Server~addClient~QDatagramPacket;" name="process" references="true" stamp="1478749354956" version="1.0"/>
+</session>

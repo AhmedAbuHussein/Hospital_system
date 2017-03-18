@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;notepad.Frame.java&apos; to &apos;Grid.java&apos;&#x0D;&#x0A;- Original project: &apos;notepad&apos;&#x0D;&#x0A;- Original element: &apos;notepad.Frame.java&apos;&#x0D;&#x0A;- Renamed element: &apos;notepad.Grid.java&apos;" description="Rename compilation unit &apos;Frame.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;notepad{Frame.java" name="Grid.java" references="false" stamp="1482937985322" version="1.0"/>
+</session>

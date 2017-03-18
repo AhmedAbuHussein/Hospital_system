@@ -1,0 +1,151 @@
+package databaseCon;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+import net.proteanit.sql.DbUtils;
+import oracle.jdbc.OracleDriver;
+
+public class UIDelete  extends SQLManager{
+
+	private static JFrame frame;
+	private static JPanel panel;
+	private JTable table;
+	private static JButton delete , exit ,delAll;
+	private static JTextField id ;
+	private static JLabel lId ;
+	private static int width = 600 , height = 700;
+	
+	public UIDelete(){
+		
+		panel = new JPanel();
+		panel.setBounds(0, 0, width, 200);
+		panel.setLayout(null);
+		panel.setBackground(new Color(20,60,40));
+		
+		lId  	 = new JLabel(" Enter ID  :- ");
+		lId.setBounds(20,40,100,40);
+		lId.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		lId.setForeground(Color.red);
+		panel.add(lId);
+
+		id    	= new JTextField();
+		id.setBounds(140,40,300,40);
+		id.setFont(new Font("Times New Roman" , Font.BOLD, 15));
+		id.setForeground(Color.red);
+		panel.add(id);
+		
+		delete  = new JButton(" delete ");
+		exit 	= new JButton(" Exit ");
+		
+		delete.setBounds(330, 100, 100, 40);
+		delete.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(id.getText().equals("") )
+					JOptionPane.showMessageDialog(null, "Plz Full The Space !");
+				else
+				Delete.delete_emp(Integer.parseInt(id.getText()));
+				id.setText("");
+				
+			}
+		});
+		panel.add(delete);
+		
+		
+		
+		exit.setBounds(180, 100, 100, 40);
+		exit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+				
+			}
+		});
+		panel.add(exit);
+		
+		delAll =new JButton("DEL All Data");
+		delAll.setBounds(20, 100, 120, 40);
+		delAll.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				Delete.delete_All();
+				JOptionPane.showMessageDialog(null, "Delete All Data successful");
+				
+				
+			}
+		});
+		panel.add(delAll);
+
+		//**********************************frame *****************************************
+		
+		frame = new JFrame("Delete");
+		frame.setSize(width,height);
+		frame.setLocationRelativeTo(null);
+		frame.setLayout(null);
+		frame.setVisible(true);
+		
+		frame.add(tabel());
+		frame.add(panel);
+		
+		
+	}
+	
+	private JScrollPane tabel(){
+		JScrollPane sc;
+		try {
+			
+			sql = "select * from EMP";
+			DriverManager.registerDriver(new OracleDriver());
+			con = DriverManager.getConnection(url, user ,password);
+			stat =con.prepareStatement(sql);
+			ResultSet rs = stat.executeQuery();
+			
+			table = new JTable();
+			table.setModel(new DefaultTableModel(
+					new Object [][] {
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null}
+		            }
+					,
+					new String [] {"NAME" ,"ID","GENDER" , "COUNTRY"}
+		            
+					));
+						
+			table.setModel(DbUtils.resultSetToTableModel(rs) );
+			table.setFillsViewportHeight(true);
+			 sc = new JScrollPane();
+			 sc.setBounds(0, 200, width, height);
+			 sc.setViewportView(table);
+			 return sc;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			return null;
+		}
+	
+	}	
+}

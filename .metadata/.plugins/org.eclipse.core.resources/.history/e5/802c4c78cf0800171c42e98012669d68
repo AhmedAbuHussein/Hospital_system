@@ -1,0 +1,36 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class SQLCon {
+
+	
+	public   static Connection 			con = null;
+	public   static PreparedStatement  	stat = null;
+	
+	public static String 		user = "root";
+	public static String 		password = "";
+	public static String 		url = "jdbc:mysql://localhost/pharmacy";
+	
+	public static ResultSet SQLConnection(String sql){
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(url, user ,password);
+			stat =con.prepareStatement(sql);
+			ResultSet rs = stat.executeQuery();
+			return rs;
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			return null;
+		}
+		
+	}
+	
+	
+	
+	
+}

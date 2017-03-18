@@ -1,0 +1,127 @@
+package databaseCon;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+import net.proteanit.sql.DbUtils;
+import oracle.jdbc.OracleDriver;
+
+public class UIUpdate extends SQLManager {
+
+	private JPanel panel;
+	private JFrame frame;
+	private JLabel lbl;
+	private JTextField txtID;
+	private JButton enter ;
+	private JTable table;
+	private int width = 600 , height = 500;
+	
+	public UIUpdate() {
+		createTabel();
+	}
+	
+	
+	
+private void createTabel(){
+		
+		frame = new JFrame("Show");
+		frame.setSize(width, height);
+		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
+		frame.setVisible(true);
+	//	frame.setLayout(null);
+	
+		
+		txtID = new JTextField();
+		txtID.setBounds(200, 40, 300, 40);
+		
+		lbl = new JLabel();
+		lbl.setFont(new Font("Time New Roman",Font.BOLD+Font.ITALIC , 25));
+		lbl.setForeground(Color.red);
+		lbl.setText("plez enter the ID that you want to Update ");
+		lbl.setBounds(50, 100, 500, 80);
+		
+		enter = new JButton("Enter");
+		
+		enter.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
+				new Update(Integer.parseInt(txtID.getText()));
+				
+			}
+		});
+		
+		
+		enter.setBounds(20, 40, 160, 40);
+		
+		panel = new JPanel();
+		panel.setBounds(0, 0, width, 301);
+		panel.setBackground(new Color(20,50,90));
+		panel.setLayout(null);
+		panel.add(enter);
+		panel.add(txtID);
+		panel.add(lbl);
+		
+		
+		
+				
+		frame.add(tabel());
+		frame.add(panel);	
+	}
+
+
+
+
+	private JScrollPane tabel(){
+		JScrollPane sc;
+		try {
+			
+			sql = "select * from EMP";
+			DriverManager.registerDriver(new OracleDriver());
+			con = DriverManager.getConnection(url, user ,password);
+			stat =con.prepareStatement(sql);
+			ResultSet rs = stat.executeQuery();
+			
+			table = new JTable();
+			table.setModel(new DefaultTableModel(
+					new Object [][] {
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null}
+		            }
+					,
+					new String [] {"NAME" ,"ID","GENDER" , "COUNTRY"}
+		            
+					));
+						
+			table.setModel(DbUtils.resultSetToTableModel(rs) );
+			table.setFillsViewportHeight(true);
+			 sc = new JScrollPane();
+			 sc.setBounds(1, 200, width-10, 275);
+			 sc.setViewportView(table);
+			 return sc;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+}

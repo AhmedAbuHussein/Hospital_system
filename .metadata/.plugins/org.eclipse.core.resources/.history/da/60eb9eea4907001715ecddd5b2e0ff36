@@ -1,0 +1,19 @@
+package doctors;
+
+import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
+public class Panel extends JPanel {
+	public Panel() {
+	}
+
+	private ImageIcon img;
+	public void paintComponent(Graphics g){
+		
+		img = new ImageIcon(getClass().getResource("/Images/9.jpg"));
+		
+	}
+
+}

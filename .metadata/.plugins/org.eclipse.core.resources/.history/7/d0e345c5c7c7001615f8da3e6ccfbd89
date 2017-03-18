@@ -1,0 +1,171 @@
+package pharmacy;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+
+public class Update extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtId;
+	private JTextField txtName;
+	private JTextField txtType;
+	private JTextField txtDate;
+	private JTextField txtEx_Date;
+	private JLabel quantity;
+	private JTextField txtQuantity;
+	private JLabel label_1;
+	private JTextField textField_1;
+	private JLabel label_2;
+	private JTextField textField_2;
+	private JLabel label_3;
+	private JTextField textField_4;
+	private JLabel label_4;
+	private JTextField textField_5;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Update frame = new Update();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Update() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 795, 471);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel productID = new JLabel("ProductID :");
+		productID.setForeground(Color.WHITE);
+		productID.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		productID.setBounds(35, 33, 106, 23);
+		contentPane.add(productID);
+		
+		JLabel productName = new JLabel("ProductName :");
+		productName.setForeground(Color.WHITE);
+		productName.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		productName.setBounds(35, 84, 106, 23);
+		contentPane.add(productName);
+		
+		JLabel type = new JLabel("Type : ");
+		type.setForeground(Color.WHITE);
+		type.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		type.setBounds(35, 140, 106, 23);
+		contentPane.add(type);
+		
+		JLabel date = new JLabel("date :");
+		date.setForeground(Color.WHITE);
+		date.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		date.setBounds(35, 192, 106, 23);
+		contentPane.add(date);
+		
+		JLabel exDate = new JLabel("Ex_Date :");
+		exDate.setForeground(Color.WHITE);
+		exDate.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		exDate.setBounds(35, 246, 106, 23);
+		contentPane.add(exDate);
+		
+		txtId = new JTextField();
+		txtId.setBounds(157, 33, 184, 23);
+		contentPane.add(txtId);
+		txtId.setColumns(10);
+		
+		txtName = new JTextField();
+		txtName.setColumns(10);
+		txtName.setBounds(157, 87, 184, 23);
+		contentPane.add(txtName);
+		
+		txtType = new JTextField();
+		txtType.setColumns(10);
+		txtType.setBounds(157, 143, 184, 23);
+		contentPane.add(txtType);
+		
+		txtDate = new JTextField();
+		txtDate.setColumns(10);
+		txtDate.setBounds(157, 195, 184, 23);
+		contentPane.add(txtDate);
+		
+		txtEx_Date = new JTextField();
+		txtEx_Date.setColumns(10);
+		txtEx_Date.setBounds(157, 249, 184, 23);
+		contentPane.add(txtEx_Date);
+		
+		quantity = new JLabel("Quantity");
+		quantity.setForeground(Color.WHITE);
+		quantity.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		quantity.setBounds(431, 30, 106, 23);
+		contentPane.add(quantity);
+		
+		txtQuantity = new JTextField();
+		txtQuantity.setColumns(10);
+		txtQuantity.setBounds(553, 30, 184, 23);
+		contentPane.add(txtQuantity);
+		
+		label_1 = new JLabel("ProductName :");
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		label_1.setBounds(431, 81, 106, 23);
+		contentPane.add(label_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(553, 84, 184, 23);
+		contentPane.add(textField_1);
+		
+		label_2 = new JLabel("Type : ");
+		label_2.setForeground(Color.WHITE);
+		label_2.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		label_2.setBounds(431, 137, 106, 23);
+		contentPane.add(label_2);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(553, 140, 184, 23);
+		contentPane.add(textField_2);
+		
+		label_3 = new JLabel("date :");
+		label_3.setForeground(Color.WHITE);
+		label_3.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		label_3.setBounds(431, 189, 106, 23);
+		contentPane.add(label_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(553, 192, 184, 23);
+		contentPane.add(textField_4);
+		
+		label_4 = new JLabel("Ex_Date :");
+		label_4.setForeground(Color.WHITE);
+		label_4.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		label_4.setBounds(431, 243, 106, 23);
+		contentPane.add(label_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(553, 246, 184, 23);
+		contentPane.add(textField_5);
+	}
+}

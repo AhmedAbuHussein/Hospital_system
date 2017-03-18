@@ -1,0 +1,40 @@
+package pharmacy;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class Connect {
+    
+	protected  static Connection 			con = null;
+	protected static PreparedStatement  	stat = null;
+	protected static String 				sql  = null;
+	
+	public static String 					user = "root";
+	public static String 					password = "";
+	public static String 					url = "jdbc:mysql://localhost/emp";
+	
+      
+    public static Connection connect(String sql)
+    {
+    	
+    	
+    	
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection(url,user,password);
+            return con;
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage() );
+            return null;
+        }
+    }
+}
+
+    
+
+

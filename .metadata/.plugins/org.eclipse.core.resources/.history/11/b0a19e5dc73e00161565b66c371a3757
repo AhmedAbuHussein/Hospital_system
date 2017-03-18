@@ -1,0 +1,82 @@
+package test.dve.Ahme.game.entities;
+
+import test.dve.Ahme.game.Handler;
+import test.dve.Ahme.game.tiles.Tile;
+
+public abstract class Creature extends Entity {
+
+	protected static final int DEFUALT_HEALTH =10 ;
+	protected static final float DEFUALT_SPEED =3.0f;
+	protected static final int DEFUALT_CREATURE_WIDTH = 64 ,
+							   DEFUALT_CREATURE_HEIGHT = 64;
+	
+	protected int health;
+	protected float speed;
+	protected float xMove , yMove;
+	
+	public Creature(Handler handler, float x, float y, int width, int height) {
+		super(handler, x, y, width, height);
+		
+		health = 	DEFUALT_HEALTH;
+		speed  =	DEFUALT_SPEED;
+		xMove = 0;
+		yMove = 0;
+		
+	}
+	
+	protected void move(){
+		moveX();
+		moveY();
+	}
+	
+	public void moveX(){
+		if(xMove > 0){
+			int tx = (int)((x +xMove + 32 ) / Tile.TILEWIDTH);
+			if(!checkSold(tx,(int)((y + yMove )/Tile.TILEHEIGHT)) && !checkSold(tx ,(int)((y+yMove+32)/Tile.TILEHEIGHT)))
+					x += xMove;
+			
+		}else if(xMove < 0){
+			int tx = (int)((x +xMove) / Tile.TILEWIDTH);
+			if(!checkSold(tx,(int)((y + yMove )/Tile.TILEHEIGHT)) && !checkSold(tx ,(int)((y+yMove+32)/Tile.TILEHEIGHT)))
+					x += xMove;
+		}
+		
+	}
+	
+	public void moveY(){
+		if(yMove > 0){
+			int ty = (int)((y +yMove + 32 ) / Tile.TILEHEIGHT);
+			if(!checkSold((int)((x + xMove )/Tile.TILEWIDTH),ty) && !checkSold((int)((x+xMove+32)/Tile.TILEWIDTH),ty))
+					y += yMove;
+			
+		}else if(yMove < 0){
+			int ty = (int)((y +yMove) / Tile.TILEHEIGHT);
+			if(!checkSold((int)((x + xMove )/Tile.TILEWIDTH),ty) && !checkSold((int)((x+xMove+32)/Tile.TILEWIDTH),ty))
+					y += yMove;
+			
+		}
+	}
+	
+	public boolean checkSold(int x , int y){
+		return  handler.getWorld().getTile(x, y).isSold();
+	}
+
+	//getters and setters
+	
+	public float getxMove() {
+		return xMove;
+	}
+
+	public void setxMove(float xMove) {
+		this.xMove = xMove;
+	}
+
+	public float getyMove() {
+		return yMove;
+	}
+
+	public void setyMove(float yMove) {
+		this.yMove = yMove;
+	}
+
+}

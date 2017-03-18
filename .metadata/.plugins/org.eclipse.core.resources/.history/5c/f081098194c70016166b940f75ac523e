@@ -1,0 +1,121 @@
+package hospitalProject;
+
+public class Changepassword extends JFrame {
+
+    private JLabel user = new JLabel("USER NAME");
+    private JLabel oldpassword = new JLabel("old password");
+    private JLabel newpassword = new JLabel("new password");
+    private JLabel confirmpassword = new JLabel("confirm password");
+    private JTextField f1 = new JTextField();
+    private JTextField old = new JTextField();
+    private JTextField New = new JTextField();
+    private JTextField confirm = new JPasswordField();
+    private JButton ok = new JButton("OK");
+    private JButton cancel = new JButton("Cancel");
+    private JPanel panel = new JPanel();
+     Connection conn = null;
+    PreparedStatement stat = null;
+    ResultSet rst = null;
+    public Changepassword() {
+        change();
+    }
+
+    public void change() {
+        setTitle("Changepassword");
+        setSize(900, 800);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel.setSize(400, 300);
+        panel.setLayout(null);
+        panel.setBackground(Color.magenta);
+        user.setBounds(20, 30, 160, 20);
+        f1.setBounds(200, 30, 130, 20);
+        oldpassword.setBounds(20, 55, 160, 20);
+        old.setBounds(200, 55, 130, 20);
+        newpassword.setBounds(20, 80, 160, 20);
+        New.setBounds(200, 80, 130, 20);
+        confirmpassword.setBounds(20, 105, 160, 20);
+        confirm.setBounds(200, 105, 130, 20);
+        ok.setBounds(50, 180, 80, 30);
+        cancel.setBounds(160, 180, 80, 30);
+        panel.add(user);
+        panel.add(oldpassword);
+        panel.add(newpassword);
+        panel.add(confirmpassword);
+        panel.add(f1);
+        panel.add(old);
+        panel.add(New);
+        panel.add(confirm);
+        panel.add(ok);
+        panel.add(cancel);
+        this.add(panel);
+        ok.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              
+                conn=Connect.connect();
+                String newpassword=New.getText();
+                String oldpassword=old.getText();
+                String confirmpassword=confirm.getText();
+                String name=f1.getText();
+                if(name.equals(""))
+                {
+                    JOptionPane.showMessageDialog(null, "  name field is empty ");
+                }
+                if(oldpassword.equals(""))
+                {
+                    JOptionPane.showMessageDialog(null, "  oldpassword field is empty ");
+                }
+                if(newpassword.equals(""))
+                {
+                    JOptionPane.showMessageDialog(null, "  newpassword field is empty ");
+                }
+                if(confirmpassword.equals(""))
+                {
+                    JOptionPane.showMessageDialog(null, "  confirmpassword field is empty ");
+                }
+                 if(oldpassword.equals(newpassword))
+                {
+                    JOptionPane.showMessageDialog(null, "  the old and the newpassword are the same ");
+                }
+                
+                 String sql="select username,password from user where username ='"+f1.getText()+"' and password='"+old.getText()+"'";
+                 try
+                 {
+                   stat=conn.prepareStatement(sql);
+                   rst=stat.executeQuery();
+                   if(rst.next())
+                   {
+                      String names= rst.getString("username");
+                       String pass=rst.getString("password");
+                       if(name.equals(names)&&oldpassword.equals(pass))
+                       {
+                           String sql2="update user set password ='"+newpassword+"'where username='"+name+"'";
+                           stat=conn.prepareStatement(sql2);
+                           stat.execute();
+                           JOptionPane.showMessageDialog(null, "password changed successfully");
+                       }
+                       else
+                       {
+                           JOptionPane.showMessageDialog(null, "invalid username or password");
+                           return;
+                       }
+                   }
+                 }
+                 catch(Exception ex)
+                 {
+                     JOptionPane.showMessageDialog(null, ex.getMessage());
+                 }
+                         
+            
+            }
+        });
+        
+
+    }
+
+    public static void main(String[] args) {
+        new Changepassword();
+    }
+}

@@ -1,0 +1,219 @@
+package hospitalProject;
+
+
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Ahmed selemou
+ */
+public class login extends JFrame {
+
+    protected String special[] = {"admin", "doctor", "nurse", "pharmacy", "x-ray", "reception", "lab", "admin", "accountancy"};
+    private JLabel username;
+    private JLabel password;
+    private JLabel specialization;
+    private JTextField f1;
+    private JTextField f2;
+    protected JComboBox box1;
+    private JButton ok;
+    private JButton cancel;
+    private JPanel panel;
+    Connection conn = null;
+    PreparedStatement stat = null;
+    ResultSet rst = null;
+
+    public login() {
+        saving();
+    }
+
+    private void saving() {
+        setTitle("login");
+        setSize(900, 800);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel = new JPanel();
+        panel.setSize(400, 300);
+        panel.setLayout(null);
+        panel.setBackground(Color.BLUE);
+        username = new JLabel("user name");
+
+        username.setBounds(20, 20, 80, 20);
+        password = new JLabel("password");
+        password.setBounds(20, 60, 80, 20);
+        specialization = new JLabel("specialization");
+        specialization.setBounds(20, 100, 80, 20);
+        f1 = new JTextField();
+        f1.setBounds(140, 20, 120, 20);
+        f2 = new JTextField();
+        f2.setBounds(140, 60, 120, 20);
+        box1 = new JComboBox(special);
+        box1.setBounds(140, 100, 120, 20);
+        ok = new JButton("ok");
+        ok.setBounds(60, 180, 100, 20);
+        cancel = new JButton("cancel");
+        cancel.setBounds(200, 180, 100, 20);
+        panel.add(username);
+        panel.add(password);
+        panel.add(specialization);
+        panel.add(f1);
+        panel.add(f2);
+        panel.add(box1);
+        panel.add(ok);
+        panel.add(cancel);
+        this.add(panel);
+
+        ok.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (f1.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter User name");
+                }
+                if (f2.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter password");
+                }
+                if (box1.getSelectedItem().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Enter your specialization");
+                }
+                conn = Connect.connect();
+                String sql = "select * from user where username='" + f1.getText() + "'and password='" + f2.getAccessibleContext() + "' and specilization='" + box1.getSelectedItem() + "'";
+                try {
+                    stat = conn.prepareStatement(sql);
+                    rst = stat.executeQuery();
+                    if (rst!= null) {
+                        if (box1.getSelectedItem().equals("admin")) {
+                            dispose();
+                            Home h = new Home();
+                            h.setVisible(true);
+                            h.reception.setEnabled(false);
+                            h.doctor.setEnabled(false);
+                            h.lab.setEnabled(false);
+                            h.x_ray.setEnabled(false);
+                            h.nurse.setEnabled(false);
+                            h.pharmacy.setEnabled(false);
+                            h.accountancy.setEnabled(false);
+                            //h.about.setEnabled(false);
+                        } else if (box1.getSelectedItem().equals("reception")) {
+                            //this.setVisible(false);
+                            Home h = new Home();
+                            h.setVisible(true);
+                            h.admin.setEnabled(false);
+                            h.doctor.setEnabled(false);
+                            h.reception.setEnabled(false);
+                            h.x_ray.setEnabled(false);
+                            h.nurse.setEnabled(false);
+                            h.pharmacy.setEnabled(false);
+                            h.accountancy.setEnabled(false);
+                            //h.about.setEnabled(false);
+                        } else if (box1.getSelectedItem().equals("doctor")) {
+                            // this.setVisible(false);
+                            Home h = new Home();
+                            h.setVisible(true);
+                            h.reception.setEnabled(false);
+                            h.admin.setEnabled(false);
+                            h.lab.setEnabled(false);
+                            h.x_ray.setEnabled(false);
+                            h.nurse.setEnabled(false);
+                            h.pharmacy.setEnabled(false);
+                            h.accountancy.setEnabled(false);
+                            //h.about.setEnabled(false);
+                        } else if (box1.getSelectedItem().equals("nurse")) {
+                            // this.setVisible(false);
+                            Home h = new Home();
+                            h.setVisible(true);
+                            h.reception.setEnabled(false);
+                            h.doctor.setEnabled(false);
+                            h.lab.setEnabled(false);
+                            h.x_ray.setEnabled(false);
+                            h.admin.setEnabled(false);
+                            h.pharmacy.setEnabled(false);
+                            h.accountancy.setEnabled(false);
+                            //h.about.setEnabled(false);
+                        } else if (box1.getSelectedItem().equals("pharmacy")) {
+                            // this.setVisible(false);
+                            Home h = new Home();
+                            h.setVisible(true);
+                            h.reception.setEnabled(false);
+                            h.doctor.setEnabled(false);
+                            h.lab.setEnabled(false);
+                            h.x_ray.setEnabled(false);
+                            h.nurse.setEnabled(false);
+                            h.admin.setEnabled(false);
+                            h.accountancy.setEnabled(false);
+                            //h.about.setEnabled(false);
+                        } else if (box1.getSelectedItem().equals("accountancy")) {
+                            // this.setVisible(false);
+                            Home h = new Home();
+                            h.setVisible(true);
+                            h.reception.setEnabled(false);
+                            h.doctor.setEnabled(false);
+                            h.lab.setEnabled(false);
+                            h.x_ray.setEnabled(false);
+                            h.nurse.setEnabled(false);
+                            h.pharmacy.setEnabled(false);
+                            h.admin.setEnabled(false);
+                            //h.about.setEnabled(false);
+                        } else if (box1.getSelectedItem().equals("x_ray")) {
+                            // this.setVisible(false);
+                            Home h = new Home();
+                            h.setVisible(true);
+                            h.reception.setEnabled(false);
+                            h.doctor.setEnabled(false);
+                            h.lab.setEnabled(false);
+                            h.admin.setEnabled(false);
+                            h.nurse.setEnabled(false);
+                            h.pharmacy.setEnabled(false);
+                            h.accountancy.setEnabled(false);
+                            //h.about.setEnabled(false);
+                        } else if (box1.getSelectedItem().equals("lab")) {
+                            JOptionPane.showMessageDialog(null, "hello lap");
+                            dispose();
+                            Home h = new Home();
+                            h.setVisible(true);
+                            h.reception.setEnabled(false);
+                            h.doctor.setEnabled(false);
+                            h.admin.setEnabled(false);
+                            h.x_ray.setEnabled(false);
+                            h.nurse.setEnabled(false);
+                            h.pharmacy.setEnabled(false);
+                            h.accountancy.setEnabled(false);
+                            //h.about.setEnabled(false);
+                        }
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, " Error  in loading");
+                    }
+
+                } catch (SQLException ex) {
+
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
+                }
+
+            }
+
+        });
+
+    }
+
+    public static void main(String[] args) {
+        new login();
+    }
+
+}
+

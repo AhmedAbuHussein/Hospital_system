@@ -1,0 +1,101 @@
+package databaseCon;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class ProManager {
+
+	private JFrame frame;
+	private JPanel panel;
+	private JButton insert , delete , select , update ;
+	private int width =300 , height = 330;
+	private UIInsert ins;
+	private UIDelete del;
+	private UISelect sel;
+	private UIUpdate updt;
+	private JLabel lbl;
+	
+	public ProManager(){
+		createFrame();
+	}
+	
+	private void createFrame(){
+		
+		insert = new JButton("Insert");
+		delete = new JButton("Delete");
+		select = new JButton("Show All");
+		update = new JButton("Update");
+		
+		
+		insert.setBounds(20,20,250,40);
+		insert.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ins = new UIInsert();
+				
+			}
+		});
+		delete.setBounds(20, 80, 250, 40);
+		delete.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				del = new UIDelete();
+				
+			}
+		});
+		select.setBounds(20, 140, 250, 40);
+		select.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				sel = new UISelect();
+			}
+		});
+		update.setBounds(20, 200, 250, 40);
+		update.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				updt = new UIUpdate();
+				
+			}
+		});
+		
+		lbl = new JLabel("M.B:-Ahmed Shaker");
+		lbl.setFont(new Font("Time New Roman",Font.BOLD+Font.ITALIC ,15));
+		lbl.setForeground(Color.cyan);
+		lbl.setBounds(10, height -80, 220, 40);
+		
+		panel =new JPanel();
+		panel.setSize(new Dimension(width, height));
+		panel.setLayout(null);
+		panel.setBackground(new Color(50,80,100));
+		
+		panel.add(lbl);
+		panel.add(insert);
+		panel.add(update);
+		panel.add(delete);
+		panel.add(select);
+		
+		
+		frame = new JFrame("Objects");
+		frame.setSize(width, height);
+		frame.setResizable(false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.add(panel);
+		
+		
+	}
+	
+}

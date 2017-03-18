@@ -1,0 +1,111 @@
+package databaseCon;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import net.proteanit.sql.DbUtils;
+import oracle.jdbc.OracleDriver;
+
+public class UISelect extends SQLManager{
+
+	private JPanel panel;
+	private JFrame frame;
+	private JButton show;
+	private ResultSet rs ;
+	private JTable table;
+	private JScrollPane sc;
+	private int width = 600 , height =400;
+	
+	public UISelect(){
+		createTabel();
+	}
+	private void createTabel(){
+		
+		frame = new JFrame("Show");
+		frame.setSize(width, height);
+		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
+		frame.setVisible(true);
+		frame.setLayout(null);
+		
+		
+		show = new JButton("Show");
+		show.setBounds(width/2 -80, 0, 160, 40);
+		
+		panel = new JPanel();
+		panel.setBounds(0, 0, width, 100);
+		panel.setBackground(new Color(80,50,90));
+		panel.setLayout(null);
+		panel.add(show);
+		show.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				table.setModel(DbUtils.resultSetToTableModel(rs) );
+			
+				
+			}
+		});
+		
+		
+		try {
+			
+			sql = "select * from EMP";
+			DriverManager.registerDriver(new OracleDriver());
+			con = DriverManager.getConnection(url, user ,password);
+			stat =con.prepareStatement(sql);
+			 rs = stat.executeQuery();
+			
+			table = new JTable();
+			table.setModel(new DefaultTableModel(
+					new Object [][] {
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null},
+		                {null, null, null, null, null}
+		            }
+					,
+					new String [] {"NAME" ,"ID","GENDER" , "COUNTRY"}
+		            
+					));
+						
+			table.setPreferredScrollableViewportSize(null);
+			table.setFillsViewportHeight(false);
+			 sc = new JScrollPane(table);
+			 sc.setBounds(3, 100, width-10, 275);
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		
+		frame.add(sc);
+		frame.add(panel);	
+	}
+}

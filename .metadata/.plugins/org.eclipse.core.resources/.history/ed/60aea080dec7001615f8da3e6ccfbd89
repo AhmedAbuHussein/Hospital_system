@@ -1,0 +1,115 @@
+package pharmacy;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JButton;
+
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+
+import javax.swing.table.DefaultTableModel;
+
+import net.proteanit.sql.DbUtils;
+
+public class Companies extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+	private JButton contact;
+	private JButton exit;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Companies frame = new Companies();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Companies() {
+		setResizable(false);
+		setTitle("Companies");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 721, 396);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 695, 249);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{new Integer(1000), new Integer(1234), "pharma misr", "01010101010", "pharma.misr.com"},
+				{new Integer(1001), new Integer(1324), "pher3'on", "01111111111", "pher3'on.pharma.com"},
+				{new Integer(1002), new Integer(1243), "Elmotahda", "01101012010", "elmotahda.pharma.com"},
+				{new Integer(1003), new Integer(1342), "elshark", "01201201201", "elshark.pharma.com"},
+				{new Integer(1004), new Integer(4321), "elfarok", "01252152120", "elfarok.pharma.come"},
+				{new Integer(1005), new Integer(4231), "Elsalam", "01235215024", "elsalam.pahrma.com"},
+				{new Integer(1006), new Integer(4312), "ElNour", "01254623852", "elnour.pharma.com"},
+				{new Integer(1007), new Integer(4132), "Elshamy", "01254254325", "elshamy.pharma.com"},
+			},
+			new String[] {
+				"companyID", "serialNumber", "companyName", "phone", "Email"
+			}
+		) {
+			boolean[] columnEditables = new boolean[] {
+				true, true, true, true, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		table.getColumnModel().getColumn(4).setPreferredWidth(153);
+		
+		ResultSet rs = null;
+		String sql ="select * from company";
+		rs = Connect.connect(sql);
+		table.setModel(DbUtils.resultSetToTableModel(rs));
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		scrollPane.setViewportView(table);
+		
+		contact = new JButton("Contact");
+		contact.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		contact.setBounds(153, 290, 123, 36);
+		contentPane.add(contact);
+		
+		exit = new JButton("Exit");
+		exit.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		exit.setBounds(429, 290, 123, 36);
+		exit.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				
+				dispose();
+				new Home().setVisible(true);
+				
+			}
+		});
+		contentPane.add(exit);
+	}
+
+}

@@ -1,0 +1,6 @@
+1467399944840	Rename type 'Animation'
+1467402155776	Rename type 'EntityStatis'
+1467402184132	Rename package 'test.dve.Ahme.game.entities.statis'
+1467405979548	Extract local variable 'player2'
+1467407748614	Extract local variable 'player2'
+1467407766407	Extract local variable 'player3'

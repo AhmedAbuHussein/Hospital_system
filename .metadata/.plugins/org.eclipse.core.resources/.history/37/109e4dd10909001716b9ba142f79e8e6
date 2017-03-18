@@ -1,0 +1,282 @@
+package admin;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Paint;
+import java.awt.PaintContext;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
+import java.awt.Toolkit;
+import java.util.Date;
+
+import javafx.scene.layout.Border;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTree;
+import javax.swing.border.EmptyBorder;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.ColorModel;
+
+import javax.swing.JPanel;
+
+public class MainMenu extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Panel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainMenu frame = new MainMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainMenu() {
+		setTitle("Hospital Management System");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MainMenu.class.getResource("/Images/hos.png")));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(1300, 730);
+		setLocationRelativeTo(null);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		menuBar.add(mnFile);
+		contentPane = new Panel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(null);
+		setContentPane(contentPane);
+		
+		JLabel lblLogo = new JLabel("");
+		lblLogo.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/hos.png")));
+		lblLogo.setBounds(1200, 0, 84, 64);
+		contentPane.add(lblLogo);
+		
+		JLabel lblLogoIcon = new JLabel("");
+		lblLogoIcon.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/sh4.png")));
+		lblLogoIcon.setBounds(188, 0, 40, 64);
+		contentPane.add(lblLogoIcon);
+		
+		JLabel lblLogoIcon3 = new JLabel("");
+		lblLogoIcon3.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/sh1.png")));
+		lblLogoIcon3.setBounds(87, 0, 40, 64);
+		contentPane.add(lblLogoIcon3);
+		
+		JLabel lblLogoIcon2 = new JLabel("");
+		lblLogoIcon2.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/sh2.png")));
+		lblLogoIcon2.setBounds(137, 0, 40, 64);
+		contentPane.add(lblLogoIcon2);
+		
+		JLabel lblLogo_1 = new JLabel("logo2");
+		lblLogo_1.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/log2.png")));
+		lblLogo_1.setBounds(390, 0, 530, 64);
+		contentPane.add(lblLogo_1);
+		
+		JLabel lblDate = new JLabel(new Date()+"");
+		lblDate.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblDate.setBounds(577, 74, 236, 26);
+		contentPane.add(lblDate);
+		
+		JLabel lblHeader = new JLabel("");
+		lblHeader.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/header.png")));
+		lblHeader.setBounds(0, 0, 1387, 78);
+		contentPane.add(lblHeader);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 78, 197, 546);
+		contentPane.add(scrollPane);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 255, 255));
+		scrollPane.setViewportView(panel);
+		panel.setLayout(null);
+
+		//***********************************************************************LEFT LIST MENU **********************************************
+		
+		JMenu btnPatintList = new JMenu("Patient Registration");
+		btnPatintList.setBounds(10, 5, 175, 49);
+		btnPatintList.setForeground(Color.black);
+		btnPatintList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnPatintList.setBackground(new Color(20,70,80));
+		panel.add(btnPatintList);
+		
+		JMenu btnNursingList = new JMenu("Nursing");
+		btnNursingList.setForeground(Color.BLACK);
+		btnNursingList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnNursingList.setBackground(new Color(20,70,80));
+		btnNursingList.setBounds(10, 65, 175, 49);
+		panel.add(btnNursingList);
+		
+		JMenu btnDoctorsList = new JMenu("Doctor Management");
+		btnDoctorsList.setForeground(Color.BLACK);
+		btnDoctorsList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnDoctorsList.setBackground(new Color(20,70,80));
+		btnDoctorsList.setBounds(10, 123, 175, 49);
+		panel.add(btnDoctorsList);
+		
+		JMenu btnAdminList = new JMenu("Admin Mamagement");
+		btnAdminList.setForeground(Color.BLACK);
+		btnAdminList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnAdminList.setBackground(new Color(20,70,80));
+		btnAdminList.setBounds(10, 180, 175, 49);
+		panel.add(btnAdminList);
+		
+		JMenu btnPharmacyList = new JMenu("Pharmacy");
+		btnPharmacyList.setForeground(Color.BLACK);
+		btnPharmacyList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnPharmacyList.setBackground(new Color(20,70,80));
+		btnPharmacyList.setBounds(10, 240, 175, 49);
+		panel.add(btnPharmacyList);
+		
+		JMenu btnReportsList = new JMenu("Reports");
+		btnReportsList.setForeground(Color.BLACK);
+		btnReportsList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnReportsList.setBackground(new Color(20,70,80));
+		btnReportsList.setBounds(10, 300, 175, 49);
+		panel.add(btnReportsList);
+		
+		JMenu btnInvestgationList = new JMenu("Investgations");
+		btnInvestgationList.setForeground(Color.BLACK);
+		btnInvestgationList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnInvestgationList.setBackground(new Color(20,70,80));
+		btnInvestgationList.setBounds(10, 359, 175, 49);
+		panel.add(btnInvestgationList);
+		
+		JMenu btnLaundryList = new JMenu("Laundry Management");
+		btnLaundryList.setForeground(Color.BLACK);
+		btnLaundryList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnLaundryList.setBackground(new Color(20,70,80));
+		btnLaundryList.setBounds(10, 419, 175, 49);
+		panel.add(btnLaundryList);
+		
+		JMenu btnSearchList = new JMenu("Search Patient Details");
+		btnSearchList.setForeground(Color.BLACK);
+		btnSearchList.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 12));
+		btnSearchList.setBackground(new Color(20,70,80));
+		btnSearchList.setBounds(10, 479, 175, 54);
+		panel.add(btnSearchList);
+		
+	//*******************************************************************************************************************************
+		
+		JButton btnPatientRegistration = new JButton("Patient Registration");
+		btnPatientRegistration.addMouseListener(new Handler());
+		btnPatientRegistration.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnPatientRegistration.setForeground(Color.WHITE);
+		btnPatientRegistration.setBackground(Color.DARK_GRAY);
+		btnPatientRegistration.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/resption.png")));
+		btnPatientRegistration.setBounds(331, 352, 236, 78);
+		contentPane.add(btnPatientRegistration);
+		
+		JLabel lblCopyright = new JLabel("CopyRight Saved for Faculty of Computer & Informatics Suze Canal University ");
+		lblCopyright.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
+		lblCopyright.setBounds(352, 629, 637, 30);
+		contentPane.add(lblCopyright);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/header.png")));
+		label.setBounds(0, 629, 1387, 78);
+		contentPane.add(label);
+		
+		JButton btnNursing = new JButton("Nursing");
+		btnNursing.addMouseListener(new Handler());
+		btnNursing.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/nurs.png")));
+		btnNursing.setForeground(Color.WHITE);
+		btnNursing.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnNursing.setBackground(Color.DARK_GRAY);
+		btnNursing.setBounds(577, 352, 236, 78);
+		contentPane.add(btnNursing);
+		
+		JButton btnDoctorManagement = new JButton("Doctor Management");
+		btnDoctorManagement.addMouseListener(new Handler());
+		btnDoctorManagement.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/doc.png")));
+		btnDoctorManagement.setForeground(Color.WHITE);
+		btnDoctorManagement.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnDoctorManagement.setBackground(Color.DARK_GRAY);
+		btnDoctorManagement.setBounds(823, 352, 236, 78);
+		contentPane.add(btnDoctorManagement);
+		
+		JButton btnAdminMamagement = new JButton("Admin Mamagement");
+		btnAdminMamagement.addMouseListener(new Handler());
+		btnAdminMamagement.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/admin.png")));
+		btnAdminMamagement.setForeground(Color.WHITE);
+		btnAdminMamagement.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnAdminMamagement.setBackground(Color.DARK_GRAY);
+		btnAdminMamagement.setBounds(331, 441, 236, 78);
+		contentPane.add(btnAdminMamagement);
+		
+		JButton btnPharmacy = new JButton("Pharmacy");
+		btnPharmacy.addMouseListener(new Handler());
+		btnPharmacy.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/pharm.png")));
+		btnPharmacy.setForeground(Color.WHITE);
+		btnPharmacy.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnPharmacy.setBackground(Color.DARK_GRAY);
+		btnPharmacy.setBounds(577, 441, 236, 78);
+		contentPane.add(btnPharmacy);
+		
+		JButton btnReports = new JButton("Reports");
+		btnReports.addMouseListener(new Handler());
+		btnReports.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/rep.png")));
+		btnReports.setForeground(Color.WHITE);
+		btnReports.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnReports.setBackground(Color.DARK_GRAY);
+		btnReports.setBounds(823, 441, 236, 78);
+		contentPane.add(btnReports);
+		
+		JButton btnInvestgation = new JButton("Investgations");
+		btnInvestgation.addMouseListener(new Handler());
+		btnInvestgation.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/invs.png")));
+		btnInvestgation.setForeground(Color.WHITE);
+		btnInvestgation.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnInvestgation.setBackground(Color.DARK_GRAY);
+		btnInvestgation.setBounds(331, 530, 236, 78);
+		contentPane.add(btnInvestgation);
+		
+		JButton btnLaundryManagement = new JButton("Laundry Management");
+		btnLaundryManagement.addMouseListener(new Handler());
+		btnLaundryManagement.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/lund.png")));
+		btnLaundryManagement.setForeground(Color.WHITE);
+		btnLaundryManagement.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnLaundryManagement.setBackground(Color.DARK_GRAY);
+		btnLaundryManagement.setBounds(577, 530, 236, 78);
+		contentPane.add(btnLaundryManagement);
+		
+		JButton btnSearchPatientDetails = new JButton("Search Patient Details");
+		btnSearchPatientDetails.addMouseListener(new Handler());
+		btnSearchPatientDetails.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/search.png")));
+		btnSearchPatientDetails.setForeground(Color.WHITE);
+		btnSearchPatientDetails.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		btnSearchPatientDetails.setBackground(Color.DARK_GRAY);
+		btnSearchPatientDetails.setBounds(823, 530, 236, 78);
+		contentPane.add(btnSearchPatientDetails);
+	}
+}

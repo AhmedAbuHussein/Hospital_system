@@ -1,0 +1,71 @@
+package source;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+
+public class A extends JFrame {
+
+	private S contentPane;
+	private JTextField txtName;
+	private JPasswordField pwdPass;
+	private JLabel lblName;
+	private JLabel label;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					A frame = new A();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public A() {
+		setBackground(new Color(20,60,80));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1356, 759);
+		contentPane = new S();
+		contentPane.setBackground(Color.GREEN);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		txtName = new JTextField();
+		txtName.setBounds(583, 302, 226, 20);
+		contentPane.add(txtName);
+		txtName.setColumns(10);
+		
+		pwdPass = new JPasswordField();
+		pwdPass.setBounds(583, 368, 226, 20);
+		contentPane.add(pwdPass);
+		
+		lblName = new JLabel("Name");
+		lblName.setBounds(437, 305, 61, 17);
+		contentPane.add(lblName);
+		
+		label = new JLabel("Name");
+		label.setBounds(421, 368, 96, 20);
+		contentPane.add(label);
+	}
+}

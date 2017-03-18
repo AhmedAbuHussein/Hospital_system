@@ -1,0 +1,352 @@
+package hospitalProject;
+
+	import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+
+	/**
+	 *
+	 * @author Ahmed selemou
+	 */
+	public class Home extends JFrame {
+
+	    //********  tools ************
+	    private JPanel panel ;
+	    private JMenuBar menubar;
+	    protected JMenu admin ;
+	    protected JMenu reception ;
+	    protected JMenu doctor ;
+	    protected JMenu nurse ;
+	    protected JMenu pharmacy ;
+	    protected JMenu x_ray ;
+	    protected JMenu lab ;
+	    protected JMenu about ;
+	    protected JMenu accountancy ;
+	    private JMenuItem staff ;
+	    private JMenuItem user ;
+	    private JMenuItem searchpassword ;
+	    private JMenuItem room ;
+	    private JMenuItem adminchangepassword ;
+	    private JMenuItem receptionpatient;
+	    private JMenuItem doctorchangepassword ;
+	    private JMenuItem receptionchangepassword ;
+	    private JMenuItem doctorpatient ;
+	    private JMenuItem nursepatient ;
+	    private JMenuItem nursepassword ;
+	    private JMenuItem pharmacypassword ;
+	    private JMenuItem pharmacypatient ;
+	    private JMenuItem x_raypassword ;
+	    private JMenuItem x_raypatient ;
+	    private JMenuItem labpassword ;
+	    private JMenuItem labpatient ;
+	    private JMenuItem accountancypatient ;
+	    private JMenuItem accountancypassword ;
+	    private JMenuItem help ;
+	    private JLabel background ;
+
+	    public Home() {
+	    	 panel = new JPanel();
+	    	  menubar = new JMenuBar();
+		        admin = new JMenu("Admin");
+		        reception = new JMenu("Reception");
+		        doctor = new JMenu("Doctor");
+		        nurse = new JMenu("Nurse");
+		        pharmacy = new JMenu("Pharmacy");
+		        x_ray = new JMenu("X-Ray");
+		        lab = new JMenu("Lab");
+		        about = new JMenu("About");
+		        accountancy = new JMenu("Accountancy");
+		        staff = new JMenuItem("staff");
+		        user = new JMenuItem("user");
+		        searchpassword = new JMenuItem("serchpassword");
+		        room = new JMenuItem("room");
+		        adminchangepassword = new JMenuItem("changpassword");
+		        receptionpatient = new JMenuItem("patient");
+		        doctorchangepassword = new JMenuItem("changpassword");
+		        receptionchangepassword = new JMenuItem("changpassword");
+		        doctorpatient = new JMenuItem("patient");
+		        nursepatient = new JMenuItem("patient");
+		        nursepassword = new JMenuItem("changepassword");
+		        pharmacypassword = new JMenuItem("changepassword");
+		        pharmacypatient = new JMenuItem("patient");
+		        x_raypassword = new JMenuItem("changepassword");
+		        x_raypatient = new JMenuItem("patient");
+		        labpassword = new JMenuItem("changepassword");
+		        labpatient = new JMenuItem("patient");
+		        accountancypatient = new JMenuItem("patient");
+		        accountancypassword = new JMenuItem("changepassword");
+		        help = new JMenuItem("Help");
+		        background = new JLabel();
+	        creating_system();
+	    }
+
+	    private void creating_system() {
+	        
+	        background.setBounds(0, 0, getWidth(), getHeight());
+	        background.setIcon(new ImageIcon(getClass().getResource("/room3.png")));
+	        getContentPane().add(background);
+	        
+	        menubar.setBackground(Color.GRAY);
+	        menubar.setBounds(10, 10, 1200, 40);
+	        getContentPane().add(menubar);
+	        
+	        admin.setBounds(20, 10, 100, 20);
+	        admin.add(staff);
+	        admin.add(user);
+	        admin.add(searchpassword);
+	        admin.add(room);
+	        admin.add(adminchangepassword);
+	        menubar.add(admin);
+	        
+	        reception.setBounds(150, 10, 100, 20);
+	        reception.add(receptionpatient);
+	        reception.add(receptionchangepassword);
+	        menubar.add(reception);
+	        
+	        doctor.setBounds(270, 10, 100, 20);
+	        doctor.add(doctorpatient);
+	        doctor.add(doctorchangepassword);
+	        menubar.add(doctor);
+	        
+	        nurse.setBounds(390, 10, 100, 20);
+	        nurse.add(nursepassword);
+	        nurse.add(nursepatient);
+	        menubar.add(nurse);
+	        
+	        pharmacy.setBounds(510, 10, 100, 20);
+	        pharmacy.add(pharmacypassword);
+	        pharmacy.add(pharmacypatient);
+	        menubar.add(pharmacy);
+	        
+	        x_ray.setBounds(630, 10, 100, 20);
+	        x_ray.add(x_raypassword);
+	        x_ray.add(x_raypatient);
+	        menubar.add(x_ray);
+	        
+	        lab.setBounds(750, 10, 100, 20);
+	        lab.add(labpassword);
+	        lab.add(labpatient);
+	        menubar.add(lab);
+	        
+	        accountancy.setBounds(870, 10, 100, 20);
+	        accountancy.add(accountancypassword);
+	        accountancy.add(accountancypatient);
+	        menubar.add(accountancy);
+	        
+	        about.setBounds(990, 10, 100, 20);
+	        about.add(help);
+	        menubar.add(about);
+	       
+	        user.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                User user = new User();
+	                user.setVisible(true);
+
+	            }
+	        });
+	        staff.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Staff staff = new Staff();
+	                staff.setVisible(true);
+
+	            }
+	        });
+	        room.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Room room = new Room();
+	                room.setVisible(true);
+
+	            }
+	        });
+	        adminchangepassword.addActionListener(new ActionListener() {
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Changepassword changepassword = new Changepassword();
+	                changepassword.setVisible(true);
+
+	            }
+	        });
+	        searchpassword.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Serchpassword search = new Serchpassword();
+	                search.setVisible(true);
+
+	            }
+	        });
+
+	        doctorpatient.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Patientfordoctor doctor = new Patientfordoctor();
+	                doctor.setVisible(true);
+
+	            }
+	        });
+	        doctorchangepassword.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Changepassword changepassword = new Changepassword();
+	                changepassword.setVisible(true);
+
+	            }
+	        });
+	        nursepassword.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Changepassword changepassword = new Changepassword();
+	                changepassword.setVisible(true);
+
+	            }
+	        });
+	        nursepatient.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Patientfornurse patient = new Patientfornurse();
+	                patient.setVisible(true);
+
+	            }
+	        });
+	        labpassword.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Changepassword changepassword = new Changepassword();
+	                changepassword.setVisible(true);
+
+	            }
+	        });
+	        labpatient.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Patientforlab plab = new Patientforlab();
+	                plab.setVisible(true);
+
+	            }
+	        });
+	        x_raypassword.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Changepassword changepassword = new Changepassword();
+	                changepassword.setVisible(true);
+
+	            }
+	        });
+	        x_raypatient.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Patientforx_ray xpatient = new Patientforx_ray();
+	                xpatient.setVisible(true);
+
+	            }
+	        });
+	        accountancypassword.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Changepassword changepassword = new Changepassword();
+	                changepassword.setVisible(true);
+
+	            }
+	        });
+	        accountancypatient.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                patientforaccountancy accountancypatient = new patientforaccountancy();
+	                accountancypatient.setVisible(true);
+
+	            }
+	        });
+	        pharmacypassword.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Changepassword changepassword = new Changepassword();
+	                changepassword.setVisible(true);
+
+	            }
+	        });
+	        pharmacypatient.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Patientforpharmacy pharmpatient = new Patientforpharmacy();
+	                pharmpatient.setVisible(true);
+
+	            }
+	        });
+	        receptionchangepassword.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Changepassword changepassword = new Changepassword();
+	                changepassword.setVisible(true);
+
+	            }
+	        });
+
+	        receptionpatient.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Patientforreception receppatient = new Patientforreception();
+	                receppatient.setVisible(true);
+
+	            }
+	        });
+
+	        help.addActionListener(new ActionListener() {
+
+	             
+	            public void actionPerformed(ActionEvent e) {
+	                Help helping = new Help();
+	                helping.setVisible(true);
+
+	            }
+	        });
+
+	        
+	        setTitle("Home");
+	        setSize(1200, 800);
+	        setVisible(true);
+	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        
+	       
+	        panel.setSize(getHeight(), getWidth());
+	        panel.setLayout(null);
+	        panel.setBackground(Color.lightGray);
+	        setContentPane(panel);
+	        
+	    }
+
+	    public static void main(String[] args) {
+
+	        new Home();
+
+	    }
+
+	}
+

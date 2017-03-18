@@ -1,0 +1,157 @@
+package pharmacy;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JButton;
+
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+
+import net.proteanit.sql.DbUtils;
+
+public class Companies extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+	private JButton contact;
+	private JButton exit;
+	private JButton update;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Companies frame = new Companies();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Companies() {
+		setResizable(false);
+		setTitle("Companies");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(721, 396);
+		setLocationRelativeTo(null);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 695, 249);
+		contentPane.add(scrollPane);
+		
+		table = new JTable(){
+			public Component prepareRenderer(TableCellRenderer r,int data,int column){
+				Component c = super.prepareRenderer(r,data,column);
+				if(data % 2 == 0){
+					c.setBackground(Color.white);
+					c.setForeground(Color.red);
+				}else{
+					c.setBackground(Color.LIGHT_GRAY);
+					c.setForeground(Color.blue);
+				}
+				return c;
+			}
+		};
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+					{null, null, null, null, null,},
+			},
+			new String[] {
+				"companyID", "serialNumber", "companyName", "phone", "Email"
+			}
+		) {
+			
+			private static final long serialVersionUID = 1L;
+			boolean[] columnEditables = new boolean[] {
+				true, true, true, true, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		table.getColumnModel().getColumn(4).setPreferredWidth(153);
+		
+		ResultSet rs = null;
+		String sql ="select * from company";
+		rs = Connect.connect(sql);
+		table.setModel(DbUtils.resultSetToTableModel(rs));
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		scrollPane.setViewportView(table);
+		
+		contact = new JButton("Contact");
+		contact.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		contact.setBounds(86, 290, 123, 36);
+		contact.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Contact().setVisible(true);
+				
+			}
+		});
+		contentPane.add(contact);
+		
+		exit = new JButton("Exit");
+		exit.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		exit.setBounds(504, 290, 123, 36);
+		exit.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				
+				dispose();
+				new Home().setVisible(true);
+				
+			}
+		});
+		contentPane.add(exit);
+		
+		update = new JButton("Update");
+		update.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		update.setBounds(295, 290, 123, 36);
+		update.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new UpdateCompany().setVisible(true);
+				
+			}
+		});
+		contentPane.add(update);
+	}
+
+}

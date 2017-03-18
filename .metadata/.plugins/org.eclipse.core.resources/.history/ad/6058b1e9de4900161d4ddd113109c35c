@@ -1,0 +1,94 @@
+package databaseCon;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import net.proteanit.sql.DbUtils;
+import oracle.jdbc.OracleDriver;
+
+public class UISelect extends SQLManager{
+
+	private JPanel panel;
+	private JFrame frame;
+	private JButton show;
+	private JTable table;
+	private JScrollPane sc;
+	private int width = 600 , height =600;
+	
+	public UISelect(){
+		createTabel();
+	}
+	private void createTabel(){
+		
+		frame = new JFrame("Show");
+		frame.setSize(width, height);
+		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
+		frame.setVisible(true);
+		frame.setLayout(null);
+		
+		
+		show = new JButton("Show");
+		show.setBounds(width/2 -80, 0, 160, 40);
+		
+		panel = new JPanel();
+		panel.setBounds(0, 0, width, 179);
+		panel.setBackground(new Color(80,50,90));
+		panel.setLayout(null);
+		panel.add(show);
+		show.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					
+					sql = "select * from EMP";
+					DriverManager.registerDriver(new OracleDriver());
+					con = DriverManager.getConnection(url, user ,password);
+					stat =con.prepareStatement(sql);
+					ResultSet rs = stat.executeQuery();
+					
+					table = new JTable();
+					table.setModel(new DefaultTableModel(
+							new Object [][] {
+				                {null, null, null, null, null},
+				                {null, null, null, null, null},
+				                {null, null, null, null, null},
+				                {null, null, null, null, null}
+				            }
+							,
+							new String [] {"NAME" ,"ID","GENDER" , "COUNTRY",}
+				            
+							));
+								
+					table.setModel(DbUtils.resultSetToTableModel(rs) );
+					table.setPreferredScrollableViewportSize(new Dimension(width,20));
+					table.setFillsViewportHeight(true);
+					 sc = new JScrollPane();
+					 sc.setBounds(0, 180, width, height);
+					 sc.setViewportView(table);
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+					System.out.println(e.getMessage());
+				}
+				frame.add(sc);
+			}
+		});
+		
+		frame.add(panel);	
+	}
+}

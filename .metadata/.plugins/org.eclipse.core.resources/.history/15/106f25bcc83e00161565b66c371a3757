@@ -1,0 +1,51 @@
+package test.dve.Ahme.game.entities;
+
+import java.awt.Graphics;
+import test.dve.Ahme.game.Handler;
+import test.dve.Ahme.game.gfx.Assets;
+
+public class Player extends Creature {
+
+	public Player(Handler handler, float x, float y) {
+		super(handler, x, y,Creature.DEFUALT_CREATURE_WIDTH ,Creature.DEFUALT_CREATURE_HEIGHT );
+		bounds.x =23;
+		bounds.y =32;
+		bounds.width=20;
+		bounds.height=30;
+		
+	}
+
+	@Override
+	public void tick() {
+
+		input();
+		move();
+	}
+
+	@Override
+	public void render(Graphics g) {
+
+
+		g.drawImage(Assets.player,(int) (x - handler.getCamera().getxOffset())
+				 ,(int) (y - handler.getCamera().getyOffset()),width ,height,null);
+		
+	}
+	
+	private void input(){
+		
+		xMove = 0;
+		yMove = 0;
+		if(handler.getKeyManager().left)
+			xMove = -speed;
+		if(handler.getKeyManager().right)
+			xMove = speed;
+		if(handler.getKeyManager().up)
+			yMove = -speed;
+		if(handler.getKeyManager().down)
+			yMove = speed;
+		handler.getCamera().centerOnEntity(this);
+	
+		
+	}
+
+}

@@ -1,0 +1,237 @@
+package pharmacy;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+import java.awt.Font;
+
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class UpdateCustomer extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtCustID;
+	private JTextField txtSerial;
+	private JTextField txtCusName;
+	private JTextField txtAddress;
+	private JTextField txtPhone;
+	private JTextField txtEmail;
+	private JButton update;
+	private JButton insert;
+	private JButton exit;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UpdateCustomer frame = new UpdateCustomer();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public UpdateCustomer() {
+		setResizable(false);
+		setTitle("Customer Update");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 822, 369);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblCustomerId = new JLabel("Customer ID :");
+		lblCustomerId.setForeground(Color.WHITE);
+		lblCustomerId.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblCustomerId.setBounds(36, 41, 124, 34);
+		contentPane.add(lblCustomerId);
+		
+		txtCustID = new JTextField();
+		txtCustID.setBounds(167, 42, 228, 34);
+		contentPane.add(txtCustID);
+		txtCustID.setColumns(10);
+		
+		JLabel pharmacySerial = new JLabel("pharmacy serial :");
+		pharmacySerial.setForeground(Color.WHITE);
+		pharmacySerial.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		pharmacySerial.setBounds(36, 117, 124, 34);
+		contentPane.add(pharmacySerial);
+		
+		txtSerial = new JTextField();
+		txtSerial.setColumns(10);
+		txtSerial.setBounds(167, 118, 228, 34);
+		contentPane.add(txtSerial);
+		
+		JLabel lblCustomerName = new JLabel("Customer Name:");
+		lblCustomerName.setForeground(Color.WHITE);
+		lblCustomerName.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblCustomerName.setBounds(36, 195, 124, 34);
+		contentPane.add(lblCustomerName);
+		
+		txtCusName = new JTextField();
+		txtCusName.setColumns(10);
+		txtCusName.setBounds(167, 196, 228, 34);
+		contentPane.add(txtCusName);
+		
+		JLabel lblAddress = new JLabel("Address : ");
+		lblAddress.setForeground(Color.WHITE);
+		lblAddress.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblAddress.setBounds(445, 41, 95, 34);
+		contentPane.add(lblAddress);
+		
+		txtAddress = new JTextField();
+		txtAddress.setColumns(10);
+		txtAddress.setBounds(545, 41, 228, 34);
+		contentPane.add(txtAddress);
+		
+		JLabel lblPhone = new JLabel("phone :");
+		lblPhone.setForeground(Color.WHITE);
+		lblPhone.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblPhone.setBounds(445, 116, 95, 34);
+		contentPane.add(lblPhone);
+		
+		txtPhone = new JTextField();
+		txtPhone.setColumns(10);
+		txtPhone.setBounds(545, 116, 228, 34);
+		contentPane.add(txtPhone);
+		
+		JLabel lblEmail = new JLabel("Email :");
+		lblEmail.setForeground(Color.WHITE);
+		lblEmail.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblEmail.setBounds(445, 194, 95, 34);
+		contentPane.add(lblEmail);
+		
+		txtEmail = new JTextField();
+		txtEmail.setColumns(10);
+		txtEmail.setBounds(545, 196, 228, 34);
+		contentPane.add(txtEmail);
+		
+		update = new JButton("Update");
+		update.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				String sql;
+				String ID 		=	txtCustID.getText().trim() ;
+				String name 	=	txtCusName.getText().trim();
+				String serial 	=	txtSerial.getText().trim();
+				String phone 	=	txtPhone.getText().trim();
+				String email 	= 	txtEmail.getText().trim();
+				String address  =   txtAddress.getText().trim();
+				if(ID.equals("")||name.equals("")||serial.equals("")||phone.equals("")||email.equals("") || address.equals("")){
+					JOptionPane.showMessageDialog(null, "plz full the space","information",2);
+				}else{
+					
+					int ids;
+					int phoneNum;
+					while(true){
+						try{
+							ids = Integer.parseInt(ID);
+							phoneNum = Integer.parseInt(phone);
+							if(ids>0 && phoneNum>0){
+								
+								sql = "INSERT INTO customer(customerID, pharmacySerial, customerName, address, phone, Email) VALUES"
+										+ " ("+Integer.parseInt(ID)+","+Integer.parseInt(serial)+",'"+name+"','"+address+"','"+phone+"','"+email+"')";
+								
+								Connect.connectUpdate(sql);
+								dispose();
+								new Customer().setVisible(true);
+								break;
+							}
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Plz enter positeve number");
+						}
+						
+					}
+					
+				}
+					
+				
+				
+			}
+		});
+		update.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		update.setBounds(121, 269, 110, 34);
+		contentPane.add(update);
+		
+		insert = new JButton("Insert");
+		insert.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		insert.setBounds(352, 269, 110, 34);
+		insert.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				String sql;
+				String ID 		=	txtCustID.getText().trim() ;
+				String name 	=	txtCusName.getText().trim();
+				String serial 	=	txtSerial.getText().trim();
+				String phone 	=	txtPhone.getText().trim();
+				String email 	= 	txtEmail.getText().trim();
+				String address  =   txtAddress.getText().trim();
+				if(ID.equals("")||name.equals("")||serial.equals("")||phone.equals("")||email.equals("") || address.equals("")){
+					JOptionPane.showMessageDialog(null, "plz full the space","information",2);
+				}else{
+					int ids;
+					int phoneNum;
+					while(true){
+						try{
+							ids = Integer.parseInt(ID);
+							phoneNum = Integer.parseInt(phone);
+							if(ids>0 && phoneNum>0){
+								
+								sql = "INSERT INTO customer(customerID, pharmacySerial, customerName, address, phone, Email) VALUES"
+										+ " ("+Integer.parseInt(ID)+","+Integer.parseInt(serial)+",'"+name+"','"+address+"','"+phone+"','"+email+"')";
+								
+								Connect.connectUpdate(sql);
+								dispose();
+								new Customer().setVisible(true);
+								break;
+							}
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Plz enter positeve number");
+						}
+						
+					}
+					
+					
+				}
+					
+			}
+		});
+		contentPane.add(insert);
+		
+		exit = new JButton("Exit");
+		exit.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		exit.setBounds(583, 269, 110, 34);
+		exit.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Customer().setVisible(true);
+				
+			}
+		});
+		contentPane.add(exit);
+	}
+}

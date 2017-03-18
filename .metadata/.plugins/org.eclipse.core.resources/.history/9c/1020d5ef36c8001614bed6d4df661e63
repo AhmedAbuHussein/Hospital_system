@@ -1,0 +1,171 @@
+package pharmacy;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JButton;
+
+public class Contact extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtComName;
+	private JTextField txtComID;
+	private JTextField txtProName;
+	private JTextField txtQuantity;
+
+	private JButton send;
+	private JButton exit;
+	
+	private JTextArea textArea;
+	private JScrollPane scrollPane;
+	private JLabel comID;
+	private JLabel comName;
+	private JLabel ProdName;
+	private JLabel quantity;
+	private JLabel lblComment;
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+				try {
+					Contact frame = new Contact();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+		
+	}
+
+	
+	public Contact() {
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize( 480, 722);
+		setLocationRelativeTo(null);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		comName = new JLabel("Company Name ");
+		comName.setHorizontalAlignment(SwingConstants.CENTER);
+		comName.setForeground(Color.WHITE);
+		comName.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		comName.setBounds(169, 28, 136, 25);
+		contentPane.add(comName);
+		
+		txtComName = new JTextField();
+		txtComName.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtComName.setBounds(44, 64, 387, 38);
+		contentPane.add(txtComName);
+		txtComName.setColumns(10);
+		
+		comID = new JLabel("Company ID");
+		comID.setHorizontalAlignment(SwingConstants.CENTER);
+		comID.setForeground(Color.WHITE);
+		comID.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		comID.setBounds(169, 126, 136, 25);
+		contentPane.add(comID);
+		
+		txtComID = new JTextField();
+		txtComID.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtComID.setColumns(10);
+		txtComID.setBounds(44, 162, 387, 38);
+		contentPane.add(txtComID);
+		
+		ProdName = new JLabel("Product Name");
+		ProdName.setHorizontalAlignment(SwingConstants.CENTER);
+		ProdName.setForeground(Color.WHITE);
+		ProdName.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		ProdName.setBounds(169, 223, 136, 25);
+		contentPane.add(ProdName);
+		
+		txtProName = new JTextField();
+		txtProName.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtProName.setColumns(10);
+		txtProName.setBounds(44, 259, 387, 38);
+		contentPane.add(txtProName);
+		
+		quantity = new JLabel("Quantity");
+		quantity.setHorizontalAlignment(SwingConstants.CENTER);
+		quantity.setForeground(Color.WHITE);
+		quantity.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		quantity.setBounds(169, 327, 136, 25);
+		contentPane.add(quantity);
+		
+		txtQuantity = new JTextField();
+		txtQuantity.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtQuantity.setColumns(10);
+		txtQuantity.setBounds(44, 363, 387, 38);
+		contentPane.add(txtQuantity);
+		
+		lblComment = new JLabel("Comment");
+		lblComment.setHorizontalAlignment(SwingConstants.CENTER);
+		lblComment.setForeground(Color.WHITE);
+		lblComment.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblComment.setBounds(175, 427, 124, 32);
+		contentPane.add(lblComment);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(53, 475, 387, 127);
+		contentPane.add(scrollPane);
+		
+		textArea = new JTextArea();
+		textArea.setFont(new Font("Georgia", Font.PLAIN, 13));
+		scrollPane.setViewportView(textArea);
+		
+		send = new JButton("Send");
+		send.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		send.setBounds(79, 638, 118, 32);
+		send.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				textArea.setText("");
+				txtComID.setText("");
+				txtComName.setText("");
+				txtProName.setText("");
+				txtQuantity.setText("");
+				JOptionPane.showMessageDialog(null, "message Sent Successfully","Information",2);
+				dispose();
+				new Companies().setVisible(true);
+				
+				
+			}
+		});
+		contentPane.add(send);
+		
+		exit = new JButton("Exit");
+		exit.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		exit.setBounds(276, 638, 118, 32);
+		exit.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new Companies().setVisible(true);
+				
+			}
+		});
+		contentPane.add(exit);
+	}
+}
