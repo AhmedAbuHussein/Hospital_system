@@ -1,5 +1,0 @@
-package doctors;
-
-public enum DateOfBirth {
-
-}
