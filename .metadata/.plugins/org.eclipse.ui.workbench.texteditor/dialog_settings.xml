@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="HDM" key="selection"/>
+		<item value="getClass()" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Doctors.class"/>
+			<item value="MainMenu.class"/>
 			<item value="new Handler()"/>
 			<item value="new admin.Handler()"/>
 			<item value="handler"/>
 			<item value="node_1"/>
 			<item value="textArea"/>
 			<item value="System.out"/>
-			<item value="setlocationRelativeTo"/>
-			<item value="setpo"/>
 		</list>
 		<list key="replacehistory">
+			<item value="getClass()"/>
 			<item value="HDM"/>
 			<item value="HDF"/>
 		</list>

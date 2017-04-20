@@ -10,7 +10,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.ResultSet;
 import java.util.Date;
 
 import javax.swing.ButtonGroup;
@@ -28,11 +27,8 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.TableCellRenderer;
-
-import net.proteanit.sql.DbUtils;
-import doctors.Doctors;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 public class Patient extends JFrame {
 
