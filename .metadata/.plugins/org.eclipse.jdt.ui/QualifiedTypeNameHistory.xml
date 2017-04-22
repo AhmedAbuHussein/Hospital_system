@@ -54,10 +54,10 @@
 <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
 <fullyQualifiedTypeName name="handler.HandlerMotion"/>
 <fullyQualifiedTypeName name="java.awt.event.FocusListener"/>
-<fullyQualifiedTypeName name="handler.HandlerFocus"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
 <fullyQualifiedTypeName name="java.awt.Graphics"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="handler.HandlerFocus"/>
 </qualifiedTypeNameHistroy>

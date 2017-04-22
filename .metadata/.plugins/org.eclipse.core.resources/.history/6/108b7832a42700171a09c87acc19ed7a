@@ -1,0 +1,152 @@
+package login;
+
+import handler.HandlerFocus;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.util.Date;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JToolBar;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.SwingConstants;
+import javax.swing.JMenuItem;
+
+
+
+import java.awt.Toolkit;
+
+public class Login extends JFrame {
+
+	private Panel contentPane;
+	private JTextField txtName;
+	private JPasswordField pwdPassword;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login frame = new Login();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Login() {
+		setResizable(false);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/Images/hos.png")));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(1300, 730);
+		setLocationRelativeTo(null);
+		HandlerFocus HDF = new HandlerFocus();
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("    File   ");
+		mnFile.setIcon(new ImageIcon(Login.class.getResource("/Images/folder_burned_system.ico")));
+		mnFile.setHorizontalAlignment(SwingConstants.CENTER);
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmContactWithAdmin = new JMenuItem("Contact With Admin");
+		mnFile.add(mntmContactWithAdmin);
+		contentPane = new Panel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(null);
+		contentPane.setBackground(Color.BLUE);
+		
+		setContentPane(contentPane);
+		
+		JLabel lblName = new JLabel("Name : ");
+		lblName.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		lblName.setBounds(423, 307, 111, 28);
+		contentPane.add(lblName);
+		
+		JLabel lblPassword = new JLabel("Password : ");
+		lblPassword.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		lblPassword.setBounds(423, 362, 111, 28);
+		contentPane.add(lblPassword);
+		
+		JLabel lblSpecialization = new JLabel("Specialization : ");
+		lblSpecialization.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		lblSpecialization.setBounds(423, 422, 111, 28);
+		contentPane.add(lblSpecialization);
+		
+		txtName = new JTextField();
+		txtName.setBounds(582, 307, 310, 30);
+		txtName.addFocusListener(HDF);
+		contentPane.add(txtName);
+		txtName.setColumns(10);
+		
+		pwdPassword = new JPasswordField();
+		pwdPassword.setBounds(582, 362, 310, 28);
+		pwdPassword.addFocusListener(HDF);
+		contentPane.add(pwdPassword);
+		
+		JButton btnLogin = new JButton("LogIn");
+		btnLogin.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		btnLogin.setBounds(542, 497, 172, 30);
+		contentPane.add(btnLogin);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		btnExit.setBounds(736, 497, 172, 30);
+		contentPane.add(btnExit);
+		
+		JLabel lblHosnaem = new JLabel("");
+		lblHosnaem.setIcon(new ImageIcon(getClass().getResource("/Images/log2.png")));
+		lblHosnaem.setBounds(375, 66, 533, 73);
+		contentPane.add(lblHosnaem);
+		
+		JLabel lblHosint = new JLabel("");
+		lblHosint.setIcon(new ImageIcon(Login.class.getResource("/Images/log3.png")));
+		lblHosint.setBounds(375, 146, 618, 43);
+		contentPane.add(lblHosint);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Admin", "Doctors", "Nurses "}));
+		comboBox.setBounds(582, 422, 310, 28);
+		contentPane.add(comboBox);
+		
+		JLabel lblDate = new JLabel();
+		lblDate.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
+		lblDate.setText(new Date()+"");
+		lblDate.setBounds(570, 192, 244, 35);
+		contentPane.add(lblDate);
+		
+		JLabel lblTeeth = new JLabel("");
+		lblTeeth.setIcon(new ImageIcon(Login.class.getResource("/Images/sh.png")));
+		lblTeeth.setBounds(82, 0, 40, 55);
+		contentPane.add(lblTeeth);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(Login.class.getResource("/Images/sh2.png")));
+		label.setBounds(147, 0, 40, 55);
+		contentPane.add(label);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setIcon(new ImageIcon(Login.class.getResource("/Images/sh4.png")));
+		label_1.setBounds(214, 0, 40, 55);
+		contentPane.add(label_1);
+	}
+}
