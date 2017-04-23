@@ -53,5 +53,10 @@
     "location": "C:\\Program Files\\Java\\jdbc\\rs2xml.jar",
     "status": "UNRESOLVED",
     "error": "No call model found for \u0027C:\\Program Files\\Java\\jdbc\\rs2xml.jar\u0027. Neither fingerprint \u00278a970b2f2ce64a6d8c96b850d8db8908ec3148f1\u0027 nor symbolic name \u0027rs2xml\u0027 are known."
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar",
+    "status": "RESOLVED"
   }
 }

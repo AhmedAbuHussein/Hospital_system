@@ -166,7 +166,7 @@ public class Patient extends JFrame {
 	//***************************************************Label information ***************************************************
 				
 				lblPatientInfo = new JLabel("Patient Information");
-				lblPatientInfo.setIcon(new ImageIcon(Doctors.class.getResource("/Images/sh2.png")));
+				lblPatientInfo.setIcon(new ImageIcon(getClass().getResource("/Images/sh2.png")));
 				lblPatientInfo.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
 				lblPatientInfo.setBounds(87, 90, 225, 45);
 				contentPane.add(lblPatientInfo);

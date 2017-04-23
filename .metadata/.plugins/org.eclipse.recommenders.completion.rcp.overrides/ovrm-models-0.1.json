@@ -8,5 +8,10 @@
     "coordinate": "jre:jre:zip:ovrm:1.0.0",
     "location": "C:\\Program Files\\Java\\jre1.8.0_45\\lib\\rt.jar",
     "status": "RESOLVED"
+  },
+  "C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar": {
+    "location": "C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar\u0027. Skipped."
   }
 }
