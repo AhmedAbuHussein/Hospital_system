@@ -27,6 +27,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableModel;
 import javax.swing.UIManager;
 import javax.swing.ImageIcon;
 import javax.swing.border.LineBorder;
@@ -39,33 +40,49 @@ import javax.swing.JScrollPane;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Doctor extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTable table;
-	private JTable table_1;
-	private HandlerMotion hdm;
-	private HandlerFocus hdf;
-	//
-	private JTextField txtSsn;
+	private JTextField txtId;
 	private JTextField txtFirstName;
 	private JTextField txtLastName;
+	private JTextField txtPhone;
+	private JTextField txtEmail;
+	private JTextField txtAddress;
+	private JTextField txtWebsite;
+	private JTextField txtQualification;
+	private JTextField txtAcademies;
+	
+	private JButton btnSave;
+	private JButton btnClear;
+	private JButton btnRemove;
+	private JButton btnDaysSave;
+	private JButton btnDadysDelete;
+
+	private JComboBox comDay;
+	private JComboBox comYear;
+	private JComboBox comMonth;
+	private JComboBox comBlood;
+	private JComboBox comTimeFromHour;
+	private JComboBox comTimeFromMinute;
+	private JComboBox comTimeToHour;
+	private JComboBox comTimeToMinute;
+	
+	private JRadioButton rdbSaturday;
+	private JRadioButton rdbSunday;
+	private JRadioButton rdbMonday;
+	private JRadioButton rdbTuseday;
+	private JRadioButton rdbWedensday;
+	private JRadioButton rdbThurthday;
+	private JRadioButton rdbFriday;	
+	
+	private JTable tableDays;
+	private JTable tableInfo;
+	private HandlerMotion hdm;
+	private HandlerFocus hdf;
 	
 		
 	
@@ -207,92 +224,96 @@ public class Doctor extends JFrame {
 		contentPane.add(lblHospitalSystem);
 		
 		JLabel lblId = new JLabel("ID : ");
-		lblId.setBounds(73, 91, 132, 21);
+		lblId.setBounds(73, 91, 101, 21);
 		lblId.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		lblId.setForeground(new Color(0, 0, 128));
 		contentPane.add(lblId);
 		
-		JLabel lblNewLabel = new JLabel("First Name : ");
-		lblNewLabel.setBounds(73, 134, 132, 21);
-		lblNewLabel.setForeground(new Color(0, 0, 128));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		contentPane.add(lblNewLabel);
+		JLabel lblFirstName = new JLabel("First Name : ");
+		lblFirstName.setBounds(73, 134, 101, 21);
+		lblFirstName.setForeground(new Color(0, 0, 128));
+		lblFirstName.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		contentPane.add(lblFirstName);
 		
 		JLabel lblLastName = new JLabel("Last Name : ");
-		lblLastName.setBounds(73, 174, 111, 22);
+		lblLastName.setBounds(73, 174, 101, 22);
 		lblLastName.setForeground(new Color(0, 0, 128));
 		lblLastName.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		contentPane.add(lblLastName);
 		
-		JLabel lblNewLabel_1 = new JLabel("Phone : ");
-		lblNewLabel_1.setBounds(73, 216, 101, 22);
-		lblNewLabel_1.setForeground(new Color(0, 0, 128));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		contentPane.add(lblNewLabel_1);
+		JLabel lblPhone = new JLabel("Phone : ");
+		lblPhone.setBounds(73, 216, 101, 22);
+		lblPhone.setForeground(new Color(0, 0, 128));
+		lblPhone.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		contentPane.add(lblPhone);
 		
-		JLabel lblNewLabel_2 = new JLabel("Date of birth : ");
-		lblNewLabel_2.setBounds(73, 249, 132, 26);
-		lblNewLabel_2.setForeground(new Color(0, 0, 128));
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		contentPane.add(lblNewLabel_2);
+		JLabel lblDateOfBirth = new JLabel("Date of birth : ");
+		lblDateOfBirth.setBounds(73, 249, 101, 26);
+		lblDateOfBirth.setForeground(new Color(0, 0, 128));
+		lblDateOfBirth.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		contentPane.add(lblDateOfBirth);
 		
-		JLabel lblNewLabel_3 = new JLabel("Blood Group : ");
-		lblNewLabel_3.setBounds(73, 286, 111, 22);
-		lblNewLabel_3.setForeground(new Color(0, 0, 128));
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		contentPane.add(lblNewLabel_3);
-		
-		JLabel label = new JLabel("");
-		label.setBounds(55, 303, 46, 14);
-		contentPane.add(label);
+		JLabel lblBlood = new JLabel("Blood Group : ");
+		lblBlood.setBounds(73, 286, 101, 22);
+		lblBlood.setForeground(new Color(0, 0, 128));
+		lblBlood.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		contentPane.add(lblBlood);
 		
 		JLabel lblEmail = new JLabel("E-mail : ");
-		lblEmail.setBounds(73, 335, 132, 21);
+		lblEmail.setBounds(73, 335, 93, 21);
 		lblEmail.setForeground(new Color(0, 0, 128));
 		lblEmail.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		contentPane.add(lblEmail);
 		
-		textField = new JTextField();
-		textField.setBounds(176, 91, 187, 27);
-		textField.addFocusListener(hdf);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtId = new JTextField();
+		txtId.setBounds(176, 91, 187, 27);
+		txtId.addFocusListener(hdf);
+		contentPane.add(txtId);
+		txtId.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(176, 134, 187, 27);
-		textField_1.addFocusListener(hdf);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		txtFirstName = new JTextField();
+		txtFirstName.setBounds(176, 134, 187, 27);
+		txtFirstName.addFocusListener(hdf);
+		contentPane.add(txtFirstName);
+		txtFirstName.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(176, 171, 187, 27);
-		textField_2.addFocusListener(hdf);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		txtLastName = new JTextField();
+		txtLastName.setBounds(176, 171, 187, 27);
+		txtLastName.addFocusListener(hdf);
+		contentPane.add(txtLastName);
+		txtLastName.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(176, 207, 187, 27);
-		textField_3.addFocusListener(hdf);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		txtPhone = new JTextField();
+		txtPhone.setBounds(176, 207, 187, 27);
+		txtPhone.addFocusListener(hdf);
+		contentPane.add(txtPhone);
+		txtPhone.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(176, 249, 187, 29);
-		textField_4.addFocusListener(hdf);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+	    comDay = new JComboBox();
+	    comDay.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		comDay.setBounds(176, 253, 55, 21);
+		contentPane.add(comDay);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(176, 286, 187, 27);
-		textField_5.addFocusListener(hdf);
-		contentPane.add(textField_5);
-		textField_5.setColumns(10);
+		comMonth = new JComboBox();
+		comMonth.setModel(new DefaultComboBoxModel(new String[] {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
+		comMonth.setBounds(241, 253, 55, 21);
+		contentPane.add(comMonth);
 		
-		textField_6 = new JTextField();
-		textField_6.setBounds(176, 331, 187, 27);
-		textField_6.addFocusListener(hdf);
-		contentPane.add(textField_6);
-		textField_6.setColumns(10);
+		comYear = new JComboBox();
+		comYear.setModel(new DefaultComboBoxModel(new String[] {"1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970"}));
+		comYear.setBounds(306, 253, 55, 21);
+		contentPane.add(comYear);
+		
+		txtEmail = new JTextField();
+		txtEmail.setBounds(176, 331, 187, 27);
+		txtEmail.addFocusListener(hdf);
+		
+		comBlood = new JComboBox();
+		comBlood.setModel(new DefaultComboBoxModel(new String[] {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"}));
+		comBlood.setBounds(177, 286, 186, 20);
+		contentPane.add(comBlood);
+		contentPane.add(txtEmail);
+		txtEmail.setColumns(10);
 		
 		JLabel lblWebsite = new JLabel("Website : ");
 		lblWebsite.setBounds(595, 100, 66, 18);
@@ -306,65 +327,52 @@ public class Doctor extends JFrame {
 		lblAddress.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
 		contentPane.add(lblAddress);
 		
-		JLabel lblSpeciality = new JLabel("Speciality : ");
-		lblSpeciality.setBounds(595, 174, 75, 22);
-		lblSpeciality.setForeground(new Color(0, 0, 128));
-		lblSpeciality.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		contentPane.add(lblSpeciality);
+		JLabel lblDepartment = new JLabel("Departement : ");
+		lblDepartment.setBounds(595, 174, 111, 22);
+		lblDepartment.setForeground(new Color(0, 0, 128));
+		lblDepartment.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		contentPane.add(lblDepartment);
 		
-		JLabel lblNewLabel_4 = new JLabel("Departement : ");
-		lblNewLabel_4.setBounds(595, 216, 111, 22);
-		lblNewLabel_4.setForeground(new Color(0, 0, 128));
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		contentPane.add(lblNewLabel_4);
+		JLabel lblQualification = new JLabel("Qualification : ");
+		lblQualification.setBounds(595, 216, 93, 22);
+		lblQualification.setForeground(new Color(0, 0, 128));
+		lblQualification.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		contentPane.add(lblQualification);
 		
-		JLabel lblNewLabel_5 = new JLabel("Qualification : ");
-		lblNewLabel_5.setBounds(595, 258, 93, 22);
-		lblNewLabel_5.setForeground(new Color(0, 0, 128));
-		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		contentPane.add(lblNewLabel_5);
+		JLabel lblAcademies = new JLabel("Academies : ");
+		lblAcademies.setBounds(595, 262, 93, 22);
+		lblAcademies.setForeground(new Color(0, 0, 128));
+		lblAcademies.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
+		contentPane.add(lblAcademies);
 		
-		JLabel lblNewLabel_6 = new JLabel("Academies : ");
-		lblNewLabel_6.setBounds(606, 311, 93, 22);
-		lblNewLabel_6.setForeground(new Color(0, 0, 128));
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 13));
-		contentPane.add(lblNewLabel_6);
+		txtAddress = new JTextField();
+		txtAddress.setBounds(727, 131, 187, 29);
+		txtAddress.addFocusListener(hdf);
+		contentPane.add(txtAddress);
+		txtAddress.setColumns(10);
 		
-		textField_7 = new JTextField();
-		textField_7.setBounds(727, 131, 187, 29);
-		textField_7.addFocusListener(hdf);
-		contentPane.add(textField_7);
-		textField_7.setColumns(10);
+		txtWebsite = new JTextField();
+		txtWebsite.setBounds(727, 91, 187, 27);
+		txtWebsite.addFocusListener(hdf);
+		contentPane.add(txtWebsite);
+		txtWebsite.setColumns(10);
 		
-		textField_8 = new JTextField();
-		textField_8.setBounds(727, 91, 187, 27);
-		textField_8.addFocusListener(hdf);
-		contentPane.add(textField_8);
-		textField_8.setColumns(10);
+		txtQualification = new JTextField();
+		txtQualification.setBounds(727, 216, 187, 26);
+		txtQualification.addFocusListener(hdf);
 		
-		textField_9 = new JTextField();
-		textField_9.setBounds(727, 175, 187, 27);
-		textField_9.addFocusListener(hdf);
-		contentPane.add(textField_9);
-		textField_9.setColumns(10);
+		JComboBox comDepartement = new JComboBox();
+		comDepartement.setModel(new DefaultComboBoxModel(new String[] {"General", "Xray", "Emergency", "Accounting", "Reception", "Pharmacy", "Emergency", "Cardiology", "Geriatrics", "Gynaecology", "Paediatrics"}));
+		comDepartement.setBounds(727, 174, 187, 29);
+		contentPane.add(comDepartement);
+		contentPane.add(txtQualification);
+		txtQualification.setColumns(10);
 		
-		textField_10 = new JTextField();
-		textField_10.setBounds(727, 212, 187, 26);
-		textField_10.addFocusListener(hdf);
-		contentPane.add(textField_10);
-		textField_10.setColumns(10);
-		
-		textField_11 = new JTextField();
-		textField_11.setBounds(727, 258, 187, 26);
-		textField_11.addFocusListener(hdf);
-		contentPane.add(textField_11);
-		textField_11.setColumns(10);
-		
-		textField_12 = new JTextField();
-		textField_12.setBounds(727, 303, 187, 26);
-		textField_12.addFocusListener(hdf);
-		contentPane.add(textField_12);
-		textField_12.setColumns(10);
+		txtAcademies = new JTextField();
+		txtAcademies.setBounds(727, 261, 187, 26);
+		txtAcademies.addFocusListener(hdf);
+		contentPane.add(txtAcademies);
+		txtAcademies.setColumns(10);
 		
 		JLabel lblDays = new JLabel("Days : ");
 		lblDays.setBounds(997, 54, 139, 31);
@@ -373,73 +381,71 @@ public class Doctor extends JFrame {
 		contentPane.add(lblDays);
 		ButtonGroup button_group=new ButtonGroup();
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Saturday");
-		rdbtnNewRadioButton.setBounds(997, 91, 109, 23);
-		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		rdbtnNewRadioButton.setForeground(new Color(0, 0, 128));
-		contentPane.add(rdbtnNewRadioButton);
+		rdbSaturday = new JRadioButton("Saturday");
+		rdbSaturday.setBounds(997, 91, 109, 23);
+		rdbSaturday.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		rdbSaturday.setForeground(new Color(0, 0, 128));
+		contentPane.add(rdbSaturday);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Sunday");
-		rdbtnNewRadioButton_1.setBounds(997, 118, 109, 23);
-		rdbtnNewRadioButton_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		rdbtnNewRadioButton_1.setForeground(new Color(0, 0, 128));
-		contentPane.add(rdbtnNewRadioButton_1);
+		rdbSunday = new JRadioButton("Sunday");
+		rdbSunday.setBounds(997, 118, 109, 23);
+		rdbSunday.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		rdbSunday.setForeground(new Color(0, 0, 128));
+		contentPane.add(rdbSunday);
 		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Monday");
-		rdbtnNewRadioButton_2.setForeground(new Color(0, 0, 128));
-		rdbtnNewRadioButton_2.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		rdbtnNewRadioButton_2.setBounds(997, 144, 109, 23);
-		contentPane.add(rdbtnNewRadioButton_2);
+		rdbMonday = new JRadioButton("Monday");
+		rdbMonday.setForeground(new Color(0, 0, 128));
+		rdbMonday.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		rdbMonday.setBounds(997, 144, 109, 23);
+		contentPane.add(rdbMonday);
 		
-		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Tuseday");
-		rdbtnNewRadioButton_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		rdbtnNewRadioButton_3.setForeground(new Color(0, 0, 128));
-		rdbtnNewRadioButton_3.setBounds(997, 175, 109, 23);
-		contentPane.add(rdbtnNewRadioButton_3);
+		rdbTuseday = new JRadioButton("Tuseday");
+		rdbTuseday.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		rdbTuseday.setForeground(new Color(0, 0, 128));
+		rdbTuseday.setBounds(997, 175, 109, 23);
+		contentPane.add(rdbTuseday);
 		
-		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Wedensday");
-		rdbtnNewRadioButton_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		rdbtnNewRadioButton_4.setForeground(new Color(0, 0, 128));
-		rdbtnNewRadioButton_4.setBounds(997, 211, 109, 23);
-		contentPane.add(rdbtnNewRadioButton_4);
+		rdbWedensday = new JRadioButton("Wedensday");
+		rdbWedensday.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		rdbWedensday.setForeground(new Color(0, 0, 128));
+		rdbWedensday.setBounds(997, 211, 109, 23);
+		contentPane.add(rdbWedensday);
 		
-		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Thurthday");
-		rdbtnNewRadioButton_5.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		rdbtnNewRadioButton_5.setForeground(new Color(0, 0, 128));
-		rdbtnNewRadioButton_5.setBounds(997, 241, 109, 23);
-		contentPane.add(rdbtnNewRadioButton_5);
+		rdbThurthday = new JRadioButton("Thurthday");
+		rdbThurthday.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		rdbThurthday.setForeground(new Color(0, 0, 128));
+		rdbThurthday.setBounds(997, 241, 109, 23);
+		contentPane.add(rdbThurthday);
 		
-		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Friday");
-		rdbtnNewRadioButton_6.setForeground(new Color(0, 0, 128));
-		rdbtnNewRadioButton_6.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		rdbtnNewRadioButton_6.setBounds(997, 273, 109, 23);
-		contentPane.add(rdbtnNewRadioButton_6);
-		button_group.add(rdbtnNewRadioButton);
-		button_group.add(rdbtnNewRadioButton_1);
-		button_group.add( rdbtnNewRadioButton_2);
-		button_group.add(rdbtnNewRadioButton_3);
-		button_group.add(rdbtnNewRadioButton_4);
-		button_group.add(rdbtnNewRadioButton_5);
-		button_group.add(rdbtnNewRadioButton_6);
+		rdbFriday = new JRadioButton("Friday");
+		rdbFriday.setForeground(new Color(0, 0, 128));
+		rdbFriday.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		rdbFriday.setBounds(997, 273, 109, 23);
+		contentPane.add(rdbFriday);
+		button_group.add(rdbSaturday);
+		button_group.add(rdbSunday);
+		button_group.add( rdbMonday);
+		button_group.add(rdbTuseday);
+		button_group.add(rdbWedensday);
+		button_group.add(rdbThurthday);
+		button_group.add(rdbFriday);
 		
 		
-		JLabel lblNewLabel_7 = new JLabel("Time from : ");
-		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
-		lblNewLabel_7.setForeground(new Color(0, 0, 128));
-		lblNewLabel_7.setBounds(1128, 91, 122, 21);
-		contentPane.add(lblNewLabel_7);
+		JLabel lblTimeFrom = new JLabel("Time from : ");
+		lblTimeFrom.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
+		lblTimeFrom.setForeground(new Color(0, 0, 128));
+		lblTimeFrom.setBounds(1128, 91, 122, 21);
+		contentPane.add(lblTimeFrom);
 		
-		textField_13 = new JTextField();
-		textField_13.setBounds(1123, 125, 174, 26);
-		textField_13.addFocusListener(hdf);
-		contentPane.add(textField_13);
-		textField_13.setColumns(10);
+		comTimeFromHour = new JComboBox();
+		comTimeFromHour.setModel(new DefaultComboBoxModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"}));
+		comTimeFromHour.setBounds(1125, 119, 66, 22);
+		contentPane.add(comTimeFromHour);
 		
-		textField_14 = new JTextField();
-		textField_14.setBounds(1128, 216, 169, 22);
-		textField_14.addFocusListener(hdf);
-		contentPane.add(textField_14);
-		textField_14.setColumns(10);
+		comTimeFromMinute = new JComboBox();
+		comTimeFromMinute.setModel(new DefaultComboBoxModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"}));
+		comTimeFromMinute.setBounds(1201, 119, 66, 22);
+		contentPane.add(comTimeFromMinute);
 		
 		JLabel lblTimeTo = new JLabel("Time to : ");
 		lblTimeTo.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 11));
@@ -447,55 +453,64 @@ public class Doctor extends JFrame {
 		lblTimeTo.setBounds(1128, 171, 122, 22);
 		contentPane.add(lblTimeTo);
 		
-		JButton btnNewButton = new JButton("Save ");
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnNewButton.setForeground( Color.white);
-		btnNewButton.addMouseListener(hdm);
-		btnNewButton.setBackground(new Color(20,30,60));
-		btnNewButton.setBounds(450, 376, 95, 31);
-		contentPane.add(btnNewButton);
+		btnSave = new JButton("Save ");
+		btnSave.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnSave.setForeground( Color.white);
+		btnSave.addMouseListener(hdm);
 		
-		JButton btnNewButton_1 = new JButton("Clear");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnNewButton_1.setForeground( Color.white);
-		btnNewButton_1.addMouseListener(hdm);
-		btnNewButton_1.setBackground(new Color(20,30,60));
-		btnNewButton_1.setBounds(580, 376, 112, 31);
-		contentPane.add(btnNewButton_1);
+		comTimeToHour = new JComboBox();
+		comTimeToHour.setModel(new DefaultComboBoxModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"}));
+		comTimeToHour.setBounds(1125, 216, 66, 22);
+		contentPane.add(comTimeToHour);
 		
-		JButton btnNewButton_2 = new JButton("Exit");
+		comTimeToMinute = new JComboBox();
+		comTimeToMinute.setModel(new DefaultComboBoxModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"}));
+		comTimeToMinute.setBounds(1201, 216, 66, 22);
+		contentPane.add(comTimeToMinute);
+		btnSave.setBackground(new Color(20,30,60));
+		btnSave.setBounds(327, 405, 95, 31);
+		contentPane.add(btnSave);
 		
-		btnNewButton_2.addActionListener(new ActionListener() {
+		btnClear = new JButton("Clear");
+		btnClear.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnClear.setForeground( Color.white);
+		btnClear.addMouseListener(hdm);
+		btnClear.setBackground(new Color(20,30,60));
+		btnClear.setBounds(457, 405, 112, 31);
+		contentPane.add(btnClear);
+		
+		btnRemove = new JButton("Remove");
+		
+		btnRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnNewButton_2.setForeground( Color.white);
-		btnNewButton_2.addMouseListener(hdm);
-		btnNewButton_2.setBackground(new Color(20,30,60));
-		btnNewButton_2.setBounds(714, 376, 111, 31);
-		//btnNewButton_2.addActionListener(hd);
-		contentPane.add(btnNewButton_2);
+		btnRemove.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnRemove.setForeground( Color.white);
+		btnRemove.addMouseListener(hdm);
+		btnRemove.setBackground(new Color(20,30,60));
+		btnRemove.setBounds(591, 405, 111, 31);
+		contentPane.add(btnRemove);
 		
-		JButton btnNewButton_3 = new JButton("Save");
-		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnNewButton_3.setForeground( Color.white);
-		btnNewButton_3.addMouseListener(hdm);
-		btnNewButton_3.setBackground(new Color(20,30,60));
-		btnNewButton_3.setBounds(997, 336, 109, 31);
-		contentPane.add(btnNewButton_3);
+		btnDaysSave = new JButton("Save");
+		btnDaysSave.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnDaysSave.setForeground( Color.white);
+		btnDaysSave.addMouseListener(hdm);
+		btnDaysSave.setBackground(new Color(20,30,60));
+		btnDaysSave.setBounds(997, 405, 109, 31);
+		contentPane.add(btnDaysSave);
 		
-		JButton btnNewButton_4 = new JButton("Delete");
-		btnNewButton_4.addActionListener(new ActionListener() {
+		btnDadysDelete = new JButton("Delete");
+		btnDadysDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
-		btnNewButton_4.setForeground( Color.white);
-		btnNewButton_4.addMouseListener(hdm);
-		btnNewButton_4.setBackground(new Color(20,30,60));
-		btnNewButton_4.setBounds(1147, 336, 103, 31);
-		contentPane.add(btnNewButton_4);
+		btnDadysDelete.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnDadysDelete.setForeground( Color.white);
+		btnDadysDelete.addMouseListener(hdm);
+		btnDadysDelete.setBackground(new Color(20,30,60));
+		btnDadysDelete.setBounds(1147, 405, 103, 31);
+		contentPane.add(btnDadysDelete);
 		
 		JLabel lblDoctorInformation = new JLabel("Doctor information");
 		lblDoctorInformation.setIcon(new ImageIcon("F:\\programs java\\hospital\\resource\\nurs.png"));
@@ -508,8 +523,8 @@ public class Doctor extends JFrame {
 		scrollPane.setBounds(822, 463, 510, 192);
 		contentPane.add(scrollPane);
 		
-		//table = new JTable();
-		table = new JTable(){
+		
+		tableDays = new JTable(){
 			public Component prepareRenderer(TableCellRenderer r,int data,int column){
 				Component c = super.prepareRenderer(r,data,column);
 				if(data % 2 == 0){
@@ -523,7 +538,7 @@ public class Doctor extends JFrame {
 			}
 			
 		};
-		table.setModel(new DefaultTableModel(
+		tableDays.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null},
 				{null, null, null, null},
@@ -551,25 +566,13 @@ public class Doctor extends JFrame {
 			}
 		));
 		
-		table.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e){
-				int row = table.getSelectedRow();
-				txtSsn.setText(table.getValueAt(row, 0).toString());
-				txtFirstName.setText(table.getValueAt(row, 1).toString());
-				txtLastName.setText(table.getValueAt(row, 2).toString());
-		
-				
-			}
-		});
-		
-		scrollPane.setViewportView(table);
+		scrollPane.setViewportView(tableDays);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(84, 463, 697, 192);
 		contentPane.add(scrollPane_1);
 		
-	    table_1 = new JTable();
-		table_1 = new JTable(){
+		tableInfo = new JTable(){
 			public Component prepareRenderer(TableCellRenderer r,int data,int column){
 				Component c = super.prepareRenderer(r,data,column);
 				if(data % 2 == 0){
@@ -584,7 +587,7 @@ public class Doctor extends JFrame {
 			
 		};
 		
-		table_1.setModel(new DefaultTableModel(
+		tableInfo.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null, null},
@@ -611,21 +614,19 @@ public class Doctor extends JFrame {
 				"ID", "First Name", "Last Name", "Phone", "DOB", "Blood Group", "E-mail", "Website", "Address", "Speciality", "Departement", "Qualification", "Academies"
 			}
 		));
-		table_1.addMouseListener(new MouseAdapter() {
+		tableInfo.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e){
-				int row = table.getSelectedRow();
-				txtSsn.setText(table.getValueAt(row, 0).toString());
-				txtFirstName.setText(table.getValueAt(row, 1).toString());
-				txtLastName.setText(table.getValueAt(row, 2).toString());
+				int row = tableDays.getSelectedRow();
+				
 		
 				
 			}
 		});
-		scrollPane_1.setViewportView(table_1);
+		scrollPane_1.setViewportView(tableInfo);
 		
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(getClass().getResource("/images/9.jpg")));
-		label_1.setBounds(10,11,1487,705);
+		label_1.setBounds(0,-21,1497,737);
 		contentPane.add(label_1);
 		
 		JMenuBar menuBar = new JMenuBar();
