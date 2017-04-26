@@ -1,5 +1,5 @@
 package patient;
-
+//This is patient status design Salwa Ahmed Handler Merna EZZ
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
