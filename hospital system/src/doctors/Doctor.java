@@ -1,4 +1,5 @@
 package doctors;
+//this is gui for doctor information by heba hamed and handler by shymaa hossny
 
 import handler.HandlerFocus;
 import handler.HandlerMotion;
