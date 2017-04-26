@@ -1,9 +1,17 @@
 package patient;
 //This is patient status design Salwa Ahmed Handler Merna EZZ
 import java.awt.Color;
+
+import handler.HandlerFocus;
+import handler.HandlerMotion;
+
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.util.Date;
 
@@ -14,22 +22,27 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 public class PatientStatus extends JFrame {
 
-	private Panel contentPane;
+	private JPanel contentPane;
 	private JLabel label;
 	private JTextField txtSearch;
 	private JButton btnSearch;
 	
 	private JScrollPane scrollPane;
 	private JTable table;
+	private HandlerMotion hdm;
+	private HandlerFocus hdf;
+	
 	
 	private JTextField txtId;
 	private JTextField txtFirstName;
@@ -99,6 +112,108 @@ public class PatientStatus extends JFrame {
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
+		
+
+		JMenu mnPatientRegistration = new JMenu("Patient Registration");
+		menuBar.add(mnPatientRegistration);
+		
+		JMenuItem mntmPatientRegisrations = new JMenuItem("Patient regisrations");
+		mnPatientRegistration.add(mntmPatientRegisrations);
+		
+		JMenuItem mntmSearchPatientDetails = new JMenuItem("Search Patient details");
+		mnPatientRegistration.add(mntmSearchPatientDetails);
+		
+		JMenu mnDoctorManagement = new JMenu("Doctor management");
+		menuBar.add(mnDoctorManagement);
+		
+		JMenuItem mntmDoctorInformation = new JMenuItem("doctor information");
+		mnDoctorManagement.add(mntmDoctorInformation);
+		
+		JMenuItem mntmPatientStatus = new JMenuItem("patient status");
+		mnDoctorManagement.add(mntmPatientStatus);
+		
+		JMenuItem mntmChangePassword = new JMenuItem("change password");
+		mnDoctorManagement.add(mntmChangePassword);
+		
+		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
+		menuBar.add(mnPharmacyManagement);
+		
+		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
+		mnPharmacyManagement.add(mntmMedicamentInformation);
+		
+		JMenuItem mntmChangePassword_1 = new JMenuItem("change password");
+		mnPharmacyManagement.add(mntmChangePassword_1);
+		
+		JMenu mnInvestigations = new JMenu("Investigations");
+		menuBar.add(mnInvestigations);
+		
+		JMenuItem mntmInvestigationType = new JMenuItem("investigation type");
+		mnInvestigations.add(mntmInvestigationType);
+		
+		JMenuItem mntmPatientStatus_1 = new JMenuItem("patient status");
+		mnInvestigations.add(mntmPatientStatus_1);
+		
+		JMenuItem mntmChangePassword_2 = new JMenuItem("change password");
+		mnInvestigations.add(mntmChangePassword_2);
+		
+		JMenu mnNursing = new JMenu("Nursing");
+		menuBar.add(mnNursing);
+		
+		JMenuItem mntmNurseInformation = new JMenuItem("nurse information");
+		mnNursing.add(mntmNurseInformation);
+		
+		JMenuItem mntmPatientStatus_2 = new JMenuItem("patient status");
+		mnNursing.add(mntmPatientStatus_2);
+		
+		JMenuItem mntmChangePassword_3 = new JMenuItem("change password");
+		mnNursing.add(mntmChangePassword_3);
+		
+		JMenu mnAdminManagement = new JMenu("Admin management");
+		menuBar.add(mnAdminManagement);
+		
+		JMenuItem mntmDoctorInformation_1 = new JMenuItem("doctor information");
+		mnAdminManagement.add(mntmDoctorInformation_1);
+		
+		JMenuItem mntmNurseInformation_1 = new JMenuItem("nurse information");
+		mnAdminManagement.add(mntmNurseInformation_1);
+		
+		JMenuItem mntmPharmacyInformation = new JMenuItem("pharmacy information");
+		mnAdminManagement.add(mntmPharmacyInformation);
+		
+		JMenuItem mntmInvestigationInformation = new JMenuItem("investigation information");
+		mnAdminManagement.add(mntmInvestigationInformation);
+		
+		JMenuItem mntmPatientInformation = new JMenuItem("patient information");
+		mnAdminManagement.add(mntmPatientInformation);
+		
+		JMenuItem mntmChangePassword_4 = new JMenuItem("change password");
+		mnAdminManagement.add(mntmChangePassword_4);
+		
+		JMenu mnReport = new JMenu(" Reports");
+		menuBar.add(mnReport);
+		
+		JMenuItem mntmPatientReport = new JMenuItem("patient report");
+		mnReport.add(mntmPatientReport);
+		
+		JMenuItem mntmPharmacyReport = new JMenuItem("pharmacy report");
+		mnReport.add(mntmPharmacyReport);
+		
+		JMenuItem mntmLaundryReport = new JMenuItem("laundry report");
+		mnReport.add(mntmLaundryReport);
+		
+		JMenu mnLaundryManagement = new JMenu("Laundry management");
+		menuBar.add(mnLaundryManagement);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(230, 230, 250));
+		contentPane.setToolTipText("");
+		
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		hdm =  new HandlerMotion();
+		hdf = new HandlerFocus();
+		
 		
 		
 		JLabel lblLogo = new JLabel("");
@@ -191,11 +306,12 @@ public class PatientStatus extends JFrame {
 				txtSearch = new JTextField();
 				txtSearch.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
 				txtSearch.setBounds(589, 132, 292, 26);
+				txtSearch.addFocusListener(hdf);
 				contentPane.add(txtSearch);
 				txtSearch.setColumns(10);
 				
 				btnSearch = new JButton("Search");
-			
+				btnSearch .addMouseListener(hdm);
 				btnSearch.setBackground(new Color(20,40,80));
 				btnSearch.setForeground(Color.WHITE);
 				btnSearch.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
@@ -206,7 +322,22 @@ public class PatientStatus extends JFrame {
 				scrollPane.setBounds(30, 475, 1303, 155);
 				contentPane.add(scrollPane);
 				
+				
 				table = new JTable();
+				table = new JTable(){
+					public Component prepareRenderer(TableCellRenderer r,int data,int column){
+						Component c = super.prepareRenderer(r,data,column);
+						if(data % 2 == 0){
+							c.setBackground(Color.white);
+							c.setForeground(Color.black);
+						}else{
+							c.setBackground(Color.LIGHT_GRAY);
+							c.setForeground(new Color(200,60,50));
+						}
+						return c;
+					}
+					
+				};
 				table.setModel(new DefaultTableModel(
 					new Object[][] {
 						{null, null, null, null, null, null, null},
@@ -247,22 +378,25 @@ public class PatientStatus extends JFrame {
 				contentPane.add(lblLastName);
 				
 				txtId = new JTextField();
+				txtId.addFocusListener(hdf);
 				txtId.setBounds(589, 228, 292, 26);
 				contentPane.add(txtId);
 				txtId.setColumns(10);
 				
 				txtFirstName = new JTextField();
 				txtFirstName.setColumns(10);
+				txtFirstName.addFocusListener(hdf);
 				txtFirstName.setBounds(589, 283, 292, 26);
 				contentPane.add(txtFirstName);
 				
 				txtLastName = new JTextField();
 				txtLastName.setColumns(10);
+				txtLastName.addFocusListener(hdf);
 				txtLastName.setBounds(589, 347, 292, 26);
 				contentPane.add(txtLastName);
 				
 				btnUpdate = new JButton("Update");
-		
+				btnUpdate.addMouseListener(hdm);
 				btnUpdate.setBackground(new Color(20,30,60));
 				btnUpdate.setForeground(Color.WHITE);
 				btnUpdate.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 16));
@@ -270,7 +404,7 @@ public class PatientStatus extends JFrame {
 				contentPane.add(btnUpdate);
 				
 				btnExit = new JButton("Exit");
-				
+				btnExit .addMouseListener(hdm);
 				btnExit.setForeground(Color.WHITE);
 				btnExit.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 16));
 				btnExit.setBackground(new Color(120, 30, 60));
@@ -279,6 +413,7 @@ public class PatientStatus extends JFrame {
 				
 				btnClear = new JButton("Clear");
 				btnClear.setForeground(Color.WHITE);
+				btnClear  .addMouseListener(hdm);
 				btnClear.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 16));
 				btnClear.setBackground(new Color(20, 50, 60));
 				btnClear.setBounds(619, 404, 125, 41);
@@ -289,6 +424,7 @@ public class PatientStatus extends JFrame {
 				contentPane.add(scrollPane_2);
 				
 				txtInvestigation = new JTextArea();
+				txtInvestigation.addFocusListener(hdf);
 				txtInvestigation.setWrapStyleWord(true);
 			
 				txtInvestigation.setLineWrap(true);
@@ -305,6 +441,7 @@ public class PatientStatus extends JFrame {
 				contentPane.add(scrollPane_1);
 				
 				txtPatientStatus = new JTextArea();
+				txtPatientStatus.addFocusListener(hdf);
 				txtPatientStatus.setWrapStyleWord(true);
 				
 				txtPatientStatus.setLineWrap(true);
