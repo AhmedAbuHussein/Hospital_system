@@ -2,6 +2,7 @@ package patient;
 //This is patient status design Salwa Ahmed Handler Merna EZZ
 import java.awt.Color;
 
+
 import handler.HandlerFocus;
 import handler.HandlerMotion;
 
@@ -33,7 +34,7 @@ import javax.swing.table.TableCellRenderer;
 
 public class PatientStatus extends JFrame {
 
-	private JPanel contentPane;
+	private Panel contentPane;
 	private JLabel label;
 	private JTextField txtSearch;
 	private JButton btnSearch;
@@ -203,7 +204,7 @@ public class PatientStatus extends JFrame {
 		
 		JMenu mnLaundryManagement = new JMenu("Laundry management");
 		menuBar.add(mnLaundryManagement);
-		contentPane = new JPanel();
+		contentPane = new Panel();
 		contentPane.setBackground(new Color(230, 230, 250));
 		contentPane.setToolTipText("");
 		
