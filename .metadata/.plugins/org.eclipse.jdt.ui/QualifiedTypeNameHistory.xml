@@ -25,7 +25,6 @@
 <fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
 <fullyQualifiedTypeName name="java.time.chrono.JapaneseDate"/>
 <fullyQualifiedTypeName name="javax.swing.JComponent"/>
-<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="doctors.Doctors.TheHandler"/>
 <fullyQualifiedTypeName name="doctors.Doctors"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="handler.HandlerFocus"/>
 <fullyQualifiedTypeName name="patient.Panel"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>

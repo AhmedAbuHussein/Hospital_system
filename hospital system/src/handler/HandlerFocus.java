@@ -8,7 +8,7 @@ public class HandlerFocus implements FocusListener {
 
 	public void focusGained(FocusEvent e) {
 		
-		e.getComponent().setBackground(new Color(250,200,210));
+		e.getComponent().setBackground(Color.LIGHT_GRAY);
 	}
 
 	public void focusLost(FocusEvent e) {

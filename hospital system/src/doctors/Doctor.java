@@ -1,51 +1,51 @@
 package doctors;
-//this is gui for doctor information by heba hamed and handler by shymaa hossny
 
 import handler.HandlerFocus;
 import handler.HandlerMotion;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-
-import java.awt.Font;
 import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.HeadlessException;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JTextField;
-import javax.swing.JRadioButton;
-import javax.swing.JButton;
-import javax.swing.JScrollBar;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableModel;
-import javax.swing.UIManager;
-import javax.swing.ImageIcon;
-import javax.swing.border.LineBorder;
-import javax.swing.ListSelectionModel;
-
-import java.awt.Toolkit;
-import java.awt.ScrollPane;
-
-import javax.swing.JScrollPane;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+//import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+//import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
+import net.proteanit.sql.DbUtils;
+import sqlconnection.SQLCon;
+//import java.awt.image.BufferedImage;
+//import java.sql.SQLException;
+//import javax.swing.JComboBox;
 
 public class Doctor extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtId;
 	private JTextField txtFirstName;
@@ -62,7 +62,6 @@ public class Doctor extends JFrame {
 	private JButton btnRemove;
 	private JButton btnDaysSave;
 	private JButton btnDadysDelete;
-
 	private JComboBox comDay;
 	private JComboBox comYear;
 	private JComboBox comMonth;
@@ -82,8 +81,7 @@ public class Doctor extends JFrame {
 	
 	private JTable tableDays;
 	private JTable tableInfo;
-	private HandlerMotion hdm;
-	private HandlerFocus hdf;
+	private JComboBox comDepartement;
 	
 		
 	
@@ -111,14 +109,16 @@ public class Doctor extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("F:\\programs java\\hospital\\resource\\s.jpeg"));
 		setTitle("Hospital management System");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		setSize(1450, 705);
+		setLocationRelativeTo(null);
 		
-		JMenuBar menuBar_1 = new JMenuBar();
-		setJMenuBar(menuBar_1);
 		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+
 		JMenu mnPatientRegistration = new JMenu("Patient Registration");
-		menuBar_1.add(mnPatientRegistration);
+		menuBar.add(mnPatientRegistration);
 		
 		JMenuItem mntmPatientRegisrations = new JMenuItem("Patient regisrations");
 		mnPatientRegistration.add(mntmPatientRegisrations);
@@ -127,7 +127,7 @@ public class Doctor extends JFrame {
 		mnPatientRegistration.add(mntmSearchPatientDetails);
 		
 		JMenu mnDoctorManagement = new JMenu("Doctor management");
-		menuBar_1.add(mnDoctorManagement);
+		menuBar.add(mnDoctorManagement);
 		
 		JMenuItem mntmDoctorInformation = new JMenuItem("doctor information");
 		mnDoctorManagement.add(mntmDoctorInformation);
@@ -139,7 +139,7 @@ public class Doctor extends JFrame {
 		mnDoctorManagement.add(mntmChangePassword);
 		
 		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
-		menuBar_1.add(mnPharmacyManagement);
+		menuBar.add(mnPharmacyManagement);
 		
 		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
 		mnPharmacyManagement.add(mntmMedicamentInformation);
@@ -148,7 +148,7 @@ public class Doctor extends JFrame {
 		mnPharmacyManagement.add(mntmChangePassword_1);
 		
 		JMenu mnInvestigations = new JMenu("Investigations");
-		menuBar_1.add(mnInvestigations);
+		menuBar.add(mnInvestigations);
 		
 		JMenuItem mntmInvestigationType = new JMenuItem("investigation type");
 		mnInvestigations.add(mntmInvestigationType);
@@ -160,7 +160,7 @@ public class Doctor extends JFrame {
 		mnInvestigations.add(mntmChangePassword_2);
 		
 		JMenu mnNursing = new JMenu("Nursing");
-		menuBar_1.add(mnNursing);
+		menuBar.add(mnNursing);
 		
 		JMenuItem mntmNurseInformation = new JMenuItem("nurse information");
 		mnNursing.add(mntmNurseInformation);
@@ -172,7 +172,7 @@ public class Doctor extends JFrame {
 		mnNursing.add(mntmChangePassword_3);
 		
 		JMenu mnAdminManagement = new JMenu("Admin management");
-		menuBar_1.add(mnAdminManagement);
+		menuBar.add(mnAdminManagement);
 		
 		JMenuItem mntmDoctorInformation_1 = new JMenuItem("doctor information");
 		mnAdminManagement.add(mntmDoctorInformation_1);
@@ -193,7 +193,7 @@ public class Doctor extends JFrame {
 		mnAdminManagement.add(mntmChangePassword_4);
 		
 		JMenu mnReport = new JMenu(" Reports");
-		menuBar_1.add(mnReport);
+		menuBar.add(mnReport);
 		
 		JMenuItem mntmPatientReport = new JMenuItem("patient report");
 		mnReport.add(mntmPatientReport);
@@ -205,17 +205,18 @@ public class Doctor extends JFrame {
 		mnReport.add(mntmLaundryReport);
 		
 		JMenu mnLaundryManagement = new JMenu("Laundry management");
-		menuBar_1.add(mnLaundryManagement);
+		menuBar.add(mnLaundryManagement);
+
+		
+
+		
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(230, 230, 250));
-		contentPane.setToolTipText("");
-		
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		contentPane.setLayout(null);
-		
-		hdm =  new HandlerMotion();
-		hdf = new HandlerFocus();
+		setContentPane(contentPane);
+
+	HandlerMotion	hdm =  new HandlerMotion();
+	HandlerFocus	hdf = new HandlerFocus();
 		
 		JLabel lblHospitalSystem = new JLabel("Hospital System");
 		lblHospitalSystem.setIcon(new ImageIcon(getClass().getResource("/images/sh4.png")));
@@ -268,27 +269,27 @@ public class Doctor extends JFrame {
 		
 		txtId = new JTextField();
 		txtId.setBounds(176, 91, 187, 27);
-		txtId.addFocusListener(hdf);
 		contentPane.add(txtId);
 		txtId.setColumns(10);
+		txtId.addFocusListener(hdf);
 		
 		txtFirstName = new JTextField();
 		txtFirstName.setBounds(176, 134, 187, 27);
-		txtFirstName.addFocusListener(hdf);
 		contentPane.add(txtFirstName);
 		txtFirstName.setColumns(10);
+		txtFirstName.addFocusListener(hdf);
 		
 		txtLastName = new JTextField();
 		txtLastName.setBounds(176, 171, 187, 27);
-		txtLastName.addFocusListener(hdf);
 		contentPane.add(txtLastName);
 		txtLastName.setColumns(10);
+		txtLastName.addFocusListener(hdf);
 		
 		txtPhone = new JTextField();
 		txtPhone.setBounds(176, 207, 187, 27);
-		txtPhone.addFocusListener(hdf);
 		contentPane.add(txtPhone);
 		txtPhone.setColumns(10);
+		txtPhone.addFocusListener(hdf);
 		
 	    comDay = new JComboBox();
 	    comDay.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
@@ -348,39 +349,37 @@ public class Doctor extends JFrame {
 		
 		txtAddress = new JTextField();
 		txtAddress.setBounds(727, 131, 187, 29);
-		txtAddress.addFocusListener(hdf);
 		contentPane.add(txtAddress);
 		txtAddress.setColumns(10);
+		txtAddress.addFocusListener(hdf);
 		
 		txtWebsite = new JTextField();
 		txtWebsite.setBounds(727, 91, 187, 27);
-		txtWebsite.addFocusListener(hdf);
 		contentPane.add(txtWebsite);
 		txtWebsite.setColumns(10);
+		txtWebsite.addFocusListener(hdf);
 		
 		txtQualification = new JTextField();
 		txtQualification.setBounds(727, 216, 187, 26);
-		txtQualification.addFocusListener(hdf);
-		
-		JComboBox comDepartement = new JComboBox();
-		comDepartement.setModel(new DefaultComboBoxModel(new String[] {"General", "Xray", "Emergency", "Accounting", "Reception", "Pharmacy", "Emergency", "Cardiology", "Geriatrics", "Gynaecology", "Paediatrics"}));
-		comDepartement.setBounds(727, 174, 187, 29);
-		contentPane.add(comDepartement);
 		contentPane.add(txtQualification);
 		txtQualification.setColumns(10);
+		txtQualification.addFocusListener(hdf);
+		comDepartement = new JComboBox();
+		comDepartement.setModel(new DefaultComboBoxModel(new String[] {"General", "Xray", "Emergency", "Accounting", "Reception", "Pharmacy", "Emergency", "Cardiology", "Geriatrics", "Gynaecology", "Paediatrics"}));
+		comDepartement.setBounds(727, 176, 187, 27);
+		contentPane.add(comDepartement);
 		
 		txtAcademies = new JTextField();
 		txtAcademies.setBounds(727, 261, 187, 26);
-		txtAcademies.addFocusListener(hdf);
 		contentPane.add(txtAcademies);
 		txtAcademies.setColumns(10);
-		
+		txtAcademies.addFocusListener(hdf);
 		JLabel lblDays = new JLabel("Days : ");
 		lblDays.setBounds(997, 54, 139, 31);
 		lblDays.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		lblDays.setForeground(new Color(0, 0, 128));
 		contentPane.add(lblDays);
-		ButtonGroup button_group=new ButtonGroup();
+		final ButtonGroup button_group=new ButtonGroup();
 		
 		rdbSaturday = new JRadioButton("Saturday");
 		rdbSaturday.setBounds(997, 91, 109, 23);
@@ -454,10 +453,34 @@ public class Doctor extends JFrame {
 		lblTimeTo.setBounds(1128, 171, 122, 22);
 		contentPane.add(lblTimeTo);
 		
-		btnSave = new JButton("Save ");
+		btnSave = new JButton("Update ");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(txtId.getText().equals(""))
+				{
+					 JOptionPane.showMessageDialog(null,"please enter your id");
+					 return;
+				}
+				else
+				{
+					try
+					{
+						String sql="update doctor_information set name='" + txtFirstName.getText()+" "+txtLastName.getText() + "',phone='"+Integer.parseInt(txtPhone.getText())+"',date_of_birth='" + comYear.getSelectedItem().toString()+"/"+comMonth.getSelectedItem().toString() +"/"+comDay.getSelectedItem().toString()+ "',blood_group='" +comBlood.getSelectedItem().toString() + "',e_mail='" + txtEmail.getText()+ "',website='" + txtWebsite.getText() + "',address='" + txtAddress.getText() + "',department='" + comDepartement.getSelectedItem().toString() + "',qualification='" + txtQualification.getText()+ "',academics='" + txtAcademies.getText()+ "' where ssn='" +Integer.parseInt( txtId.getText())+ "'";
+		                SQLCon.SQLConn(sql);
+		                ResultSet rs = SQLCon.SQLConnection("select * from doctor_information");
+		        		tableInfo.setModel(DbUtils.resultSetToTableModel(rs));
+		                JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+					}
+					catch (Exception ex) {
+	                    JOptionPane.showMessageDialog(null, ex.getMessage());
+	                }
+				}
+				
+				
+			}
+		});
 		btnSave.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnSave.setForeground( Color.white);
-		btnSave.addMouseListener(hdm);
 		
 		comTimeToHour = new JComboBox();
 		comTimeToHour.setModel(new DefaultComboBoxModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"}));
@@ -469,49 +492,152 @@ public class Doctor extends JFrame {
 		comTimeToMinute.setBounds(1201, 216, 66, 22);
 		contentPane.add(comTimeToMinute);
 		btnSave.setBackground(new Color(20,30,60));
-		btnSave.setBounds(327, 405, 95, 31);
+		btnSave.setBounds(372, 410, 95, 31);
 		contentPane.add(btnSave);
+		btnSave.addMouseListener(hdm);
 		
 		btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txtId.setText("");
+				txtFirstName.setText("");
+				txtLastName.setText("");
+				txtPhone.setText("");
+				txtEmail.setText("");
+				txtWebsite.setText("");
+				txtAddress.setText("");
+				txtAcademies.setText("");
+				txtQualification.setText("");
+				
+			}
+		});
 		btnClear.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnClear.setForeground( Color.white);
-		btnClear.addMouseListener(hdm);
 		btnClear.setBackground(new Color(20,30,60));
-		btnClear.setBounds(457, 405, 112, 31);
+		btnClear.setBounds(518, 410, 112, 31);
 		contentPane.add(btnClear);
+		btnClear.addMouseListener(hdm);
 		
-		btnRemove = new JButton("Remove");
+		btnRemove = new JButton("Delete");
 		
 		btnRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				if(txtId.getText().equals(""))
+				{
+				    JOptionPane.showMessageDialog(null, "choose your ssn");
+				}
+				else
+				{
+					
+					try
+					{
+						int val = JOptionPane.showConfirmDialog(null, "Do you realy want to delete");
+		                if (val == 0)
+		                {
+		                	 String sql_delete="delete from nurse_information where ssn='" + txtId.getText() + "'";
+							 SQLCon.SQLConn(sql_delete);
+							 ResultSet rs = SQLCon.SQLConnection("select * from nurse_information");
+							 tableInfo.setModel(DbUtils.resultSetToTableModel(rs));
+							 txtId.setText("");
+								txtFirstName.setText("");
+								txtLastName.setText("");
+								txtPhone.setText("");
+								txtEmail.setText("");
+								txtWebsite.setText("");
+								txtAddress.setText("");
+								txtAcademies.setText("");
+								txtQualification.setText("");
+						     JOptionPane.showMessageDialog(null, "DELETED successfully");
+		                }
+		                else
+		                {
+		                	return;
+		                }
+						
+					}
+				
+	             catch (Exception ex) {
+	                JOptionPane.showMessageDialog(null, ex.getMessage());
+	            }
+				}
+				
 			}
 		});
 		btnRemove.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnRemove.setForeground( Color.white);
-		btnRemove.addMouseListener(hdm);
 		btnRemove.setBackground(new Color(20,30,60));
-		btnRemove.setBounds(591, 405, 111, 31);
+		btnRemove.setBounds(681, 410, 111, 31);
 		contentPane.add(btnRemove);
+		btnRemove.addMouseListener(hdm);
 		
-		btnDaysSave = new JButton("Save");
+		btnDaysSave = new JButton("Update");
+		btnDaysSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String day = null;
+				if(rdbSaturday.isSelected()) day = rdbSaturday.getText();
+				else if(rdbSunday.isSelected())day = rdbSunday.getText();
+				else if(rdbMonday.isSelected())day = rdbMonday.getText();
+				else if(rdbTuseday.isSelected())day = rdbTuseday.getText();
+				else if(rdbWedensday.isSelected())day = rdbWedensday.getText();
+				else if(rdbThurthday.isSelected())day = rdbThurthday.getText();
+				else if(rdbFriday.isSelected())day = rdbFriday.getText();
+				
+				if(txtId.getText().equals("")||day.equals(null)||comTimeFromHour.getSelectedItem().toString().equals(null)||comTimeFromMinute.getSelectedItem().toString().equals(null)||comTimeToHour.getSelectedItem().toString().equals(null)||comTimeToMinute.getSelectedItem().toString().equals(null))
+				{
+					JOptionPane.showMessageDialog(null,"please fill all parts ");
+					return;
+				}
+				try
+				{
+					
+					String update_sql="update doctor_schedule set ssn='"+Integer.parseInt(txtId.getText())+"',days='"+day+"',day_from='"+comTimeFromHour.getSelectedItem().toString()+ ":" +comTimeFromMinute.getSelectedItem().toString()+"',day_to='"+comTimeToHour.getSelectedItem().toString()+ ":" +comTimeToMinute.getSelectedItem().toString()+"' where ssn='"+Integer.parseInt(txtId.getText())+"'"; 
+					SQLCon.SQLConn(update_sql);
+					ResultSet rs = SQLCon.SQLConnection("select * from doctor_schedule");
+					tableDays.setModel(DbUtils.resultSetToTableModel(rs));
+					JOptionPane.showMessageDialog(null,"Updated is done");
+				}
+				catch(Exception ex)
+				{
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+				}
+				
+			}
+		});
 		btnDaysSave.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnDaysSave.setForeground( Color.white);
-		btnDaysSave.addMouseListener(hdm);
 		btnDaysSave.setBackground(new Color(20,30,60));
-		btnDaysSave.setBounds(997, 405, 109, 31);
+		btnDaysSave.setBounds(1085, 399, 109, 31);
 		contentPane.add(btnDaysSave);
+		btnDaysSave.addMouseListener(hdm);
 		
 		btnDadysDelete = new JButton("Delete");
 		btnDadysDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				 int val = JOptionPane.showConfirmDialog(null, "Do you realy want to delete");
+	                if (val == 0)
+	                {
+	                	String sql_delete="delete from doctor_schedule where ssn=" + Integer.parseInt(txtId.getText());
+	    		     	SQLCon.SQLConn(sql_delete);
+	    			    ResultSet rs = SQLCon.SQLConnection("select * from doctor_schedule");
+	    				tableDays.setModel(DbUtils.resultSetToTableModel(rs));
+	    				txtId.setText("");
+	    		        JOptionPane.showMessageDialog(null, "DELETED successfully");
+	                }
+	                else
+	                {
+	                	JOptionPane.showMessageDialog(null,"wrong choice ");
+	                }
+				
+		
+				
 			}
 		});
 		btnDadysDelete.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnDadysDelete.setForeground( Color.white);
-		btnDadysDelete.addMouseListener(hdm);
 		btnDadysDelete.setBackground(new Color(20,30,60));
-		btnDadysDelete.setBounds(1147, 405, 103, 31);
+		btnDadysDelete.setBounds(1229, 399, 103, 31);
 		contentPane.add(btnDadysDelete);
+		btnDadysDelete.addMouseListener(hdm);
 		
 		JLabel lblDoctorInformation = new JLabel("Doctor information");
 		lblDoctorInformation.setIcon(new ImageIcon("F:\\programs java\\hospital\\resource\\nurs.png"));
@@ -525,20 +651,35 @@ public class Doctor extends JFrame {
 		contentPane.add(scrollPane);
 		
 		
-		tableDays = new JTable(){
-			public Component prepareRenderer(TableCellRenderer r,int data,int column){
-				Component c = super.prepareRenderer(r,data,column);
-				if(data % 2 == 0){
-					c.setBackground(Color.white);
-					c.setForeground(Color.black);
-				}else{
-					c.setBackground(Color.LIGHT_GRAY);
-					c.setForeground(new Color(200,60,50));
-				}
-				return c;
-			}
+		tableDays = new JTable();
+		tableDays.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e)
+			{
+				
+				TableModel m = tableDays.getModel();
+				int row = tableDays.getSelectedRow();
+				txtId.setText(m.getValueAt(row, 0).toString());
+				String ssn=txtId.getText();
+				String sql="select * from doctor_information where ssn="+Integer.parseInt(ssn);
+				ResultSet rss=SQLCon.SQLConnection(sql);
+				
+				JTable t = new JTable();
+				t.setModel(DbUtils.resultSetToTableModel(rss));
+				TableModel newModel = t.getModel();
+				
+				txtFirstName.setText(newModel.getValueAt(0, 1).toString().split(" ")[0]);
+				txtLastName.setText(newModel.getValueAt(0, 1).toString().split(" ")[1]);
+				txtPhone.setText(newModel.getValueAt(0, 2).toString());
+				txtEmail.setText(newModel.getValueAt(0, 5).toString());
+				txtWebsite.setText(newModel.getValueAt(0, 6).toString());
+				txtAddress.setText(newModel.getValueAt(0, 7).toString());
+				txtQualification.setText(newModel.getValueAt(0, 9).toString());
+				txtAcademies.setText(newModel.getValueAt(0, 10).toString());
+				
 			
-		};
+				
+			}
+		});
 		tableDays.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null},
@@ -567,26 +708,17 @@ public class Doctor extends JFrame {
 			}
 		));
 		
+		ResultSet rst = SQLCon.SQLConnection("select * from doctor_schedule");
+		tableDays.setModel(DbUtils.resultSetToTableModel(rst));
+		
 		scrollPane.setViewportView(tableDays);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(84, 463, 697, 192);
 		contentPane.add(scrollPane_1);
 		
-		tableInfo = new JTable(){
-			public Component prepareRenderer(TableCellRenderer r,int data,int column){
-				Component c = super.prepareRenderer(r,data,column);
-				if(data % 2 == 0){
-					c.setBackground(Color.white);
-					c.setForeground(Color.black);
-				}else{
-					c.setBackground(Color.LIGHT_GRAY);
-					c.setForeground(new Color(200,60,50));
-				}
-				return c;
-			}
-			
-		};
+		
+		tableInfo = new JTable();
 		
 		tableInfo.setModel(new DefaultTableModel(
 			new Object[][] {
@@ -616,22 +748,206 @@ public class Doctor extends JFrame {
 			}
 		));
 		tableInfo.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e){
-				int row = tableDays.getSelectedRow();
+			public void  mouseClicked(MouseEvent e)
+			{
+				TableModel m = tableInfo.getModel();
+				int row = tableInfo.getSelectedRow();
+				txtId.setText(m.getValueAt(row, 0).toString());
+				txtFirstName.setText(m.getValueAt(row, 1).toString().split(" ")[0]);
+				txtLastName.setText(m.getValueAt(row, 1).toString().split(" ")[1]);
+				txtPhone.setText(m.getValueAt(row, 2).toString());
+				txtEmail.setText(m.getValueAt(row, 5).toString());
+				txtWebsite.setText(m.getValueAt(row, 6).toString());
+				txtAddress.setText(m.getValueAt(row, 7).toString());
+				txtQualification.setText(m.getValueAt(row, 9).toString());
+				txtAcademies.setText(m.getValueAt(row, 10).toString());
 				
-		
+				
+				
 				
 			}
+			
 		});
 		scrollPane_1.setViewportView(tableInfo);
 		
+
+		ResultSet rs = SQLCon.SQLConnection("select * from doctor_information");
+		tableInfo.setModel(DbUtils.resultSetToTableModel(rs));
+		
+		JButton btnNewButton = new JButton("Add");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(Integer.parseInt(txtId.getText())<1)
+				{
+					JOptionPane.showMessageDialog(null,"Invalid input");
+					{
+						return;
+					}
+				}
+				if(txtId.getText().equals("")||txtFirstName.getText().equals("")||txtLastName.getText().equals("")||txtPhone.getText().equals("")||txtEmail.getText().equals("")||txtWebsite.getText().equals("")||txtAddress.getText().equals("")||txtQualification.getText().equals("")||txtAcademies.getText().equals(""))
+				{
+					JOptionPane.showMessageDialog(null, "please fill all fields ");
+					return;
+				}
+				String email_text=txtEmail.getText();
+				
+					if(email_text.contains("@")==false||email_text.contains(".com")==false)
+					{
+						JOptionPane.showMessageDialog(null,"enter email address like that ...@yahoo.com");
+						return;
+				    }
+					if(email_text.startsWith("@")||email_text.startsWith(".com"))
+					{
+						
+					JOptionPane.showMessageDialog(null,"enter email address like that ...@yahoo.com");
+					return;
+					}
+					int x=0,y=0;
+					for(int i=0;i<email_text.length();i++)
+					{
+						if(email_text.charAt(i)=='@')
+						{
+							x=i;
+						}
+						if(email_text.charAt(i)=='.')
+						{
+							y=i;
+						}
+						
+					}
+					
+					if(x>y)
+					{
+						JOptionPane.showMessageDialog(null,"enter email address like that ...@yahoo.com");
+						return;	
+					}
+					
+					
+					String website_text=txtWebsite.getText();
+					
+					if(website_text.contains("@")==false||website_text.contains(".com")==false)
+					{
+						JOptionPane.showMessageDialog(null,"enter website address like that ...@yahoo.com");
+						return;
+				    }
+					if(website_text.startsWith("@")||website_text.startsWith(".com"))
+					{
+						
+					JOptionPane.showMessageDialog(null,"enter website address like that ...@yahoo.com");
+					return;
+					}
+					int w=0,z=0;
+					for(int i=0;i<website_text.length();i++)
+					{
+						if(website_text.charAt(i)=='@')
+						{
+							w=i;
+						}
+						if(website_text.charAt(i)=='.')
+						{
+							z=i;
+						}
+						
+					}
+					
+					if(w>z)
+					{
+						JOptionPane.showMessageDialog(null,"enter website address like that ...@yahoo.com");
+						return;	
+					}
+					
+					
+				try {
+                    String sql = "select ssn from doctor_information where ssn='" + txtId.getText() + "'";
+                    ResultSet rst=SQLCon.SQLConnection(sql);
+                    if (rst.next()) {
+                        JOptionPane.showMessageDialog(null, "ID already exist");
+                        return;
+                    }
+                    else
+                    {
+                    	String sql_add="INSERT INTO doctor_information(ssn, name, phone, date_of_birth, blood_group, e_mail, website, address, department, qualification, academics) VALUES ("+Integer.parseInt(txtId.getText())+",'"+ txtFirstName.getText()+" "+txtLastName.getText()+ "'," + Integer.parseInt(txtPhone.getText())+ ",'" + comYear.getSelectedItem().toString()+"/"+comMonth.getSelectedItem().toString()+"/"+comDay.getSelectedItem().toString()+ "','"+ comBlood.getSelectedItem().toString() +"','"+txtEmail.getText()+"','"+txtWebsite.getText()+"','"+txtAddress.getText()+"','"+comDepartement.getSelectedItem().toString()+"','"+txtQualification.getText()+"','"+txtAcademies.getText()+"')";
+                        SQLCon.SQLConn(sql_add);
+                        ResultSet rs = SQLCon.SQLConnection("select * from doctor_information");
+                		tableInfo.setModel(DbUtils.resultSetToTableModel(rs));
+    					JOptionPane.showMessageDialog(null,"Added successfully");
+    					
+                    }
+					
+				}
+				catch(Exception ex)
+				{
+					JOptionPane.showMessageDialog(null,ex.getMessage());
+				}
+				
+				
+			}
+		});
+		btnNewButton.setBounds(248, 410, 101, 28);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnNewButton.setForeground( Color.white);
+		btnNewButton.setBackground(new Color(20,30,60));
+		contentPane.add(btnNewButton);
+		btnNewButton.addMouseListener(hdm);
+		
+		JButton add_button = new JButton("Add");
+		add_button.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		add_button.setForeground( Color.white);
+		add_button.setBackground(new Color(20,30,60));
+		add_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String day = null;
+				if(rdbSaturday.isSelected()) day = rdbSaturday.getText();
+				else if(rdbSunday.isSelected())day = rdbSunday.getText();
+				else if(rdbMonday.isSelected())day = rdbMonday.getText();
+				else if(rdbTuseday.isSelected())day = rdbTuseday.getText();
+				else if(rdbWedensday.isSelected())day = rdbWedensday.getText();
+				else if(rdbThurthday.isSelected())day = rdbThurthday.getText();
+				else if(rdbFriday.isSelected())day = rdbFriday.getText();
+				if(txtId.getText().equals("")||day.equals(null)||comTimeFromHour.getSelectedItem().toString().equals(null)||comTimeFromMinute.getSelectedItem().toString().equals(null)||comTimeToHour.getSelectedItem().toString().equals(null)||comTimeToMinute.getSelectedItem().toString().equals(null))
+				{
+					JOptionPane.showMessageDialog(null,"please fill all parts ");
+					return;
+				}
+				  String sql = "select ssn from doctor_schedule where ssn='" + txtId.getText() + "'";
+                  ResultSet rs=SQLCon.SQLConnection(sql);
+                  try {
+					if (rs.next()) {
+					      JOptionPane.showMessageDialog(null, "ID already exist");
+					      return;
+					  }
+				} catch (HeadlessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                  
+			try
+			{
+					
+					String sql_add="INSERT INTO doctor_schedule(ssn,days,day_from,day_to) values("+Integer.parseInt(txtId.getText())+",'"+day+"','"+comTimeFromHour.getSelectedItem().toString()+ ":" +comTimeFromMinute.getSelectedItem().toString()+"', '"+comTimeToHour.getSelectedItem().toString()+ ":"  + comTimeToMinute.getSelectedItem().toString()+"')";
+					SQLCon.SQLConn(sql_add);
+					JOptionPane.showMessageDialog(null,"Added successfully");
+					ResultSet rst = SQLCon.SQLConnection("select * from doctor_schedule");
+					tableDays.setModel(DbUtils.resultSetToTableModel(rst));
+				}
+				catch(Exception ex)
+				{
+					JOptionPane.showMessageDialog(null,ex.getMessage());
+				}
+				
+			}
+		});
+		add_button.setBounds(928, 400, 111, 31);
+		contentPane.add(add_button);
+		add_button.addMouseListener(hdm);
+		
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(getClass().getResource("/images/9.jpg")));
-		label_1.setBounds(0,-21,1497,737);
+		label_1.setBounds(0,-29,1381,738);
 		contentPane.add(label_1);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(10, 11, 97, 21);
-		contentPane.add(menuBar);
 	}
 }
