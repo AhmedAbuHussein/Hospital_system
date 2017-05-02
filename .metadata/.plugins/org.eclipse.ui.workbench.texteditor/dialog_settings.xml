@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getClass()" key="selection"/>
+		<item value="Medical" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="MainMenu"/>
 			<item value="Doctors.class"/>
 			<item value="MainMenu.class"/>
 			<item value="new Handler()"/>
@@ -15,9 +16,9 @@
 			<item value="handler"/>
 			<item value="node_1"/>
 			<item value="textArea"/>
-			<item value="System.out"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Medical"/>
 			<item value="getClass()"/>
 			<item value="HDM"/>
 			<item value="HDF"/>
