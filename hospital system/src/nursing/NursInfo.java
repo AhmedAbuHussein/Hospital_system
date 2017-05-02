@@ -7,11 +7,15 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.TextEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 //import java.awt.image.BufferedImage;
 //import java.sql.SQLException;
 import java.util.Date;
@@ -27,6 +31,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 //import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
@@ -42,6 +47,8 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
+import net.proteanit.sql.DbUtils;
+import sqlconnection.SQLCon;
 import doctors.Doctor;
 
 public class NursInfo extends JFrame {
@@ -112,6 +119,104 @@ public class NursInfo extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(1450, 705);
 		setLocationRelativeTo(null);
+		
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+
+		JMenu mnPatientRegistration = new JMenu("Patient Registration");
+		menuBar.add(mnPatientRegistration);
+		
+		JMenuItem mntmPatientRegisrations = new JMenuItem("Patient regisrations");
+		mnPatientRegistration.add(mntmPatientRegisrations);
+		
+		JMenuItem mntmSearchPatientDetails = new JMenuItem("Search Patient details");
+		mnPatientRegistration.add(mntmSearchPatientDetails);
+		
+		JMenu mnDoctorManagement = new JMenu("Doctor management");
+		menuBar.add(mnDoctorManagement);
+		
+		JMenuItem mntmDoctorInformation = new JMenuItem("doctor information");
+		mnDoctorManagement.add(mntmDoctorInformation);
+		
+		JMenuItem mntmPatientStatus = new JMenuItem("patient status");
+		mnDoctorManagement.add(mntmPatientStatus);
+		
+		JMenuItem mntmChangePassword = new JMenuItem("change password");
+		mnDoctorManagement.add(mntmChangePassword);
+		
+		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
+		menuBar.add(mnPharmacyManagement);
+		
+		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
+		mnPharmacyManagement.add(mntmMedicamentInformation);
+		
+		JMenuItem mntmChangePassword_1 = new JMenuItem("change password");
+		mnPharmacyManagement.add(mntmChangePassword_1);
+		
+		JMenu mnInvestigations = new JMenu("Investigations");
+		menuBar.add(mnInvestigations);
+		
+		JMenuItem mntmInvestigationType = new JMenuItem("investigation type");
+		mnInvestigations.add(mntmInvestigationType);
+		
+		JMenuItem mntmPatientStatus_1 = new JMenuItem("patient status");
+		mnInvestigations.add(mntmPatientStatus_1);
+		
+		JMenuItem mntmChangePassword_2 = new JMenuItem("change password");
+		mnInvestigations.add(mntmChangePassword_2);
+		
+		JMenu mnNursing = new JMenu("Nursing");
+		menuBar.add(mnNursing);
+		
+		JMenuItem mntmNurseInformation = new JMenuItem("nurse information");
+		mnNursing.add(mntmNurseInformation);
+		
+		JMenuItem mntmPatientStatus_2 = new JMenuItem("patient status");
+		mnNursing.add(mntmPatientStatus_2);
+		
+		JMenuItem mntmChangePassword_3 = new JMenuItem("change password");
+		mnNursing.add(mntmChangePassword_3);
+		
+		JMenu mnAdminManagement = new JMenu("Admin management");
+		menuBar.add(mnAdminManagement);
+		
+		JMenuItem mntmDoctorInformation_1 = new JMenuItem("doctor information");
+		mnAdminManagement.add(mntmDoctorInformation_1);
+		
+		JMenuItem mntmNurseInformation_1 = new JMenuItem("nurse information");
+		mnAdminManagement.add(mntmNurseInformation_1);
+		
+		JMenuItem mntmPharmacyInformation = new JMenuItem("pharmacy information");
+		mnAdminManagement.add(mntmPharmacyInformation);
+		
+		JMenuItem mntmInvestigationInformation = new JMenuItem("investigation information");
+		mnAdminManagement.add(mntmInvestigationInformation);
+		
+		JMenuItem mntmPatientInformation = new JMenuItem("patient information");
+		mnAdminManagement.add(mntmPatientInformation);
+		
+		JMenuItem mntmChangePassword_4 = new JMenuItem("change password");
+		mnAdminManagement.add(mntmChangePassword_4);
+		
+		JMenu mnReport = new JMenu(" Reports");
+		menuBar.add(mnReport);
+		
+		JMenuItem mntmPatientReport = new JMenuItem("patient report");
+		mnReport.add(mntmPatientReport);
+		
+		JMenuItem mntmPharmacyReport = new JMenuItem("pharmacy report");
+		mnReport.add(mntmPharmacyReport);
+		
+		JMenuItem mntmLaundryReport = new JMenuItem("laundry report");
+		mnReport.add(mntmLaundryReport);
+		
+		JMenu mnLaundryManagement = new JMenu("Laundry management");
+		menuBar.add(mnLaundryManagement);
+
+		
+
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -272,7 +377,7 @@ public class NursInfo extends JFrame {
 		lblDays.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		lblDays.setForeground(new Color(0, 0, 128));
 		contentPane.add(lblDays);
-		ButtonGroup button_group=new ButtonGroup();
+		final ButtonGroup button_group=new ButtonGroup();
 		
 		rdbSaturday = new JRadioButton("Saturday");
 		rdbSaturday.setBounds(997, 91, 109, 23);
@@ -346,7 +451,32 @@ public class NursInfo extends JFrame {
 		lblTimeTo.setBounds(1128, 171, 122, 22);
 		contentPane.add(lblTimeTo);
 		
-		btnSave = new JButton("Save ");
+		btnSave = new JButton("Update ");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(txtId.getText().equals(""))
+				{
+					 JOptionPane.showMessageDialog(null,"please enter your id");
+					 return;
+				}
+				else
+				{
+					try
+					{
+						String sql="update nurse_information set ssn='" + Integer.parseInt(txtId.getText())+ "',name='" + txtFirstName.getText()+" "+txtLastName.getText() + "',phone='"+Integer.parseInt(txtPhone.getText())+"',date_of_birth='" + comYear.getSelectedItem().toString()+"/"+comMonth.getSelectedItem().toString() +"/"+comDay.getSelectedItem().toString()+ "',blood_group='" +comBlood.getSelectedItem().toString() + "',e_mail='" + txtEmail.getText()+ "',website='" + txtWebsite.getText() + "',address='" + txtAddress.getText() + "',department='" + comDepartement.getSelectedItem().toString() + "',qualification='" + txtQualification.getText()+ "',academics='" + txtAcademies.getText()+ "' where ssn='" +Integer.parseInt( txtId.getText())+ "'";
+		                SQLCon.SQLConn(sql);
+		                ResultSet rs = SQLCon.SQLConnection("select * from nurse_information");
+		        		tableInfo.setModel(DbUtils.resultSetToTableModel(rs));
+		                JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+					}
+					catch (Exception ex) {
+	                    JOptionPane.showMessageDialog(null, ex.getMessage());
+	                }
+				}
+				
+				
+			}
+		});
 		btnSave.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnSave.setForeground( Color.white);
 		
@@ -360,44 +490,146 @@ public class NursInfo extends JFrame {
 		comTimeToMinute.setBounds(1201, 216, 66, 22);
 		contentPane.add(comTimeToMinute);
 		btnSave.setBackground(new Color(20,30,60));
-		btnSave.setBounds(366, 399, 95, 31);
+		btnSave.setBounds(372, 410, 95, 31);
 		contentPane.add(btnSave);
 		
 		btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txtId.setText("");
+				txtFirstName.setText("");
+				txtLastName.setText("");
+				txtPhone.setText("");
+				txtEmail.setText("");
+				txtWebsite.setText("");
+				txtAddress.setText("");
+				txtAcademies.setText("");
+				txtQualification.setText("");
+				
+			}
+		});
 		btnClear.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnClear.setForeground( Color.white);
 		btnClear.setBackground(new Color(20,30,60));
-		btnClear.setBounds(496, 399, 112, 31);
+		btnClear.setBounds(518, 410, 112, 31);
 		contentPane.add(btnClear);
 		
-		btnRemove = new JButton("Remove");
+		btnRemove = new JButton("Delete");
 		
 		btnRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				if(txtId.getText().equals(""))
+				{
+				    JOptionPane.showMessageDialog(null, "choose your ssn");
+				}
+				else
+				{
+					
+					try
+					{
+						int val = JOptionPane.showConfirmDialog(null, "Do you realy want to delete");
+		                if (val == 0)
+		                {
+		                	 String sql_delete="delete from nurse_information where ssn='" + txtId.getText() + "'";
+							 SQLCon.SQLConn(sql_delete);
+							 ResultSet rs = SQLCon.SQLConnection("select * from nurse_information");
+							 tableInfo.setModel(DbUtils.resultSetToTableModel(rs));
+							 txtId.setText("");
+								txtFirstName.setText("");
+								txtLastName.setText("");
+								txtPhone.setText("");
+								txtEmail.setText("");
+								txtWebsite.setText("");
+								txtAddress.setText("");
+								txtAcademies.setText("");
+								txtQualification.setText("");
+						     JOptionPane.showMessageDialog(null, "DELETED successfully");
+		                }
+		                else
+		                {
+		                	return;
+		                }
+						
+					}
+				
+	             catch (Exception ex) {
+	                JOptionPane.showMessageDialog(null, ex.getMessage());
+	            }
+				}
+				
 			}
 		});
 		btnRemove.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnRemove.setForeground( Color.white);
 		btnRemove.setBackground(new Color(20,30,60));
-		btnRemove.setBounds(630, 399, 111, 31);
+		btnRemove.setBounds(681, 410, 111, 31);
 		contentPane.add(btnRemove);
 		
-		btnDaysSave = new JButton("Save");
+		btnDaysSave = new JButton("Update");
+		btnDaysSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String day = null;
+				if(rdbSaturday.isSelected()) day = rdbSaturday.getText();
+				else if(rdbSunday.isSelected())day = rdbSunday.getText();
+				else if(rdbMonday.isSelected())day = rdbMonday.getText();
+				else if(rdbTuseday.isSelected())day = rdbTuseday.getText();
+				else if(rdbWedensday.isSelected())day = rdbWedensday.getText();
+				else if(rdbThurthday.isSelected())day = rdbThurthday.getText();
+				else if(rdbFriday.isSelected())day = rdbFriday.getText();
+				
+				if(txtId.getText().equals("")||day.equals(null)||comTimeFromHour.getSelectedItem().toString().equals(null)||comTimeFromMinute.getSelectedItem().toString().equals(null)||comTimeToHour.getSelectedItem().toString().equals(null)||comTimeToMinute.getSelectedItem().toString().equals(null))
+				{
+					JOptionPane.showMessageDialog(null,"please fill all parts ");
+					return;
+				}
+				try
+				{
+					
+					String update_sql="update nurse_schedule set ssn='"+Integer.parseInt(txtId.getText())+"',days='"+day+"',day_from='"+comTimeFromHour.getSelectedItem().toString()+ ":" +comTimeFromMinute.getSelectedItem().toString()+"',day_to='"+comTimeToHour.getSelectedItem().toString()+ ":" +comTimeToMinute.getSelectedItem().toString()+"' where ssn='"+Integer.parseInt(txtId.getText())+"'"; 
+					SQLCon.SQLConn(update_sql);
+					ResultSet rs = SQLCon.SQLConnection("select * from nurse_schedule");
+					tableDays.setModel(DbUtils.resultSetToTableModel(rs));
+					JOptionPane.showMessageDialog(null,"Updated is done");
+				}
+				catch(Exception ex)
+				{
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+				}
+				
+			}
+		});
 		btnDaysSave.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnDaysSave.setForeground( Color.white);
 		btnDaysSave.setBackground(new Color(20,30,60));
-		btnDaysSave.setBounds(941, 399, 109, 31);
+		btnDaysSave.setBounds(1085, 399, 109, 31);
 		contentPane.add(btnDaysSave);
 		
 		btnDadysDelete = new JButton("Delete");
 		btnDadysDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				 int val = JOptionPane.showConfirmDialog(null, "Do you realy want to delete");
+	                if (val == 0)
+	                {
+	                	String sql_delete="delete from nurse_schedule where ssn='" + txtId.getText() + "'";
+	    		     	SQLCon.SQLConn(sql_delete);
+	    			    ResultSet rs = SQLCon.SQLConnection("select * from nurse_schedule");
+	    				tableDays.setModel(DbUtils.resultSetToTableModel(rs));
+	    				txtId.setText("");
+	    		        JOptionPane.showMessageDialog(null, "DELETED successfully");
+	                }
+	                else
+	                {
+	                	JOptionPane.showMessageDialog(null,"wrong choice ");
+	                }
+				
+		
+				
 			}
 		});
 		btnDadysDelete.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
 		btnDadysDelete.setForeground( Color.white);
 		btnDadysDelete.setBackground(new Color(20,30,60));
-		btnDadysDelete.setBounds(1091, 399, 103, 31);
+		btnDadysDelete.setBounds(1229, 399, 103, 31);
 		contentPane.add(btnDadysDelete);
 		
 		JLabel lblDoctorInformation = new JLabel("Nurse information");
@@ -413,6 +645,33 @@ public class NursInfo extends JFrame {
 		
 		
 		tableDays = new JTable();
+		tableDays.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e)
+			{
+				
+				TableModel m = tableDays.getModel();
+				int row = tableDays.getSelectedRow();
+				txtId.setText(m.getValueAt(row, 0).toString());
+				String ssn=txtId.getText();
+				String sql="select * from nurse_information where ssn="+Integer.parseInt(ssn);
+				ResultSet rss=SQLCon.SQLConnection(sql);
+				
+				JTable t = new JTable();
+				t.setModel(DbUtils.resultSetToTableModel(rss));
+				TableModel newModel = t.getModel();
+				
+				txtFirstName.setText(newModel.getValueAt(0, 1).toString().split(" ")[0]);
+				txtLastName.setText(newModel.getValueAt(0, 1).toString().split(" ")[1]);
+				txtPhone.setText(newModel.getValueAt(0, 2).toString());
+				txtEmail.setText(newModel.getValueAt(0, 5).toString());
+				txtWebsite.setText(newModel.getValueAt(0, 6).toString());
+				txtAddress.setText(newModel.getValueAt(0, 7).toString());
+				txtQualification.setText(newModel.getValueAt(0, 9).toString());
+				txtAcademies.setText(newModel.getValueAt(0, 10).toString());
+			
+				
+			}
+		});
 		tableDays.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null},
@@ -441,11 +700,15 @@ public class NursInfo extends JFrame {
 			}
 		));
 		
+		ResultSet rst = SQLCon.SQLConnection("select * from nurse_schedule");
+		tableDays.setModel(DbUtils.resultSetToTableModel(rst));
+		
 		scrollPane.setViewportView(tableDays);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(84, 463, 697, 192);
 		contentPane.add(scrollPane_1);
+		
 		
 		tableInfo = new JTable();
 		
@@ -476,15 +739,206 @@ public class NursInfo extends JFrame {
 				"ID", "First Name", "Last Name", "Phone", "DOB", "Blood Group", "E-mail", "Website", "Address", "Speciality", "Departement", "Qualification", "Academies"
 			}
 		));
+		tableInfo.addMouseListener(new MouseAdapter() {
+			public void  mouseClicked(MouseEvent e)
+			{
+				TableModel m = tableInfo.getModel();
+				int row = tableInfo.getSelectedRow();
+				txtId.setText(m.getValueAt(row, 0).toString());
+				txtFirstName.setText(m.getValueAt(row, 1).toString().split(" ")[0]);
+				txtLastName.setText(m.getValueAt(row, 1).toString().split(" ")[1]);
+				txtPhone.setText(m.getValueAt(row, 2).toString());
+				txtEmail.setText(m.getValueAt(row, 5).toString());
+				txtWebsite.setText(m.getValueAt(row, 6).toString());
+				txtAddress.setText(m.getValueAt(row, 7).toString());
+				txtQualification.setText(m.getValueAt(row, 9).toString());
+				txtAcademies.setText(m.getValueAt(row, 10).toString());
+				
+				
+				
+				
+			}
+			
+		});
 		scrollPane_1.setViewportView(tableInfo);
+		
+
+		ResultSet rs = SQLCon.SQLConnection("select * from nurse_information");
+		tableInfo.setModel(DbUtils.resultSetToTableModel(rs));
+		
+		JButton btnNewButton = new JButton("Add");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(Integer.parseInt(txtId.getText())<1)
+				{
+					JOptionPane.showMessageDialog(null,"Invalid input");
+					{
+						return;
+					}
+				}
+				if(txtId.getText().equals("")||txtFirstName.getText().equals("")||txtLastName.getText().equals("")||txtPhone.getText().equals("")||txtEmail.getText().equals("")||txtWebsite.getText().equals("")||txtAddress.getText().equals("")||txtQualification.getText().equals("")||txtAcademies.getText().equals(""))
+				{
+					JOptionPane.showMessageDialog(null, "please fill all fields ");
+					return;
+				}
+				String email_text=txtEmail.getText();
+				
+					if(email_text.contains("@")==false||email_text.contains(".com")==false)
+					{
+						JOptionPane.showMessageDialog(null,"enter email address like that ...@yahoo.com");
+						return;
+				    }
+					if(email_text.startsWith("@")||email_text.startsWith(".com"))
+					{
+						
+					JOptionPane.showMessageDialog(null,"enter email address like that ...@yahoo.com");
+					return;
+					}
+					int x=0,y=0;
+					for(int i=0;i<email_text.length();i++)
+					{
+						if(email_text.charAt(i)=='@')
+						{
+							x=i;
+						}
+						if(email_text.charAt(i)=='.')
+						{
+							y=i;
+						}
+						
+					}
+					
+					if(x>y)
+					{
+						JOptionPane.showMessageDialog(null,"enter email address like that ...@yahoo.com");
+						return;	
+					}
+					
+					
+					String website_text=txtWebsite.getText();
+					
+					if(website_text.contains("@")==false||website_text.contains(".com")==false)
+					{
+						JOptionPane.showMessageDialog(null,"enter website address like that ...@yahoo.com");
+						return;
+				    }
+					if(website_text.startsWith("@")||website_text.startsWith(".com"))
+					{
+						
+					JOptionPane.showMessageDialog(null,"enter website address like that ...@yahoo.com");
+					return;
+					}
+					int w=0,z=0;
+					for(int i=0;i<website_text.length();i++)
+					{
+						if(website_text.charAt(i)=='@')
+						{
+							w=i;
+						}
+						if(website_text.charAt(i)=='.')
+						{
+							z=i;
+						}
+						
+					}
+					
+					if(w>z)
+					{
+						JOptionPane.showMessageDialog(null,"enter website address like that ...@yahoo.com");
+						return;	
+					}
+					
+					
+				try {
+                    String sql = "select ssn from nurse_information where ssn='" + txtId.getText() + "'";
+                    ResultSet rst=SQLCon.SQLConnection(sql);
+                    if (rst.next()) {
+                        JOptionPane.showMessageDialog(null, "ID already exist");
+                        return;
+                    }
+                    else
+                    {
+                    	//String sql_add= "insert into nurse_information(ssn,name,phone,data_of_birth,blood_group,e_mail,website,address,department,qualification,academics) values('"+txtId.getText().toString()+"','"+ txtFirstName.getText().toString() + "','" + txtPhone.getText().toString() + "','" + comYear.getSelectedItem().toString()+ "','"+ comBlood.getSelectedItem().toString() +"','"+txtEmail.getText().toString()+"','"+txtWebsite.getText().toString()+"','"+txtAddress.getText().toString()+"','"+comDepartement.getSelectedItem().toString()+"','"+txtQualification.getText().toString()+"','"+txtAcademies.getText().toString()+"')";
+    					String sql_add="INSERT INTO nurse_information(ssn, name, phone, date_of_birth, blood_group, e_mail, website, address, department, qualification, academics) VALUES ("+Integer.parseInt(txtId.getText())+",'"+ txtFirstName.getText()+" "+txtLastName.getText()+ "'," + Integer.parseInt(txtPhone.getText())+ ",'" + comYear.getSelectedItem().toString()+"/"+comMonth.getSelectedItem().toString()+"/"+comDay.getSelectedItem().toString()+ "','"+ comBlood.getSelectedItem().toString() +"','"+txtEmail.getText()+"','"+txtWebsite.getText()+"','"+txtAddress.getText()+"','"+comDepartement.getSelectedItem().toString()+"','"+txtQualification.getText()+"','"+txtAcademies.getText()+"')";
+                        SQLCon.SQLConn(sql_add);
+                        ResultSet rs = SQLCon.SQLConnection("select * from nurse_information");
+                		tableInfo.setModel(DbUtils.resultSetToTableModel(rs));
+    					JOptionPane.showMessageDialog(null,"Added successfully");
+    					
+                    }
+					
+				}
+				catch(Exception ex)
+				{
+					JOptionPane.showMessageDialog(null,ex.getMessage());
+				}
+				
+				
+			}
+		});
+		btnNewButton.setBounds(248, 410, 101, 28);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		btnNewButton.setForeground( Color.white);
+		btnNewButton.setBackground(new Color(20,30,60));
+		contentPane.add(btnNewButton);
+		
+		JButton add_button = new JButton("Add");
+		add_button.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 12));
+		add_button.setForeground( Color.white);
+		add_button.setBackground(new Color(20,30,60));
+		add_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String day = null;
+				if(rdbSaturday.isSelected()) day = rdbSaturday.getText();
+				else if(rdbSunday.isSelected())day = rdbSunday.getText();
+				else if(rdbMonday.isSelected())day = rdbMonday.getText();
+				else if(rdbTuseday.isSelected())day = rdbTuseday.getText();
+				else if(rdbWedensday.isSelected())day = rdbWedensday.getText();
+				else if(rdbThurthday.isSelected())day = rdbThurthday.getText();
+				else if(rdbFriday.isSelected())day = rdbFriday.getText();
+				if(txtId.getText().equals("")||day.equals(null)||comTimeFromHour.getSelectedItem().toString().equals(null)||comTimeFromMinute.getSelectedItem().toString().equals(null)||comTimeToHour.getSelectedItem().toString().equals(null)||comTimeToMinute.getSelectedItem().toString().equals(null))
+				{
+					JOptionPane.showMessageDialog(null,"please fill all parts ");
+					return;
+				}
+				  String sql = "select ssn from nurse_schedule where ssn='" + txtId.getText() + "'";
+                  ResultSet rs=SQLCon.SQLConnection(sql);
+                  try {
+					if (rs.next()) {
+					      JOptionPane.showMessageDialog(null, "ID already exist");
+					      return;
+					  }
+				} catch (HeadlessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                  
+			try
+			{
+					
+					String sql_add="INSERT INTO nurse_schedule(ssn,days,day_from,day_to) values("+Integer.parseInt(txtId.getText())+",'"+day+"','"+comTimeFromHour.getSelectedItem().toString()+ ":" +comTimeFromMinute.getSelectedItem().toString()+"', '"+comTimeToHour.getSelectedItem().toString()+ ":"  + comTimeToMinute.getSelectedItem().toString()+"')";
+					SQLCon.SQLConn(sql_add);
+					JOptionPane.showMessageDialog(null,"Added successfully");
+					ResultSet rst = SQLCon.SQLConnection("select * from nurse_schedule");
+					tableDays.setModel(DbUtils.resultSetToTableModel(rst));
+				}
+				catch(Exception ex)
+				{
+					JOptionPane.showMessageDialog(null,ex.getMessage());
+				}
+				
+			}
+		});
+		add_button.setBounds(928, 400, 111, 31);
+		contentPane.add(add_button);
 		
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(getClass().getResource("/images/9.jpg")));
-		label_1.setBounds(0,-22,1381,738);
+		label_1.setBounds(0,-29,1381,738);
 		contentPane.add(label_1);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(10, 11, 97, 21);
-		contentPane.add(menuBar);
 	}
 }
