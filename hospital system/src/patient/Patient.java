@@ -8,8 +8,11 @@ import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
 import java.util.Date;
 
 import javax.swing.ButtonGroup;
@@ -21,6 +24,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -29,6 +34,9 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+
+import sqlconnection.SQLCon;
+import net.proteanit.sql.DbUtils;
 
 public class Patient extends JFrame {
 
@@ -118,6 +126,102 @@ public class Patient extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
+
+		JMenu mnPatientRegistration = new JMenu("Patient Registration");
+		menuBar.add(mnPatientRegistration);
+		
+		JMenuItem mntmPatientRegisrations = new JMenuItem("Patient regisrations");
+		mnPatientRegistration.add(mntmPatientRegisrations);
+		
+		JMenuItem mntmSearchPatientDetails = new JMenuItem("Search Patient details");
+		mnPatientRegistration.add(mntmSearchPatientDetails);
+		
+		JMenu mnDoctorManagement = new JMenu("Doctor management");
+		menuBar.add(mnDoctorManagement);
+		
+		JMenuItem mntmDoctorInformation = new JMenuItem("doctor information");
+		mnDoctorManagement.add(mntmDoctorInformation);
+		
+		JMenuItem mntmPatientStatus = new JMenuItem("patient status");
+		mnDoctorManagement.add(mntmPatientStatus);
+		
+		JMenuItem mntmChangePassword = new JMenuItem("change password");
+		mnDoctorManagement.add(mntmChangePassword);
+		
+		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
+		menuBar.add(mnPharmacyManagement);
+		
+		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
+		mnPharmacyManagement.add(mntmMedicamentInformation);
+		
+		JMenuItem mntmChangePassword_1 = new JMenuItem("change password");
+		mnPharmacyManagement.add(mntmChangePassword_1);
+		
+		JMenu mnInvestigations = new JMenu("Investigations");
+		menuBar.add(mnInvestigations);
+		
+		JMenuItem mntmInvestigationType = new JMenuItem("investigation type");
+		mnInvestigations.add(mntmInvestigationType);
+		
+		JMenuItem mntmPatientStatus_1 = new JMenuItem("patient status");
+		mnInvestigations.add(mntmPatientStatus_1);
+		
+		JMenuItem mntmChangePassword_2 = new JMenuItem("change password");
+		mnInvestigations.add(mntmChangePassword_2);
+		
+		JMenu mnNursing = new JMenu("Nursing");
+		menuBar.add(mnNursing);
+		
+		JMenuItem mntmNurseInformation = new JMenuItem("nurse information");
+		mnNursing.add(mntmNurseInformation);
+		
+		JMenuItem mntmPatientStatus_2 = new JMenuItem("patient status");
+		mnNursing.add(mntmPatientStatus_2);
+		
+		JMenuItem mntmChangePassword_3 = new JMenuItem("change password");
+		mnNursing.add(mntmChangePassword_3);
+		
+		JMenu mnAdminManagement = new JMenu("Admin management");
+		menuBar.add(mnAdminManagement);
+		
+		JMenuItem mntmDoctorInformation_1 = new JMenuItem("doctor information");
+		mnAdminManagement.add(mntmDoctorInformation_1);
+		
+		JMenuItem mntmNurseInformation_1 = new JMenuItem("nurse information");
+		mnAdminManagement.add(mntmNurseInformation_1);
+		
+		JMenuItem mntmPharmacyInformation = new JMenuItem("pharmacy information");
+		mnAdminManagement.add(mntmPharmacyInformation);
+		
+		JMenuItem mntmInvestigationInformation = new JMenuItem("investigation information");
+		mnAdminManagement.add(mntmInvestigationInformation);
+		
+		JMenuItem mntmPatientInformation = new JMenuItem("patient information");
+		mnAdminManagement.add(mntmPatientInformation);
+		
+		JMenuItem mntmChangePassword_4 = new JMenuItem("change password");
+		mnAdminManagement.add(mntmChangePassword_4);
+		
+		JMenu mnReport = new JMenu(" Reports");
+		menuBar.add(mnReport);
+		
+		JMenuItem mntmPatientReport = new JMenuItem("patient report");
+		mnReport.add(mntmPatientReport);
+		
+		JMenuItem mntmPharmacyReport = new JMenuItem("pharmacy report");
+		mnReport.add(mntmPharmacyReport);
+		
+		JMenuItem mntmLaundryReport = new JMenuItem("laundry report");
+		mnReport.add(mntmLaundryReport);
+		
+		JMenu mnLaundryManagement = new JMenu("Laundry management");
+		menuBar.add(mnLaundryManagement);
+
+		
+
+		
+		
+		
 		
 		//************************************************** LOGO *******************************************************************************
 		
@@ -219,7 +323,7 @@ public class Patient extends JFrame {
 	// ************************************* Table Information ***************************************************
 				
 				scrollPane = new JScrollPane();
-				scrollPane.setBounds(87, 450, 1197, 180);
+				scrollPane.setBounds(87, 450, 1116, 180);
 				contentPane.add(scrollPane);
 			//	ResultSet rs = SQLCon.SQLConnection("select * from doctor") ;
 				table = new JTable(){
@@ -255,14 +359,26 @@ public class Patient extends JFrame {
 						"New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column"
 					}
 				));
-			//	table.setModel(DbUtils.resultSetToTableModel(rs));
+				ResultSet rs = SQLCon.SQLConnection("select * from patient");
+				table.setModel(DbUtils.resultSetToTableModel(rs));
+			
 				table.addMouseListener(new MouseAdapter() {
 					public void mouseClicked(MouseEvent e){
+						btnSave.setText("Update");
+						txtSsn.setEditable(false);
 						int row = table.getSelectedRow();
 						txtSsn.setText(table.getValueAt(row, 0).toString());
-						txtFirstName.setText(table.getValueAt(row, 1).toString());
-						txtLastName.setText(table.getValueAt(row, 2).toString());
-				
+						txtFirstName.setText(table.getValueAt(row, 1).toString().split(" ")[0]);
+						txtLastName.setText(table.getValueAt(row, 1).toString().split(" ")[1]);
+						if(table.getValueAt(row, 2).toString().equals("female")) rdbtnFemale.setSelected(true);
+						else if(table.getValueAt(row, 2).toString().equals("male")) rdbtnMale.setSelected(true);
+						txtPhone.setText(table.getValueAt(row, 3).toString());
+						txtAge.setText(table.getValueAt(row, 4).toString());
+						textArea.setText(table.getValueAt(row, 5).toString());
+						
+						 cmMaritalStatus.setSelectedItem(table.getValueAt(row, 6));
+						
+						txtWeight.setText(table.getValueAt(row, 7).toString());
 						
 					}
 				});
@@ -373,16 +489,86 @@ public class Patient extends JFrame {
 				txtWeight.setColumns(10);
 				txtWeight.setBounds(810, 319, 325, 26);
 				contentPane.add(txtWeight);
-				
+	
+                
 				btnSave = new JButton("Save");
-				btnSave.setForeground(Color.WHITE);
-				btnSave.addMouseListener(HDM);
-				btnSave.setBackground(new Color(20,60,80));
-				btnSave.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
-				btnSave.setBounds(652, 369, 154, 39);
-				contentPane.add(btnSave);
+				btnSave.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent arg0) {
+					
+					if(btnSave.getText().equals("Update")){
+						
+						String gender = "male";
+						if(rdbtnMale.isSelected()) gender = "male";
+						else if (rdbtnFemale.isSelected()) gender = "female";
+						
+						String marital = cmMaritalStatus.getSelectedItem().toString();
+						
+						String sql = "update patient set Name = '"+txtFirstName.getText()+" "+txtLastName.getText()+"',"
+								+ "gender = '"+gender+"',phone = "+Double.parseDouble(txtPhone.getText())+",age = "+Integer.parseInt(txtAge.getText())
+								+",address = '"+textArea.getText()+"',marital_status = '"+marital+"',weight = "+Integer.parseInt(txtWeight.getText())+" WHERE SSN = "+Integer.parseInt(txtSsn.getText());
+						
+						SQLCon.SQLConn(sql);
+						table.setModel(DbUtils.resultSetToTableModel(SQLCon.SQLConnection("select * from patient")));
+						btnSave.setText("Save");
+						txtSsn.setEditable(true);
+						JOptionPane.showMessageDialog(null, "Update done");
+						
+					}else{
+						
+					if(txtSsn.getText().equals("")||txtFirstName.getText().equals("")||txtLastName.getText().equals("")||txtPhone.getText().equals("")||txtAge.getText().equals("")||textArea.getText().equals("")||cmMaritalStatus.getSelectedItem().toString().equals("-Select-")||txtWeight.getText().equals(""))
+					{
+						JOptionPane.showMessageDialog(null, "please fill all fields ");
+						return;
+					}else{
+						String gender = "male";
+						if(rdbtnMale.isSelected()) gender = "male";
+						else if (rdbtnFemale.isSelected()) gender = "female";
+						
+						String marital = cmMaritalStatus.getSelectedItem().toString();
+						
+						String sql ="insert into patient (SSN,name,gender,phone,age,address,marital_status,weight)"
+					+ "values("+Integer.parseInt(txtSsn.getText())+",'"+txtFirstName.getText()+" "+txtLastName.getText()+"','"+gender+"',"+Double.parseDouble(txtPhone.getText())+","+Integer.parseInt(txtAge.getText())+",'"+textArea.getText()+"','"+marital+"',"+Integer.parseInt(txtWeight.getText())+")";
+						
+						SQLCon.SQLConn(sql);
+						table.setModel(DbUtils.resultSetToTableModel(SQLCon.SQLConnection("select * from patient")));
+						JOptionPane.showMessageDialog(null, "done");
+						
+					}
+				  }
+				}
+			});
+			
+					btnSave.setForeground(Color.WHITE);
+					
+					btnSave.setBackground(new Color(20,60,80));
+					btnSave.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
+					btnSave.setBounds(652, 369, 154, 39);
+					contentPane.add(btnSave);
+					btnSave.addMouseListener(HDM);
+					
+					
 				
 				btnDelete = new JButton("Delete");
+				btnDelete.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						 int val = JOptionPane.showConfirmDialog(null, "Do you realy want to delete");
+			                if (val == 0)
+			                {
+			                	String sql_delete="delete from patient where SSN=" + Integer.parseInt(txtSsn.getText());
+			    		     	SQLCon.SQLConn(sql_delete);
+			    			    ResultSet rs = SQLCon.SQLConnection("select * from patient");
+			    			    table.setModel(DbUtils.resultSetToTableModel(rs));
+			    				
+			    		        JOptionPane.showMessageDialog(null, "DELETED successfully");
+			                }
+			                else
+			                {
+			                	JOptionPane.showMessageDialog(null,"wrong choice ");
+			                }
+						
+				
+					}
+			});
 				btnDelete.setForeground(Color.WHITE);
 				btnDelete.addMouseListener(HDM);
 				btnDelete.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
@@ -391,12 +577,47 @@ public class Patient extends JFrame {
 				contentPane.add(btnDelete);
 				
 				btnClear = new JButton("Clear");
+				btnClear.addActionListener(new ActionListener() {
+					
+					public void actionPerformed(ActionEvent arg0) {
+						btnSave.setText("Save");
+						txtSsn.setEditable(true);
+						txtSsn.setText("");
+						txtFirstName.setText("");
+						txtLastName.setText("");
+						txtAge.setText("");
+						txtPhone.setText("");
+						txtWeight.setText("");
+						cmMaritalStatus.setSelectedIndex(0);
+						textArea.setText("");
+						rdbtnMale.setSelected(true);
+						
+					}
+				});
 				btnClear.setForeground(Color.WHITE);
 				btnClear.addMouseListener(HDM);
 				btnClear.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
 				btnClear.setBackground(new Color(20, 90, 80));
 				btnClear.setBounds(817, 369, 154, 39);
 				contentPane.add(btnClear);
+				
+				btnClear = new JButton("Clear");
+		     	btnClear.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						int SSN=Integer.parseInt(txtSsn.getText());
+						String FirstName=txtFirstName.getText();
+						String LastName=txtLastName.getText();
+						String gender=lblGender.getText();
+						int Phone=Integer.parseInt(txtPhone.getText());
+						int Age=Integer.parseInt(txtAge.getText());
+						String Addess=textArea.getText();
+						String MaritalStatus=lblMaritalStatus.getText();
+						int Weight=Integer.parseInt(txtWeight.getText());
+			         
+						
+					}
+				});
+				btnClear.addMouseListener(HDM);
 				
 				scrollPane_1 = new JScrollPane();
 				scrollPane_1.setBounds(666, 173, 463, 87);
