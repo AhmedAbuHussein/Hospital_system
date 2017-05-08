@@ -58,5 +58,25 @@
     "coordinate": "jre:jre:zip:call:1.0.0",
     "location": "C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar",
     "status": "RESOLVED"
+  },
+  "E:\\SWF\\ConnectionDB\\jdbc\\rs2xml.jar": {
+    "location": "E:\\SWF\\ConnectionDB\\jdbc\\rs2xml.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027E:\\SWF\\ConnectionDB\\jdbc\\rs2xml.jar\u0027. Neither fingerprint \u00278a970b2f2ce64a6d8c96b850d8db8908ec3148f1\u0027 nor symbolic name \u0027rs2xml\u0027 are known."
+  },
+  "E:\\my hospital\\hospital system\\src": {
+    "location": "E:\\my hospital\\hospital system\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027E:\\my hospital\\hospital system\\src\u0027. Skipped."
+  },
+  "C:\\Users\\Ahmed Shaker\\Desktop\\my hospital\\hospital system\\src": {
+    "location": "C:\\Users\\Ahmed Shaker\\Desktop\\my hospital\\hospital system\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Ahmed Shaker\\Desktop\\my hospital\\hospital system\\src\u0027. Skipped."
+  },
+  "C:\\Users\\Ahmed Shaker\\Desktop\\my hospital\\ConnectionDB\\jdbc\\rs2xml.jar": {
+    "location": "C:\\Users\\Ahmed Shaker\\Desktop\\my hospital\\ConnectionDB\\jdbc\\rs2xml.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027C:\\Users\\Ahmed Shaker\\Desktop\\my hospital\\ConnectionDB\\jdbc\\rs2xml.jar\u0027. Neither fingerprint \u00278a970b2f2ce64a6d8c96b850d8db8908ec3148f1\u0027 nor symbolic name \u0027rs2xml\u0027 are known."
   }
 }

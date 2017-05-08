@@ -1,6 +1,27 @@
 package patient;
 //This is patient status design Salwa Ahmed Handler Merna EZZ
+import investigation.investigation;
+
 import java.awt.Color;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 import handler.HandlerFocus;
@@ -10,19 +31,28 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -32,6 +62,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
+import net.proteanit.sql.DbUtils;
+import nursing.NursInfo;
+import report.Report;
+import sqlconnection.SQLCon;
+
+import javax.swing.JComboBox;
+
+import pharmacy.Medical;
+import doctors.Doctor;
+
 public class PatientStatus extends JFrame {
 
 	private Panel contentPane;
@@ -40,7 +80,7 @@ public class PatientStatus extends JFrame {
 	private JButton btnSearch;
 	
 	private JScrollPane scrollPane;
-	private JTable table;
+	private JTable table , table1;
 	private HandlerMotion hdm;
 	private HandlerFocus hdf;
 	
@@ -73,6 +113,7 @@ public class PatientStatus extends JFrame {
 	private JMenuItem mntmChangePasswordNursing;
 	private JMenuItem mntmNursingRegistration;
 	private JMenuItem mntmPatientStatusNursing;
+	private JComboBox<String> comboBox;
 
 	/**
 	 * Launch the application.
@@ -104,11 +145,6 @@ public class PatientStatus extends JFrame {
 
 	private void createFrame(){
 		
-		contentPane = new Panel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
-		setContentPane(contentPane);
-		
 		//***************************************************MENU BAR ********************************************************************
 		
 		menuBar = new JMenuBar();
@@ -120,9 +156,15 @@ public class PatientStatus extends JFrame {
 		
 		JMenuItem mntmPatientRegisrations = new JMenuItem("Patient regisrations");
 		mnPatientRegistration.add(mntmPatientRegisrations);
-		
-		JMenuItem mntmSearchPatientDetails = new JMenuItem("Search Patient details");
-		mnPatientRegistration.add(mntmSearchPatientDetails);
+		mntmPatientRegisrations.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				Patient patient=new Patient();
+				patient.setVisible(true);
+			}
+		});
 		
 		JMenu mnDoctorManagement = new JMenu("Doctor management");
 		menuBar.add(mnDoctorManagement);
@@ -130,11 +172,26 @@ public class PatientStatus extends JFrame {
 		JMenuItem mntmDoctorInformation = new JMenuItem("doctor information");
 		mnDoctorManagement.add(mntmDoctorInformation);
 		
+        mntmDoctorInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				Doctor doctor=new Doctor();
+				doctor.setVisible(true);
+			}
+		});
 		JMenuItem mntmPatientStatus = new JMenuItem("patient status");
 		mnDoctorManagement.add(mntmPatientStatus);
-		
-		JMenuItem mntmChangePassword = new JMenuItem("change password");
-		mnDoctorManagement.add(mntmChangePassword);
+		mntmPatientStatus.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				PatientStatus patient=new PatientStatus();
+				patient.setVisible(true);
+			}
+		});
 		
 		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
 		menuBar.add(mnPharmacyManagement);
@@ -142,75 +199,148 @@ public class PatientStatus extends JFrame {
 		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
 		mnPharmacyManagement.add(mntmMedicamentInformation);
 		
-		JMenuItem mntmChangePassword_1 = new JMenuItem("change password");
-		mnPharmacyManagement.add(mntmChangePassword_1);
-		
+        mntmMedicamentInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				Medical medical=new Medical();
+				medical.setVisible(true);
+			}
+		});
 		JMenu mnInvestigations = new JMenu("Investigations");
 		menuBar.add(mnInvestigations);
 		
 		JMenuItem mntmInvestigationType = new JMenuItem("investigation type");
 		mnInvestigations.add(mntmInvestigationType);
-		
+		mntmInvestigationType.addActionListener(new ActionListener() {
+				
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					dispose();
+					investigation investigation=new investigation();
+					investigation.setVisible(true);
+				}
+			});
 		JMenuItem mntmPatientStatus_1 = new JMenuItem("patient status");
 		mnInvestigations.add(mntmPatientStatus_1);
-		
-		JMenuItem mntmChangePassword_2 = new JMenuItem("change password");
-		mnInvestigations.add(mntmChangePassword_2);
-		
+       mntmPatientStatus_1.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				PatientStatus patient=new PatientStatus();
+				patient.setVisible(true);
+			}
+		});
 		JMenu mnNursing = new JMenu("Nursing");
 		menuBar.add(mnNursing);
 		
 		JMenuItem mntmNurseInformation = new JMenuItem("nurse information");
 		mnNursing.add(mntmNurseInformation);
+		mntmNurseInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				NursInfo nurse=new NursInfo();
+				nurse.setVisible(true);
+			}
+		});
 		
 		JMenuItem mntmPatientStatus_2 = new JMenuItem("patient status");
 		mnNursing.add(mntmPatientStatus_2);
-		
-		JMenuItem mntmChangePassword_3 = new JMenuItem("change password");
-		mnNursing.add(mntmChangePassword_3);
+        mntmPatientStatus_2.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				PatientStatus patient=new PatientStatus();
+				patient.setVisible(true);
+			}
+		});
 		
 		JMenu mnAdminManagement = new JMenu("Admin management");
 		menuBar.add(mnAdminManagement);
 		
 		JMenuItem mntmDoctorInformation_1 = new JMenuItem("doctor information");
 		mnAdminManagement.add(mntmDoctorInformation_1);
-		
+		 mntmDoctorInformation_1.addActionListener(new ActionListener() {
+				
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					dispose();
+					Doctor doctor=new Doctor();
+					doctor.setVisible(true);
+				}
+			});
 		JMenuItem mntmNurseInformation_1 = new JMenuItem("nurse information");
 		mnAdminManagement.add(mntmNurseInformation_1);
+		mntmNurseInformation_1.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				NursInfo nurse =new NursInfo();
+				nurse.setVisible(true);
+			}
+		});
 		
 		JMenuItem mntmPharmacyInformation = new JMenuItem("pharmacy information");
 		mnAdminManagement.add(mntmPharmacyInformation);
+		mntmPharmacyInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				Medical medical=new Medical();
+				medical.setVisible(true);
+			}
+		});
 		
 		JMenuItem mntmInvestigationInformation = new JMenuItem("investigation information");
 		mnAdminManagement.add(mntmInvestigationInformation);
-		
+		mntmInvestigationInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				investigation investigation=new investigation();
+				investigation.setVisible(true);
+			}
+		});
 		JMenuItem mntmPatientInformation = new JMenuItem("patient information");
 		mnAdminManagement.add(mntmPatientInformation);
-		
-		JMenuItem mntmChangePassword_4 = new JMenuItem("change password");
-		mnAdminManagement.add(mntmChangePassword_4);
-		
+		mntmPatientInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				Patient patient =new Patient();
+				patient.setVisible(true);
+			}
+		});
 		JMenu mnReport = new JMenu(" Reports");
 		menuBar.add(mnReport);
 		
 		JMenuItem mntmPatientReport = new JMenuItem("patient report");
 		mnReport.add(mntmPatientReport);
+		mntmPatientReport .addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				Report report=new Report();
+				report.setVisible(true);
+			}
+		});
 		
-		JMenuItem mntmPharmacyReport = new JMenuItem("pharmacy report");
-		mnReport.add(mntmPharmacyReport);
-		
-		JMenuItem mntmLaundryReport = new JMenuItem("laundry report");
-		mnReport.add(mntmLaundryReport);
-		
-		JMenu mnLaundryManagement = new JMenu("Laundry management");
-		menuBar.add(mnLaundryManagement);
 		contentPane = new Panel();
 		contentPane.setBackground(new Color(230, 230, 250));
 		contentPane.setToolTipText("");
-		
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setContentPane(contentPane);
 		
 		hdm =  new HandlerMotion();
 		hdf = new HandlerFocus();
@@ -297,12 +427,6 @@ public class PatientStatus extends JFrame {
 				label.setIcon(new ImageIcon(getClass().getResource("/Images/header.png")));
 				label.setBounds(0, 629, 1387, 78);
 				contentPane.add(label);
-		//*******************************************************************************************************************************
-				
-				JLabel lblPatientName = new JLabel("Patient Name :");
-				lblPatientName.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 14));
-				lblPatientName.setBounds(469, 132, 118, 26);
-				contentPane.add(lblPatientName);
 				
 				txtSearch = new JTextField();
 				txtSearch.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
@@ -310,6 +434,36 @@ public class PatientStatus extends JFrame {
 				txtSearch.addFocusListener(hdf);
 				contentPane.add(txtSearch);
 				txtSearch.setColumns(10);
+				txtSearch.addKeyListener(new KeyAdapter() {
+					public void keyPressed(KeyEvent e)
+					{
+						ResultSet rss;
+						if(comboBox.getSelectedItem().toString().equals("ssn")){
+							
+							if(txtSearch.getText().equals(""))
+								rss= SQLCon.SQLConnection("select * from patient_statues");
+							else{
+								 rss= SQLCon.SQLConnection("select * from patient_statues where ssn = "+Integer.parseInt(txtSearch.getText()));
+								 table.setModel(DbUtils.resultSetToTableModel(rss));
+							}
+						}else if(comboBox.getSelectedItem().toString().equals("Name")){
+							
+							if(txtSearch.getText().equals(""))
+								rss= SQLCon.SQLConnection("select * from patient_statues");
+							else{
+								rss = SQLCon.SQLConnection("select ssn from patient "
+										+ "where Name LIKE '%"+txtSearch.getText()+"%'");
+								table1.setModel(DbUtils.resultSetToTableModel(rss));
+								
+								 rss= SQLCon.SQLConnection("select * from patient_statues "
+								 		+ "where ssn = "+Integer.parseInt(table1.getValueAt(0, 0).toString()));
+								 table.setModel(DbUtils.resultSetToTableModel(rss));
+							}
+							
+						}
+						
+					}
+				});
 				
 				btnSearch = new JButton("Search");
 				btnSearch .addMouseListener(hdm);
@@ -317,12 +471,46 @@ public class PatientStatus extends JFrame {
 				btnSearch.setForeground(Color.WHITE);
 				btnSearch.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
 				btnSearch.setBounds(891, 132, 118, 26);
+				
+				btnSearch.addActionListener(new ActionListener() {
+					
+					public void actionPerformed(ActionEvent arg0) {
+						ResultSet rss;
+						if(comboBox.getSelectedItem().toString().equals("ssn")){
+							
+							if(txtSearch.getText().equals(""))
+								rss= SQLCon.SQLConnection("select * from patient_statues");
+							else{
+								 rss= SQLCon.SQLConnection("select * from patient_statues where ssn = "+Integer.parseInt(txtSearch.getText()));
+								 table.setModel(DbUtils.resultSetToTableModel(rss));
+							}
+						}else if(comboBox.getSelectedItem().toString().equals("Name")){
+							
+							if(txtSearch.getText().equals(""))
+								rss= SQLCon.SQLConnection("select * from patient_statues");
+							else{
+								rss = SQLCon.SQLConnection("select ssn from patient "
+										+ "where Name LIKE '%"+txtSearch.getText()+"%'");
+								table1.setModel(DbUtils.resultSetToTableModel(rss));
+								
+								 rss= SQLCon.SQLConnection("select * from patient_statues "
+								 		+ "where ssn = "+Integer.parseInt(table1.getValueAt(0, 0).toString()));
+								 table.setModel(DbUtils.resultSetToTableModel(rss));
+							}
+							
+						}
+						
+						
+					}
+					});
+				
 				contentPane.add(btnSearch);
 				
 				scrollPane = new JScrollPane();
 				scrollPane.setBounds(30, 475, 1303, 155);
 				contentPane.add(scrollPane);
 				
+				table1 = new JTable();
 				
 				table = new JTable();
 				table = new JTable(){
@@ -339,6 +527,7 @@ public class PatientStatus extends JFrame {
 					}
 					
 				};
+				
 				table.setModel(new DefaultTableModel(
 					new Object[][] {
 						{null, null, null, null, null, null, null},
@@ -360,8 +549,33 @@ public class PatientStatus extends JFrame {
 						"New column", "New column", "New column", "New column", "New column", "New column", "New column"
 					}
 				));
+				ResultSet rs = SQLCon.SQLConnection("select * from patient_statues");
+				table.setModel(DbUtils.resultSetToTableModel(rs));
+				table.addMouseListener(new MouseAdapter() {
+					public void mouseClicked(MouseEvent e){
+					 
+						int row = table.getSelectedRow();
+						txtId.setText(table.getValueAt(row, 0).toString());
+						txtPatientStatus.setText(table.getValueAt(row, 1).toString());
+						txtInvestigation.setText(table.getValueAt(row, 2).toString());
+						
+						ResultSet rss = SQLCon.SQLConnection("select Name from patient "
+								+ "where SSN= "+Integer.parseInt(txtId.getText()));
+						
+						table1.setModel(DbUtils.resultSetToTableModel(rss));
+						
+						
+						txtFirstName.setText(table1.getValueAt(0, 0).toString().split(" ")[0]);
+						txtLastName.setText(table1.getValueAt(0, 0).toString().split(" ")[1]);
+
+					
+					}
+					
+				});
+				
 				
 				scrollPane.setViewportView(table);
+				
 				
 				JLabel lblId = new JLabel("ID");
 				lblId.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
@@ -404,12 +618,49 @@ public class PatientStatus extends JFrame {
 				btnUpdate.setBounds(488, 404, 125, 41);
 				contentPane.add(btnUpdate);
 				
+				btnUpdate.addActionListener(new ActionListener() {
+					
+					public void actionPerformed(ActionEvent arg0) {
+						// TODO Auto-generated method stub
+						if(txtId.getText().equals("")||txtInvestigation.getText().equals(""))
+						{
+							JOptionPane.showMessageDialog(null, "may be id or text area is empty ckeck it out");
+							return;
+						}
+						else
+						{
+							try
+							{
+								String sql="update patient_statues set doctor_report='" + txtPatientStatus.getText()+"'where ssn = " +Integer.parseInt( txtId.getText());
+				                SQLCon.SQLConn(sql);
+				                ResultSet rs = SQLCon.SQLConnection("select * from patient_statues ");
+				        		table.setModel(DbUtils.resultSetToTableModel(rs));
+				                JOptionPane.showMessageDialog(null, "UPDATED Successfully");
+							}
+							catch(Exception ex)
+							{
+								ex.getMessage();
+							}
+						}
+						
+
+
+					}
+				});
+				
 				btnExit = new JButton("Exit");
 				btnExit .addMouseListener(hdm);
 				btnExit.setForeground(Color.WHITE);
 				btnExit.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 16));
 				btnExit.setBackground(new Color(120, 30, 60));
 				btnExit.setBounds(756, 404, 125, 41);
+				btnExit.addActionListener(new ActionListener() {
+					
+					public void actionPerformed(ActionEvent arg0) {
+						// TODO Auto-generated method stub
+						dispose();
+					}
+				});
 				contentPane.add(btnExit);
 				
 				btnClear = new JButton("Clear");
@@ -419,6 +670,21 @@ public class PatientStatus extends JFrame {
 				btnClear.setBackground(new Color(20, 50, 60));
 				btnClear.setBounds(619, 404, 125, 41);
 				contentPane.add(btnClear);
+				btnClear.addActionListener(new ActionListener() {
+					
+					public void actionPerformed(ActionEvent arg0) {
+						// TODO Auto-generated method stub
+						txtId.setText("");
+						txtSearch.setText("");
+						txtFirstName.setText("");
+						txtLastName.setText("");
+						txtInvestigation.setText("");
+						txtPatientStatus.setText("");
+
+
+						
+					}
+				});
 				
 				JScrollPane scrollPane_2 = new JScrollPane();
 				scrollPane_2.setBounds(933, 228, 400, 236);
@@ -427,6 +693,7 @@ public class PatientStatus extends JFrame {
 				txtInvestigation = new JTextArea();
 				txtInvestigation.addFocusListener(hdf);
 				txtInvestigation.setWrapStyleWord(true);
+				txtInvestigation.setEditable(false);
 			
 				txtInvestigation.setLineWrap(true);
 				txtInvestigation.setFont(new Font("Monospaced", Font.BOLD | Font.ITALIC, 18));
@@ -454,9 +721,22 @@ public class PatientStatus extends JFrame {
 				label_1.setBounds(30, 195, 155, 26);
 				contentPane.add(label_1);
 				
+				comboBox = new JComboBox<String>();
+				comboBox.setBackground(new Color(220,30,50));
+				comboBox.setForeground(Color.WHITE);
+				comboBox.setFont(new Font("Georgia", Font.ITALIC | Font.ITALIC, 17));
+				comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"ssn", "Name"}));
+			
+				comboBox.setBounds(390, 132, 189, 24);
+				contentPane.add(comboBox);
+				
+				
+				
+				
 				
 				
 		//***********************************************************************************************************************************
 		
 	}
 }
+
