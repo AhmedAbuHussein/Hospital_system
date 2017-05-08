@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.awt.event.MouseAdapter"/>
 <fullyQualifiedTypeName name="javax.swing.JTable"/>
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="sqlconnection.SQLCon"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -11,4 +10,14 @@
 <fullyQualifiedTypeName name="javax.swing.JComponent"/>
 <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
 <fullyQualifiedTypeName name="net.proteanit.sql.DbUtils"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="patient.PatientStatus"/>
+<fullyQualifiedTypeName name="doctors.Doctor"/>
+<fullyQualifiedTypeName name="nursing.NursInfo"/>
+<fullyQualifiedTypeName name="pharmacy.Medical"/>
+<fullyQualifiedTypeName name="investigation.investigation"/>
+<fullyQualifiedTypeName name="patient.Patient"/>
+<fullyQualifiedTypeName name="report.Report"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyAdapter"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
 </qualifiedTypeNameHistroy>
