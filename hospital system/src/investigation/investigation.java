@@ -163,6 +163,101 @@ public class investigation extends JFrame {
 		JMenu mnLaundryManagement = new JMenu("Laundry management");
 		menuBar.add(mnLaundryManagement);
 		//************************************************
+		       /**************  Dispose & link to all frames *******************/
+		
+		mntmDoctorInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Doctor().setVisible(true);
+			}
+		});
+
+		
+		mntmPatientStatus.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				Patient p=new Patient();
+				p.setVisible(true);
+			}
+		});
+		
+		mntmMedicamentInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Medical().setVisible(true);
+				
+			}
+		});
+		mntmInvestigationType.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new investigation().setVisible(true);
+			}
+		});
+		mntmNurseInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new NursInfo().setVisible(true);
+				
+			}
+		});
+		
+		mntmDoctorInformation_1.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Doctor().setVisible(true);
+				
+			}
+		});
+		mntmNurseInformation_1.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new NursInfo().setVisible(true);
+				
+			}
+		});
+		
+		mntmPharmacyInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Medical().setVisible(true);
+			}
+		});
+		mntmInvestigationInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new investigation().setVisible(true);
+			}
+		});
+		mntmPatientReport.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Report().setVisible(true);
+			}
+		});
+		//***********************************
+
+		
 		
 		
 		contentPane = new panel();// the new variable in the panel to put the componant in the panel
