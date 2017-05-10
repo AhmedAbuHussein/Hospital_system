@@ -282,6 +282,20 @@ mntmNurseInformation_1.addActionListener(new ActionListener() {
 		});
 		
 		
+		JMenuItem mntmPharmacyReport = new JMenuItem("pharmacy report");
+		mnReport.add(mntmPharmacyReport);
+		mntmPharmacyReport.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Report(Report.this.name,Report.this.spc).setVisible(true);
+				
+				
+			}
+		});
+		
+		
 		
 		
 		

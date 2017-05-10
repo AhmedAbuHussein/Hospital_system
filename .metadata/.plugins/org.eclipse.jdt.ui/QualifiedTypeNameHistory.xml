@@ -6,8 +6,6 @@
 <fullyQualifiedTypeName name="javax.swing.JComponent"/>
 <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
 <fullyQualifiedTypeName name="patient.PatientStatus"/>
-<fullyQualifiedTypeName name="doctors.Doctor"/>
-<fullyQualifiedTypeName name="pharmacy.Medical"/>
 <fullyQualifiedTypeName name="investigation.investigation"/>
 <fullyQualifiedTypeName name="patient.Patient"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyAdapter"/>
@@ -21,4 +19,7 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="handler.HandlerMotion"/>
+<fullyQualifiedTypeName name="doctors.Doctor"/>
+<fullyQualifiedTypeName name="pharmacy.Medical"/>
 </qualifiedTypeNameHistroy>
