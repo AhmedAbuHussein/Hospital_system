@@ -2,6 +2,7 @@ package patient;
 
 import handler.HandlerFocus;
 import handler.HandlerMotion;
+import investigation.investigation;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -35,8 +36,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
+import pharmacy.Medical;
+import doctors.Doctor;
+import report.Report;
 import sqlconnection.SQLCon;
 import net.proteanit.sql.DbUtils;
+import nursing.NursInfo;
 
 public class Patient extends JFrame {
 
@@ -61,7 +66,6 @@ public class Patient extends JFrame {
 	private JLabel lblAddress;
 	
 	private JMenuBar menuBar;
-	private JMenu mnFile;
 	
 	private JTextField txtSsn;
 	private JTextField txtFirstName;
@@ -86,13 +90,14 @@ public class Patient extends JFrame {
 	
 	private HandlerMotion HDM;
 	private HandlerFocus HDF;
+	private String Name,specification;
 
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Patient frame = new Patient();
+					Patient frame = new Patient("","");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -104,7 +109,9 @@ public class Patient extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Patient() {
+	public Patient(String name,String spc) {
+		this.Name=name;
+		this.specification=spc;
 		setTitle("Patient Registration");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Patient.class.getResource("/Images/hos.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -119,9 +126,6 @@ public class Patient extends JFrame {
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		
-		mnFile = new JMenu("File ");
-		menuBar.add(mnFile);
 		contentPane = new Panel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
@@ -133,11 +137,9 @@ public class Patient extends JFrame {
 		JMenuItem mntmPatientRegisrations = new JMenuItem("Patient regisrations");
 		mnPatientRegistration.add(mntmPatientRegisrations);
 		
-		JMenuItem mntmSearchPatientDetails = new JMenuItem("Search Patient details");
-		mnPatientRegistration.add(mntmSearchPatientDetails);
-		
 		JMenu mnDoctorManagement = new JMenu("Doctor management");
 		menuBar.add(mnDoctorManagement);
+		
 		
 		JMenuItem mntmDoctorInformation = new JMenuItem("doctor information");
 		mnDoctorManagement.add(mntmDoctorInformation);
@@ -145,17 +147,11 @@ public class Patient extends JFrame {
 		JMenuItem mntmPatientStatus = new JMenuItem("patient status");
 		mnDoctorManagement.add(mntmPatientStatus);
 		
-		JMenuItem mntmChangePassword = new JMenuItem("change password");
-		mnDoctorManagement.add(mntmChangePassword);
-		
 		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
 		menuBar.add(mnPharmacyManagement);
 		
 		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
 		mnPharmacyManagement.add(mntmMedicamentInformation);
-		
-		JMenuItem mntmChangePassword_1 = new JMenuItem("change password");
-		mnPharmacyManagement.add(mntmChangePassword_1);
 		
 		JMenu mnInvestigations = new JMenu("Investigations");
 		menuBar.add(mnInvestigations);
@@ -166,9 +162,6 @@ public class Patient extends JFrame {
 		JMenuItem mntmPatientStatus_1 = new JMenuItem("patient status");
 		mnInvestigations.add(mntmPatientStatus_1);
 		
-		JMenuItem mntmChangePassword_2 = new JMenuItem("change password");
-		mnInvestigations.add(mntmChangePassword_2);
-		
 		JMenu mnNursing = new JMenu("Nursing");
 		menuBar.add(mnNursing);
 		
@@ -178,14 +171,12 @@ public class Patient extends JFrame {
 		JMenuItem mntmPatientStatus_2 = new JMenuItem("patient status");
 		mnNursing.add(mntmPatientStatus_2);
 		
-		JMenuItem mntmChangePassword_3 = new JMenuItem("change password");
-		mnNursing.add(mntmChangePassword_3);
-		
 		JMenu mnAdminManagement = new JMenu("Admin management");
 		menuBar.add(mnAdminManagement);
 		
 		JMenuItem mntmDoctorInformation_1 = new JMenuItem("doctor information");
 		mnAdminManagement.add(mntmDoctorInformation_1);
+		
 		
 		JMenuItem mntmNurseInformation_1 = new JMenuItem("nurse information");
 		mnAdminManagement.add(mntmNurseInformation_1);
@@ -199,28 +190,105 @@ public class Patient extends JFrame {
 		JMenuItem mntmPatientInformation = new JMenuItem("patient information");
 		mnAdminManagement.add(mntmPatientInformation);
 		
-		JMenuItem mntmChangePassword_4 = new JMenuItem("change password");
-		mnAdminManagement.add(mntmChangePassword_4);
-		
 		JMenu mnReport = new JMenu(" Reports");
 		menuBar.add(mnReport);
 		
 		JMenuItem mntmPatientReport = new JMenuItem("patient report");
 		mnReport.add(mntmPatientReport);
 		
-		JMenuItem mntmPharmacyReport = new JMenuItem("pharmacy report");
-		mnReport.add(mntmPharmacyReport);
 		
-		JMenuItem mntmLaundryReport = new JMenuItem("laundry report");
-		mnReport.add(mntmLaundryReport);
+       /**************  Dispose & link to all frames *******************/
 		
-		JMenu mnLaundryManagement = new JMenu("Laundry management");
-		menuBar.add(mnLaundryManagement);
+		mntmDoctorInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Doctor(Name,specification).setVisible(true);
+			}
+		});
 
 		
-
+		mntmPatientStatus.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				Patient p=new Patient(Name,specification);
+				p.setVisible(true);
+			}
+		});
 		
+		mntmMedicamentInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Medical(Name,specification).setVisible(true);
+				
+			}
+		});
+		mntmInvestigationType.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new investigation(Name,specification).setVisible(true);
+			}
+		});
+		mntmNurseInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new NursInfo(Name,specification).setVisible(true);
+				
+			}
+		});
 		
+		mntmDoctorInformation_1.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Doctor(Name,specification).setVisible(true);
+				
+			}
+		});
+		mntmNurseInformation_1.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new NursInfo(Name,specification).setVisible(true);
+				
+			}
+		});
+		
+		mntmPharmacyInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Medical(Name,specification).setVisible(true);
+			}
+		});
+		mntmInvestigationInformation.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new investigation(Name,specification).setVisible(true);
+			}
+		});
+		mntmPatientReport.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				dispose();
+				new Report(Name,specification).setVisible(true);
+			}
+		});
 		
 		
 		//************************************************** LOGO *******************************************************************************
@@ -259,6 +327,10 @@ public class Patient extends JFrame {
 				lblHeader.setIcon(new ImageIcon(getClass().getResource("/Images/header.png")));
 				lblHeader.setBounds(0, 0, 1387, 78);
 				contentPane.add(lblHeader);
+			    
+			    JLabel lblNewLabel = new JLabel("DR :"+Name);
+			    lblNewLabel.setBounds(33, 641, 109, 28);
+			    contentPane.add(lblNewLabel);
 				
 				//***************************************Footer ************************************************
 				
@@ -558,6 +630,9 @@ public class Patient extends JFrame {
 			    		     	SQLCon.SQLConn(sql_delete);
 			    			    ResultSet rs = SQLCon.SQLConnection("select * from patient");
 			    			    table.setModel(DbUtils.resultSetToTableModel(rs));
+			    			    
+			    			    sql_delete="delete from patient_statues where SSN=" + Integer.parseInt(txtSsn.getText());
+			    		     	SQLCon.SQLConn(sql_delete);
 			    				
 			    		        JOptionPane.showMessageDialog(null, "DELETED successfully");
 			                }
