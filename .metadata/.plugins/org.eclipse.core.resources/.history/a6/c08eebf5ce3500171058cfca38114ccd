@@ -114,7 +114,7 @@ public class Login extends JFrame {
 					if(userName.trim().equals(temp.getValueAt(i, 1).toString().trim())){
 						if(pws.trim().equals(temp.getValueAt(i, 2).toString().trim())){
 							JOptionPane.showMessageDialog(null, "Hellow : "+userName);
-							new MainMenu(userName,temp.getValueAt(i, 3).toString()).setVisible(true);
+						//	new MainMenu(userName,temp.getValueAt(i, 3).toString()).setVisible(true);
 							return;
 						}
 						JOptionPane.showMessageDialog(null, "Invaled Password");
@@ -146,7 +146,7 @@ public class Login extends JFrame {
 					if(userName.trim().equals(temp.getValueAt(i, 1).toString().trim())){
 						if(pws.trim().equals(temp.getValueAt(i, 2).toString().trim())){
 							JOptionPane.showMessageDialog(null, "Hellow : "+userName);
-							new MainMenu(userName,temp.getValueAt(i, 3).toString()).setVisible(true);
+					//		new MainMenu(userName,temp.getValueAt(i, 3).toString()).setVisible(true);
 							return;
 						}
 						JOptionPane.showMessageDialog(null, "Invaled Password");

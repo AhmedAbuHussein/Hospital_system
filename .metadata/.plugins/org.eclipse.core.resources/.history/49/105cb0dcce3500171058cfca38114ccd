@@ -6,7 +6,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.sql.ResultSet;
 import java.util.Date;
 
 import javax.swing.DefaultComboBoxModel;
@@ -15,9 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JToolBar;
@@ -28,19 +25,7 @@ import javax.swing.JMenuItem;
 
 
 
-
-
-
-
-
-
-
-import sqlconnection.SQLCon;
-import net.proteanit.sql.DbUtils;
-
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Login extends JFrame {
 
@@ -102,66 +87,10 @@ public class Login extends JFrame {
 		txtName.setColumns(10);
 		
 		pwdPassword = new JPasswordField();
-		pwdPassword.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				String userName = txtName.getText();
-				String pws = new String(pwdPassword.getPassword());
-				ResultSet rs = SQLCon.SQLConnection("select * from login");
-				JTable temp = new JTable();
-				temp.setModel(DbUtils.resultSetToTableModel(rs));
-				for(int i=0;i<temp.getRowCount();i++){
-					if(userName.trim().equals(temp.getValueAt(i, 1).toString().trim())){
-						if(pws.trim().equals(temp.getValueAt(i, 2).toString().trim())){
-							JOptionPane.showMessageDialog(null, "Hellow : "+userName);
-							new MainMenu(userName,temp.getValueAt(i, 3).toString()).setVisible(true);
-							return;
-						}
-						JOptionPane.showMessageDialog(null, "Invaled Password");
-						pwdPassword.setText("");
-						return;
-					}
-				}
-				JOptionPane.showMessageDialog(null, "Invaled user name and password");
-				txtName.setText("");
-				pwdPassword.setText("");
-				return;
-				
-				
-			}
-		});
 		pwdPassword.setBounds(582, 362, 310, 28);
 		contentPane.add(pwdPassword);
 		
 		JButton btnLogin = new JButton("LogIn");
-		btnLogin.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				String userName = txtName.getText();
-				String pws = new String(pwdPassword.getPassword());
-				ResultSet rs = SQLCon.SQLConnection("select * from login");
-				JTable temp = new JTable();
-				temp.setModel(DbUtils.resultSetToTableModel(rs));
-				for(int i=0;i<temp.getRowCount();i++){
-					if(userName.trim().equals(temp.getValueAt(i, 1).toString().trim())){
-						if(pws.trim().equals(temp.getValueAt(i, 2).toString().trim())){
-							JOptionPane.showMessageDialog(null, "Hellow : "+userName);
-							new MainMenu(userName,temp.getValueAt(i, 3).toString()).setVisible(true);
-							return;
-						}
-						JOptionPane.showMessageDialog(null, "Invaled Password");
-						pwdPassword.setText("");
-						return;
-					}
-				}
-				JOptionPane.showMessageDialog(null, "Invaled user name and password");
-				txtName.setText("");
-				pwdPassword.setText("");
-				return;
-				
-				
-			}
-		});
 		btnLogin.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		btnLogin.setBounds(542, 497, 172, 30);
 		contentPane.add(btnLogin);
