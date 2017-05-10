@@ -12,12 +12,13 @@
 <fullyQualifiedTypeName name="net.proteanit.sql.DbUtils"/>
 <fullyQualifiedTypeName name="patient.PatientStatus"/>
 <fullyQualifiedTypeName name="doctors.Doctor"/>
-<fullyQualifiedTypeName name="nursing.NursInfo"/>
 <fullyQualifiedTypeName name="pharmacy.Medical"/>
 <fullyQualifiedTypeName name="investigation.investigation"/>
 <fullyQualifiedTypeName name="patient.Patient"/>
-<fullyQualifiedTypeName name="report.Report"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyAdapter"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="nursing.NursInfo"/>
+<fullyQualifiedTypeName name="report.Report"/>
+<fullyQualifiedTypeName name="nursing.Panel"/>
 </qualifiedTypeNameHistroy>
