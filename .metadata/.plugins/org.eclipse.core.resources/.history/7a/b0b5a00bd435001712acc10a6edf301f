@@ -286,53 +286,7 @@ mntmNurseInformation_1.addActionListener(new ActionListener() {
 			}
 		});
 		
-	//****************************************************************************************
 		
-		//************************************************** LOGO *******************************************************************************
-		
-		
-		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon(Medical.class.getResource("/Images/hos.png")));
-		lblLogo.setBounds(1200, 0, 84, 64);
-		contentPane.add(lblLogo);
-		
-		JLabel lblLogoIcon = new JLabel("");
-		lblLogoIcon.setIcon(new ImageIcon(Medical.class.getResource("/Images/sh4.png")));
-		lblLogoIcon.setBounds(188, 0, 40, 64);
-		contentPane.add(lblLogoIcon);
-		
-		JLabel lblLogoIcon3 = new JLabel("");
-		lblLogoIcon3.setIcon(new ImageIcon(Medical.class.getResource("/Images/sh1.png")));
-		lblLogoIcon3.setBounds(87, 0, 40, 64);
-		contentPane.add(lblLogoIcon3);
-		
-		JLabel lblLogoIcon2 = new JLabel("");
-		lblLogoIcon2.setIcon(new ImageIcon(Medical.class.getResource("/Images/sh2.png")));
-		lblLogoIcon2.setBounds(137, 0, 40, 64);
-		contentPane.add(lblLogoIcon2);
-		
-		JLabel lblLogo_1 = new JLabel("logo2");
-		lblLogo_1.setIcon(new ImageIcon(Medical.class.getResource("/Images/log2.png")));
-		lblLogo_1.setBounds(390, 0, 530, 64);
-		contentPane.add(lblLogo_1);
-		
-		
-		
-		JLabel lblDate = new JLabel(new Date()+"");
-		lblDate.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblDate.setBounds(577, 74, 236, 26);
-		contentPane.add(lblDate);
-		
-		JLabel lblDocname = new JLabel("");
-		lblDocname.setText("Dr : "+this.name);
-		lblDocname.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 17));
-		lblDocname.setBounds(22, 629, 175, 26);
-		contentPane.add(lblDocname);
-		
-		JLabel lblHeader = new JLabel("");
-		lblHeader.setIcon(new ImageIcon(Medical.class.getResource("/Images/header.png")));
-		lblHeader.setBounds(0, 0, 1387, 78);
-		contentPane.add(lblHeader);
 		
 		
 	//**************************************************************************************************************
@@ -341,7 +295,7 @@ mntmNurseInformation_1.addActionListener(new ActionListener() {
 		btnPatientRegistration.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
-				new Patient(MainMenu.this.name, MainMenu.this.spc).setVisible(true);
+				new Patient(MainMenu.this.name, MainMenu.this.spc);
 				dispose();
 				
 			}
@@ -360,14 +314,6 @@ mntmNurseInformation_1.addActionListener(new ActionListener() {
 		contentPane.add(label);
 		
 		btnNursing = new JButton("Nursing");
-		btnNursing.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				new NursInfo(MainMenu.this.name, MainMenu.this.spc).setVisible(true);
-				dispose();
-				
-			}
-		});
 		btnNursing.addMouseListener(HDM);
 		btnNursing.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/nurs.png")));
 		btnNursing.setForeground(Color.WHITE);
@@ -392,14 +338,6 @@ mntmNurseInformation_1.addActionListener(new ActionListener() {
 		contentPane.add(btnDoctorManagement);
 		
 		btnPharmacy = new JButton("Pharmacy");
-		btnPharmacy.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				new Medical(MainMenu.this.name, MainMenu.this.spc).setVisible(true);
-				dispose();
-			}
-		});
-
 		btnPharmacy.addMouseListener(HDM);
 		btnPharmacy.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/pharm.png")));
 		btnPharmacy.setForeground(Color.WHITE);
@@ -409,14 +347,6 @@ mntmNurseInformation_1.addActionListener(new ActionListener() {
 		contentPane.add(btnPharmacy);
 		
 		btnReports = new JButton("Reports");
-		btnReports.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				new Report(MainMenu.this.name, MainMenu.this.spc).setVisible(true);
-				dispose();
-			}
-		});
-
 		btnReports.addMouseListener(HDM);
 		btnReports.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/rep.png")));
 		btnReports.setForeground(Color.WHITE);
@@ -426,14 +356,6 @@ mntmNurseInformation_1.addActionListener(new ActionListener() {
 		contentPane.add(btnReports);
 		
 		btnInvestgation = new JButton("Investgations");
-		btnInvestgation.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				new investigation(MainMenu.this.name, MainMenu.this.spc).setVisible(true);
-				dispose();
-			}
-		});
-
 		btnInvestgation.addMouseListener(HDM);
 		btnInvestgation.setIcon(new ImageIcon(MainMenu.class.getResource("/Images/invs.png")));
 		btnInvestgation.setForeground(Color.WHITE);

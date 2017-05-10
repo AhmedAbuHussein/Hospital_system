@@ -286,53 +286,7 @@ mntmNurseInformation_1.addActionListener(new ActionListener() {
 			}
 		});
 		
-	//****************************************************************************************
 		
-		//************************************************** LOGO *******************************************************************************
-		
-		
-		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon(Medical.class.getResource("/Images/hos.png")));
-		lblLogo.setBounds(1200, 0, 84, 64);
-		contentPane.add(lblLogo);
-		
-		JLabel lblLogoIcon = new JLabel("");
-		lblLogoIcon.setIcon(new ImageIcon(Medical.class.getResource("/Images/sh4.png")));
-		lblLogoIcon.setBounds(188, 0, 40, 64);
-		contentPane.add(lblLogoIcon);
-		
-		JLabel lblLogoIcon3 = new JLabel("");
-		lblLogoIcon3.setIcon(new ImageIcon(Medical.class.getResource("/Images/sh1.png")));
-		lblLogoIcon3.setBounds(87, 0, 40, 64);
-		contentPane.add(lblLogoIcon3);
-		
-		JLabel lblLogoIcon2 = new JLabel("");
-		lblLogoIcon2.setIcon(new ImageIcon(Medical.class.getResource("/Images/sh2.png")));
-		lblLogoIcon2.setBounds(137, 0, 40, 64);
-		contentPane.add(lblLogoIcon2);
-		
-		JLabel lblLogo_1 = new JLabel("logo2");
-		lblLogo_1.setIcon(new ImageIcon(Medical.class.getResource("/Images/log2.png")));
-		lblLogo_1.setBounds(390, 0, 530, 64);
-		contentPane.add(lblLogo_1);
-		
-		
-		
-		JLabel lblDate = new JLabel(new Date()+"");
-		lblDate.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblDate.setBounds(577, 74, 236, 26);
-		contentPane.add(lblDate);
-		
-		JLabel lblDocname = new JLabel("");
-		lblDocname.setText("Dr : "+this.name);
-		lblDocname.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 17));
-		lblDocname.setBounds(22, 629, 175, 26);
-		contentPane.add(lblDocname);
-		
-		JLabel lblHeader = new JLabel("");
-		lblHeader.setIcon(new ImageIcon(Medical.class.getResource("/Images/header.png")));
-		lblHeader.setBounds(0, 0, 1387, 78);
-		contentPane.add(lblHeader);
 		
 		
 	//**************************************************************************************************************

@@ -84,5 +84,10 @@
     "location": "C:\\Users\\Ahmed Shaker\\Desktop\\hos\\ConnectionDB\\jdbc\\rs2xml.jar",
     "status": "UNRESOLVED",
     "error": "No call model found for \u0027C:\\Users\\Ahmed Shaker\\Desktop\\hos\\ConnectionDB\\jdbc\\rs2xml.jar\u0027. Neither fingerprint \u00278a970b2f2ce64a6d8c96b850d8db8908ec3148f1\u0027 nor symbolic name \u0027rs2xml\u0027 are known."
+  },
+  "C:\\Users\\Ahmed Shaker\\Desktop\\hos\\hospital system\\src": {
+    "location": "C:\\Users\\Ahmed Shaker\\Desktop\\hos\\hospital system\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Ahmed Shaker\\Desktop\\hos\\hospital system\\src\u0027. Skipped."
   }
 }

@@ -1,7 +1,6 @@
 package login;
 
 import handler.HandlerFocus;
-import handler.HandlerMotion;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -36,7 +35,6 @@ import javax.swing.JMenuItem;
 
 
 
-
 import sqlconnection.SQLCon;
 import net.proteanit.sql.DbUtils;
 
@@ -49,7 +47,6 @@ public class Login extends JFrame {
 	private Panel contentPane;
 	private JTextField txtName;
 	private JPasswordField pwdPassword;
-	private HandlerMotion HDM;
 
 	/**
 	 * Launch the application.
@@ -71,7 +68,6 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
-		HDM =new HandlerMotion();
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/Images/hos.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,16 +83,16 @@ public class Login extends JFrame {
 		
 		JLabel lblName = new JLabel("Name : ");
 		lblName.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
-		lblName.setBounds(473, 282, 111, 28);
+		lblName.setBounds(477, 312, 111, 28);
 		contentPane.add(lblName);
 		
 		JLabel lblPassword = new JLabel("Password : ");
 		lblPassword.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 16));
-		lblPassword.setBounds(473, 358, 111, 28);
+		lblPassword.setBounds(477, 388, 111, 28);
 		contentPane.add(lblPassword);
 		
 		txtName = new JTextField();
-		txtName.setBounds(473, 310, 452, 44);
+		txtName.setBounds(477, 340, 452, 44);
 		contentPane.add(txtName);
 		txtName.setColumns(10);
 		
@@ -129,11 +125,10 @@ public class Login extends JFrame {
 				
 			}
 		});
-		pwdPassword.setBounds(473, 386, 452, 44);
+		pwdPassword.setBounds(477, 416, 452, 44);
 		contentPane.add(pwdPassword);
 		
 		JButton btnLogin = new JButton("LogIn");
-		btnLogin.addMouseListener(HDM);
 		btnLogin.setForeground(Color.WHITE);
 		btnLogin.setBackground(new Color(20,30,50));
 		btnLogin.addActionListener(new ActionListener() {
@@ -165,22 +160,14 @@ public class Login extends JFrame {
 			}
 		});
 		btnLogin.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnLogin.setBounds(492, 471, 204, 43);
+		btnLogin.setBounds(496, 501, 204, 43);
 		contentPane.add(btnLogin);
 		
 		JButton btnExit = new JButton("Exit");
-		btnExit.addMouseListener(HDM);
-		btnExit.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
-				
-			}
-		});
 		btnExit.setForeground(Color.WHITE);
 		btnExit.setBackground(new Color(20,30,50));
 		btnExit.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnExit.setBounds(718, 471, 193, 43);
+		btnExit.setBounds(722, 501, 193, 43);
 		contentPane.add(btnExit);
 		
 		JLabel lblHosnaem = new JLabel("");

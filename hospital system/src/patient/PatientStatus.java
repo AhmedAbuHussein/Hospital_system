@@ -3,6 +3,7 @@ package patient;
 import investigation.investigation;
 
 import java.awt.Color;
+
 import handler.HandlerFocus;
 import handler.HandlerMotion;
 
@@ -48,6 +49,7 @@ import sqlconnection.SQLCon;
 
 import javax.swing.JComboBox;
 
+import login.MainMenu;
 import pharmacy.Medical;
 import doctors.Doctor;
 
@@ -646,7 +648,7 @@ public class PatientStatus extends JFrame {
 				btnExit.addActionListener(new ActionListener() {
 					
 					public void actionPerformed(ActionEvent arg0) {
-						// TODO Auto-generated method stub
+						new MainMenu(Name,specification).setVisible(true);
 						dispose();
 					}
 				});
