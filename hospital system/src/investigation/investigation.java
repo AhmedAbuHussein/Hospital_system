@@ -11,32 +11,57 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import patient.Patient;
+import pharmacy.Medical;
+import report.Report;
+import sqlconnection.SQLCon;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 
 import java.awt.Color;
+import java.sql.ResultSet;
 import java.util.Date;
 import java.awt.ScrollPane;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
 
+import doctors.Doctor;
+import net.proteanit.sql.DbUtils;
+import nursing.NursInfo;
+
 public class investigation extends JFrame {
 
+	
+	
+	private String name;
+	private String spc ;
 	private JPanel contentPane;
 	private JTable table;
-	private JTextArea textField;
+	private JTextArea textAreaInves;
+	private JLabel invest;
+	private JComboBox comboBox;
+	private JTextField txtFirstName;
+	private JTextField txtLastName;
+	private JLabel inves;
+	private JTextField txtSsn;
+	private JLabel lblNewLabel_6;
 
 	/**
 	 * Launch the application.
@@ -45,7 +70,7 @@ public class investigation extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					investigation frame = new investigation();
+					investigation frame = new investigation(" "," ");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,7 +82,9 @@ public class investigation extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public investigation() {
+	public investigation(String name,String spc ) {
+		this.name = name;
+		this.spc = spc;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//************Icon For The bage*****************
@@ -66,8 +93,9 @@ public class investigation extends JFrame {
 		
 		//*************************************
 		
-		setBounds(100, 100, 450, 300);
-		setSize(1378, 740);
+		//setBounds(100, 100, 450, 300);
+		setSize(1735, 735);
+		setLocationRelativeTo(null);// to be the window in the center of screen
 		
 		// ***************the bar in the head of bage*****************
 		JMenuBar menuBar = new JMenuBar();
@@ -79,9 +107,6 @@ public class investigation extends JFrame {
 		JMenuItem mntmPatientRegisrations = new JMenuItem("Patient regisrations");
 		mnPatientRegistration.add(mntmPatientRegisrations);
 		
-		JMenuItem mntmSearchPatientDetails = new JMenuItem("Search Patient details");
-		mnPatientRegistration.add(mntmSearchPatientDetails);
-		
 		JMenu mnDoctorManagement = new JMenu("Doctor management");
 		menuBar.add(mnDoctorManagement);
 		
@@ -91,17 +116,11 @@ public class investigation extends JFrame {
 		JMenuItem mntmPatientStatus = new JMenuItem("patient status");
 		mnDoctorManagement.add(mntmPatientStatus);
 		
-		JMenuItem mntmChangePassword = new JMenuItem("change password");
-		mnDoctorManagement.add(mntmChangePassword);
-		
 		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
 		menuBar.add(mnPharmacyManagement);
 		
 		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
 		mnPharmacyManagement.add(mntmMedicamentInformation);
-		
-		JMenuItem mntmChangePassword_1 = new JMenuItem("change password");
-		mnPharmacyManagement.add(mntmChangePassword_1);
 		
 		JMenu mnInvestigations = new JMenu("Investigations");
 		menuBar.add(mnInvestigations);
@@ -112,9 +131,6 @@ public class investigation extends JFrame {
 		JMenuItem mntmPatientStatus_1 = new JMenuItem("patient status");
 		mnInvestigations.add(mntmPatientStatus_1);
 		
-		JMenuItem mntmChangePassword_2 = new JMenuItem("change password");
-		mnInvestigations.add(mntmChangePassword_2);
-		
 		JMenu mnNursing = new JMenu("Nursing");
 		menuBar.add(mnNursing);
 		
@@ -123,9 +139,6 @@ public class investigation extends JFrame {
 		
 		JMenuItem mntmPatientStatus_2 = new JMenuItem("patient status");
 		mnNursing.add(mntmPatientStatus_2);
-		
-		JMenuItem mntmChangePassword_3 = new JMenuItem("change password");
-		mnNursing.add(mntmChangePassword_3);
 		
 		JMenu mnAdminManagement = new JMenu("Admin management");
 		menuBar.add(mnAdminManagement);
@@ -145,32 +158,19 @@ public class investigation extends JFrame {
 		JMenuItem mntmPatientInformation = new JMenuItem("patient information");
 		mnAdminManagement.add(mntmPatientInformation);
 		
-		JMenuItem mntmChangePassword_4 = new JMenuItem("change password");
-		mnAdminManagement.add(mntmChangePassword_4);
-		
 		JMenu mnReport = new JMenu(" Reports");
 		menuBar.add(mnReport);
 		
 		JMenuItem mntmPatientReport = new JMenuItem("patient report");
 		mnReport.add(mntmPatientReport);
-		
-		JMenuItem mntmPharmacyReport = new JMenuItem("pharmacy report");
-		mnReport.add(mntmPharmacyReport);
-		
-		JMenuItem mntmLaundryReport = new JMenuItem("laundry report");
-		mnReport.add(mntmLaundryReport);
-		
-		JMenu mnLaundryManagement = new JMenu("Laundry management");
-		menuBar.add(mnLaundryManagement);
-		//************************************************
-		       /**************  Dispose & link to all frames *******************/
+/**************  Dispose & link to all frames *******************/
 		
 		mntmDoctorInformation.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new Doctor().setVisible(true);
+				new Doctor(investigation.this.name,investigation.this.spc).setVisible(true);
 			}
 		});
 
@@ -190,7 +190,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new Medical().setVisible(true);
+				new Medical(investigation.this.name,investigation.this.spc).setVisible(true);
 				
 			}
 		});
@@ -199,7 +199,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new investigation().setVisible(true);
+				//new investigation().setVisible(true);
 			}
 		});
 		mntmNurseInformation.addActionListener(new ActionListener() {
@@ -207,7 +207,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new NursInfo().setVisible(true);
+				new NursInfo(investigation.this.name,investigation.this.spc).setVisible(true);
 				
 			}
 		});
@@ -217,7 +217,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new Doctor().setVisible(true);
+				new Doctor(investigation.this.name,investigation.this.spc).setVisible(true);
 				
 			}
 		});
@@ -226,7 +226,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new NursInfo().setVisible(true);
+				new NursInfo(investigation.this.name,investigation.this.spc).setVisible(true);
 				
 			}
 		});
@@ -236,7 +236,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new Medical().setVisible(true);
+				new Medical(investigation.this.name,investigation.this.spc).setVisible(true);
 			}
 		});
 		mntmInvestigationInformation.addActionListener(new ActionListener() {
@@ -244,7 +244,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new investigation().setVisible(true);
+			new investigation(investigation.this.name,investigation.this.spc).setVisible(true);
 			}
 		});
 		mntmPatientReport.addActionListener(new ActionListener() {
@@ -252,33 +252,41 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new Report().setVisible(true);
+				new Report(investigation.this.name,investigation.this.spc).setVisible(true);
 			}
 		});
-		//***********************************
+		
+		
 
 		
+		
+		
+		
+		
+		
+		//************************************************
 		
 		
 		contentPane = new panel();// the new variable in the panel to put the componant in the panel
 		
 		
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		setContentPane(contentPane);
+		/*
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(58, 0, 47, 46);
 		lblNewLabel_1.setIcon(new ImageIcon(getClass().getResource("/Images/nurs.png")));
 		contentPane.add(lblNewLabel_1);
-		
+		*/
+		/*
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setBounds(104, 0, 40, 46);
 		lblNewLabel_2.setIcon(new ImageIcon(getClass().getResource("/Images/sh2.png")));
 		contentPane.add(lblNewLabel_2);
-		
+		*/
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setBounds(148, 0, 40, 46);
+		lblNewLabel_3.setBounds(350, 0, 40, 46);
 		lblNewLabel_3.setIcon(new ImageIcon(getClass().getResource("/Images/sh4.png")));
 		contentPane.add(lblNewLabel_3);
 		
@@ -288,18 +296,57 @@ public class investigation extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		//*****************Header*****************
-		
+	/*
 		JLabel lblNewLabel = new JLabel("");
 		
 		lblNewLabel.setBounds(0, 0, 1384, 58);
 		lblNewLabel.setIcon(new ImageIcon(getClass().getResource("/Images/header.png")));
 		contentPane.add(lblNewLabel);
-		
+		*/
 		//******************* buttons*******************
 		
 		JButton btnSave = new JButton("Save");
-		btnSave.setForeground(Color.WHITE);
 		
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				     
+				if(txtSsn.getText().equals(""))
+				{
+					JOptionPane.showMessageDialog(null, "fill snn");
+					return;
+				}
+				else
+				{
+					
+				
+					try
+					{
+						
+                        ResultSet rss;								
+                        String sql = "INSERT INTO patient_statues(ssn,patient_investigation,investigation_type) "
+                        		+ "VALUES ("+Integer.parseInt(txtSsn.getText())+",'"+textAreaInves.getText()+"','"+comboBox.getSelectedItem().toString()+"')";
+                        SQLCon.SQLConn(sql);
+                        
+                        
+                        
+		                JOptionPane.showMessageDialog(null, "insert Successfully");
+		                rss=SQLCon.SQLConnection("select * from patient_statues");
+		                table.setModel(DbUtils.resultSetToTableModel(rss));
+		                
+					}
+					catch (Exception ex) {
+	                    JOptionPane.showMessageDialog(null, ex.getMessage());
+	                }
+				}
+			}
+				
+				
+				
+			
+		});
+		
+		
+		btnSave.setForeground(Color.WHITE);
 		btnSave.setBackground(new Color(20,60,80));
 		btnSave.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
 		btnSave.setBounds(523, 370, 154, 39);
@@ -314,14 +361,37 @@ public class investigation extends JFrame {
 		btnClear.setBounds(723, 370, 154, 39);
 		contentPane.add(btnClear);
 		
+		//*****************handling clear button*****************
+		
+		btnClear.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				txtSsn.setText(" ");
+				   txtLastName.setText(" ");
+					textAreaInves.setText("");
+					txtFirstName.setText(" ");
+					comboBox.setSelectedIndex(0);
+				
+					
+					
+				
+			}
+		});
 		
 		
 		//************************footer**************
-		
+		JLabel lblDocname = new JLabel("DR : ");
+		lblDocname.setText("DR : "+this.name);
+		lblDocname.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 15));
+		lblDocname.setBounds(20, 629, 189, 26);
+		contentPane.add(lblDocname);
+
+		/*
 		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setBounds(-91, 646, 1518, 33);
 		lblNewLabel_5.setIcon(new ImageIcon(getClass().getResource("/Images/header.png")));
 		contentPane.add(lblNewLabel_5);
+		*/
 		
 		//****************** date*****************
 		
@@ -329,8 +399,21 @@ public class investigation extends JFrame {
 			lblDate.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 			lblDate.setBounds(577, 74, 236, 26);
 			contentPane.add(lblDate);
+		//****************************************
 			
-			JTextField txtFirstName = new JTextField();
+			//**************TextFields****************
+			
+			txtSsn = new JTextField();
+			txtSsn.setBounds(270, 161, 343, 22);
+			
+			txtSsn.setColumns(10);
+			txtSsn.setForeground(Color.BLACK);
+			
+			txtSsn.setFont(new Font("Times New Roman", Font.ITALIC, 17));
+			txtSsn.setBackground(Color.WHITE);
+			contentPane.add(txtSsn);
+			
+			txtFirstName = new JTextField();
 			txtFirstName.setForeground(Color.BLACK);
 			
 			txtFirstName.setFont(new Font("Times New Roman", Font.ITALIC, 17));
@@ -339,7 +422,7 @@ public class investigation extends JFrame {
 			txtFirstName.setBounds(270, 201, 343, 26);
 			contentPane.add(txtFirstName);
 			
-			JTextField txtLastName = new JTextField();
+			 txtLastName = new JTextField();
 			txtLastName.setForeground(Color.BLACK);
 			
 			txtLastName.setFont(new Font("Times New Roman", Font.ITALIC, 17));
@@ -349,7 +432,7 @@ public class investigation extends JFrame {
 			contentPane.add(txtLastName);
 			
 			//********************** investegation report**********
-			JLabel invest = new JLabel("investegation report");
+			 invest = new JLabel("investegation report");
 			invest.setForeground(new Color(25, 25, 112));
 			invest.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
 			invest.setBackground(Color.LIGHT_GRAY);
@@ -357,7 +440,19 @@ public class investigation extends JFrame {
 			contentPane.add(invest);
 			
 			//*******************labels*************
-			JLabel inves = new JLabel("investigation Type: ");
+			lblNewLabel_6 = new JLabel("SSN");
+			lblNewLabel_6.setBounds(104, 164, 56, 16);
+			lblNewLabel_6.setForeground(new Color(25, 25, 112));
+			lblNewLabel_6.setBackground(Color.LIGHT_GRAY);
+			lblNewLabel_6.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
+			contentPane.add(lblNewLabel_6);
+			
+			
+			
+			
+			
+			
+			 inves = new JLabel("investigation Type: ");
 			inves.setForeground(new Color(25, 25, 112));
 			inves.setBackground(Color.LIGHT_GRAY);
 			inves.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
@@ -406,12 +501,33 @@ public class investigation extends JFrame {
 				}
 			));
 			
+			ResultSet rs = SQLCon.SQLConnection("select * from patient_statues"); 
+			table.setModel(DbUtils.resultSetToTableModel(rs));
+			
+			table.addMouseListener(new MouseAdapter() {
+				public void  mouseClicked(MouseEvent e)
+				{
+					TableModel m = table.getModel();
+					int row = table.getSelectedRow();
+					txtSsn.setText(m.getValueAt(row, 0).toString());
+					comboBox.setSelectedItem(m.getValueAt(row, 3));
+				    textAreaInves.setText(m.getValueAt(row, 2).toString());
+				    
+				    JTable temp = new JTable();
+				    temp.setModel(DbUtils.resultSetToTableModel(SQLCon.SQLConnection("select name from patient "
+				    		+ "where ssn = "+Integer.parseInt(m.getValueAt(row, 0).toString()))));
+				    txtFirstName.setText(temp.getValueAt(0, 0).toString().split(" ")[0]);
+					txtLastName.setText(temp.getValueAt(0, 0).toString().split(" ")[1]);
+					
+				}
+				
+			});
 			
 			table.setBounds(462, 395, 724, 238);
 			scrollPane.setViewportView(table);
 			
-			JComboBox comboBox = new JComboBox();
-			comboBox.setModel(new DefaultComboBoxModel(new String[] {"select"}));
+			comboBox = new JComboBox();
+			comboBox.setModel(new DefaultComboBoxModel(new String[] {"C.B.C","R.B.C","W.B.C","Hb_Hgb","E.S.R"}));
 			comboBox.setBounds(270, 280, 343, 29);
 			contentPane.add(comboBox);
 			
@@ -419,11 +535,47 @@ public class investigation extends JFrame {
 			scrpane.setBounds(778, 189, 470, 158);
 			contentPane.add(scrpane);
 			
-			textField = new JTextArea();
-			textField.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
-			textField.setWrapStyleWord(true);
-			textField.setLineWrap(true);
-			scrpane.setViewportView(textField);
+			
+			table.addMouseListener(new MouseAdapter(){
+				public void mouseClicked(MouseEvent e){
+					
+					int row = table.getSelectedRow();
+					//setText(table.getValueAt(row, 0).toString());
+					
+					
+				}
+				
+				
+			}
+			
+					
+					
+					
+					
+					
+					
+					
+					);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			//************************ Text Area of investigation*************************
+			textAreaInves = new JTextArea();
+			textAreaInves.setFont(new Font("Georgia", Font.BOLD | Font.ITALIC, 15));
+			textAreaInves.setWrapStyleWord(true);
+			textAreaInves.setLineWrap(true);
+			scrpane.setViewportView(textAreaInves);
+			
+		
+			
+		
 			
 			
 		
