@@ -3,9 +3,9 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
 	<classpathentry kind="lib" path="res"/>
-	<classpathentry kind="lib" path="F:/project/ConnectionDB/jdbc/derbyclient.jar"/>
-	<classpathentry kind="lib" path="F:/project/ConnectionDB/jdbc/itextpdf-5.1.0.jar"/>
-	<classpathentry kind="lib" path="F:/project/ConnectionDB/jdbc/mysql-connector-java-5.1.35.jar"/>
-	<classpathentry kind="lib" path="F:/project/ConnectionDB/jdbc/rs2xml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maged_mohamed/Desktop/New folder/ConnectionDB/jdbc/derbyclient.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maged_mohamed/Desktop/New folder/ConnectionDB/jdbc/itextpdf-5.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maged_mohamed/Desktop/New folder/ConnectionDB/jdbc/mysql-connector-java-5.1.35.jar"/>
+	<classpathentry kind="lib" path="C:/Users/maged_mohamed/Desktop/New folder/ConnectionDB/jdbc/rs2xml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
