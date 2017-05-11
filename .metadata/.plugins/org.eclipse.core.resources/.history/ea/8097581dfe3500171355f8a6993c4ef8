@@ -18,7 +18,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import patient.Patient;
-import patient.PatientStatus;
 import pharmacy.Medical;
 import report.Report;
 import sqlconnection.SQLCon;
@@ -99,59 +98,92 @@ public class investigation extends JFrame {
 		setLocationRelativeTo(null);// to be the window in the center of screen
 		
 		// ***************the bar in the head of bage*****************
-		JMenuBar menuBar_1 = new JMenuBar();
-		setJMenuBar(menuBar_1);
-		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+
 		JMenu mnPatientRegistration = new JMenu("Patient Registration");
-		menuBar_1.add(mnPatientRegistration);
+		menuBar.add(mnPatientRegistration);
 		
 		JMenuItem mntmPatientRegisrations = new JMenuItem("Patient regisrations");
-		mntmPatientRegisrations.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-				new Patient(investigation.this.name,investigation.this.spc).setVisible(true);
-				
-			}
-		});
 		mnPatientRegistration.add(mntmPatientRegisrations);
 		
 		JMenu mnDoctorManagement = new JMenu("Doctor management");
-		menuBar_1.add(mnDoctorManagement);
+		menuBar.add(mnDoctorManagement);
 		
 		JMenuItem mntmDoctorInformation = new JMenuItem("doctor information");
 		mnDoctorManagement.add(mntmDoctorInformation);
 		
+		JMenuItem mntmPatientStatus = new JMenuItem("patient status");
+		mnDoctorManagement.add(mntmPatientStatus);
+		
+		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
+		menuBar.add(mnPharmacyManagement);
+		
+		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
+		mnPharmacyManagement.add(mntmMedicamentInformation);
+		
+		JMenu mnInvestigations = new JMenu("Investigations");
+		menuBar.add(mnInvestigations);
+		
+		JMenuItem mntmInvestigationType = new JMenuItem("investigation type");
+		mnInvestigations.add(mntmInvestigationType);
+		
+		JMenuItem mntmPatientStatus_1 = new JMenuItem("patient status");
+		mnInvestigations.add(mntmPatientStatus_1);
+		
+		JMenu mnNursing = new JMenu("Nursing");
+		menuBar.add(mnNursing);
+		
+		JMenuItem mntmNurseInformation = new JMenuItem("nurse information");
+		mnNursing.add(mntmNurseInformation);
+		
+		JMenuItem mntmPatientStatus_2 = new JMenuItem("patient status");
+		mnNursing.add(mntmPatientStatus_2);
+		
+		JMenu mnAdminManagement = new JMenu("Admin management");
+		menuBar.add(mnAdminManagement);
+		
+		JMenuItem mntmDoctorInformation_1 = new JMenuItem("doctor information");
+		mnAdminManagement.add(mntmDoctorInformation_1);
+		
+		JMenuItem mntmNurseInformation_1 = new JMenuItem("nurse information");
+		mnAdminManagement.add(mntmNurseInformation_1);
+		
+		JMenuItem mntmPharmacyInformation = new JMenuItem("pharmacy information");
+		mnAdminManagement.add(mntmPharmacyInformation);
+		
+		JMenuItem mntmInvestigationInformation = new JMenuItem("investigation information");
+		mnAdminManagement.add(mntmInvestigationInformation);
+		
+		JMenuItem mntmPatientInformation = new JMenuItem("patient information");
+		mnAdminManagement.add(mntmPatientInformation);
+		
+		JMenu mnReport = new JMenu(" Reports");
+		menuBar.add(mnReport);
+		
+		JMenuItem mntmPatientReport = new JMenuItem("patient report");
+		mnReport.add(mntmPatientReport);
+/**************  Dispose & link to all frames *******************/
+		
 		mntmDoctorInformation.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
 				dispose();
 				new Doctor(investigation.this.name,investigation.this.spc).setVisible(true);
-				
 			}
 		});
-		
-		
-		JMenuItem mntmPatientStatus = new JMenuItem("patient status");
-		mnDoctorManagement.add(mntmPatientStatus);
+
 		
 		mntmPatientStatus.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new PatientStatus(investigation.this.name,investigation.this.spc).setVisible(true);
+				Patient p=new Patient();
+				p.setVisible(true);
 			}
 		});
-		
-		
-		
-		JMenu mnPharmacyManagement = new JMenu("Pharmacy management");
-		menuBar_1.add(mnPharmacyManagement);
-//********************************************************************************************
-		
-		JMenuItem mntmMedicamentInformation = new JMenuItem("medicament information");
-		mnPharmacyManagement.add(mntmMedicamentInformation);
 		
 		mntmMedicamentInformation.addActionListener(new ActionListener() {
 			
@@ -160,107 +192,44 @@ public class investigation extends JFrame {
 				dispose();
 				new Medical(investigation.this.name,investigation.this.spc).setVisible(true);
 				
-				
 			}
 		});
-		
-		
-		
-		
-		JMenu mnInvestigations = new JMenu("Investigations");
-		menuBar_1.add(mnInvestigations);
-		
-		JMenuItem mntmInvestigationType = new JMenuItem("investigation type");
-		mnInvestigations.add(mntmInvestigationType);
-		
 		mntmInvestigationType.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new investigation(investigation.this.name,investigation.this.spc).setVisible(true);
+				//new investigation().setVisible(true);
 			}
 		});
-		
-		
-		JMenuItem mntmPatientStatus_1 = new JMenuItem("patient status");
-		mnInvestigations.add(mntmPatientStatus_1);
-		
-		mntmPatientStatus_1.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				dispose();
-				new PatientStatus(investigation.this.name,investigation.this.spc).setVisible(true);
-			}
-		});
-		
-		
-		
-		
-		JMenu mnNursing = new JMenu("Nursing");
-		menuBar_1.add(mnNursing);
-		
-		JMenuItem mntmNurseInformation = new JMenuItem("nurse information");
-		mnNursing.add(mntmNurseInformation);
-		
 		mntmNurseInformation.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
 				new NursInfo(investigation.this.name,investigation.this.spc).setVisible(true);
+				
 			}
 		});
-		
-		
-		JMenuItem mntmPatientStatus_2 = new JMenuItem("patient status");
-		mnNursing.add(mntmPatientStatus_2);
-		
-		mntmPatientStatus_2.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				dispose();
-				new PatientStatus(investigation.this.name,investigation.this.spc).setVisible(true);
-			}
-		});
-		
-		JMenu mnAdminManagement = new JMenu("Admin management");
-		menuBar_1.add(mnAdminManagement);
-		
-		JMenuItem mntmDoctorInformation_1 = new JMenuItem("doctor information");
-		mnAdminManagement.add(mntmDoctorInformation_1);
 		
 		mntmDoctorInformation_1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
 				dispose();
 				new Doctor(investigation.this.name,investigation.this.spc).setVisible(true);
 				
 			}
 		});
-		
-		
-		
-		
-		
-		JMenuItem mntmNurseInformation_1 = new JMenuItem("nurse information");
-		mnAdminManagement.add(mntmNurseInformation_1);
-		
 		mntmNurseInformation_1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
 				new NursInfo(investigation.this.name,investigation.this.spc).setVisible(true);
+				
 			}
 		});
-		
-		
-		
-		JMenuItem mntmPharmacyInformation = new JMenuItem("pharmacy information");
-		mnAdminManagement.add(mntmPharmacyInformation);
 		
 		mntmPharmacyInformation.addActionListener(new ActionListener() {
 			
@@ -268,46 +237,16 @@ public class investigation extends JFrame {
 				// TODO Auto-generated method stub
 				dispose();
 				new Medical(investigation.this.name,investigation.this.spc).setVisible(true);
-				
-				
 			}
 		});
-		
-		JMenuItem mntmInvestigationInformation = new JMenuItem("investigation information");
-		mnAdminManagement.add(mntmInvestigationInformation);
-		
 		mntmInvestigationInformation.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new investigation(investigation.this.name,investigation.this.spc).setVisible(true);
+			new investigation(investigation.this.name,investigation.this.spc).setVisible(true);
 			}
 		});
-		
-		
-		
-		
-		JMenuItem mntmPatientInformation = new JMenuItem("patient information");
-		mnAdminManagement.add(mntmPatientInformation);
-		
-		
-		mntmPatientInformation .addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-				new Patient(investigation.this.name,investigation.this.spc).setVisible(true);
-				
-			}
-		});
-		
-		
-		JMenu mnReport = new JMenu(" Reports");
-		menuBar_1.add(mnReport);
-		
-		JMenuItem mntmPatientReport = new JMenuItem("patient report");
-		mnReport.add(mntmPatientReport);
-	
 		mntmPatientReport.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
@@ -316,6 +255,12 @@ public class investigation extends JFrame {
 				new Report(investigation.this.name,investigation.this.spc).setVisible(true);
 			}
 		});
+		
+		
+
+		
+		
+		
 		
 		
 		

@@ -110,7 +110,7 @@ public class investigation extends JFrame {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new Patient(investigation.this.name,investigation.this.spc).setVisible(true);
+				new Patient(name,Specification).setVisible(true);
 				
 			}
 		});
@@ -126,7 +126,7 @@ public class investigation extends JFrame {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new Doctor(investigation.this.name,investigation.this.spc).setVisible(true);
+				new Doctor(name,Specification).setVisible(true);
 				
 			}
 		});
@@ -140,7 +140,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new PatientStatus(investigation.this.name,investigation.this.spc).setVisible(true);
+				new PatientStatus(name,Specification).setVisible(true);
 			}
 		});
 		
@@ -158,7 +158,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new Medical(investigation.this.name,investigation.this.spc).setVisible(true);
+				new Medical(name,Specification).setVisible(true);
 				
 				
 			}
@@ -178,7 +178,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new investigation(investigation.this.name,investigation.this.spc).setVisible(true);
+				new investigation(name,Specification).setVisible(true);
 			}
 		});
 		
@@ -191,7 +191,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new PatientStatus(investigation.this.name,investigation.this.spc).setVisible(true);
+				new PatientStatus(name,Specification).setVisible(true);
 			}
 		});
 		
@@ -209,7 +209,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new NursInfo(investigation.this.name,investigation.this.spc).setVisible(true);
+				new NursInfo(name,Specification).setVisible(true);
 			}
 		});
 		
@@ -222,7 +222,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new PatientStatus(investigation.this.name,investigation.this.spc).setVisible(true);
+				new PatientStatus(name,Specification).setVisible(true);
 			}
 		});
 		
@@ -236,7 +236,7 @@ public class investigation extends JFrame {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new Doctor(investigation.this.name,investigation.this.spc).setVisible(true);
+				new Doctor(name,Specification).setVisible(true);
 				
 			}
 		});
@@ -253,7 +253,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new NursInfo(investigation.this.name,investigation.this.spc).setVisible(true);
+				new NursInfo(name,Specification).setVisible(true);
 			}
 		});
 		
@@ -267,7 +267,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new Medical(investigation.this.name,investigation.this.spc).setVisible(true);
+				new Medical(name,Specification).setVisible(true);
 				
 				
 			}
@@ -281,7 +281,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new investigation(investigation.this.name,investigation.this.spc).setVisible(true);
+				new investigation(name,Specification).setVisible(true);
 			}
 		});
 		
@@ -296,7 +296,7 @@ public class investigation extends JFrame {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new Patient(investigation.this.name,investigation.this.spc).setVisible(true);
+				new Patient(name,Specification).setVisible(true);
 				
 			}
 		});
@@ -313,7 +313,7 @@ public class investigation extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				dispose();
-				new Report(investigation.this.name,investigation.this.spc).setVisible(true);
+				new Report(name,Specification).setVisible(true);
 			}
 		});
 		
